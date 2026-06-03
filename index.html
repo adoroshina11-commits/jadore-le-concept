@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<title>J'adore Le Concept</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cream:#faf8f4;--off:#f4f1eb;--ink:#1a1814;--muted:#6a6460;--rule:#d8d4cc;--accent:#b89a7a;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.96);backdrop-filter:blur(4px);border-bottom:0.5px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--ink);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-rows:1fr auto;
+  padding:0 10vw;
+  border-bottom:0.5px solid var(--rule);
+  overflow:hidden;
+  position:relative;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(10vw - 0.5px),
+      var(--rule) calc(10vw - 0.5px),
+      var(--rule) 10vw
+    );
+  opacity:0.35;
+  pointer-events:none;
+}
+.hero-inner{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:56px;
+}
+.hero-over{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:2.5rem;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,8vw,116px);
+  font-weight:300;
+  line-height:0.92;
+  letter-spacing:-0.01em;
+  margin-bottom:0;
+}
+.hero-title em{font-style:italic;}
+.hero-title .line{display:block;overflow:hidden;}
+.hero-title .line span{
+  display:block;
+  animation:slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-title .line:nth-child(1) span{animation-delay:0.1s;}
+.hero-title .line:nth-child(2) span{animation-delay:0.22s;}
+.hero-title .line:nth-child(3) span{animation-delay:0.34s;}
+@keyframes slideUp{
+  from{transform:translateY(100%);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+.hero-bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  padding-bottom:7vh;
+  animation:fadeIn 1.2s ease 0.6s both;
+}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;
+  font-style:italic;
+  letter-spacing:0.08em;
+  color:var(--muted);
+}
+.hero-desc{
+  max-width:360px;
+  text-align:right;
+  font-size:15.5px;
+  color:var(--muted);
+  line-height:1.7;
+}
+.hero-cta{
+  margin-top:1.2rem;
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:0.5px solid var(--ink);
+  padding-bottom:3px;
+}
+
+/* TICKER */
+.ticker{
+  background:#05242b;
+  color:var(--cream);
+  overflow:hidden;
+  white-space:nowrap;
+  height:36px;
+  display:flex;
+  align-items:center;
+  position:relative;
+}
+.ticker-inner{
+  display:inline-flex;
+  animation:ticker 30s linear infinite;
+}
+.ticker-item{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  padding:0 3rem;
+  opacity:0.6;
+}
+.ticker-item::after{
+  content:'·';
+  margin-left:3rem;
+}
+@keyframes ticker{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* INTRO STRIP */
+.intro{padding:6vw 10vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;border-bottom:0.5px solid var(--rule);}
+.intro-num{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+.intro-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.2;margin-bottom:1.5rem;}
+.intro-heading em{font-style:italic;}
+.intro-body{font-size:15.5px;color:var(--muted);line-height:1.85;}
+.intro-link{
+  display:inline-block;
+  margin-top:1.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:0.5px solid var(--ink);
+  padding-bottom:2px;
+}
+
+/* FOOTER */
+/* ── FOOTER ── */
+footer{
+  background:#05242b;
+  color:var(--cream);
+  padding:3.5vw 10vw;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:3rem;
+  align-items:center;
+  border-top:0.5px solid rgba(255,255,255,0.08);
+}
+.ft-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--cream);
+  margin-bottom:0.6rem;
+}
+.ft-sub{
+  font-size:13.5px;
+  color:rgba(250,248,244,0.45);
+  line-height:1.6;
+  max-width:260px;
+}
+.ft-cities{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10.5px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(250,248,244,0.4);
+  text-align:center;
+  white-space:nowrap;
+}
+.ft-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+}
+.ft-link{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(250,248,244,0.5);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.ft-link:hover{color:var(--cream);}
+.ft-copy{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(250,248,244,0.2);
+  margin-top:4px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">J'adore Le Concept</a>
+  <div class="nav-links">
+    <a href="archive.html">Archive</a>
+    <a href="essays.html">Essays</a>
+    <a href="photography.html">Photography</a>
+    <a href="about.html">About</a>
+    <a href="about.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-over">Barcelona · Paris · Los Angeles · New York · Athens — Est. 2024</div>
+    <h1 class="hero-title">
+      <span class="line"><span>A curated</span></span>
+      <span class="line"><span>perspective <em>on</em></span></span>
+      <span class="line"><span>fashion &amp; luxury.</span></span>
+    </h1>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-sub">anais doroshina</div>
+    <div class="hero-desc">
+      Examining the systems, strategies, and creative forces that define contemporary luxury.
+      <br/>
+      <a href="archive.html" class="hero-cta">View the Archive →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Archive</span>
+    <span class="ticker-item">Photography</span>
+    <span class="ticker-item">Essays</span>
+    <span class="ticker-item">Luxury Strategy</span>
+    <span class="ticker-item">Brand Identity</span>
+    <span class="ticker-item">Fashion Culture</span>
+    <span class="ticker-item">Archive</span>
+    <span class="ticker-item">Photography</span>
+    <span class="ticker-item">Essays</span>
+    <span class="ticker-item">Luxury Strategy</span>
+    <span class="ticker-item">Brand Identity</span>
+    <span class="ticker-item">Fashion Culture</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div>
+    <div class="intro-num">01 — Essays</div>
+    <h2 class="intro-heading">Writing at the intersection of fashion, <em>strategy,</em> and culture.</h2>
+    <p class="intro-body">From why heritage still sells to how luxury is no longer just about objects — analytical essays on the forces shaping the industry.</p>
+    <a href="essays.html" class="intro-link">Read the Essays →</a>
+  </div>
+  <div>
+    <div class="intro-num">02 — Photography</div>
+    <h2 class="intro-heading">Visual studies of craft, <em>theatricality,</em> and narrative.</h2>
+    <p class="intro-body">From Dolce &amp; Gabbana in Milan to the Venetian Carnival — fashion as living spectacle.</p>
+    <a href="photography.html" class="intro-link">View Photography →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-col ft-brand">
+    <div class="ft-logo">J'adore Le Concept</div>
+    <p class="ft-sub">A continuing exploration of fashion, luxury, and structure.</p>
+  </div>
+  <div class="ft-col ft-center">
+    <p class="ft-cities">Barcelona · Paris · Los Angeles · New York · Athens</p>
+  </div>
+  <div class="ft-col ft-right">
+    <a href="mailto:anaisdoroshina1@gmail.com" class="ft-link">anaisdoroshina1@gmail.com</a>
+    <a href="#" class="ft-link">LinkedIn</a>
+    <p class="ft-copy">Est. 2024</p>
+  </div>
+</footer>
+
+<script>
+// Footer loader — edit footer.html to update all pages at once
+fetch('footer.html').then(r=>r.text()).then(html=>{
+  const el = document.querySelector('footer');
+  if(el) el.outerHTML = html;
+});
+</script>
+
+</body>
+</html>
