@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<title>Archive — J'adore Le Concept</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cream:#faf8f4;--off:#f4f1eb;--ink:#1a1814;--muted:#6a6460;--rule:#d8d4cc;--accent:#b89a7a;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.96);backdrop-filter:blur(4px);border-bottom:0.5px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+
+/* PAGE HEADER */
+.page-header{padding:120px 10vw 5vw;border-bottom:0.5px solid var(--rule);}
+.page-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,72px);font-weight:300;line-height:1.0;}
+.page-title em{font-style:italic;}
+
+/* ARCHIVE GRID */
+section{padding:6vw 10vw;}
+.label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px;margin-bottom:3.5rem;}
+.label::after{content:'';flex:1;height:0.5px;background:var(--rule);}
+.archive-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:0.5px solid var(--rule);}
+.card{padding:2.2rem 2rem;border-right:0.5px solid var(--rule);border-bottom:0.5px solid var(--rule);transition:background 0.2s;}
+.card:hover{background:var(--off);}
+.card:nth-child(3n){border-right:none;}
+.card-n{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.2em;color:var(--muted);margin-bottom:1.2rem;}
+.card-t{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;line-height:1.3;color:var(--ink);margin-bottom:1rem;}
+.card-tag{font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);}
+
+/* FOOTER */
+footer{background:#1a1814;color:var(--cream);padding:4vw 10vw;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;border-top:0.5px solid rgba(255,255,255,0.1);}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.8rem;}
+.ft-sub{font-size:14px;color:rgba(250,248,244,0.5);line-height:1.7;}
+.ft-links{display:flex;flex-direction:column;gap:10px;}
+.ft-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,244,0.5);text-decoration:none;}
+.ft-links a:hover{color:var(--cream);}
+.ft-right{text-align:right;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">J'adore Le Concept</a>
+  <div class="nav-links">
+    <a href="archive.html" class="active">Archive</a>
+    <a href="photography.html">Photography</a>
+    <a href="essays.html">Essays</a>
+    <a href="about.html">About</a>
+    <a href="about.html#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-label">Le Concept</div>
+  <h1 class="page-title">The <em>Archive.</em></h1>
+</div>
+
+<section>
+  <div class="label">Le Concept Archive</div>
+  <div class="archive-grid">
+    <div class="card"><div class="card-n">001</div><div class="card-t">When a Fashion House Becomes a Cultural Institution</div><div class="card-tag">Brand Identity</div></div>
+    <div class="card"><div class="card-n">002</div><div class="card-t">Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars</div><div class="card-tag">Experience</div></div>
+    <div class="card"><div class="card-n">003</div><div class="card-t">Miu Miu's Jazz Club and the New Language of Brand Identity</div><div class="card-tag">Miu Miu</div></div>
+    <div class="card"><div class="card-n">004</div><div class="card-t">From Product to World-Building: The Future of Luxury Branding</div><div class="card-tag">Strategy</div></div>
+    <div class="card"><div class="card-n">005</div><div class="card-t">Jewelry, Authenticity, and the Legal Value of Design</div><div class="card-tag">Law · Craft</div></div>
+    <div class="card"><div class="card-n">006</div><div class="card-t">How Fashion Houses Use Space, Sound, and Experience to Build Desire</div><div class="card-tag">Culture</div></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div><div class="ft-logo">J'adore Le Concept</div><p class="ft-sub">A continuing exploration of fashion, luxury, and structure.</p></div>
+  <div class="ft-links"><a href="archive.html">Archive</a><a href="photography.html">Photography</a><a href="essays.html">Essays</a></div>
+  <div class="ft-right ft-links"><span style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,244,0.35);">Barcelona / Paris</span><a href="mailto:anaisdoroshina1@gmail.com">anaisdoroshina1@gmail.com</a><a href="#">LinkedIn</a></div>
+</footer>
+
+</body>
+</html>
