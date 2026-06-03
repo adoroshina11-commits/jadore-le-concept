@@ -18,14 +18,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .nav-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
 
-/* PAGE HEADER */
-.page-header{padding:120px 10vw 5vw;border-bottom:0.5px solid var(--rule);}
-.page-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,72px);font-weight:300;line-height:1.0;}
-.page-title em{font-style:italic;}
-
 /* ARCHIVE GRID */
-section{padding:6vw 10vw;}
+section{padding:6vw 10vw;padding-top:calc(56px + 5vw);}
 .label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px;margin-bottom:3.5rem;}
 .label::after{content:'';flex:1;height:0.5px;background:var(--rule);}
 .archive-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:0.5px solid var(--rule);}
@@ -109,11 +103,6 @@ footer{
     <a href="about.html#contact">Contact</a>
   </div>
 </nav>
-
-<div class="page-header">
-  <div class="page-label">Le Concept</div>
-  <h1 class="page-title">The <em>Archive.</em></h1>
-</div>
 
 <section>
   <div class="label">Le Concept Archive</div>
