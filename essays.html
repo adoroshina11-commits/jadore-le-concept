@@ -18,14 +18,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .nav-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
 
-/* PAGE HEADER */
-.page-header{padding:120px 10vw 5vw;border-bottom:0.5px solid var(--rule);}
-.page-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
-.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,72px);font-weight:300;line-height:1.0;}
-.page-title em{font-style:italic;}
-
 /* ESSAYS */
-section{padding:6vw 10vw;}
+section{padding:6vw 10vw;padding-top:calc(56px + 5vw);}
 .label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px;margin-bottom:3.5rem;}
 .label::after{content:'';flex:1;height:0.5px;background:var(--rule);}
 .essay-row{display:grid;grid-template-columns:60px 1fr 110px;align-items:baseline;gap:2rem;padding:1.8rem 0;border-bottom:0.5px solid var(--rule);transition:background 0.2s;margin:0 -2rem;padding-left:2rem;padding-right:2rem;}
@@ -108,13 +102,8 @@ footer{
   </div>
 </nav>
 
-<div class="page-header">
-  <div class="page-label">Writing</div>
-  <h1 class="page-title">Essays &amp; <em>Analysis.</em></h1>
-</div>
-
 <section>
-  <div class="label">Essays</div>
+  <div class="label">Essays &amp; <em style="font-style:italic;">Analysis</em></div>
   <div class="essay-row"><span class="essay-n">I.</span><span class="essay-t">Why Heritage Still Sells</span><span class="essay-cat">Brand Identity</span></div>
   <div class="essay-row"><span class="essay-n">II.</span><span class="essay-t">When Fashion Becomes Performance</span><span class="essay-cat">Culture</span></div>
   <div class="essay-row"><span class="essay-n">III.</span><span class="essay-t">Why Luxury Is No Longer Just About Objects</span><span class="essay-cat">Strategy</span></div>
