@@ -57,27 +57,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   color:var(--muted);
   margin-bottom:2.5rem;
 }
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(52px,8vw,116px);
-  font-weight:300;
-  line-height:0.92;
-  letter-spacing:-0.01em;
-  margin-bottom:0;
-}
-.hero-title em{font-style:italic;}
-.hero-title .line{display:block;overflow:hidden;}
-.hero-title .line span{
+.hero-logo{
+  width:clamp(180px,22vw,300px);
+  height:auto;
   display:block;
-  animation:slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
+  margin-bottom:2.5rem;
+  opacity:0;
+  animation:fadeIn 1s ease 0.1s forwards;
 }
-.hero-title .line:nth-child(1) span{animation-delay:0.1s;}
-.hero-title .line:nth-child(2) span{animation-delay:0.22s;}
-.hero-title .line:nth-child(3) span{animation-delay:0.34s;}
-@keyframes slideUp{
-  from{transform:translateY(100%);opacity:0;}
-  to{transform:translateY(0);opacity:1;}
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(15px,1.6vw,21px);
+  font-weight:300;
+  font-style:italic;
+  color:var(--muted);
+  line-height:1.4;
+  margin-top:0;
+  animation:fadeIn 1s ease 0.5s both;
 }
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 .hero-bottom{
   display:flex;
   align-items:flex-end;
@@ -85,13 +83,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   padding-bottom:7vh;
   animation:fadeIn 1.2s ease 0.6s both;
 }
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.hero-name-block{
+  display:flex;
+  flex-direction:column;
+  gap:0.2rem;
+}
+.hero-by{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 .hero-sub{
   font-family:'Cormorant Garamond',serif;
-  font-size:13px;
+  font-size:clamp(22px,2.4vw,34px);
+  font-weight:500;
   font-style:italic;
-  letter-spacing:0.08em;
-  color:var(--muted);
+  letter-spacing:0.01em;
+  color:var(--ink);
 }
 .hero-desc{
   max-width:360px;
@@ -241,15 +251,14 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-over">Barcelona · Paris · Los Angeles · New York · Athens — Est. 2024</div>
-    <h1 class="hero-title">
-      <span class="line"><span>A curated</span></span>
-      <span class="line"><span>perspective <em>on</em></span></span>
-      <span class="line"><span>fashion &amp; luxury.</span></span>
-    </h1>
+    <img src="jeadore.png" alt="J'adore Le Concept" class="hero-logo"/>
+    <p class="hero-tagline">A curated perspective on fashion &amp; luxury.</p>
   </div>
   <div class="hero-bottom">
-    <div class="hero-sub">anais doroshina</div>
+    <div class="hero-name-block">
+      <span class="hero-by">A portfolio by</span>
+      <span class="hero-sub">Anais Doroshina</span>
+    </div>
     <div class="hero-desc">
       Examining the systems, strategies, and creative forces that define contemporary luxury.
       <br/>
