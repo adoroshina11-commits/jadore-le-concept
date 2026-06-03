@@ -46,22 +46,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .hero-inner{
   display:flex;
   flex-direction:column;
+  align-items:center;
   justify-content:center;
   padding-top:56px;
-}
-.hero-over{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.3em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:2.5rem;
+  text-align:center;
 }
 .hero-logo{
-  width:clamp(180px,22vw,300px);
+  width:clamp(200px,24vw,320px);
   height:auto;
   display:block;
-  margin-bottom:2.5rem;
+  mix-blend-mode:multiply;
+  margin-bottom:2rem;
   opacity:0;
   animation:fadeIn 1s ease 0.1s forwards;
 }
@@ -72,7 +67,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   font-style:italic;
   color:var(--muted);
   line-height:1.4;
-  margin-top:0;
   animation:fadeIn 1s ease 0.5s both;
 }
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
@@ -83,25 +77,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   padding-bottom:7vh;
   animation:fadeIn 1.2s ease 0.6s both;
 }
-.hero-name-block{
-  display:flex;
-  flex-direction:column;
-  gap:0.2rem;
-}
-.hero-by{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:0.3em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
 .hero-sub{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(22px,2.4vw,34px);
-  font-weight:500;
+  font-size:13px;
   font-style:italic;
-  letter-spacing:0.01em;
-  color:var(--ink);
+  letter-spacing:0.08em;
+  color:var(--muted);
 }
 .hero-desc{
   max-width:360px;
@@ -255,10 +236,7 @@ footer{
     <p class="hero-tagline">A curated perspective on fashion &amp; luxury.</p>
   </div>
   <div class="hero-bottom">
-    <div class="hero-name-block">
-      <span class="hero-by">A portfolio by</span>
-      <span class="hero-sub">Anais Doroshina</span>
-    </div>
+    <div class="hero-sub">anais doroshina</div>
     <div class="hero-desc">
       Examining the systems, strategies, and creative forces that define contemporary luxury.
       <br/>
