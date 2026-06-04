@@ -150,36 +150,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   width:100%;
   height:70vh;
   overflow:hidden;
-  border-bottom:0.5px solid var(--rule);
   background:var(--cream);
 }
 .venice-hero img{
   width:100%;
   height:100%;
-  object-fit:contain;
-  object-position:center center;
+  object-fit:cover;
+  object-position:center 20%;
   display:block;
 }
 
-/* Venice compact grid — 3 cols × 3 rows */
-.venice-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:4px;
-  padding:4px;
-  background:var(--cream);
+/* Venice: lace detail full width right under canal */
+.venice-lace{
+  width:100%;
+  overflow:hidden;
   border-bottom:0.5px solid var(--rule);
 }
-.venice-photo{overflow:hidden;background:var(--cream);}
-.venice-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.5s ease;}
-.venice-photo:hover img{transform:scale(1.03);}
-.venice-photo.sq{aspect-ratio:1/1;}
+.venice-lace img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 
-/* Venice caption stretched bottom center */
+/* Venice caption — centered, no border */
 .venice-text{
   padding:2.5vw 10vw;
-  border-bottom:0.5px solid var(--rule);
   text-align:center;
+  border-bottom:0.5px solid var(--rule);
 }
 .venice-text p{
   font-family:'Cormorant Garamond',serif;
@@ -191,10 +188,36 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   line-height:1.6;
 }
 
-/* LOGO STAMP */
-.logo-stamp{display:flex;justify-content:center;align-items:center;padding:3vw 0;}
-.stamp-img{width:clamp(70px,7.5vw,100px);height:auto;mix-blend-mode:multiply;opacity:0.45;transition:opacity 0.3s;}
-.stamp-img:hover{opacity:0.8;}
+/* Venice 8-photo grid — no borders between cells */
+.venice-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:4px;
+  padding:4px;
+  background:var(--cream);
+  border-bottom:0.5px solid var(--rule);
+}
+.venice-photo{overflow:hidden;background:var(--cream);}
+.venice-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.venice-photo:hover img{transform:scale(1.03);}
+.venice-photo.sq{aspect-ratio:1/1;}
+
+/* SPINNING LOGO STAMP */
+.logo-stamp{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:4.5vw 10vw;
+  border-bottom:0.5px solid var(--rule);
+}
+.stamp-spin{
+  animation:spinStamp 12s linear infinite;
+  transform-origin:center;
+}
+@keyframes spinStamp{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
 
 /* FOOTER */
 footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;align-items:center;border-top:0.5px solid rgba(255,255,255,0.08);}
@@ -254,17 +277,22 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   <span class="chapter-divider-next">Venice.</span>
 </div>
 
-<!-- VENICE HERO: fog gondolas -->
+<!-- VENICE HERO: fog gondolas — cropped to remove black shadow edges -->
 <div class="venice-hero">
-  <img src="IMG_6505.png" alt="Venice fog gondolas"/>
+  <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:center 15%;"/>
 </div>
 
-<!-- VENICE CAPTION — below hero -->
+<!-- LACE DETAIL — right under canal -->
+<div class="venice-lace">
+  <img src="DSC01134.png" alt="Lace detail"/>
+</div>
+
+<!-- VENICE CAPTION — after both images -->
 <div class="venice-text">
   <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together</p>
 </div>
 
-<!-- VENICE GRID: 9 photos, 3 cols x 3 rows, no grey backgrounds -->
+<!-- VENICE GRID: 8 photos, 4 cols × 2 rows -->
 <div class="venice-grid">
   <div class="venice-photo sq"><img src="IMG_6640.png" alt="Silver carnival duo"/></div>
   <div class="venice-photo sq"><img src="IMG_6720.png" alt="Moon lady gondolas"/></div>
@@ -273,15 +301,20 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   <div class="venice-photo sq"><img src="IMG_6745.png" alt="Pink Bridge of Sighs"/></div>
   <div class="venice-photo sq"><img src="IMG_6718.png" alt="Tarot fortune teller"/></div>
   <div class="venice-photo sq"><img src="IMG_6736.png" alt="Colourful duo with dog"/></div>
-  <div class="venice-photo sq"><img src="DSC01134.png" alt="Lace detail"/></div>
   <div class="venice-photo sq"><img src="IMG_6713.png" alt="Blue costume St Mark"/></div>
 </div>
 
-<!-- LOGO STAMP -->
+<!-- SPINNING LOGO STAMP -->
 <div class="logo-stamp">
-  <img src="jeadore.png" alt="J'adore Le Concept" class="stamp-img"/>
+  <svg class="stamp-spin" width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="cp-photo" d="M55,55 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
+    </defs>
+    <text font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#1a1814" letter-spacing="8.6">
+      <textPath href="#cp-photo">J'ADORE LE CONCEPT</textPath>
+    </text>
+  </svg>
 </div>
-
 <footer>
   <div class="ft-col ft-brand">
     <div class="ft-logo">J'adore Le Concept</div>
