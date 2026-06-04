@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&family=Corinthia&display=swap" rel="stylesheet"/>
 <title>Photography — J'adore Le Concept</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -28,53 +28,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 
 /* ── HERO TITLE ── */
 .chapter-title{
-  padding:100px 10vw 0;
+  padding:88px 10vw 3vw;
   border-bottom:0.5px solid var(--rule);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:4vw;
-  align-items:end;
-  padding-bottom:3vw;
-}
-.chapter-eyebrow{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:0.35em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:1.2rem;
 }
 .chapter-h{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(38px,5vw,72px);
+  font-size:clamp(22px,2.8vw,40px);
   font-weight:300;
   line-height:1.0;
+  margin-bottom:1.2rem;
 }
 .chapter-h em{font-style:italic;}
 .chapter-desc{
-  font-size:15.5px;
+  font-size:15px;
   color:var(--muted);
-  line-height:1.85;
-  max-width:400px;
-  align-self:end;
-  padding-bottom:0.3rem;
+  line-height:1.8;
+  max-width:560px;
 }
 
 /* ── SPREAD 1: 2x2 grid + text ── */
 .spread{
   display:grid;
   grid-template-columns:1fr 1fr;
-  min-height:90vh;
   border-bottom:0.5px solid var(--rule);
 }
 .spread-photos{
   display:grid;
   grid-template-columns:1fr 1fr;
+  gap:6px;
+  padding:6px;
+  background:var(--rule);
   border-right:0.5px solid var(--rule);
 }
 .spread-photo{
   overflow:hidden;
   aspect-ratio:1/1;
+  background:var(--off);
 }
 .spread-photo img{
   width:100%;
@@ -83,30 +72,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   display:block;
   transition:transform 0.6s ease;
 }
-.spread-photo:hover img{transform:scale(1.03);}
-.spread-photo:nth-child(1){border-bottom:0.5px solid var(--rule);border-right:0.5px solid var(--rule);}
-.spread-photo:nth-child(2){border-bottom:0.5px solid var(--rule);}
-.spread-photo:nth-child(3){border-right:0.5px solid var(--rule);}
+.spread-photo:hover img{transform:scale(1.04);}
 
 .spread-text{
-  padding:6vw 8vw;
+  padding:6vw 7vw;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
-.spread-label{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:0.35em;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:2rem;
-}
 .spread-heading{
-  font-family:'Italiana',serif;
-  font-size:clamp(32px,3.5vw,52px);
+  font-family:'Corinthia',cursive;
+  font-size:clamp(56px,6vw,88px);
   font-weight:400;
-  line-height:1.1;
+  line-height:1.0;
   margin-bottom:2.5rem;
   color:var(--ink);
 }
@@ -114,7 +92,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   font-size:15.5px;
   line-height:1.9;
   color:var(--muted);
-  margin-bottom:1.8rem;
+  margin-bottom:1.4rem;
 }
 
 /* ── FULL WIDTH PHOTO ── */
@@ -218,10 +196,7 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
 
 <!-- CHAPTER TITLE -->
 <div class="chapter-title">
-  <div>
-    <div class="chapter-eyebrow">Dolce &amp; Gabbana · Milan</div>
-    <h1 class="chapter-h">Fashion as<br/><em>Spectacle.</em></h1>
-  </div>
+  <h1 class="chapter-h">Fashion: Through <em>The Looking Glass</em></h1>
   <p class="chapter-desc">A visual study of craftsmanship, theatricality, and the relationship between fashion and cultural narrative — shot at the Dolce &amp; Gabbana exhibition in Milan.</p>
 </div>
 
@@ -234,10 +209,9 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
     <div class="spread-photo"><img src="IMG_9470.png" alt="D&G Atelier"/></div>
   </div>
   <div class="spread-text">
-    <div class="spread-label">The Full Silhouette</div>
-    <h2 class="spread-heading">The Full<br/>Silhouette.</h2>
+    <h2 class="spread-heading">The Full Silhouette.</h2>
     <p class="spread-body">Each look is presented as a complete composition, where structure, styling, and ornament are treated as equally important. What emerges is not just a garment, but a fully realised image shaped through proportion, texture, and detail.</p>
-    <p class="spread-body">Dolce &amp; Gabbana's visual language is rooted in contrast, tradition and spectacle. Each piece reflects a deeply Italian narrative, where craftsmanship is not hidden but emphasised, and ornament becomes a form of storytelling.</p>
+    <p class="spread-body">Dolce &amp; Gabbana's visual language is rooted in contrast, tradition and spectacle, discipline and excess. Each piece reflects a deeply Italian narrative, where craftsmanship is not hidden but emphasized, and ornament becomes a form of storytelling. The garments do not simply dress the body; they construct identity, drawing from history, religion, and theatre to create something both timeless and deliberately exaggerated.</p>
   </div>
 </div>
 
