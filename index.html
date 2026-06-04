@@ -47,28 +47,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   position:relative;
   z-index:1;
 }
-
-/* LAYERED LOGO ANIMATION */
-.script-stage{display:none;}
 .hero-logo{
   width:clamp(200px,24vw,320px);
   height:auto;
   display:block;
   mix-blend-mode:multiply;
-  background:transparent;
   margin-bottom:2rem;
-  opacity:0;
-  animation:fadeIn 1s ease 0.1s forwards;
+  animation:fadeIn 1s ease 0.1s both;
 }
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-
-@keyframes hardCut{
-  0%{opacity:1;}
-  20%{opacity:1;}
-  20.01%{opacity:0;}
-  100%{opacity:0;}
-}
-
 .hero-tagline{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(13px,1.4vw,18px);
@@ -77,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   color:var(--muted);
   line-height:1.4;
   letter-spacing:0.06em;
-  animation:fadeIn 1s ease 1s both;
+  animation:fadeIn 1s ease 0.6s both;
 }
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 .hero-bottom{
@@ -85,7 +71,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   align-items:flex-end;
   justify-content:space-between;
   padding-bottom:7vh;
-  animation:fadeIn 1.2s ease 0.8s both;
+  animation:fadeIn 1s ease 0.9s both;
   position:relative;
   z-index:1;
 }
@@ -117,36 +103,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 }
 
 /* TICKER */
-.ticker{
-  background:#05242b;
-  color:var(--cream);
-  overflow:hidden;
-  white-space:nowrap;
-  height:36px;
-  display:flex;
-  align-items:center;
-  position:relative;
-}
-.ticker-inner{
-  display:inline-flex;
-  animation:ticker 30s linear infinite;
-}
-.ticker-item{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-  padding:0 3rem;
-  opacity:0.6;
-}
-.ticker-item::after{
-  content:'·';
-  margin-left:3rem;
-}
-@keyframes ticker{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
+.ticker{background:#05242b;color:var(--cream);overflow:hidden;white-space:nowrap;height:36px;display:flex;align-items:center;}
+.ticker-inner{display:inline-flex;animation:ticker 30s linear infinite;}
+.ticker-item{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;padding:0 3rem;opacity:0.6;}
+.ticker-item::after{content:'·';margin-left:3rem;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* INTRO STRIP */
 .intro{padding:6vw 10vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;border-bottom:0.5px solid var(--rule);}
@@ -154,94 +115,57 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .intro-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.2;margin-bottom:1.5rem;}
 .intro-heading em{font-style:italic;}
 .intro-body{font-size:15.5px;color:var(--muted);line-height:1.85;}
-.intro-link{
-  display:inline-block;
-  margin-top:1.5rem;
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:var(--ink);
-  text-decoration:none;
-  border-bottom:0.5px solid var(--ink);
-  padding-bottom:2px;
+.intro-link{display:inline-block;margin-top:1.5rem;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--ink);padding-bottom:2px;}
+
+/* LOGO STAMP */
+.logo-stamp{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:4vw 10vw;
+  border-bottom:0.5px solid var(--rule);
+}
+.stamp-stage{
+  position:relative;
+  width:100px;
+  height:100px;
+}
+.stamp-layer{
+  position:absolute;
+  top:50%;
+  left:50%;
+  opacity:0;
+  animation:stampCut 2s step-start infinite;
+}
+.stamp-layer img{
+  display:block;
+}
+.stamp-layer:nth-child(1){transform:translate(-50%,-50%) rotate(-4deg);animation-delay:0s;}
+.stamp-layer:nth-child(1) img{width:84px;}
+.stamp-layer:nth-child(2){transform:translate(-53%,-47%) rotate(3deg);animation-delay:0.4s;}
+.stamp-layer:nth-child(2) img{width:92px;}
+.stamp-layer:nth-child(3){transform:translate(-47%,-53%) rotate(-2deg);animation-delay:0.8s;}
+.stamp-layer:nth-child(3) img{width:78px;}
+.stamp-layer:nth-child(4){transform:translate(-50%,-50%) rotate(5deg);animation-delay:1.2s;}
+.stamp-layer:nth-child(4) img{width:96px;}
+.stamp-layer:nth-child(5){transform:translate(-52%,-50%) rotate(-3deg);animation-delay:1.6s;}
+.stamp-layer:nth-child(5) img{width:88px;}
+@keyframes stampCut{
+  0%{opacity:1;}
+  20%{opacity:1;}
+  20.01%{opacity:0;}
+  100%{opacity:0;}
 }
 
 /* FOOTER */
-/* ── FOOTER ── */
-footer{
-  background:#05242b;
-  color:var(--cream);
-  padding:3.5vw 10vw;
-  display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
-  gap:3rem;
-  align-items:center;
-  border-top:0.5px solid rgba(255,255,255,0.08);
-}
-.ft-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:13px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:var(--cream);
-  margin-bottom:0.6rem;
-}
-.ft-sub{
-  font-size:13.5px;
-  color:rgba(250,248,244,0.45);
-  line-height:1.6;
-  max-width:260px;
-}
-.ft-cities{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10.5px;
-  letter-spacing:0.22em;
-  text-transform:uppercase;
-  color:rgba(250,248,244,0.4);
-  text-align:center;
-  white-space:nowrap;
-}
-.ft-right{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:8px;
-}
-.ft-link{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:rgba(250,248,244,0.5);
-  text-decoration:none;
-  transition:color 0.2s;
-}
+footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;align-items:center;border-top:0.5px solid rgba(255,255,255,0.08);}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream);margin-bottom:0.6rem;}
+.ft-sub{font-size:13.5px;color:rgba(250,248,244,0.45);line-height:1.6;max-width:260px;}
+.ft-cities{font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,244,0.4);text-align:center;white-space:nowrap;}
+.ft-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.ft-link{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,244,0.5);text-decoration:none;transition:color 0.2s;}
 .ft-link:hover{color:var(--cream);}
-.ft-copy{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:rgba(250,248,244,0.2);
-  margin-top:4px;
-}
-/* LOGO STAMP */
-.logo-stamp{display:flex;justify-content:center;align-items:center;padding:3vw 0;}
-.stamp-stage{position:relative;width:94px;height:94px;}
-.stamp-layer{position:absolute;top:50%;left:50%;opacity:0;animation:stampCut 2s step-start infinite;}
-.stamp-layer img{mix-blend-mode:multiply;display:block;}
-.stamp-layer:nth-child(1){transform:translate(-50%,-50%) rotate(-4deg);animation-delay:0s;}
-.stamp-layer:nth-child(1) img{width:82px;}
-.stamp-layer:nth-child(2){transform:translate(-52%,-48%) rotate(2deg);animation-delay:0.4s;}
-.stamp-layer:nth-child(2) img{width:90px;}
-.stamp-layer:nth-child(3){transform:translate(-48%,-52%) rotate(-1deg);animation-delay:0.8s;}
-.stamp-layer:nth-child(3) img{width:76px;}
-.stamp-layer:nth-child(4){transform:translate(-50%,-50%) rotate(5deg);animation-delay:1.2s;}
-.stamp-layer:nth-child(4) img{width:94px;}
-.stamp-layer:nth-child(5){transform:translate(-51%,-49%) rotate(-3deg);animation-delay:1.6s;}
-.stamp-layer:nth-child(5) img{width:86px;}
-@keyframes stampCut{0%{opacity:0.55;}24%{opacity:0.55;}24.01%{opacity:0;}100%{opacity:0;}}
+.ft-copy{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,244,0.2);margin-top:4px;}
 </style>
 </head>
 <body>
@@ -307,7 +231,17 @@ footer{
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ANIMATED LOGO STAMP -->
+<div class="logo-stamp">
+  <div class="stamp-stage">
+    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
+    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
+    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
+    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
+    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
+  </div>
+</div>
+
 <footer>
   <div class="ft-col ft-brand">
     <div class="ft-logo">J'adore Le Concept</div>
@@ -324,7 +258,6 @@ footer{
 </footer>
 
 <script>
-// Footer loader — edit footer.html to update all pages at once
 fetch('footer.html').then(r=>r.text()).then(html=>{
   const el = document.querySelector('footer');
   if(el) el.outerHTML = html;
