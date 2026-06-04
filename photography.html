@@ -148,10 +148,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 /* ── VENICE ── */
 .venice-hero{
   width:100%;
-  height:55vh;
+  height:70vh;
   overflow:hidden;
   border-bottom:0.5px solid var(--rule);
-  background:#e8e6e2;
+  background:var(--cream);
 }
 .venice-hero img{
   width:100%;
@@ -161,23 +161,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   display:block;
 }
 
-/* Venice compact grid — 2 rows of photos side by side */
+/* Venice compact grid — 3 cols × 3 rows */
 .venice-grid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  grid-template-rows:auto auto;
+  grid-template-columns:repeat(3,1fr);
   gap:4px;
   padding:4px;
   background:var(--cream);
   border-bottom:0.5px solid var(--rule);
 }
-.venice-photo{overflow:hidden;background:var(--off);}
+.venice-photo{overflow:hidden;background:var(--cream);}
 .venice-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.5s ease;}
 .venice-photo:hover img{transform:scale(1.03);}
 .venice-photo.sq{aspect-ratio:1/1;}
-.venice-photo.port{aspect-ratio:3/4;}
-.venice-photo.land{aspect-ratio:4/3;}
-.venice-photo.span2{grid-column:span 2;}
 
 /* Venice caption stretched bottom center */
 .venice-text{
@@ -263,7 +259,12 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   <img src="IMG_6505.png" alt="Venice fog gondolas"/>
 </div>
 
-<!-- VENICE GRID: 10 photos in 2 compact rows -->
+<!-- VENICE CAPTION — below hero -->
+<div class="venice-text">
+  <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together</p>
+</div>
+
+<!-- VENICE GRID: 9 photos, 3 cols x 3 rows, no grey backgrounds -->
 <div class="venice-grid">
   <div class="venice-photo sq"><img src="IMG_6640.png" alt="Silver carnival duo"/></div>
   <div class="venice-photo sq"><img src="IMG_6720.png" alt="Moon lady gondolas"/></div>
@@ -274,12 +275,6 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   <div class="venice-photo sq"><img src="IMG_6736.png" alt="Colourful duo with dog"/></div>
   <div class="venice-photo sq"><img src="DSC01134.png" alt="Lace detail"/></div>
   <div class="venice-photo sq"><img src="IMG_6713.png" alt="Blue costume St Mark"/></div>
-  <div class="venice-photo sq"><img src="DSC01110.png" alt="Pink dress photographers"/></div>
-</div>
-
-<!-- VENICE CAPTION — stretched bottom center -->
-<div class="venice-text">
-  <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together</p>
 </div>
 
 <!-- LOGO STAMP -->
