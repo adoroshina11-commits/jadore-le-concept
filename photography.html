@@ -159,9 +159,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 }
 .venice-lace-overlay{
   position:absolute;
-  bottom:0;left:0;right:0;
-  padding:4vw 10vw;
-  background:linear-gradient(to top, rgba(18,16,14,0.55) 0%, transparent 100%);
+  bottom:0;right:0;
+  padding:4vw 5vw 4vw 10vw;
+  text-align:right;
 }
 .venice-main-title{
   font-family:'Corinthia',cursive;
@@ -174,15 +174,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 
 .venice-hero{
   width:100%;
-  height:70vh;
+  height:45vh;
   overflow:hidden;
   background:var(--cream);
+  border-bottom:0.5px solid var(--rule);
 }
 .venice-hero img{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 20%;
   display:block;
 }
 
@@ -305,15 +305,15 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
 
 <!-- VENICE BIG TITLE overlaid on lace image -->
 <div class="venice-lace-title">
-  <img src="DSC01134.png" alt="Lace detail"/>
+  <img src="DSC01134.png" alt="Venice lace detail"/>
   <div class="venice-lace-overlay">
     <h2 class="venice-main-title">Inside<br/><em>Venice Carnival.</em></h2>
   </div>
 </div>
 
-<!-- VENICE HERO: fog gondolas — after lace -->
+<!-- VENICE HERO: fog gondolas — smaller, cropped to avoid black shadow corner -->
 <div class="venice-hero">
-  <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:center 15%;"/>
+  <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:25% 20%;"/>
 </div>
 
 <!-- VENICE CAPTION — after both images -->
