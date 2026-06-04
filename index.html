@@ -55,6 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   height:auto;
   display:block;
   mix-blend-mode:multiply;
+  background:transparent;
   margin-bottom:2rem;
   opacity:0;
   animation:fadeIn 1s ease 0.1s forwards;
@@ -225,6 +226,22 @@ footer{
   color:rgba(250,248,244,0.2);
   margin-top:4px;
 }
+/* LOGO STAMP */
+.logo-stamp{display:flex;justify-content:center;align-items:center;padding:3vw 0;}
+.stamp-stage{position:relative;width:94px;height:94px;}
+.stamp-layer{position:absolute;top:50%;left:50%;opacity:0;animation:stampCut 2s step-start infinite;}
+.stamp-layer img{mix-blend-mode:multiply;display:block;}
+.stamp-layer:nth-child(1){transform:translate(-50%,-50%) rotate(-4deg);animation-delay:0s;}
+.stamp-layer:nth-child(1) img{width:82px;}
+.stamp-layer:nth-child(2){transform:translate(-52%,-48%) rotate(2deg);animation-delay:0.4s;}
+.stamp-layer:nth-child(2) img{width:90px;}
+.stamp-layer:nth-child(3){transform:translate(-48%,-52%) rotate(-1deg);animation-delay:0.8s;}
+.stamp-layer:nth-child(3) img{width:76px;}
+.stamp-layer:nth-child(4){transform:translate(-50%,-50%) rotate(5deg);animation-delay:1.2s;}
+.stamp-layer:nth-child(4) img{width:94px;}
+.stamp-layer:nth-child(5){transform:translate(-51%,-49%) rotate(-3deg);animation-delay:1.6s;}
+.stamp-layer:nth-child(5) img{width:86px;}
+@keyframes stampCut{0%{opacity:0.55;}24%{opacity:0.55;}24.01%{opacity:0;}100%{opacity:0;}}
 </style>
 </head>
 <body>
