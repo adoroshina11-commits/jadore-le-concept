@@ -55,15 +55,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .spread-photos{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:6px;
-  padding:6px;
-  background:var(--rule);
+  gap:4px;
+  padding:4px;
+  background:var(--cream);
   border-right:0.5px solid var(--rule);
 }
 .spread-photo{
   overflow:hidden;
   aspect-ratio:1/1;
-  background:var(--off);
+  background:var(--cream);
 }
 .spread-photo img{
   width:100%;
@@ -85,13 +85,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   font-size:clamp(56px,6vw,88px);
   font-weight:400;
   line-height:1.0;
-  margin-bottom:2.5rem;
+  margin-bottom:1.2rem;
   color:var(--ink);
 }
 .spread-body{
   font-size:15.5px;
-  line-height:1.9;
+  line-height:2.0;
   color:var(--muted);
+  letter-spacing:0.04em;
   margin-bottom:1.4rem;
 }
 
@@ -99,21 +100,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .spread-subheader{
   font-family:'Cormorant Garamond',serif;
   font-size:11px;
-  letter-spacing:0.28em;
+  letter-spacing:0.32em;
   text-transform:uppercase;
   color:var(--muted);
   font-style:italic;
-  margin-top:0.6rem;
-  margin-bottom:2rem;
+  margin-top:0.2rem;
+  margin-bottom:2.2rem;
 }
 
 /* ── PHOTO STRIP ── */
 .strip{
   display:grid;
   grid-template-columns:repeat(7,1fr);
-  gap:5px;
-  padding:5px;
-  background:var(--rule);
+  gap:4px;
+  padding:4px;
+  background:var(--cream);
   border-bottom:0.5px solid var(--rule);
 }
 .strip-photo{overflow:hidden;aspect-ratio:2/3;}
@@ -174,7 +175,7 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
 </nav>
 
 <!-- 2x2 GRID + TEXT — no header above -->
-<div class="spread" style="padding-top:56px;margin-top:2.5vh;">
+<div class="spread" style="padding-top:56px;margin-top:4vh;">
   <div class="spread-photos">
     <div class="spread-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
     <div class="spread-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
@@ -191,11 +192,11 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
 
 <!-- 7-PHOTO STRIP -->
 <div class="strip">
-  <div class="strip-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
-  <div class="strip-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons" style="object-position:left center;"/></div>
-  <div class="strip-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
   <div class="strip-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
-  <div class="strip-photo"><img src="IMG_6987.png" alt="White Baroque"/></div>
+  <div class="strip-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons" style="object-position:left center;"/></div>
+  <div class="strip-photo"><img src="IMG_6987.png" alt="White Baroque" style="object-position:30% center;"/></div>
+  <div class="strip-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
+  <div class="strip-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
   <div class="strip-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
   <div class="strip-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
 </div>
