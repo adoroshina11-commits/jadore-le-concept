@@ -46,80 +46,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   max-width:560px;
 }
 
-/* ── SPREAD 1: 2x2 grid + text ── */
-.spread{
+/* ── D&G GRID ── */
+.dg-grid-top{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  gap:4px;
+  background:var(--cream);
   border-bottom:0.5px solid var(--rule);
+  align-items:stretch;
 }
-.spread-photos{
+.dg-grid-bottom{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(4,1fr);
   gap:4px;
   padding:4px;
   background:var(--cream);
+  border-bottom:0.5px solid var(--rule);
 }
-.spread-photo{
+.dg-photo{
   overflow:hidden;
   aspect-ratio:1/1;
   background:var(--cream);
 }
-.spread-photo img{
+.dg-photo img{
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:cover;
   display:block;
-  transition:transform 0.6s ease;
+  transition:transform 0.5s ease;
 }
-.spread-photo:hover img{transform:scale(1.04);}
-
-.spread-text{
-  padding:6vw 7vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-.spread-heading{
-  font-family:'Corinthia',cursive;
-  font-size:clamp(56px,6vw,88px);
-  font-weight:400;
-  line-height:1.0;
-  margin-bottom:1.2rem;
-  color:var(--ink);
-}
-.spread-body{
-  font-size:15.5px;
-  line-height:2.0;
-  color:var(--muted);
-  letter-spacing:0.04em;
-  margin-bottom:1.4rem;
-}
-
-/* ── SPREAD subheader ── */
-.spread-subheader{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
-  color:var(--muted);
-  font-style:italic;
-  margin-top:-1rem;
-  margin-bottom:2.2rem;
-  white-space:nowrap;
-}
-
-/* ── PHOTO STRIP ── */
-.strip{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:4px;
-  padding:4px;
-  background:var(--cream);
-  border-bottom:0.5px solid var(--rule);
-}
-.strip-photo{overflow:hidden;aspect-ratio:2/3;background:var(--cream);}
-.strip-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.5s ease;}
-.strip-photo:hover img{transform:scale(1.06);}
+.dg-photo:hover img{transform:scale(1.04);}
 
 /* ── SECTION DIVIDER ── */
 .chapter-divider{
@@ -191,22 +146,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:20% center;
+  object-position:35% center;
   display:block;
 }
 .venice-side-text{
-  padding:4vw 5vw;
+  padding:5vw 6vw;
   display:flex;
   align-items:center;
   border-left:0.5px solid var(--rule);
 }
 .venice-side-text p{
   font-family:'Cormorant Garamond',serif;
-  font-size:15px;
+  font-size:16px;
   font-style:italic;
-  letter-spacing:0.06em;
+  letter-spacing:0.04em;
   color:var(--muted);
-  line-height:1.9;
+  line-height:1.85;
+  max-width:480px;
 }
 
 /* Venice: lace detail full width right under canal */
@@ -292,31 +248,32 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </nav>
 
-<!-- 2x2 GRID + TEXT — no header above -->
-<div class="spread" style="padding-top:56px;margin-top:4vh;">
-  <div class="spread-photos">
-    <div class="spread-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
-    <div class="spread-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
-    <div class="spread-photo"><img src="IMG_7020.png" alt="D&G Exhibition Room"/></div>
-    <div class="spread-photo"><img src="IMG_9470.png" alt="D&G Atelier"/></div>
+<!-- D&G: 4 photos left + text right, then detail grid below -->
+<div class="dg-grid-top" style="padding-top:calc(56px + 4vh);grid-template-columns:1fr 1fr;border-bottom:none;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+    <div class="dg-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
+    <div class="dg-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
+    <div class="dg-photo"><img src="IMG_7020.png" alt="D&G Exhibition Room"/></div>
+    <div class="dg-photo"><img src="IMG_9470.png" alt="D&G Atelier"/></div>
   </div>
   <div class="spread-text">
     <h2 class="spread-heading">The Full Silhouette.</h2>
-    <p class="spread-subheader">Fashion: Through The Looking Glass — Inside Dolce &amp; Gabbana - Milano</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-style:italic;margin-bottom:2rem;white-space:nowrap;">Fashion: Through The Looking Glass — Inside Dolce &amp; Gabbana - Milano</p>
     <p class="spread-body">Each look is presented as a complete composition, where structure, styling, and ornament are treated as equally important. What emerges is not just a garment, but a fully realised image shaped through proportion, texture, and detail.</p>
     <p class="spread-body">Dolce &amp; Gabbana's visual language is rooted in contrast, tradition and spectacle, discipline and excess. Each piece reflects a deeply Italian narrative, where craftsmanship is not hidden but emphasized, and ornament becomes a form of storytelling. The garments do not simply dress the body; they construct identity, drawing from history, religion, and theatre to create something both timeless and deliberately exaggerated.</p>
   </div>
 </div>
 
-<!-- 7-PHOTO STRIP -->
-<div class="strip">
-  <div class="strip-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
-  <div class="strip-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons" style="object-position:left center;"/></div>
-  <div class="strip-photo"><img src="IMG_6987.png" alt="White Baroque" style="object-position:30% center;"/></div>
-  <div class="strip-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
-  <div class="strip-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
-  <div class="strip-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
-  <div class="strip-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
+<!-- D&G DETAIL GRID: 8 photos, 4 cols x 2 rows -->
+<div class="dg-grid-bottom">
+  <div class="dg-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
+  <div class="dg-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons"/></div>
+  <div class="dg-photo"><img src="IMG_6987.png" alt="White Baroque"/></div>
+  <div class="dg-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
+  <div class="dg-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
+  <div class="dg-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
+  <div class="dg-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
+  <div class="dg-photo" style="background:var(--off);"></div>
 </div>
 
 <!-- VENICE DIVIDER -->
