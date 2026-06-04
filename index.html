@@ -47,14 +47,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   position:relative;
   z-index:1;
 }
+
+/* Hero logo — PNG white blends away on cream using multiply */
 .hero-logo{
   width:clamp(200px,24vw,320px);
   height:auto;
   display:block;
   mix-blend-mode:multiply;
   margin-bottom:2rem;
-  animation:fadeIn 1s ease 0.1s both;
+  animation:fadeIn 1s ease 0.2s both;
 }
+
 .hero-tagline{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(13px,1.4vw,18px);
@@ -63,44 +66,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   color:var(--muted);
   line-height:1.4;
   letter-spacing:0.06em;
-  animation:fadeIn 1s ease 0.6s both;
+  animation:fadeIn 1s ease 0.7s both;
 }
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
 .hero-bottom{
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
   padding-bottom:7vh;
-  animation:fadeIn 1s ease 0.9s both;
+  animation:fadeIn 1s ease 1s both;
   position:relative;
   z-index:1;
 }
-.hero-sub{
-  font-family:'Cormorant Garamond',serif;
-  font-size:13px;
-  font-style:italic;
-  letter-spacing:0.08em;
-  color:var(--muted);
-}
-.hero-desc{
-  max-width:360px;
-  text-align:right;
-  font-size:15.5px;
-  color:var(--muted);
-  line-height:1.7;
-}
-.hero-cta{
-  margin-top:1.2rem;
-  display:inline-block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.28em;
-  text-transform:uppercase;
-  color:var(--ink);
-  text-decoration:none;
-  border-bottom:0.5px solid var(--ink);
-  padding-bottom:3px;
-}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;letter-spacing:0.08em;color:var(--muted);}
+.hero-desc{max-width:360px;text-align:right;font-size:15.5px;color:var(--muted);line-height:1.7;}
+.hero-cta{margin-top:1.2rem;display:inline-block;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--ink);padding-bottom:3px;}
 
 /* TICKER */
 .ticker{background:#05242b;color:var(--cream);overflow:hidden;white-space:nowrap;height:36px;display:flex;align-items:center;}
@@ -109,7 +90,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .ticker-item::after{content:'·';margin-left:3rem;}
 @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
-/* INTRO STRIP */
+/* INTRO */
 .intro{padding:6vw 10vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;border-bottom:0.5px solid var(--rule);}
 .intro-num{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
 .intro-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,32px);font-weight:300;line-height:1.2;margin-bottom:1.5rem;}
@@ -117,44 +98,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .intro-body{font-size:15.5px;color:var(--muted);line-height:1.85;}
 .intro-link{display:inline-block;margin-top:1.5rem;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--ink);padding-bottom:2px;}
 
-/* LOGO STAMP */
+/* ANIMATED LOGO STAMP */
 .logo-stamp{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:4vw 10vw;
+  padding:4.5vw 10vw;
   border-bottom:0.5px solid var(--rule);
 }
-.stamp-stage{
-  position:relative;
-  width:100px;
-  height:100px;
+.stamp-spin{
+  animation:spinStamp 12s linear infinite;
+  transform-origin:center;
 }
-.stamp-layer{
-  position:absolute;
-  top:50%;
-  left:50%;
-  opacity:0;
-  animation:stampCut 2s step-start infinite;
-}
-.stamp-layer img{
-  display:block;
-}
-.stamp-layer:nth-child(1){transform:translate(-50%,-50%) rotate(-4deg);animation-delay:0s;}
-.stamp-layer:nth-child(1) img{width:84px;}
-.stamp-layer:nth-child(2){transform:translate(-53%,-47%) rotate(3deg);animation-delay:0.4s;}
-.stamp-layer:nth-child(2) img{width:92px;}
-.stamp-layer:nth-child(3){transform:translate(-47%,-53%) rotate(-2deg);animation-delay:0.8s;}
-.stamp-layer:nth-child(3) img{width:78px;}
-.stamp-layer:nth-child(4){transform:translate(-50%,-50%) rotate(5deg);animation-delay:1.2s;}
-.stamp-layer:nth-child(4) img{width:96px;}
-.stamp-layer:nth-child(5){transform:translate(-52%,-50%) rotate(-3deg);animation-delay:1.6s;}
-.stamp-layer:nth-child(5) img{width:88px;}
-@keyframes stampCut{
-  0%{opacity:1;}
-  20%{opacity:1;}
-  20.01%{opacity:0;}
-  100%{opacity:0;}
+@keyframes spinStamp{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
 }
 
 /* FOOTER */
@@ -181,7 +139,6 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <img src="jeadore.png" alt="J'adore Le Concept" class="hero-logo"/>
@@ -197,7 +154,6 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
     <span class="ticker-item">Archive</span>
@@ -215,7 +171,6 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </div>
 
-<!-- INTRO -->
 <section class="intro">
   <div>
     <div class="intro-num">01 — Essays</div>
@@ -231,15 +186,16 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </section>
 
-<!-- ANIMATED LOGO STAMP -->
+<!-- SPINNING LOGO STAMP -->
 <div class="logo-stamp">
-  <div class="stamp-stage">
-    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
-    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
-    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
-    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
-    <div class="stamp-layer"><img src="jeadore.png" alt=""/></div>
-  </div>
+  <svg class="stamp-spin" width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="circle-path" d="M55,55 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
+    </defs>
+    <text font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#1a1814" letter-spacing="8.6">
+      <textPath href="#circle-path">J'ADORE LE CONCEPT</textPath>
+    </text>
+  </svg>
 </div>
 
 <footer>
@@ -259,10 +215,9 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
 
 <script>
 fetch('footer.html').then(r=>r.text()).then(html=>{
-  const el = document.querySelector('footer');
-  if(el) el.outerHTML = html;
+  const el=document.querySelector('footer');
+  if(el) el.outerHTML=html;
 });
 </script>
-
 </body>
 </html>
