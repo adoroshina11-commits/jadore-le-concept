@@ -49,63 +49,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 }
 
 /* LAYERED LOGO ANIMATION */
-.script-stage{
-  position:relative;
-  width:clamp(200px,28vw,400px);
-  height:clamp(200px,28vw,400px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:1.5rem;
-}
-.script-layer{
-  position:absolute;
-  top:50%;left:50%;
-  opacity:0;
-  animation:hardCut 2s step-start infinite;
-}
-.script-layer img{
-  mix-blend-mode:multiply;
+.script-stage{display:none;}
+.hero-logo{
+  width:clamp(200px,24vw,320px);
+  height:auto;
   display:block;
+  mix-blend-mode:multiply;
+  margin-bottom:2rem;
+  opacity:0;
+  animation:fadeIn 1s ease 0.1s forwards;
 }
-
-/* each layer: diff size, rotation, position offset */
-.script-layer:nth-child(1){
-  transform:translate(-50%,-50%) rotate(-4deg) scale(1.0);
-  animation-delay:0s;
-}
-.script-layer:nth-child(1) img{width:clamp(180px,24vw,340px);}
-
-.script-layer:nth-child(2){
-  transform:translate(-52%,-48%) rotate(2deg) scale(1.06);
-  animation-delay:0.4s;
-}
-.script-layer:nth-child(2) img{width:clamp(200px,26vw,360px);}
-
-.script-layer:nth-child(3){
-  transform:translate(-48%,-52%) rotate(-1deg) scale(0.92);
-  animation-delay:0.8s;
-}
-.script-layer:nth-child(3) img{width:clamp(160px,22vw,310px);}
-
-.script-layer:nth-child(4){
-  transform:translate(-50%,-50%) rotate(5deg) scale(1.1);
-  animation-delay:1.2s;
-}
-.script-layer:nth-child(4) img{width:clamp(210px,27vw,370px);}
-
-.script-layer:nth-child(5){
-  transform:translate(-51%,-49%) rotate(-3deg) scale(0.97);
-  animation-delay:1.6s;
-}
-.script-layer:nth-child(5) img{width:clamp(190px,25vw,350px);}
-
-@keyframes hardCut{
-  0%{opacity:1;}
-  24%{opacity:1;}
-  24.01%{opacity:0;}
-  100%{opacity:0;}
-}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
 @keyframes hardCut{
   0%{opacity:1;}
@@ -289,13 +243,7 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="script-stage">
-      <div class="script-layer"><img src="jeadore.png" alt="J'adore Le Concept"/></div>
-      <div class="script-layer"><img src="jeadore.png" alt="J'adore Le Concept"/></div>
-      <div class="script-layer"><img src="jeadore.png" alt="J'adore Le Concept"/></div>
-      <div class="script-layer"><img src="jeadore.png" alt="J'adore Le Concept"/></div>
-      <div class="script-layer"><img src="jeadore.png" alt="J'adore Le Concept"/></div>
-    </div>
+    <img src="jeadore.png" alt="J'adore Le Concept" class="hero-logo"/>
     <p class="hero-tagline">A curated perspective on fashion &amp; luxury.</p>
   </div>
   <div class="hero-bottom">
