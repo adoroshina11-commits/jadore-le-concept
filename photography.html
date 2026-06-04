@@ -7,15 +7,7 @@
 <title>Photography — J'adore Le Concept</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --cream:#faf8f4;
-  --off:#f4f1eb;
-  --ink:#1a1814;
-  --muted:#6a6460;
-  --rule:#d8d4cc;
-  --accent:#b89a7a;
-  --dark:#12100e;
-}
+:root{--cream:#faf8f4;--off:#f4f1eb;--ink:#1a1814;--muted:#6a6460;--rule:#d8d4cc;--accent:#b89a7a;--dark:#12100e;}
 html{scroll-behavior:smooth;}
 body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;}
 
@@ -26,203 +18,66 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .nav-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
 
-/* ── HERO TITLE ── */
-.chapter-title{
-  padding:88px 10vw 3vw;
-  border-bottom:0.5px solid var(--rule);
-}
-.chapter-h{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(22px,2.8vw,40px);
-  font-weight:300;
-  line-height:1.0;
-  margin-bottom:1.2rem;
-}
-.chapter-h em{font-style:italic;}
-.chapter-desc{
-  font-size:15px;
-  color:var(--muted);
-  line-height:1.8;
-  max-width:560px;
-}
-
-/* ── D&G GRID ── */
-.dg-grid-top{
+/* ── SPREAD ── */
+.spread{
   display:grid;
-  gap:4px;
-  background:var(--cream);
+  grid-template-columns:1fr 1fr;
   border-bottom:0.5px solid var(--rule);
-  align-items:stretch;
+  padding-top:56px;
+  margin-top:4vh;
 }
-.dg-grid-bottom{
+.spread-photos{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:1fr 1fr;
   gap:4px;
   padding:4px;
   background:var(--cream);
-  border-bottom:0.5px solid var(--rule);
 }
-.dg-photo{
-  overflow:hidden;
-  aspect-ratio:1/1;
-  background:var(--cream);
-}
-.dg-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform 0.5s ease;
-}
-.dg-photo:hover img{transform:scale(1.04);}
+.spread-photo{overflow:hidden;aspect-ratio:1/1;background:var(--cream);}
+.spread-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.6s ease;}
+.spread-photo:hover img{transform:scale(1.04);}
+.spread-text{padding:6vw 7vw;display:flex;flex-direction:column;justify-content:center;}
+.spread-heading{font-family:'Corinthia',cursive;font-size:clamp(56px,6vw,88px);font-weight:400;line-height:1.0;margin-bottom:1.2rem;color:var(--ink);}
+.spread-subheader{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-style:italic;margin-top:-1rem;margin-bottom:2.2rem;white-space:nowrap;}
+.spread-body{font-size:15.5px;line-height:2.0;color:var(--muted);letter-spacing:0.04em;margin-bottom:1.4rem;}
+
+/* ── PHOTO STRIP ── */
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:4px;background:var(--cream);border-bottom:0.5px solid var(--rule);}
+.strip-photo{overflow:hidden;aspect-ratio:2/3;background:var(--cream);}
+.strip-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.5s ease;}
+.strip-photo:hover img{transform:scale(1.06);}
 
 /* ── SECTION DIVIDER ── */
-.chapter-divider{
-  display:flex;
-  align-items:center;
-  gap:2rem;
-  padding:3.5vw 10vw;
-  border-bottom:0.5px solid var(--rule);
-}
-.chapter-divider-label{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:0.3em;
-  text-transform:uppercase;
-  color:var(--muted);
-  white-space:nowrap;
-}
+.chapter-divider{display:flex;align-items:center;gap:2rem;padding:3.5vw 10vw;border-bottom:0.5px solid var(--rule);}
+.chapter-divider-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
 .chapter-divider-line{flex:1;height:0.5px;background:var(--rule);}
-.chapter-divider-next{
-  font-family:'Corinthia',cursive;
-  font-size:clamp(32px,3.5vw,50px);
-  color:var(--ink);
-  white-space:nowrap;
-}
+.chapter-divider-next{font-family:'Corinthia',cursive;font-size:clamp(32px,3.5vw,50px);color:var(--ink);white-space:nowrap;}
 
 /* ── VENICE ── */
-.venice-lace-title{
-  position:relative;
-  width:100%;
-  overflow:hidden;
-  border-bottom:0.5px solid var(--rule);
-}
-.venice-lace-title img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-.venice-lace-overlay{
-  position:absolute;
-  bottom:0;right:0;
-  padding:4vw 5vw 4vw 10vw;
-  text-align:right;
-}
-.venice-main-title{
-  font-family:'Corinthia',cursive;
-  font-size:clamp(64px,8vw,120px);
-  font-weight:400;
-  line-height:0.9;
-  color:#faf8f4;
-}
+.venice-lace-title{position:relative;width:100%;overflow:hidden;border-bottom:0.5px solid var(--rule);}
+.venice-lace-title img{width:100%;height:auto;display:block;}
+.venice-lace-overlay{position:absolute;bottom:0;right:0;padding:4vw 5vw 4vw 10vw;text-align:right;}
+.venice-main-title{font-family:'Corinthia',cursive;font-size:clamp(64px,8vw,120px);font-weight:400;line-height:0.9;color:#faf8f4;}
 .venice-main-title em{font-style:italic;}
 
 /* Venice gondola + caption side by side */
-.venice-hero-row{
-  display:grid;
-  grid-template-columns:380px 1fr;
-  gap:0;
-  border-bottom:0.5px solid var(--rule);
-  align-items:stretch;
-}
-.venice-hero{
-  width:380px;
-  height:420px;
-  overflow:hidden;
-  background:var(--cream);
-  flex-shrink:0;
-}
-.venice-hero img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:35% center;
-  display:block;
-}
-.venice-side-text{
-  padding:5vw 6vw;
-  display:flex;
-  align-items:center;
-  border-left:0.5px solid var(--rule);
-}
-.venice-side-text p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:16px;
-  font-style:italic;
-  letter-spacing:0.04em;
-  color:var(--muted);
-  line-height:1.85;
-  max-width:480px;
-}
+.venice-hero-row{display:grid;grid-template-columns:380px 1fr;gap:0;border-bottom:0.5px solid var(--rule);align-items:stretch;}
+.venice-hero{width:380px;height:420px;overflow:hidden;background:var(--cream);}
+.venice-hero img{width:100%;height:100%;object-fit:cover;object-position:35% center;display:block;}
+.venice-side-text{padding:5vw 6vw;display:flex;align-items:center;border-left:0.5px solid var(--rule);}
+.venice-side-text p{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.04em;color:var(--muted);line-height:1.85;max-width:480px;}
 
-/* Venice: lace detail full width right under canal */
-.venice-lace{
-  width:100%;
-  overflow:hidden;
-  border-bottom:0.5px solid var(--rule);
-}
-.venice-lace img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-/* Venice caption — centered, no border */
-.venice-text{
-  padding:2.5vw 10vw;
-  text-align:center;
-  border-bottom:0.5px solid var(--rule);
-}
-.venice-text p{
-  font-family:'Cormorant Garamond',serif;
-  font-size:13px;
-  letter-spacing:0.3em;
-  text-transform:uppercase;
-  color:var(--muted);
-  font-style:italic;
-  line-height:1.6;
-}
-
-/* Venice 8-photo grid — no borders between cells */
-.venice-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:4px;
-  padding:4px;
-  background:var(--cream);
-  border-bottom:0.5px solid var(--rule);
-}
+/* Venice grid */
+.venice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:4px;background:var(--cream);border-bottom:0.5px solid var(--rule);}
 .venice-photo{overflow:hidden;background:var(--cream);}
 .venice-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
 .venice-photo:hover img{transform:scale(1.03);}
 .venice-photo.sq{aspect-ratio:1/1;}
 
 /* SPINNING LOGO STAMP */
-.logo-stamp{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:4.5vw 10vw;
-  border-bottom:0.5px solid var(--rule);
-}
-.stamp-spin{
-  animation:spinStamp 12s linear infinite;
-  transform-origin:center;
-}
-@keyframes spinStamp{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
-}
+.logo-stamp{display:flex;justify-content:center;align-items:center;padding:4.5vw 10vw;border-bottom:0.5px solid var(--rule);}
+.stamp-spin{animation:spinStamp 12s linear infinite;transform-origin:center;}
+@keyframes spinStamp{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* FOOTER */
 footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;align-items:center;border-top:0.5px solid rgba(255,255,255,0.08);}
@@ -248,32 +103,31 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </nav>
 
-<!-- D&G: 4 photos left + text right, then detail grid below -->
-<div class="dg-grid-top" style="padding-top:calc(56px + 4vh);grid-template-columns:1fr 1fr;border-bottom:none;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
-    <div class="dg-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
-    <div class="dg-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
-    <div class="dg-photo"><img src="IMG_7020.png" alt="D&G Exhibition Room"/></div>
-    <div class="dg-photo"><img src="IMG_9470.png" alt="D&G Atelier"/></div>
+<!-- 2x2 GRID + TEXT -->
+<div class="spread">
+  <div class="spread-photos">
+    <div class="spread-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
+    <div class="spread-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
+    <div class="spread-photo"><img src="IMG_7020.png" alt="D&G Exhibition Room"/></div>
+    <div class="spread-photo"><img src="IMG_9470.png" alt="D&G Atelier"/></div>
   </div>
   <div class="spread-text">
     <h2 class="spread-heading">The Full Silhouette.</h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-style:italic;margin-bottom:2rem;white-space:nowrap;">Fashion: Through The Looking Glass — Inside Dolce &amp; Gabbana - Milano</p>
+    <p class="spread-subheader">Fashion: Through The Looking Glass — Inside Dolce &amp; Gabbana - Milano</p>
     <p class="spread-body">Each look is presented as a complete composition, where structure, styling, and ornament are treated as equally important. What emerges is not just a garment, but a fully realised image shaped through proportion, texture, and detail.</p>
     <p class="spread-body">Dolce &amp; Gabbana's visual language is rooted in contrast, tradition and spectacle, discipline and excess. Each piece reflects a deeply Italian narrative, where craftsmanship is not hidden but emphasized, and ornament becomes a form of storytelling. The garments do not simply dress the body; they construct identity, drawing from history, religion, and theatre to create something both timeless and deliberately exaggerated.</p>
   </div>
 </div>
 
-<!-- D&G DETAIL GRID: 8 photos, 4 cols x 2 rows -->
-<div class="dg-grid-bottom">
-  <div class="dg-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
-  <div class="dg-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons"/></div>
-  <div class="dg-photo"><img src="IMG_6987.png" alt="White Baroque"/></div>
-  <div class="dg-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
-  <div class="dg-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
-  <div class="dg-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
-  <div class="dg-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
-  <div class="dg-photo" style="background:var(--off);"></div>
+<!-- 7-PHOTO STRIP -->
+<div class="strip">
+  <div class="strip-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
+  <div class="strip-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons" style="object-position:left center;"/></div>
+  <div class="strip-photo"><img src="IMG_6987.png" alt="White Baroque" style="object-position:30% center;"/></div>
+  <div class="strip-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
+  <div class="strip-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
+  <div class="strip-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
+  <div class="strip-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
 </div>
 
 <!-- VENICE DIVIDER -->
@@ -283,7 +137,7 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   <span class="chapter-divider-next">Italy.</span>
 </div>
 
-<!-- LACE DETAIL with title overlay -->
+<!-- LACE with title overlay -->
 <div class="venice-lace-title">
   <img src="DSC01134.png" alt="Venice lace detail"/>
   <div class="venice-lace-overlay">
@@ -291,17 +145,17 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </div>
 
-<!-- VENICE GONDOLA + CAPTION side by side -->
+<!-- GONDOLA + CAPTION -->
 <div class="venice-hero-row">
   <div class="venice-hero">
-    <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:20% center;"/>
+    <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:35% center;"/>
   </div>
   <div class="venice-side-text">
     <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together.</p>
   </div>
 </div>
 
-<!-- VENICE GRID: 8 photos, 4 cols × 2 rows -->
+<!-- VENICE GRID: 8 photos, 4 cols x 2 rows -->
 <div class="venice-grid">
   <div class="venice-photo sq"><img src="IMG_6640.png" alt="Silver carnival duo"/></div>
   <div class="venice-photo sq"><img src="IMG_6720.png" alt="Moon lady gondolas"/></div>
@@ -324,6 +178,7 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
     </text>
   </svg>
 </div>
+
 <footer>
   <div class="ft-col ft-brand">
     <div class="ft-logo">J'adore Le Concept</div>
@@ -341,10 +196,9 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
 
 <script>
 fetch('footer.html').then(r=>r.text()).then(html=>{
-  const el = document.querySelector('footer');
-  if(el) el.outerHTML = html;
+  const el=document.querySelector('footer');
+  if(el) el.outerHTML=html;
 });
 </script>
-
 </body>
 </html>
