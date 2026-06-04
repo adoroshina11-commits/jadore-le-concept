@@ -67,7 +67,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .spread-photo img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
   display:block;
   transition:transform 0.6s ease;
 }
@@ -117,8 +117,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   background:var(--cream);
   border-bottom:0.5px solid var(--rule);
 }
-.strip-photo{overflow:hidden;aspect-ratio:2/3;}
-.strip-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.strip-photo{overflow:hidden;aspect-ratio:2/3;background:var(--cream);}
+.strip-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.5s ease;}
 .strip-photo:hover img{transform:scale(1.06);}
 
 /* ── SECTION DIVIDER ── */
@@ -172,20 +172,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 }
 .venice-main-title em{font-style:italic;}
 
+/* Venice gondola + caption side by side */
+.venice-hero-row{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:0;
+  border-bottom:0.5px solid var(--rule);
+  align-items:stretch;
+}
 .venice-hero{
   width:380px;
   height:420px;
   overflow:hidden;
   background:var(--cream);
-  border-bottom:none;
-  margin:2vw auto;
-  display:block;
+  flex-shrink:0;
 }
 .venice-hero img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:20% center;
   display:block;
+}
+.venice-side-text{
+  padding:4vw 5vw;
+  display:flex;
+  align-items:center;
+  border-left:0.5px solid var(--rule);
+}
+.venice-side-text p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  font-style:italic;
+  letter-spacing:0.06em;
+  color:var(--muted);
+  line-height:1.9;
 }
 
 /* Venice: lace detail full width right under canal */
@@ -313,14 +334,14 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </div>
 
-<!-- VENICE CAPTION -->
-<div class="venice-text">
-  <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together</p>
-</div>
-
-<!-- VENICE GONDOLA: smaller, full image minus black right edge -->
-<div class="venice-hero">
-  <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:20% center;"/>
+<!-- VENICE GONDOLA + CAPTION side by side -->
+<div class="venice-hero-row">
+  <div class="venice-hero">
+    <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:20% center;"/>
+  </div>
+  <div class="venice-side-text">
+    <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together.</p>
+  </div>
 </div>
 
 <!-- VENICE GRID: 8 photos, 4 cols × 2 rows -->
