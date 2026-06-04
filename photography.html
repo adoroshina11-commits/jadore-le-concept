@@ -95,74 +95,53 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
   margin-bottom:1.4rem;
 }
 
-/* ── FULL WIDTH PHOTO ── */
-.full-photo{
-  width:100%;
-  height:70vh;
-  overflow:hidden;
-  border-bottom:0.5px solid var(--rule);
-}
-.full-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform 0.8s ease;
-}
-.full-photo:hover img{transform:scale(1.02);}
-
-/* ── CAPTION BAR ── */
-.caption-bar{
-  display:grid;
-  grid-template-columns:1fr 2fr 1fr;
-  align-items:center;
-  padding:2rem 10vw;
-  border-bottom:0.5px solid var(--rule);
-  gap:3rem;
-}
-.caption-n{
+/* ── SPREAD subheader ── */
+.spread-subheader{
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:0.3em;
+  font-size:11px;
+  letter-spacing:0.28em;
   text-transform:uppercase;
   color:var(--muted);
-}
-.caption-text{
-  font-family:'Cormorant Garamond',serif;
-  font-size:15px;
   font-style:italic;
-  color:var(--ink);
-  text-align:center;
-  line-height:1.5;
+  margin-top:0.6rem;
+  margin-bottom:2rem;
 }
-.caption-loc{
+
+/* ── PHOTO STRIP ── */
+.strip{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:5px;
+  padding:5px;
+  background:var(--rule);
+  border-bottom:0.5px solid var(--rule);
+}
+.strip-photo{overflow:hidden;aspect-ratio:2/3;}
+.strip-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+.strip-photo:hover img{transform:scale(1.06);}
+
+/* ── SECTION DIVIDER ── */
+.chapter-divider{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  padding:3.5vw 10vw;
+  border-bottom:0.5px solid var(--rule);
+}
+.chapter-divider-label{
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
+  font-size:11px;
   letter-spacing:0.3em;
   text-transform:uppercase;
   color:var(--muted);
-  text-align:right;
+  white-space:nowrap;
 }
-
-/* ── CLOSING TEXT ── */
-.closing{
-  padding:6vw 10vw;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8vw;
-  border-bottom:0.5px solid var(--rule);
-  align-items:center;
-}
-.closing-quote{
-  font-family:'Italiana',serif;
-  font-size:clamp(26px,3vw,42px);
-  line-height:1.2;
+.chapter-divider-line{flex:1;height:0.5px;background:var(--rule);}
+.chapter-divider-next{
+  font-family:'Corinthia',cursive;
+  font-size:clamp(32px,3.5vw,50px);
   color:var(--ink);
-}
-.closing-body{
-  font-size:15.5px;
-  line-height:1.9;
-  color:var(--muted);
+  white-space:nowrap;
 }
 
 /* LOGO STAMP */
@@ -194,14 +173,8 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
 </nav>
 
-<!-- CHAPTER TITLE -->
-<div class="chapter-title">
-  <h1 class="chapter-h">Fashion: Through <em>The Looking Glass</em></h1>
-  <p class="chapter-desc">A visual study of craftsmanship, theatricality, and the relationship between fashion and cultural narrative — shot at the Dolce &amp; Gabbana exhibition in Milan.</p>
-</div>
-
-<!-- 2x2 GRID + TEXT -->
-<div class="spread">
+<!-- 2x2 GRID + TEXT — no header above -->
+<div class="spread" style="padding-top:56px;">
   <div class="spread-photos">
     <div class="spread-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
     <div class="spread-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
@@ -210,22 +183,28 @@ footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;gri
   </div>
   <div class="spread-text">
     <h2 class="spread-heading">The Full Silhouette.</h2>
+    <p class="spread-subheader">Fashion: Through The Looking Glass — Dolce &amp; Gabbana, Milan</p>
     <p class="spread-body">Each look is presented as a complete composition, where structure, styling, and ornament are treated as equally important. What emerges is not just a garment, but a fully realised image shaped through proportion, texture, and detail.</p>
     <p class="spread-body">Dolce &amp; Gabbana's visual language is rooted in contrast, tradition and spectacle, discipline and excess. Each piece reflects a deeply Italian narrative, where craftsmanship is not hidden but emphasized, and ornament becomes a form of storytelling. The garments do not simply dress the body; they construct identity, drawing from history, religion, and theatre to create something both timeless and deliberately exaggerated.</p>
   </div>
 </div>
 
-<!-- CAPTION -->
-<div class="caption-bar">
-  <span class="caption-n">D&amp;G · Milan · 2024</span>
-  <span class="caption-text">The garments do not simply dress the body — they construct identity, drawing from history, religion, and theatre.</span>
-  <span class="caption-loc">Exhibition · Photography</span>
+<!-- 7-PHOTO STRIP -->
+<div class="strip">
+  <div class="strip-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
+  <div class="strip-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
+  <div class="strip-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
+  <div class="strip-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons"/></div>
+  <div class="strip-photo"><img src="IMG_6987.png" alt="White Baroque"/></div>
+  <div class="strip-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
+  <div class="strip-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
 </div>
 
-<!-- CLOSING -->
-<div class="closing">
-  <div class="closing-quote">Fashion as living spectacle.</div>
-  <p class="closing-body">The Dolce &amp; Gabbana exhibition in Milan is an exercise in the theatrics of Italian craft. Gold, lace, and embroidery coexist with a ferocity rarely seen in contemporary fashion — a reminder that luxury is not restraint alone, but sometimes, the full expression of excess.</p>
+<!-- VENICE DIVIDER -->
+<div class="chapter-divider">
+  <span class="chapter-divider-label">Next Chapter</span>
+  <div class="chapter-divider-line"></div>
+  <span class="chapter-divider-next">Venice Carnival.</span>
 </div>
 
 <!-- LOGO STAMP -->
