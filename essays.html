@@ -19,7 +19,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,
 .nav-links a:hover,.nav-links a.active{color:var(--ink);}
 
 /* ARCHIVE GRID */
-section{padding:6vw 10vw;padding-top:calc(56px + 5vw);}
+section{padding:6vw 10vw 2vw;padding-top:calc(56px + 5vw);}
 .label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px;margin-bottom:3.5rem;}
 .label::after{content:'';flex:1;height:0.5px;background:var(--rule);}
 .archive-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:0.5px solid var(--rule);}
@@ -90,7 +90,7 @@ footer{
   margin-top:4px;
 }
 /* LOGO STAMP */
-.logo-stamp{display:flex;justify-content:center;align-items:center;padding:3vw 0;}
+.logo-stamp{display:flex;justify-content:center;align-items:center;padding:2vw 0 2.5vw;}
 .stamp-spin{animation:spinStamp 12s linear infinite;transform-origin:center;}
 @keyframes spinStamp{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 </style>
@@ -109,7 +109,7 @@ footer{
 </nav>
 
 <section>
-  <div class="label">The Edit</div>
+  <div class="label">The Edit.</div>
   <div class="archive-grid">
     <div class="card"><div class="card-n">001</div><div class="card-t">When a Fashion House Becomes a Cultural Institution</div><div class="card-tag">Brand Identity</div></div>
     <div class="card"><div class="card-n">002</div><div class="card-t">Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars</div><div class="card-tag">Experience</div></div>
