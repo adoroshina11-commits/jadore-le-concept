@@ -89,6 +89,10 @@ footer{
   color:rgba(250,248,244,0.2);
   margin-top:4px;
 }
+/* LOGO STAMP */
+.logo-stamp{display:flex;justify-content:center;align-items:center;padding:3vw 0;}
+.stamp-spin{animation:spinStamp 12s linear infinite;transform-origin:center;}
+@keyframes spinStamp{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 </style>
 </head>
 <body>
@@ -109,13 +113,23 @@ footer{
   <div class="archive-grid">
     <div class="card"><div class="card-n">001</div><div class="card-t">When a Fashion House Becomes a Cultural Institution</div><div class="card-tag">Brand Identity</div></div>
     <div class="card"><div class="card-n">002</div><div class="card-t">Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars</div><div class="card-tag">Experience</div></div>
-    <div class="card"><div class="card-n">003</div><div class="card-t">Miu Miu's Jazz Club and the New Language of Brand Identity</div><div class="card-tag">Miu Miu</div></div>
+    <div class="card"><div class="card-n">003</div><div class="card-t">Gucci x Alpine: When a Fashion House Buys Into Formula One</div><div class="card-tag">Brand Strategy</div></div>
     <div class="card"><div class="card-n">004</div><div class="card-t">From Product to World-Building: The Future of Luxury Branding</div><div class="card-tag">Strategy</div></div>
     <div class="card"><div class="card-n">005</div><div class="card-t">Jewelry, Authenticity, and the Legal Value of Design</div><div class="card-tag">Law · Craft</div></div>
     <div class="card"><div class="card-n">006</div><div class="card-t">How Fashion Houses Use Space, Sound, and Experience to Build Desire</div><div class="card-tag">Culture</div></div>
   </div>
 </section>
 
+<div class="logo-stamp">
+  <svg class="stamp-spin" width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <path id="cp-archive" d="M55,55 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
+    </defs>
+    <text font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#1a1814" letter-spacing="8.6">
+      <textPath href="#cp-archive">J'ADORE LE CONCEPT</textPath>
+    </text>
+  </svg>
+</div>
 <footer>
   <div class="ft-col ft-brand">
     <div class="ft-logo">J'adore Le Concept</div>
