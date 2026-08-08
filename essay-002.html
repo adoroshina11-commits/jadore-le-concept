@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars — J'adore le Concept</title>
+  <title>
+    Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars — J'adore le Concept
+  </title>
+
+
+  <!-- GOOGLE FONTS -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  >
+
 
   <style>
+
+
+    /* ─────────────────────────────
+       VARIABLES
+    ───────────────────────────── */
 
     :root{
       --cream:#faf8f4;
@@ -23,39 +44,45 @@
       --teal:#05242b;
     }
 
+
+    /* ─────────────────────────────
+       RESET
+    ───────────────────────────── */
+
     *{
-      box-sizing:border-box;
       margin:0;
       padding:0;
+      box-sizing:border-box;
     }
+
 
     html{
       scroll-behavior:smooth;
     }
 
+
     body{
       background:var(--cream);
+
       color:var(--ink);
+
       font-family:'Inter',sans-serif;
       font-weight:300;
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        NAV
-    ───────────────────────── */
+    ───────────────────────────── */
 
     nav{
       position:fixed;
+
       top:0;
       left:0;
       right:0;
+
       z-index:100;
-
-      background:rgba(250,248,244,0.96);
-      backdrop-filter:blur(4px);
-
-      border-bottom:0.5px solid var(--rule);
 
       height:56px;
 
@@ -64,31 +91,53 @@
       justify-content:space-between;
 
       padding:0 5vw;
+
+      background:rgba(250,248,244,0.96);
+
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+
+      border-bottom:0.5px solid var(--rule);
     }
+
 
     .nav-logo{
       font-family:'Cormorant Garamond',serif;
+
       font-size:12px;
       letter-spacing:0.22em;
+
       text-transform:uppercase;
+
       color:var(--ink);
+
       text-decoration:none;
     }
+
 
     .nav-links{
       display:flex;
+      align-items:center;
+
       gap:28px;
     }
 
+
     .nav-links a{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
       letter-spacing:0.18em;
+
       text-transform:uppercase;
+
       color:var(--muted);
+
       text-decoration:none;
-      transition:color 0.2s;
+
+      transition:color 0.2s ease;
     }
+
 
     .nav-links a:hover,
     .nav-links a.active{
@@ -96,267 +145,380 @@
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        ARTICLE HEADER
-    ───────────────────────── */
+    ───────────────────────────── */
 
     .article-header{
-      padding:calc(56px + 7vw) 10vw 5vw;
+      padding:
+        calc(56px + 7vw)
+        10vw
+        5vw;
+
       border-bottom:0.5px solid var(--rule);
     }
+
 
     .article-meta{
       display:flex;
       align-items:center;
+
       gap:18px;
+
       margin-bottom:2.4rem;
     }
+
 
     .article-number,
     .article-category{
       font-family:'Cormorant Garamond',serif;
+
       font-size:10.5px;
       letter-spacing:0.25em;
+
       text-transform:uppercase;
     }
+
 
     .article-number{
       color:var(--muted);
     }
 
+
     .article-category{
       color:var(--accent);
     }
 
+
     .article-dot{
       width:3px;
       height:3px;
+
       border-radius:50%;
+
       background:var(--rule);
     }
 
+
     h1{
+      max-width:1050px;
+
       font-family:'Cormorant Garamond',serif;
+
       font-size:clamp(44px,5.3vw,78px);
+
       font-weight:400;
       font-style:italic;
+
       line-height:0.98;
+
       letter-spacing:-0.025em;
-      max-width:1050px;
+
+      color:var(--ink);
     }
 
+
     .article-deck{
-      margin-top:2.2rem;
       max-width:650px;
 
+      margin-top:2.2rem;
+
       font-family:'Cormorant Garamond',serif;
+
       font-size:19px;
       font-style:italic;
+
       line-height:1.55;
 
       color:var(--muted);
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        ARTICLE BODY
-    ───────────────────────── */
+    ───────────────────────────── */
 
     .article-wrap{
       display:grid;
-      grid-template-columns:1fr minmax(0,650px) 1fr;
+
+      grid-template-columns:
+        1fr
+        minmax(0,650px)
+        1fr;
+
       padding:6vw 10vw 8vw;
     }
+
 
     .article-body{
       grid-column:2;
     }
 
+
     .article-body p{
       font-family:'Cormorant Garamond',serif;
+
       font-size:20px;
+
       line-height:1.72;
+
       color:#393734;
+
       margin-bottom:1.8rem;
     }
 
+
     .article-body p:first-child::first-letter{
       float:left;
+
+      font-family:'Cormorant Garamond',serif;
+
       font-size:76px;
+
       line-height:0.75;
+
       padding-right:10px;
       padding-top:11px;
-      font-family:'Cormorant Garamond',serif;
+
       color:var(--ink);
     }
+
 
     .article-body em{
       font-style:italic;
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        PULL QUOTE
-    ───────────────────────── */
+    ───────────────────────────── */
 
     .pull-quote{
       margin:4rem -7vw;
+
       padding:3.8rem 6vw;
 
       border-top:0.5px solid var(--rule);
       border-bottom:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
+
       font-size:clamp(28px,3vw,42px);
+
       font-style:italic;
+
       line-height:1.25;
+
       text-align:center;
 
       color:var(--ink);
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        SOURCES
-    ───────────────────────── */
+    ───────────────────────────── */
 
     .sources{
       margin-top:5rem;
+
       padding-top:2.5rem;
+
       border-top:0.5px solid var(--rule);
     }
 
+
     .sources-title{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
+
       letter-spacing:0.3em;
+
       text-transform:uppercase;
+
       color:var(--muted);
+
       margin-bottom:1.8rem;
     }
 
+
     .source{
       font-family:'Cormorant Garamond',serif;
+
       font-size:15px;
+
       line-height:1.55;
+
       color:var(--muted);
+
       margin-bottom:1rem;
     }
 
+
     .source strong{
       color:var(--ink);
+
       font-weight:500;
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        BACK TO ESSAYS
-    ───────────────────────── */
+    ───────────────────────────── */
 
     .back-wrap{
-      padding:0 10vw 6vw;
       display:flex;
+
       justify-content:center;
+
+      padding:0 10vw 6vw;
     }
+
 
     .back-link{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
+
       letter-spacing:0.25em;
+
       text-transform:uppercase;
 
       color:var(--muted);
+
       text-decoration:none;
 
       padding-bottom:5px;
+
       border-bottom:0.5px solid var(--rule);
 
-      transition:color 0.2s;
+      transition:color 0.2s ease;
     }
+
 
     .back-link:hover{
       color:var(--ink);
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        FOOTER
-    ───────────────────────── */
+    ───────────────────────────── */
 
     footer{
       background:#05242b;
+
       color:var(--cream);
 
       padding:3.5vw 10vw;
 
       display:grid;
+
       grid-template-columns:1.2fr 1fr 1fr;
+
       gap:3rem;
+
       align-items:center;
 
       border-top:0.5px solid rgba(255,255,255,0.08);
     }
 
+
     .ft-logo{
       font-family:'Cormorant Garamond',serif;
+
       font-size:13px;
+
       letter-spacing:0.22em;
+
       text-transform:uppercase;
+
       color:var(--cream);
+
       margin-bottom:0.6rem;
     }
 
+
     .ft-sub{
       font-size:13.5px;
+
       color:rgba(250,248,244,0.45);
+
       line-height:1.6;
+
       max-width:260px;
     }
 
+
     .ft-cities{
       font-family:'Cormorant Garamond',serif;
+
       font-size:10.5px;
+
       letter-spacing:0.22em;
+
       text-transform:uppercase;
+
       color:rgba(250,248,244,0.4);
+
       text-align:center;
+
       white-space:nowrap;
     }
 
+
     .ft-right{
       display:flex;
+
       flex-direction:column;
+
       align-items:flex-end;
+
       gap:8px;
     }
 
+
     .ft-link{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
+
       letter-spacing:0.2em;
+
       text-transform:uppercase;
+
       color:rgba(250,248,244,0.5);
+
       text-decoration:none;
-      transition:color 0.2s;
+
+      transition:color 0.2s ease;
     }
+
 
     .ft-link:hover{
       color:var(--cream);
     }
 
+
     .ft-copy{
       font-family:'Cormorant Garamond',serif;
+
       font-size:10px;
+
       letter-spacing:0.2em;
+
       text-transform:uppercase;
+
       color:rgba(250,248,244,0.2);
+
       margin-top:4px;
     }
 
 
-    /* ─────────────────────────
+    /* ─────────────────────────────
        MOBILE
-    ───────────────────────── */
+    ───────────────────────────── */
 
     @media(max-width:800px){
 
@@ -364,13 +526,16 @@
         padding:0 5vw;
       }
 
+
       .nav-links{
         gap:14px;
       }
 
+
       .nav-links a{
         font-size:9px;
       }
+
 
       .article-header{
         padding:
@@ -379,41 +544,56 @@
           10vw;
       }
 
+
       h1{
         font-size:42px;
       }
 
+
       .article-wrap{
         display:block;
+
         padding:10vw 8vw 14vw;
       }
+
 
       .article-body p{
         font-size:19px;
       }
 
+
       .pull-quote{
         margin:3.5rem 0;
+
         padding:2.5rem 0;
       }
 
+
       footer{
         grid-template-columns:1fr;
+
         gap:2rem;
+
         padding:8vw;
       }
+
 
       .ft-cities{
         text-align:left;
       }
 
+
       .ft-right{
         align-items:flex-start;
       }
+
     }
 
+
   </style>
+
 </head>
+
 
 
 <body>
@@ -423,19 +603,37 @@
 
   <nav>
 
-    <a href="index.html" class="nav-logo">
+    <a href="./index.html" class="nav-logo">
       J'adore le Concept
     </a>
 
+
     <div class="nav-links">
-      <a href="archive.html">Archive</a>
-      <a href="essays.html" class="active">Essays</a>
-      <a href="photography.html">Photography</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="./archive.html">
+        Archive
+      </a>
+
+      <a href="./essays.html" class="active">
+        Essays
+      </a>
+
+      <a href="./photography.html">
+        Photography
+      </a>
+
+      <a href="./about.html">
+        About
+      </a>
+
+      <a href="./contact.html">
+        Contact
+      </a>
+
     </div>
 
   </nav>
+
 
 
   <!-- ARTICLE HEADER -->
@@ -477,6 +675,7 @@
   <main class="article-wrap">
 
     <article class="article-body">
+
 
       <p>
         Luxury is no longer confined to what we wear. Increasingly,
@@ -542,7 +741,7 @@
 
       <!-- SOURCES -->
 
-      <section class="sources">
+      <div class="sources">
 
         <div class="sources-title">
           Sources
@@ -550,35 +749,59 @@
 
 
         <div class="source">
+
           <strong>Miu Miu</strong> —
-          <em>Miu Miu Jazz Club Tokyo 2026</em>,
+
+          <em>
+            Miu Miu Jazz Club Tokyo 2026
+          </em>,
+
           official brand website.
+
         </div>
 
 
         <div class="source">
+
           <strong>Miu Miu</strong> —
+
           official LinkedIn post announcing Miu Miu Jazz Club Tokyo
           and the reopening of the Ginza flagship.
+
         </div>
 
 
         <div class="source">
+
           <strong>Vogue Business</strong> —
-          <em>The brand guide to 2025’s European summer pop-ups</em>,
+
+          <em>
+            The brand guide to 2025’s European summer pop-ups
+          </em>,
+
           covering Jacquemus at Jondal Ibiza, Dioriviera in Ibiza,
           and the wider luxury resort-pop-up trend.
+
         </div>
 
 
         <div class="source">
+
           <strong>Country Life</strong> —
-          <em>Eight of our favourite fashion pop-ups to have on your
-          radar this summer</em>, covering Jacquemus at Monte-Carlo
-          Beach and Dioriviera at Il Riccio in Capri.
+
+          <em>
+            Eight of our favourite fashion pop-ups to have on your
+            radar this summer
+          </em>,
+
+          covering Jacquemus at Monte-Carlo Beach and Dioriviera
+          at Il Riccio in Capri.
+
         </div>
 
-      </section>
+
+      </div>
+
 
     </article>
 
@@ -586,9 +809,11 @@
 
 
 
+  <!-- BACK TO ESSAYS -->
+
   <div class="back-wrap">
 
-    <a href="essays.html" class="back-link">
+    <a href="./essays.html" class="back-link">
       ← Back to Essays
     </a>
 
@@ -599,6 +824,7 @@
   <!-- FOOTER -->
 
   <footer>
+
 
     <div>
 
@@ -621,11 +847,11 @@
 
     <div class="ft-right">
 
-      <a href="about.html" class="ft-link">
+      <a href="./about.html" class="ft-link">
         About
       </a>
 
-      <a href="contact.html" class="ft-link">
+      <a href="./contact.html" class="ft-link">
         Contact
       </a>
 
@@ -635,8 +861,10 @@
 
     </div>
 
+
   </footer>
 
 
 </body>
+
 </html>
