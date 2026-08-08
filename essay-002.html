@@ -341,24 +341,33 @@
 
 
     /* ─────────────────────────────
-       SECOND EDITORIAL IMAGE
+       IBIZA EDITORIAL IMAGE PAIR
     ───────────────────────────── */
 
-    .secondary-figure{
-      width:78%;
+    .editorial-pair{
+      width:min(1000px, 82vw);
 
-      margin:
-        4.5rem
-        -8vw
-        4.5rem
-        auto;
+      margin:4.8rem 50%;
+      transform:translateX(-50%);
+
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+
+      gap:24px;
+
+      align-items:start;
     }
 
-    .secondary-figure img{
+    .editorial-pair figure{
+      width:100%;
+      margin:0;
+    }
+
+    .editorial-pair img{
       display:block;
 
       width:100%;
-      height:430px;
+      height:390px;
 
       object-fit:cover;
       object-position:center;
@@ -366,9 +375,26 @@
       filter:saturate(0.94) contrast(0.98);
     }
 
-    .secondary-figure .image-caption{
-      justify-content:flex-end;
+    .editorial-pair .image-caption{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+
+      gap:12px;
+
+      width:100%;
+
+      margin-top:10px;
+
+      font-size:9px;
+      letter-spacing:0.14em;
+
+      line-height:1.45;
+    }
+
+    .editorial-pair .image-caption .credit{
       text-align:right;
+      white-space:nowrap;
     }
 
 
@@ -628,19 +654,42 @@
         padding:2.5rem 0;
       }
 
-      .secondary-figure{
+
+      /* STACK IBIZA IMAGES ON MOBILE */
+
+      .editorial-pair{
         width:100%;
 
         margin:3.5rem 0;
+
+        transform:none;
+
+        display:grid;
+        grid-template-columns:1fr;
+
+        gap:2.8rem;
       }
 
-      .secondary-figure img{
-        height:360px;
+      .editorial-pair img{
+        height:auto;
+        aspect-ratio:4 / 3;
       }
 
-      .secondary-figure .image-caption{
+      .editorial-pair .image-caption{
+        display:block;
         text-align:left;
       }
+
+      .editorial-pair .image-caption .credit{
+        display:block;
+
+        text-align:left;
+
+        margin-top:4px;
+
+        white-space:normal;
+      }
+
 
       footer{
         grid-template-columns:1fr;
@@ -828,30 +877,62 @@
 
 
       <!-- ─────────────────────────
-           BEACH CLUB IMAGE
+           JACQUEMUS + DIORIVIERA
       ───────────────────────── -->
 
-      <figure class="secondary-figure">
-
-        <img
-          src="./jacquemus-jondal-ibiza.jpg"
-          alt="Jacquemus installation at Casa Jondal in Ibiza"
-        >
+      <div class="editorial-pair">
 
 
-        <figcaption class="image-caption">
+        <!-- JACQUEMUS -->
 
-          <span>
-            Jacquemus at Casa Jondal · Ibiza
-          </span>
+        <figure>
 
-          <span class="credit">
-            Image via Vogue Business
-          </span>
+          <img
+            src="./jacquemus-jondal-ibiza.jpg"
+            alt="Jacquemus installation at Casa Jondal in Ibiza"
+          >
 
-        </figcaption>
+          <figcaption class="image-caption">
 
-      </figure>
+            <span>
+              Jacquemus at Casa Jondal · Ibiza
+            </span>
+
+            <span class="credit">
+              Image via Vogue Business
+            </span>
+
+          </figcaption>
+
+        </figure>
+
+
+
+        <!-- DIOR -->
+
+        <figure>
+
+          <img
+            src="./dioriviera-pop-up.jpg"
+            alt="Dioriviera pop-up in Ibiza"
+          >
+
+          <figcaption class="image-caption">
+
+            <span>
+              Dioriviera · Ibiza
+            </span>
+
+            <span class="credit">
+              Image via Vogue Business
+            </span>
+
+          </figcaption>
+
+        </figure>
+
+
+      </div>
 
 
 
