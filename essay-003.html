@@ -1,1 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Gucci x Alpine: When a Fashion House Buys Into Formula One — J'adore le Concept
+  </title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* ─────────────────────────────
+       VARIABLES
+    ───────────────────────────── */
+
+    :root{
+      --cream:#faf8f4;
+      --off:#f4f1eb;
+      --ink:#282724;
+      --muted:#969087;
+      --accent:#c9aa91;
+      --rule:#e5e0d8;
+      --teal:#05242b;
+    }
+
+
+    /* ─────────────────────────────
+       RESET
+    ───────────────────────────── */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--cream);
+      color:var(--ink);
+
+      font-family:'Inter',sans-serif;
+      font-weight:300;
+    }
+
+
+    /* ─────────────────────────────
+       NAV
+    ───────────────────────────── */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+
+      z-index:100;
+
+      height:56px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 5vw;
+
+      background:rgba(250,248,244,0.96);
+
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+
+      border-bottom:0.5px solid var(--rule);
+    }
+
+    .nav-logo{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:12px;
+      letter-spacing:0.22em;
+
+      text-transform:uppercase;
+
+      color:var(--ink);
+
+      text-decoration:none;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+
+      gap:28px;
+    }
+
+    .nav-links a{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:11px;
+      letter-spacing:0.18em;
+
+      text-transform:uppercase;
+
+      color:var(--muted);
+
+      text-decoration:none;
+
+      transition:color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--ink);
+    }
+
+
+    /* ─────────────────────────────
+       ARTICLE HEADER
+    ───────────────────────────── */
+
+    .article-header{
+      padding:
+        calc(56px + 7vw)
+        10vw
+        5vw;
+
+      border-bottom:0.5px solid var(--rule);
+    }
+
+    .article-meta{
+      display:flex;
+      align-items:center;
+
+      gap:18px;
+
+      margin-bottom:2.4rem;
+    }
+
+    .article-number,
+    .article-category{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:10.5px;
+      letter-spacing:0.25em;
+
+      text-transform:uppercase;
+    }
+
+    .article-number{
+      color:var(--muted);
+    }
+
+    .article-category{
+      color:var(--accent);
+    }
+
+    .article-dot{
+      width:3px;
+      height:3px;
+
+      border-radius:50%;
+
+      background:var(--rule);
+    }
+
+    h1{
+      max-width:1100px;
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:clamp(46px,5.5vw,82px);
+
+      font-weight:400;
+      font-style:italic;
+
+      line-height:0.98;
+
+      letter-spacing:-0.025em;
+
+      color:var(--ink);
+    }
+
+    .article-deck{
+      max-width:680px;
+
+      margin-top:2.3rem;
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:19px;
+      font-style:italic;
+
+      line-height:1.55;
+
+      color:var(--muted);
+    }
+
+
+    /* ─────────────────────────────
+       HERO IMAGE
+    ───────────────────────────── */
+
+    .hero-figure{
+      width:80%;
+      max-width:1240px;
+
+      margin:5vw auto 0;
+    }
+
+    .hero-figure img{
+      display:block;
+
+      width:100%;
+      height:560px;
+
+      object-fit:cover;
+      object-position:center;
+
+      filter:saturate(0.92) contrast(0.98);
+    }
+
+    .image-caption{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      gap:2rem;
+
+      margin-top:12px;
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:10px;
+      letter-spacing:0.16em;
+
+      text-transform:uppercase;
+
+      color:var(--muted);
+    }
+
+    .image-caption .credit{
+      color:var(--accent);
+    }
+
+
+    /* ─────────────────────────────
+       ARTICLE BODY
+    ───────────────────────────── */
+
+    .article-wrap{
+      display:grid;
+
+      grid-template-columns:
+        1fr
+        minmax(0,650px)
+        1fr;
+
+      padding:5vw 10vw 8vw;
+    }
+
+    .article-body{
+      grid-column:2;
+    }
+
+    .article-body p{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:20px;
+
+      line-height:1.72;
+
+      color:#393734;
+
+      margin-bottom:1.8rem;
+    }
+
+    .article-body p:first-child::first-letter{
+      float:left;
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:76px;
+
+      line-height:0.75;
+
+      padding-right:10px;
+      padding-top:11px;
+
+      color:var(--ink);
+    }
+
+    .article-body em{
+      font-style:italic;
+    }
+
+    .article-body strong{
+      font-weight:500;
+      color:var(--ink);
+    }
+
+
+    /* ─────────────────────────────
+       SHORT EMPHASIS
+    ───────────────────────────── */
+
+    .pause-line{
+      margin:3.4rem 0;
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:30px;
+      font-style:italic;
+
+      line-height:1.2;
+
+      text-align:center;
+
+      color:var(--ink);
+    }
+
+
+    /* ─────────────────────────────
+       PULL QUOTE
+    ───────────────────────────── */
+
+    .pull-quote{
+      margin:4rem -7vw;
+
+      padding:3.8rem 6vw;
+
+      border-top:0.5px solid var(--rule);
+      border-bottom:0.5px solid var(--rule);
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:clamp(28px,3vw,42px);
+
+      font-style:italic;
+
+      line-height:1.25;
+
+      text-align:center;
+
+      color:var(--ink);
+    }
+
+
+    /* ─────────────────────────────
+       SECOND EDITORIAL IMAGE
+    ───────────────────────────── */
+
+    .secondary-figure{
+      width:78%;
+
+      margin:
+        4.5rem
+        auto
+        4.5rem
+        -8vw;
+    }
+
+    .secondary-figure img{
+      display:block;
+
+      width:100%;
+      height:430px;
+
+      object-fit:cover;
+      object-position:center;
+
+      filter:saturate(0.94) contrast(0.98);
+    }
+
+    .secondary-figure .image-caption{
+      justify-content:flex-start;
+      text-align:left;
+    }
+
+
+    /* ─────────────────────────────
+       FINAL THREE LINES
+    ───────────────────────────── */
+
+    .final-beat{
+      margin:3.8rem 0;
+
+      padding-left:2rem;
+
+      border-left:0.5px solid var(--accent);
+    }
+
+    .final-beat p{
+      margin:0 0 0.35rem;
+
+      font-size:23px;
+
+      font-style:italic;
+
+      color:var(--muted);
+    }
+
+
+    /* ─────────────────────────────
+       FINAL STATEMENT
+    ───────────────────────────── */
+
+    .final-statement{
+      margin-top:4rem;
+
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:27px;
+
+      line-height:1.45;
+
+      font-style:italic;
+
+      color:var(--ink);
+    }
+
+
+    /* ─────────────────────────────
+       SOURCES
+    ───────────────────────────── */
+
+    .sources{
+      margin-top:5rem;
+
+      padding-top:2.5rem;
+
+      border-top:0.5px solid var(--rule);
+    }
+
+    .sources-title{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:11px;
+
+      letter-spacing:0.3em;
+
+      text-transform:uppercase;
+
+      color:var(--muted);
+
+      margin-bottom:1.8rem;
+    }
+
+    .source{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:15px;
+
+      line-height:1.55;
+
+      color:var(--muted);
+
+      margin-bottom:1rem;
+    }
+
+    .source strong{
+      color:var(--ink);
+
+      font-weight:500;
+    }
+
+
+    /* ─────────────────────────────
+       BACK LINK
+    ───────────────────────────── */
+
+    .back-wrap{
+      display:flex;
+
+      justify-content:center;
+
+      padding:0 10vw 6vw;
+    }
+
+    .back-link{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:11px;
+
+      letter-spacing:0.25em;
+
+      text-transform:uppercase;
+
+      color:var(--muted);
+
+      text-decoration:none;
+
+      padding-bottom:5px;
+
+      border-bottom:0.5px solid var(--rule);
+
+      transition:color 0.2s ease;
+    }
+
+    .back-link:hover{
+      color:var(--ink);
+    }
+
+
+    /* ─────────────────────────────
+       FOOTER
+    ───────────────────────────── */
+
+    footer{
+      background:#05242b;
+
+      color:var(--cream);
+
+      padding:3.5vw 10vw;
+
+      display:grid;
+
+      grid-template-columns:1.2fr 1fr 1fr;
+
+      gap:3rem;
+
+      align-items:center;
+
+      border-top:0.5px solid rgba(255,255,255,0.08);
+    }
+
+    .ft-logo{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:13px;
+
+      letter-spacing:0.22em;
+
+      text-transform:uppercase;
+
+      color:var(--cream);
+
+      margin-bottom:0.6rem;
+    }
+
+    .ft-sub{
+      font-size:13.5px;
+
+      color:rgba(250,248,244,0.45);
+
+      line-height:1.6;
+
+      max-width:260px;
+    }
+
+    .ft-cities{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:10.5px;
+
+      letter-spacing:0.22em;
+
+      text-transform:uppercase;
+
+      color:rgba(250,248,244,0.4);
+
+      text-align:center;
+
+      white-space:nowrap;
+    }
+
+    .ft-right{
+      display:flex;
+
+      flex-direction:column;
+
+      align-items:flex-end;
+
+      gap:8px;
+    }
+
+    .ft-link{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:11px;
+
+      letter-spacing:0.2em;
+
+      text-transform:uppercase;
+
+      color:rgba(250,248,244,0.5);
+
+      text-decoration:none;
+
+      transition:color 0.2s ease;
+    }
+
+    .ft-link:hover{
+      color:var(--cream);
+    }
+
+    .ft-copy{
+      font-family:'Cormorant Garamond',serif;
+
+      font-size:10px;
+
+      letter-spacing:0.2em;
+
+      text-transform:uppercase;
+
+      color:rgba(250,248,244,0.2);
+
+      margin-top:4px;
+    }
+
+
+    /* ─────────────────────────────
+       MOBILE
+    ───────────────────────────── */
+
+    @media(max-width:800px){
+
+      nav{
+        padding:0 5vw;
+      }
+
+      .nav-links{
+        gap:14px;
+      }
+
+      .nav-links a{
+        font-size:9px;
+      }
+
+      .article-header{
+        padding:
+          calc(56px + 12vw)
+          7vw
+          10vw;
+      }
+
+      h1{
+        font-size:42px;
+      }
+
+      .hero-figure{
+        width:86%;
+
+        margin-top:10vw;
+      }
+
+      .hero-figure img{
+        height:420px;
+      }
+
+      .image-caption{
+        display:block;
+
+        line-height:1.6;
+      }
+
+      .image-caption .credit{
+        display:block;
+
+        margin-top:4px;
+      }
+
+      .article-wrap{
+        display:block;
+
+        padding:10vw 8vw 14vw;
+      }
+
+      .article-body p{
+        font-size:19px;
+      }
+
+      .pull-quote{
+        margin:3.5rem 0;
+
+        padding:2.5rem 0;
+      }
+
+      .pause-line{
+        font-size:26px;
+      }
+
+      .secondary-figure{
+        width:100%;
+
+        margin:3.5rem 0;
+      }
+
+      .secondary-figure img{
+        height:360px;
+      }
+
+      .final-beat{
+        margin:3rem 0;
+
+        padding-left:1.4rem;
+      }
+
+      .final-beat p{
+        font-size:21px;
+      }
+
+      .final-statement{
+        font-size:24px;
+      }
+
+      footer{
+        grid-template-columns:1fr;
+
+        gap:2rem;
+
+        padding:8vw;
+      }
+
+      .ft-cities{
+        text-align:left;
+      }
+
+      .ft-right{
+        align-items:flex-start;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ─────────────────────────────
+       NAV
+  ───────────────────────────── -->
+
+  <nav>
+
+    <a href="./index.html" class="nav-logo">
+      J'adore le Concept
+    </a>
+
+
+    <div class="nav-links">
+
+      <a href="./archive.html">
+        Archive
+      </a>
+
+      <a href="./essays.html" class="active">
+        Essays
+      </a>
+
+      <a href="./photography.html">
+        Photography
+      </a>
+
+      <a href="./about.html">
+        About
+      </a>
+
+      <a href="./contact.html">
+        Contact
+      </a>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- ─────────────────────────────
+       ARTICLE HEADER
+  ───────────────────────────── -->
+
+  <header class="article-header">
+
+
+    <div class="article-meta">
+
+      <span class="article-number">
+        003
+      </span>
+
+      <span class="article-dot"></span>
+
+      <span class="article-category">
+        Brand Strategy
+      </span>
+
+    </div>
+
+
+    <h1>
+      Gucci x Alpine: When a Fashion House Buys Into Formula One
+    </h1>
+
+
+    <div class="article-deck">
+      Gucci is not simply sponsoring Formula One.
+      It is placing itself inside one of the world's most visible
+      cultural and sporting identities.
+    </div>
+
+
+  </header>
+
+
+
+  <!-- ─────────────────────────────
+       GUCCI x ALPINE HERO
+  ───────────────────────────── -->
+
+  <figure class="hero-figure">
+
+    <img
+      src="./gucci-alpine-f1.jpg"
+      alt="Gucci Racing Alpine Formula One partnership"
+    >
+
+
+    <figcaption class="image-caption">
+
+      <span>
+        Gucci Racing x Alpine · Formula One
+      </span>
+
+      <span class="credit">
+        Image via Alpine / Renault Group
+      </span>
+
+    </figcaption>
+
+  </figure>
+
+
+
+  <!-- ─────────────────────────────
+       ARTICLE
+  ───────────────────────────── -->
+
+  <main class="article-wrap">
+
+
+    <article class="article-body">
+
+
+      <p>
+        For years, fashion has borrowed from motorsport. Racing jackets
+        became streetwear, logos became decoration, and Formula One slowly
+        moved from a niche sporting world into something much closer to
+        entertainment, celebrity and culture. Gucci’s new partnership
+        with Alpine feels like the moment that relationship becomes
+        something much bigger.
+      </p>
+
+
+      <p>
+        From the 2027 Formula One season, Alpine will compete as
+        <strong>Gucci Racing Alpine Formula One Team</strong>, making
+        Gucci the first luxury fashion house to serve as title partner
+        of an F1 team. The cars will compete in Gucci colours, and the
+        partnership launches a new platform called <em>Gucci Racing</em>.
+        This goes far beyond putting a logo on a car. Gucci is placing
+        its name directly inside one of the most visible sporting
+        identities in the world.
+      </p>
+
+
+      <p>
+        What makes the move interesting is the timing. Formula One has
+        become increasingly intertwined with fashion, celebrity and
+        luxury. Vogue was already documenting the influence of racing
+        aesthetics on fashion years before this deal, from moto jackets
+        to race-inspired dressing among celebrities and fashion-week
+        audiences. What once felt like a temporary trend now looks more
+        like a permanent cultural overlap.
+      </p>
+
+
+
+      <!-- PULL QUOTE -->
+
+      <div class="pull-quote">
+        Formula One offers something a traditional luxury campaign
+        cannot: repetition.
+      </div>
+
+
+
+      <p>
+        For Gucci, Formula One offers something a traditional campaign
+        cannot: repetition. A runway show might dominate conversation
+        for several days. A campaign might appear for a season. Formula
+        One returns almost every weekend for much of the year, across
+        cities, television screens, social platforms and hospitality
+        spaces around the world.
+      </p>
+
+
+      <div class="pause-line">
+        That frequency matters.
+      </div>
+
+
+      <p>
+        Every race becomes another moment where Gucci can exist outside
+        the boutique.
+      </p>
+
+
+      <p>
+        The Alpine announcement describes Formula One as a way for Gucci
+        to reach an increasingly diverse and premium global audience
+        while strengthening visibility, desirability and cultural
+        relevance. That language says a lot about how luxury branding is
+        changing. The objective is no longer simply to convince someone
+        to buy a product. It is to make the brand continuously present
+        in the environments people are already emotionally invested in.
+      </p>
+
+
+      <p>
+        There is also a natural similarity between the two worlds.
+        Motorsport depends on precision, engineering, scarcity and
+        performance. Luxury depends on craftsmanship, detail,
+        exclusivity and control. Gucci itself has framed the partnership
+        around performance, precision, discipline and excellence. The
+        products may be completely different, but the values used to
+        justify them are remarkably similar.
+      </p>
+
+
+
+      <!-- SECOND PULL QUOTE -->
+
+      <div class="pull-quote">
+        Gucci is not approaching Formula One as an outside sponsor.
+        It is becoming part of the team's name.
+      </div>
+
+
+
+      <p>
+        What interests me most, though, is that Gucci is not approaching
+        Formula One as an outside sponsor. It is becoming part of the
+        team's name.
+      </p>
+
+
+      <div class="pause-line">
+        That changes the relationship.
+      </div>
+
+
+      <p>
+        A logo positioned on the side of a car is advertising.
+        <strong>Gucci Racing Alpine Formula One Team</strong> begins to
+        feel closer to world-building.
+      </p>
+
+
+      <p>
+        It allows Gucci to potentially create clothing, experiences,
+        hospitality, content and products around an entirely new
+        identity. The company has already described Gucci Racing as an
+        experiential and business platform, with the Alpine partnership
+        only its first expression.
+      </p>
+
+
+      <p>
+        And that may be the most important part of the strategy.
+      </p>
+
+
+      <p>
+        Gucci is not simply borrowing Formula One's audience. It is
+        creating a new part of the Gucci universe inside it.
+      </p>
+
+
+
+      <!-- ─────────────────────────
+           GUCCI TIMES SQUARE IMAGE
+      ───────────────────────── -->
+
+      <figure class="secondary-figure">
+
+        <img
+          src="./gucci-times-square.jpg"
+          alt="Gucci Resort 2027 presentation in Times Square"
+        >
+
+
+        <figcaption class="image-caption">
+
+          <span>
+            Gucci Resort 2027 · Times Square, New York
+          </span>
+
+          <span class="credit">
+            Image via Vogue
+          </span>
+
+        </figcaption>
+
+      </figure>
+
+
+
+      <p>
+        Recent Gucci projects suggest this broader appetite for spectacle
+        and cultural scale. Under Demna, Vogue noted the house's
+        increasingly ambitious approach to presentation, including its
+        Resort 2027 show staged in Times Square, where dozens of screens
+        transformed one of the world's most commercial public spaces
+        into part of the Gucci experience.
+      </p>
+
+
+      <p>
+        Formula One offers the same opportunity on an even larger and
+        more continuous scale.
+      </p>
+
+
+      <p>
+        Luxury used to depend heavily on distance: velvet ropes, private
+        boutiques, invitation-only shows. Today, some of the strongest
+        brands are experimenting with another form of exclusivity —
+        being everywhere culturally while remaining difficult to own
+        materially.
+      </p>
+
+
+      <p>
+        Gucci entering Formula One captures that contradiction perfectly.
+      </p>
+
+
+
+      <!-- FINAL RHYTHMIC SECTION -->
+
+      <div class="final-beat">
+
+        <p>You may never own the car.</p>
+
+        <p>You may never sit inside the paddock.</p>
+
+        <p>You may never buy the collection.</p>
+
+      </div>
+
+
+      <p>
+        But for an entire race weekend, you can still enter the world.
+      </p>
+
+
+      <div class="final-statement">
+        And perhaps that is what modern luxury increasingly understands:
+        <strong>desire does not always begin with a product. Sometimes
+        it begins with wanting to be part of the story.</strong>
+      </div>
+
+
+
+      <!-- ─────────────────────────
+           SOURCES
+      ───────────────────────── -->
+
+      <div class="sources">
+
+
+        <div class="sources-title">
+          Sources
+        </div>
+
+
+        <div class="source">
+          <strong>Alpine / Renault Group</strong> —
+          <em>Luxury Takes the Grid: Gucci Enters Formula One with Alpine,
+          Becoming Its Title Partner</em>, 27 May 2026. Official
+          announcement confirming the 2027 title partnership,
+          Gucci Racing platform and strategic rationale.
+        </div>
+
+
+        <div class="source">
+          <strong>Formula 1</strong> —
+          <em>Gucci announced as Alpine title partner from 2027 season</em>.
+          Confirms the team will compete as Gucci Racing Alpine Formula
+          One Team and race in Gucci colours from 2027.
+        </div>
+
+
+        <div class="source">
+          <strong>Gucci / LinkedIn</strong> —
+          official Gucci announcement introducing Gucci Racing and the
+          Alpine partnership.
+        </div>
+
+
+        <div class="source">
+          <strong>Alpine / LinkedIn</strong> —
+          official Alpine announcement positioning the collaboration
+          around performance, precision, discipline and excellence.
+        </div>
+
+
+        <div class="source">
+          <strong>LinkedIn News</strong> —
+          coverage of Gucci joining Alpine as title partner and the
+          wider relationship between Formula One and luxury brands.
+        </div>
+
+
+        <div class="source">
+          <strong>Vogue</strong> —
+          Nicole Phelps, Gucci Resort 2027 review, discussing Demna's
+          large-scale Times Square presentation.
+        </div>
+
+
+        <div class="source">
+          <strong>Vogue</strong> —
+          coverage of Formula One and motorsport aesthetics within
+          fashion, including Gucci's earlier moto-fashion presence.
+        </div>
+
+
+      </div>
+
+
+    </article>
+
+
+  </main>
+
+
+
+  <!-- ─────────────────────────────
+       BACK TO ESSAYS
+  ───────────────────────────── -->
+
+  <div class="back-wrap">
+
+    <a href="./essays.html" class="back-link">
+      ← Back to Essays
+    </a>
+
+  </div>
+
+
+
+  <!-- ─────────────────────────────
+       FOOTER
+  ───────────────────────────── -->
+
+  <footer>
+
+
+    <div>
+
+      <div class="ft-logo">
+        J'adore le Concept
+      </div>
+
+
+      <div class="ft-sub">
+        A curated perspective on fashion, luxury,
+        and the structures behind them.
+      </div>
+
+    </div>
+
+
+
+    <div class="ft-cities">
+      Paris · Barcelona · Athens
+    </div>
+
+
+
+    <div class="ft-right">
+
+      <a href="./about.html" class="ft-link">
+        About
+      </a>
+
+      <a href="./contact.html" class="ft-link">
+        Contact
+      </a>
+
+      <div class="ft-copy">
+        © 2026 J'adore le Concept
+      </div>
+
+    </div>
+
+
+  </footer>
+
+
+</body>
+
+</html>
