@@ -12,12 +12,7 @@
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400&display=swap"
@@ -59,7 +54,6 @@
     body{
       background:var(--cream);
       color:var(--ink);
-
       font-family:'Inter',sans-serif;
       font-weight:300;
     }
@@ -95,34 +89,27 @@
 
     .nav-logo{
       font-family:'Cormorant Garamond',serif;
-
       font-size:12px;
       letter-spacing:0.22em;
-
       text-transform:uppercase;
 
       color:var(--ink);
-
       text-decoration:none;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-
       gap:28px;
     }
 
     .nav-links a{
       font-family:'Cormorant Garamond',serif;
-
       font-size:11px;
       letter-spacing:0.18em;
-
       text-transform:uppercase;
 
       color:var(--muted);
-
       text-decoration:none;
 
       transition:color 0.2s ease;
@@ -320,7 +307,7 @@
 
 
     /* ─────────────────────────────
-       SHORT EMPHASIS
+       EDITORIAL PAUSE
     ───────────────────────────── */
 
     .pause-line{
@@ -374,9 +361,9 @@
 
       margin:
         4.5rem
-        auto
+        -8vw
         4.5rem
-        -8vw;
+        auto;
     }
 
     .secondary-figure img{
@@ -392,8 +379,8 @@
     }
 
     .secondary-figure .image-caption{
-      justify-content:flex-start;
-      text-align:left;
+      justify-content:flex-end;
+      text-align:right;
     }
 
 
@@ -402,15 +389,15 @@
     ───────────────────────────── */
 
     .final-beat{
-      margin:3.8rem 0;
+      margin:4rem 0;
 
-      padding-left:2rem;
+      padding:2rem 0 2rem 2rem;
 
       border-left:0.5px solid var(--accent);
     }
 
     .final-beat p{
-      margin:0 0 0.35rem;
+      margin:0 0 0.4rem;
 
       font-size:23px;
 
@@ -427,6 +414,10 @@
     .final-statement{
       margin-top:4rem;
 
+      padding-top:3rem;
+
+      border-top:0.5px solid var(--rule);
+
       font-family:'Cormorant Garamond',serif;
 
       font-size:27px;
@@ -436,6 +427,10 @@
       font-style:italic;
 
       color:var(--ink);
+    }
+
+    .final-statement strong{
+      font-weight:500;
     }
 
 
@@ -709,6 +704,10 @@
         height:360px;
       }
 
+      .secondary-figure .image-caption{
+        text-align:left;
+      }
+
       .final-beat{
         margin:3rem 0;
 
@@ -816,9 +815,10 @@
 
 
     <div class="article-deck">
-      Gucci is not simply sponsoring Formula One.
-      It is placing itself inside one of the world's most visible
-      cultural and sporting identities.
+      Fashion has borrowed from motorsport for years.
+      Gucci's move into Formula One suggests something larger:
+      the luxury house is no longer borrowing from the culture —
+      it is entering the world itself.
     </div>
 
 
@@ -827,7 +827,7 @@
 
 
   <!-- ─────────────────────────────
-       GUCCI x ALPINE HERO
+       HERO IMAGE
   ───────────────────────────── -->
 
   <figure class="hero-figure">
@@ -954,8 +954,8 @@
       <!-- SECOND PULL QUOTE -->
 
       <div class="pull-quote">
-        Gucci is not approaching Formula One as an outside sponsor.
-        It is becoming part of the team's name.
+        A logo on the side of a car is advertising.
+        Becoming part of the team's name is something else entirely.
       </div>
 
 
@@ -1001,25 +1001,25 @@
 
 
       <!-- ─────────────────────────
-           GUCCI TIMES SQUARE IMAGE
+           SECOND CAR IMAGE
       ───────────────────────── -->
 
       <figure class="secondary-figure">
 
         <img
-          src="./gucci-times-square.jpg"
-          alt="Gucci Resort 2027 presentation in Times Square"
+          src="./guccicar.png"
+          alt="Gucci-inspired Alpine Formula One racing car on track"
         >
 
 
         <figcaption class="image-caption">
 
           <span>
-            Gucci Resort 2027 · Times Square, New York
+            Gucci x Alpine · Formula One
           </span>
 
           <span class="credit">
-            Image via Vogue
+            Racing imagery
           </span>
 
         </figcaption>
@@ -1029,18 +1029,24 @@
 
 
       <p>
-        Recent Gucci projects suggest this broader appetite for spectacle
-        and cultural scale. Under Demna, Vogue noted the house's
-        increasingly ambitious approach to presentation, including its
-        Resort 2027 show staged in Times Square, where dozens of screens
-        transformed one of the world's most commercial public spaces
-        into part of the Gucci experience.
+        The visual potential of the partnership is equally important.
+        Formula One gives Gucci a moving canvas: the car itself, the
+        paddock, team apparel, hospitality spaces and the wider spectacle
+        surrounding each race weekend can all become part of the brand's
+        visual language.
       </p>
 
 
       <p>
-        Formula One offers the same opportunity on an even larger and
-        more continuous scale.
+        That makes the collaboration feel less like sponsorship and more
+        like an extension of Gucci's identity into a completely different
+        cultural system.
+      </p>
+
+
+      <p>
+        Formula One offers that opportunity on an unusually large and
+        continuous scale.
       </p>
 
 
@@ -1059,7 +1065,7 @@
 
 
 
-      <!-- FINAL RHYTHMIC SECTION -->
+      <!-- FINAL EDITORIAL BEAT -->
 
       <div class="final-beat">
 
@@ -1077,10 +1083,17 @@
       </p>
 
 
+
+      <!-- FINAL STATEMENT -->
+
       <div class="final-statement">
+
         And perhaps that is what modern luxury increasingly understands:
-        <strong>desire does not always begin with a product. Sometimes
-        it begins with wanting to be part of the story.</strong>
+        <strong>
+          desire does not always begin with a product.
+          Sometimes it begins with wanting to be part of the story.
+        </strong>
+
       </div>
 
 
@@ -1099,53 +1112,54 @@
 
         <div class="source">
           <strong>Alpine / Renault Group</strong> —
-          <em>Luxury Takes the Grid: Gucci Enters Formula One with Alpine,
-          Becoming Its Title Partner</em>, 27 May 2026. Official
-          announcement confirming the 2027 title partnership,
-          Gucci Racing platform and strategic rationale.
+          <em>
+            Luxury Takes the Grid: Gucci Enters Formula One with Alpine,
+            Becoming Its Title Partner
+          </em>,
+          27 May 2026. Official announcement confirming the 2027 title
+          partnership, Gucci Racing platform and strategic rationale
+          behind the collaboration.
         </div>
 
 
         <div class="source">
           <strong>Formula 1</strong> —
-          <em>Gucci announced as Alpine title partner from 2027 season</em>.
-          Confirms the team will compete as Gucci Racing Alpine Formula
-          One Team and race in Gucci colours from 2027.
+          <em>
+            Gucci announced as Alpine title partner from 2027 season
+          </em>.
+          Confirms the team will become Gucci Racing Alpine Formula One
+          Team and compete in Gucci colours from 2027.
         </div>
 
 
         <div class="source">
           <strong>Gucci / LinkedIn</strong> —
-          official Gucci announcement introducing Gucci Racing and the
-          Alpine partnership.
+          Gucci's official announcement describing the partnership as
+          the first time a luxury fashion house has served as title
+          partner of an F1 team and introducing Gucci Racing.
         </div>
 
 
         <div class="source">
           <strong>Alpine / LinkedIn</strong> —
-          official Alpine announcement positioning the collaboration
-          around performance, precision, discipline and excellence.
+          Official Alpine announcement discussing the partnership and
+          its positioning around performance, precision, discipline
+          and excellence.
         </div>
 
 
         <div class="source">
           <strong>LinkedIn News</strong> —
-          coverage of Gucci joining Alpine as title partner and the
+          Coverage of Gucci joining Alpine as title partner and the
           wider relationship between Formula One and luxury brands.
         </div>
 
 
         <div class="source">
           <strong>Vogue</strong> —
-          Nicole Phelps, Gucci Resort 2027 review, discussing Demna's
-          large-scale Times Square presentation.
-        </div>
-
-
-        <div class="source">
-          <strong>Vogue</strong> —
-          coverage of Formula One and motorsport aesthetics within
-          fashion, including Gucci's earlier moto-fashion presence.
+          Coverage of the growing influence of Formula One and
+          motorsport aesthetics within fashion, including Gucci's
+          earlier moto-fashion presence.
         </div>
 
 
