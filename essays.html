@@ -17,7 +17,6 @@
     rel="stylesheet"
   >
 
-
   <style>
 
     /* ─────────────────────────────
@@ -69,12 +68,6 @@
 
       z-index:100;
 
-      background:rgba(250,248,244,0.96);
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
-
-      border-bottom:0.5px solid var(--rule);
-
       height:56px;
 
       display:flex;
@@ -82,7 +75,15 @@
       justify-content:space-between;
 
       padding:0 5vw;
+
+      background:rgba(250,248,244,0.96);
+
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+
+      border-bottom:0.5px solid var(--rule);
     }
+
 
     .nav-logo{
       font-family:'Cormorant Garamond',serif;
@@ -94,11 +95,13 @@
       text-decoration:none;
     }
 
+
     .nav-links{
       display:flex;
       align-items:center;
       gap:28px;
     }
+
 
     .nav-links a{
       font-family:'Cormorant Garamond',serif;
@@ -112,6 +115,7 @@
       transition:color 0.2s ease;
     }
 
+
     .nav-links a:hover,
     .nav-links a.active{
       color:var(--ink);
@@ -119,7 +123,7 @@
 
 
     /* ─────────────────────────────
-       ESSAYS / ARCHIVE GRID
+       ESSAYS
     ───────────────────────────── */
 
     .essays-section{
@@ -127,30 +131,37 @@
       padding-top:calc(56px + 5vw);
     }
 
+
     .label{
+      display:flex;
+      align-items:center;
+      gap:16px;
+
+      margin-bottom:3.5rem;
+
       font-family:'Cormorant Garamond',serif;
       font-size:11px;
       letter-spacing:0.3em;
       text-transform:uppercase;
 
       color:var(--muted);
-
-      display:flex;
-      align-items:center;
-      gap:16px;
-
-      margin-bottom:3.5rem;
     }
+
 
     .label::after{
       content:'';
+
       flex:1;
+
       height:0.5px;
+
       background:var(--rule);
     }
 
 
-    /* GRID */
+    /* ─────────────────────────────
+       GRID
+    ───────────────────────────── */
 
     .archive-grid{
       display:grid;
@@ -160,7 +171,9 @@
     }
 
 
-    /* CARDS */
+    /* ─────────────────────────────
+       CARDS
+    ───────────────────────────── */
 
     .card{
       min-height:203px;
@@ -173,24 +186,19 @@
       display:flex;
       flex-direction:column;
 
+      position:relative;
+
       transition:background 0.25s ease;
     }
+
 
     .card:hover{
       background:var(--off);
     }
 
+
     .card:nth-child(3n){
       border-right:none;
-    }
-
-
-    /* CLICKABLE CARD */
-
-    a.card{
-      text-decoration:none;
-      color:inherit;
-      cursor:pointer;
     }
 
 
@@ -203,6 +211,7 @@
 
       margin-bottom:1.2rem;
     }
+
 
     .card-t{
       font-family:'Cormorant Garamond',serif;
@@ -219,6 +228,7 @@
       max-width:330px;
     }
 
+
     .card-tag{
       font-family:'Cormorant Garamond',serif;
       font-size:10.5px;
@@ -228,6 +238,36 @@
       color:var(--accent);
 
       margin-top:auto;
+    }
+
+
+    /* ─────────────────────────────
+       CLICKABLE ESSAY
+    ───────────────────────────── */
+
+    a.card{
+      display:flex;
+      flex-direction:column;
+
+      text-decoration:none;
+      color:inherit;
+
+      cursor:pointer;
+
+      position:relative;
+      z-index:10;
+
+      pointer-events:auto;
+    }
+
+
+    a.card *{
+      pointer-events:none;
+    }
+
+
+    a.card:hover{
+      background:var(--off);
     }
 
 
@@ -243,6 +283,7 @@
       padding:4vw 0 4.5vw;
     }
 
+
     .stamp{
       width:105px;
       height:105px;
@@ -254,6 +295,7 @@
       align-items:center;
     }
 
+
     .stamp-spin{
       position:absolute;
 
@@ -261,14 +303,18 @@
       height:100%;
 
       animation:spinStamp 12s linear infinite;
+
       transform-origin:center;
     }
+
 
     .stamp-spin svg{
       width:100%;
       height:100%;
+
       overflow:visible;
     }
+
 
     .stamp-center{
       font-family:'Cormorant Garamond',serif;
@@ -279,6 +325,7 @@
 
       color:var(--muted);
     }
+
 
     @keyframes spinStamp{
 
@@ -299,6 +346,7 @@
 
     footer{
       background:#05242b;
+
       color:var(--cream);
 
       padding:3.5vw 10vw;
@@ -307,10 +355,12 @@
       grid-template-columns:1.2fr 1fr 1fr;
 
       gap:3rem;
+
       align-items:center;
 
       border-top:0.5px solid rgba(255,255,255,0.08);
     }
+
 
     .ft-logo{
       font-family:'Cormorant Garamond',serif;
@@ -324,6 +374,7 @@
       margin-bottom:0.6rem;
     }
 
+
     .ft-sub{
       font-size:13.5px;
 
@@ -333,6 +384,7 @@
 
       max-width:260px;
     }
+
 
     .ft-cities{
       font-family:'Cormorant Garamond',serif;
@@ -348,6 +400,7 @@
       white-space:nowrap;
     }
 
+
     .ft-right{
       display:flex;
       flex-direction:column;
@@ -356,6 +409,7 @@
 
       gap:8px;
     }
+
 
     .ft-link{
       font-family:'Cormorant Garamond',serif;
@@ -371,9 +425,11 @@
       transition:color 0.2s ease;
     }
 
+
     .ft-link:hover{
       color:var(--cream);
     }
+
 
     .ft-copy{
       font-family:'Cormorant Garamond',serif;
@@ -398,9 +454,11 @@
         grid-template-columns:repeat(2,1fr);
       }
 
+
       .card:nth-child(3n){
         border-right:0.5px solid var(--rule);
       }
+
 
       .card:nth-child(2n){
         border-right:none;
@@ -417,7 +475,6 @@
 
       nav{
         height:auto;
-
         min-height:56px;
 
         padding:14px 5vw;
@@ -427,10 +484,12 @@
         gap:20px;
       }
 
+
       .nav-logo{
         font-size:10px;
         white-space:nowrap;
       }
+
 
       .nav-links{
         gap:11px;
@@ -439,6 +498,7 @@
 
         justify-content:flex-end;
       }
+
 
       .nav-links a{
         font-size:8.5px;
@@ -449,6 +509,7 @@
         padding:110px 7vw 4vw;
       }
 
+
       .label{
         margin-bottom:2rem;
       }
@@ -458,6 +519,7 @@
         grid-template-columns:1fr;
       }
 
+
       .card{
         border-right:none !important;
 
@@ -465,6 +527,7 @@
 
         min-height:180px;
       }
+
 
       .card-t{
         font-size:20px;
@@ -486,9 +549,11 @@
         padding:9vw 8vw;
       }
 
+
       .ft-cities{
         text-align:left;
       }
+
 
       .ft-right{
         align-items:flex-start;
@@ -496,46 +561,42 @@
 
     }
 
-
   </style>
 
 </head>
 
 
-
 <body>
 
 
-  <!-- ─────────────────────────
-       NAV
-  ───────────────────────── -->
+  <!-- NAV -->
 
   <nav>
 
-    <a href="index.html" class="nav-logo">
+    <a href="./index.html" class="nav-logo">
       J'adore le Concept
     </a>
 
 
     <div class="nav-links">
 
-      <a href="archive.html">
+      <a href="./archive.html">
         Archive
       </a>
 
-      <a href="essays.html" class="active">
+      <a href="./essays.html" class="active">
         Essays
       </a>
 
-      <a href="photography.html">
+      <a href="./photography.html">
         Photography
       </a>
 
-      <a href="about.html">
+      <a href="./about.html">
         About
       </a>
 
-      <a href="contact.html">
+      <a href="./contact.html">
         Contact
       </a>
 
@@ -545,12 +606,9 @@
 
 
 
-  <!-- ─────────────────────────
-       ESSAYS
-  ───────────────────────── -->
+  <!-- ESSAYS -->
 
   <section class="essays-section">
-
 
     <div class="label">
       The Edit.
@@ -582,7 +640,11 @@
 
       <!-- 002 — CLICKABLE -->
 
-      <a href="essay-002.html" class="card">
+      <a
+        href="./essay-002.html"
+        class="card"
+        aria-label="Read Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars"
+      >
 
         <div class="card-n">
           002
@@ -685,9 +747,7 @@
 
 
 
-  <!-- ─────────────────────────
-       ROTATING LOGO STAMP
-  ───────────────────────── -->
+  <!-- ROTATING LOGO -->
 
   <div class="logo-stamp">
 
@@ -740,12 +800,9 @@
 
 
 
-  <!-- ─────────────────────────
-       FOOTER
-  ───────────────────────── -->
+  <!-- FOOTER -->
 
   <footer>
-
 
     <div>
 
@@ -761,20 +818,18 @@
     </div>
 
 
-
     <div class="ft-cities">
       Paris · Barcelona · Athens
     </div>
 
 
-
     <div class="ft-right">
 
-      <a href="about.html" class="ft-link">
+      <a href="./about.html" class="ft-link">
         About
       </a>
 
-      <a href="contact.html" class="ft-link">
+      <a href="./contact.html" class="ft-link">
         Contact
       </a>
 
@@ -783,7 +838,6 @@
       </div>
 
     </div>
-
 
   </footer>
 
