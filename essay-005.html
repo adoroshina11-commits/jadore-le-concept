@@ -19,12 +19,7 @@
     rel="stylesheet"
   >
 
-
   <style>
-
-    /* ─────────────────────────────
-       VARIABLES
-    ───────────────────────────── */
 
     :root{
       --cream:#faf8f4;
@@ -35,11 +30,6 @@
       --rule:#e5e0d8;
       --teal:#05242b;
     }
-
-
-    /* ─────────────────────────────
-       RESET
-    ───────────────────────────── */
 
     *{
       margin:0;
@@ -54,24 +44,18 @@
     body{
       background:var(--cream);
       color:var(--ink);
-
       font-family:'Inter',sans-serif;
       font-weight:300;
-
       overflow-x:hidden;
     }
 
-
-    /* ─────────────────────────────
-       NAV
-    ───────────────────────────── */
+    /* NAV */
 
     nav{
       position:fixed;
       top:0;
       left:0;
       right:0;
-
       z-index:100;
 
       height:56px;
@@ -83,7 +67,6 @@
       padding:0 5vw;
 
       background:rgba(250,248,244,0.96);
-
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
 
@@ -92,10 +75,8 @@
 
     .nav-logo{
       font-family:'Cormorant Garamond',serif;
-
       font-size:12px;
       letter-spacing:0.22em;
-
       text-transform:uppercase;
 
       color:var(--ink);
@@ -105,16 +86,13 @@
     .nav-links{
       display:flex;
       align-items:center;
-
       gap:28px;
     }
 
     .nav-links a{
       font-family:'Cormorant Garamond',serif;
-
       font-size:11px;
       letter-spacing:0.18em;
-
       text-transform:uppercase;
 
       color:var(--muted);
@@ -128,10 +106,7 @@
       color:var(--ink);
     }
 
-
-    /* ─────────────────────────────
-       ARTICLE HEADER
-    ───────────────────────────── */
+    /* ARTICLE HEADER */
 
     .article-header{
       padding:
@@ -145,19 +120,15 @@
     .article-meta{
       display:flex;
       align-items:center;
-
       gap:18px;
-
       margin-bottom:2.4rem;
     }
 
     .article-number,
     .article-category{
       font-family:'Cormorant Garamond',serif;
-
       font-size:10.5px;
       letter-spacing:0.25em;
-
       text-transform:uppercase;
     }
 
@@ -172,9 +143,7 @@
     .article-dot{
       width:3px;
       height:3px;
-
       border-radius:50%;
-
       background:var(--rule);
     }
 
@@ -182,9 +151,7 @@
       max-width:1100px;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:clamp(46px,5.5vw,82px);
-
       font-weight:400;
       font-style:italic;
 
@@ -196,23 +163,17 @@
 
     .article-deck{
       max-width:680px;
-
       margin-top:2.3rem;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:19px;
       font-style:italic;
-
       line-height:1.55;
 
       color:var(--muted);
     }
 
-
-    /* ─────────────────────────────
-       HERO IMAGE
-    ───────────────────────────── */
+    /* HERO IMAGE */
 
     .hero-figure{
       width:100%;
@@ -237,14 +198,11 @@
       align-items:center;
 
       gap:2rem;
-
       margin-top:12px;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:10px;
       letter-spacing:0.16em;
-
       text-transform:uppercase;
 
       color:var(--muted);
@@ -258,26 +216,20 @@
       color:var(--accent);
     }
 
-
-    /* ─────────────────────────────
-       ARTICLE BODY
-    ───────────────────────────── */
+    /* ARTICLE BODY */
 
     .article-wrap{
       width:100%;
-
       padding:4.2rem 0 4.8rem;
     }
 
     .article-body{
       width:min(720px,86vw);
-
       margin:0 auto;
     }
 
     .article-body p{
       font-family:'Cormorant Garamond',serif;
-
       font-size:20px;
       line-height:1.58;
 
@@ -295,10 +247,7 @@
       font-style:italic;
     }
 
-
-    /* ─────────────────────────────
-       OPENING PARAGRAPH + DROP CAP
-    ───────────────────────────── */
+    /* OPENING PARAGRAPH + DROP CAP */
 
     .opening-paragraph{
       margin-bottom:1.15rem !important;
@@ -308,7 +257,6 @@
       float:left;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:76px;
       font-weight:400;
 
@@ -316,69 +264,53 @@
 
       margin:
         0.08em
-        0.09em
-        0
+        0.12em
+        0.12em
         0;
 
       color:var(--ink);
     }
 
-
-    /* ─────────────────────────────
-       SECTION HEADINGS
-    ───────────────────────────── */
+    /* SECTION HEADINGS */
 
     .article-heading{
       margin:2.5rem 0 1.15rem;
-
       padding-top:1.4rem;
 
       border-top:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:11px;
       letter-spacing:0.28em;
-
       text-transform:uppercase;
 
       color:var(--accent);
     }
 
-
-    /* ─────────────────────────────
-       EDITORIAL CALLOUTS
-    ───────────────────────────── */
+    /* EDITORIAL CALLOUTS */
 
     .editorial-callout{
       width:100%;
       max-width:610px;
 
       margin:1.8rem auto;
-
       padding:1.15rem 1rem;
 
       border-top:0.5px solid var(--rule);
       border-bottom:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:24px;
       font-style:italic;
       font-weight:400;
 
       line-height:1.22;
-
       text-align:center;
 
       color:var(--ink);
     }
 
-
-    /* ─────────────────────────────
-       CHAUMET ARCHIVE IMAGE
-       FULL BLEED
-    ───────────────────────────── */
+    /* CHAUMET IMAGE */
 
     .secondary-figure{
       width:100vw;
@@ -404,7 +336,6 @@
       object-position:center;
 
       background:var(--cream);
-
       mix-blend-mode:multiply;
 
       filter:
@@ -415,7 +346,6 @@
 
     .secondary-figure .image-caption{
       width:90%;
-
       margin:10px auto 0;
 
       display:flex;
@@ -423,10 +353,8 @@
       align-items:center;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:10px;
       letter-spacing:0.17em;
-
       text-transform:uppercase;
 
       color:var(--muted);
@@ -436,39 +364,29 @@
       color:var(--accent);
     }
 
-
-    /* ─────────────────────────────
-       FINAL STATEMENT
-    ───────────────────────────── */
+    /* FINAL STATEMENT */
 
     .final-statement{
       margin-top:2rem;
-
       padding:1.35rem 1rem;
 
       border-top:0.5px solid var(--rule);
       border-bottom:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:24px;
       font-style:italic;
 
       line-height:1.25;
-
       text-align:center;
 
       color:var(--ink);
     }
 
-
-    /* ─────────────────────────────
-       SOURCES
-    ───────────────────────────── */
+    /* SOURCES */
 
     .sources{
       margin-top:2.2rem;
-
       padding-top:1.7rem;
 
       border-top:0.5px solid var(--rule);
@@ -478,10 +396,8 @@
       margin-bottom:1.35rem;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:11px;
       letter-spacing:0.3em;
-
       text-transform:uppercase;
 
       color:var(--muted);
@@ -491,7 +407,6 @@
       margin-bottom:0.9rem;
 
       font-family:'Cormorant Garamond',serif;
-
       font-size:15px;
       line-height:1.48;
 
@@ -500,18 +415,13 @@
 
     .source strong{
       color:var(--ink);
-
       font-weight:500;
     }
 
-
-    /* ─────────────────────────────
-       BACK LINK
-    ───────────────────────────── */
+    /* BACK */
 
     .back-wrap{
       display:flex;
-
       justify-content:center;
 
       padding:0 10vw 4vw;
@@ -519,10 +429,8 @@
 
     .back-link{
       font-family:'Cormorant Garamond',serif;
-
       font-size:11px;
       letter-spacing:0.25em;
-
       text-transform:uppercase;
 
       color:var(--muted);
@@ -539,10 +447,7 @@
       color:var(--ink);
     }
 
-
-    /* ─────────────────────────────
-       FOOTER
-    ───────────────────────────── */
+    /* FOOTER */
 
     footer{
       background:#05242b;
@@ -551,11 +456,9 @@
       padding:3.5vw 10vw;
 
       display:grid;
-
       grid-template-columns:1.2fr 1fr 1fr;
 
       gap:3rem;
-
       align-items:center;
 
       border-top:0.5px solid rgba(255,255,255,0.08);
@@ -563,10 +466,8 @@
 
     .ft-logo{
       font-family:'Cormorant Garamond',serif;
-
       font-size:13px;
       letter-spacing:0.22em;
-
       text-transform:uppercase;
 
       color:var(--cream);
@@ -576,44 +477,34 @@
 
     .ft-sub{
       font-size:13.5px;
-
       color:rgba(250,248,244,0.45);
-
       line-height:1.6;
-
       max-width:260px;
     }
 
     .ft-cities{
       font-family:'Cormorant Garamond',serif;
-
       font-size:10.5px;
       letter-spacing:0.22em;
-
       text-transform:uppercase;
 
       color:rgba(250,248,244,0.4);
 
       text-align:center;
-
       white-space:nowrap;
     }
 
     .ft-right{
       display:flex;
-
       flex-direction:column;
       align-items:flex-end;
-
       gap:8px;
     }
 
     .ft-link{
       font-family:'Cormorant Garamond',serif;
-
       font-size:11px;
       letter-spacing:0.2em;
-
       text-transform:uppercase;
 
       color:rgba(250,248,244,0.5);
@@ -628,10 +519,8 @@
 
     .ft-copy{
       font-family:'Cormorant Garamond',serif;
-
       font-size:10px;
       letter-spacing:0.2em;
-
       text-transform:uppercase;
 
       color:rgba(250,248,244,0.2);
@@ -639,10 +528,7 @@
       margin-top:4px;
     }
 
-
-    /* ─────────────────────────────
-       MOBILE
-    ───────────────────────────── */
+    /* MOBILE */
 
     @media(max-width:800px){
 
@@ -679,13 +565,11 @@
 
       .image-caption{
         display:block;
-
         line-height:1.6;
       }
 
       .image-caption .credit{
         display:block;
-
         margin-top:4px;
       }
 
@@ -699,27 +583,27 @@
 
       .article-body p{
         font-size:19px;
-
         margin-bottom:0.9rem;
       }
 
       .opening-paragraph::first-letter{
         font-size:64px;
 
-        margin-right:0.08em;
+        margin:
+          0.08em
+          0.10em
+          0.12em
+          0;
       }
 
       .article-heading{
         margin-top:2.2rem;
-
         padding-top:1.2rem;
       }
 
       .editorial-callout{
         margin:1.6rem auto;
-
         padding:1rem 0.5rem;
-
         font-size:22px;
       }
 
@@ -729,23 +613,18 @@
 
       .secondary-figure .image-caption{
         width:86%;
-
         display:block;
-
         line-height:1.6;
       }
 
       .secondary-figure .credit{
         display:block;
-
         margin-top:4px;
       }
 
       .final-statement{
         margin-top:1.8rem;
-
         padding:1.2rem 0.5rem;
-
         font-size:22px;
       }
 
@@ -755,9 +634,7 @@
 
       footer{
         grid-template-columns:1fr;
-
         gap:2rem;
-
         padding:8vw;
       }
 
@@ -778,7 +655,6 @@
 
 <body>
 
-
   <!-- NAV -->
 
   <nav>
@@ -786,7 +662,6 @@
     <a href="./index.html" class="nav-logo">
       J'adore le Concept
     </a>
-
 
     <div class="nav-links">
 
@@ -859,7 +734,6 @@
       alt="Oscar Massin contemporary jewelry campaign"
     >
 
-
     <figcaption class="image-caption">
 
       <span>
@@ -882,8 +756,6 @@
 
     <article class="article-body">
 
-
-      <!-- OPENING — NOW ONE COHESIVE PARAGRAPH -->
 
       <p class="opening-paragraph">
         Jewelry has always depended on permanence. A ring can outlive the
@@ -911,16 +783,12 @@
       </p>
 
 
-      <!-- COMPACT INTRODUCTION CALLOUT -->
-
       <div class="editorial-callout">
         What fascinates me is that this has not made heritage irrelevant.
         It may have made it more valuable.
       </div>
 
 
-
-      <!-- THE ARCHIVE -->
 
       <div class="article-heading">
         The Archive Isn't Standing Still
@@ -975,15 +843,12 @@
 
 
 
-      <!-- CHAUMET FULL-BLEED IMAGE -->
-
       <figure class="secondary-figure">
 
         <img
           src="./chaumet-bee.jpg"
           alt="Chaumet bee jewelry and archival drawings across the maison's history"
         >
-
 
         <figcaption class="image-caption">
 
@@ -1000,8 +865,6 @@
       </figure>
 
 
-
-      <!-- OSCAR MASSIN -->
 
       <div class="article-heading">
         Reviving Oscar Massin
@@ -1069,9 +932,6 @@
       </p>
 
 
-
-      <!-- RARITY — REDUNDANT HEADING REMOVED -->
-
       <div class="editorial-callout">
         If rarity can now be manufactured, where does value actually come from?
       </div>
@@ -1116,16 +976,13 @@
 
 
 
-      <!-- DESIGN -->
-
       <div class="article-heading">
         When Design Becomes an Asset
       </div>
 
 
       <p>
-        For luxury houses, design has always been creative. But it is also
-        legal.
+        For luxury houses, design has always been creative. But it is also legal.
       </p>
 
 
@@ -1178,8 +1035,6 @@
       </p>
 
 
-
-      <!-- TECHNOLOGY -->
 
       <div class="article-heading">
         Can Technology Prove Authenticity?
@@ -1235,8 +1090,6 @@
 
 
 
-      <!-- SUSTAINABILITY -->
-
       <div class="article-heading">
         Sustainability Isn't as Simple as Natural vs. Lab-Grown
       </div>
@@ -1287,8 +1140,6 @@
       </p>
 
 
-
-      <!-- VALUE -->
 
       <div class="article-heading">
         So, What Makes Jewelry Valuable Now?
@@ -1348,8 +1199,6 @@
 
 
 
-      <!-- SOURCES -->
-
       <div class="sources">
 
         <div class="sources-title">
@@ -1371,16 +1220,14 @@
         <div class="source">
           <strong>Vogue — Lab-Grown Diamonds</strong> —
           Reporting on the growing presence of laboratory-grown diamonds
-          in contemporary fine jewelry and changing consumer attitudes
-          toward them.
+          in contemporary fine jewelry and changing consumer attitudes toward them.
         </div>
 
 
         <div class="source">
           <strong>Chaumet / LVMH</strong> —
           Information on Chaumet's introduction of High Jewelry creations
-          using traceable gold and the maison's broader responsible-sourcing
-          efforts.
+          using traceable gold and the maison's broader responsible-sourcing efforts.
         </div>
 
 
@@ -1410,8 +1257,7 @@
         <div class="source">
           <strong>GIA / Tracr</strong> —
           GIA's involvement with Tracr and the use of blockchain
-          technology to strengthen natural-diamond provenance and
-          traceability.
+          technology to strengthen natural-diamond provenance and traceability.
         </div>
 
       </div>
@@ -1423,8 +1269,6 @@
 
 
 
-  <!-- BACK -->
-
   <div class="back-wrap">
 
     <a href="./essays.html" class="back-link">
@@ -1435,10 +1279,7 @@
 
 
 
-  <!-- FOOTER -->
-
   <footer>
-
 
     <div>
 
@@ -1474,7 +1315,6 @@
       </div>
 
     </div>
-
 
   </footer>
 
