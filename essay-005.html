@@ -21,6 +21,10 @@
 
   <style>
 
+    /* ─────────────────────────────
+       VARIABLES
+    ───────────────────────────── */
+
     :root{
       --cream:#faf8f4;
       --off:#f4f1eb;
@@ -30,6 +34,11 @@
       --rule:#e5e0d8;
       --teal:#05242b;
     }
+
+
+    /* ─────────────────────────────
+       RESET
+    ───────────────────────────── */
 
     *{
       margin:0;
@@ -44,18 +53,24 @@
     body{
       background:var(--cream);
       color:var(--ink);
+
       font-family:'Inter',sans-serif;
       font-weight:300;
+
       overflow-x:hidden;
     }
 
-    /* NAV */
+
+    /* ─────────────────────────────
+       NAV
+    ───────────────────────────── */
 
     nav{
       position:fixed;
       top:0;
       left:0;
       right:0;
+
       z-index:100;
 
       height:56px;
@@ -67,6 +82,7 @@
       padding:0 5vw;
 
       background:rgba(250,248,244,0.96);
+
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
 
@@ -75,8 +91,10 @@
 
     .nav-logo{
       font-family:'Cormorant Garamond',serif;
+
       font-size:12px;
       letter-spacing:0.22em;
+
       text-transform:uppercase;
 
       color:var(--ink);
@@ -86,13 +104,16 @@
     .nav-links{
       display:flex;
       align-items:center;
+
       gap:28px;
     }
 
     .nav-links a{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
       letter-spacing:0.18em;
+
       text-transform:uppercase;
 
       color:var(--muted);
@@ -106,7 +127,10 @@
       color:var(--ink);
     }
 
-    /* ARTICLE HEADER */
+
+    /* ─────────────────────────────
+       ARTICLE HEADER
+    ───────────────────────────── */
 
     .article-header{
       padding:
@@ -120,15 +144,19 @@
     .article-meta{
       display:flex;
       align-items:center;
+
       gap:18px;
-      margin-bottom:2.4rem;
+
+      margin-bottom:2.2rem;
     }
 
     .article-number,
     .article-category{
       font-family:'Cormorant Garamond',serif;
+
       font-size:10.5px;
       letter-spacing:0.25em;
+
       text-transform:uppercase;
     }
 
@@ -143,40 +171,52 @@
     .article-dot{
       width:3px;
       height:3px;
+
       border-radius:50%;
+
       background:var(--rule);
     }
 
     h1{
-      max-width:1100px;
+      max-width:1080px;
 
       font-family:'Cormorant Garamond',serif;
-      font-size:clamp(46px,5.5vw,82px);
+
+      font-size:clamp(46px,5.2vw,78px);
+
       font-weight:400;
       font-style:italic;
 
-      line-height:0.98;
+      line-height:1;
+
       letter-spacing:-0.025em;
 
       color:var(--ink);
     }
 
     .article-deck{
-      max-width:680px;
-      margin-top:2.3rem;
+      max-width:650px;
+
+      margin-top:2rem;
 
       font-family:'Cormorant Garamond',serif;
-      font-size:19px;
+
+      font-size:18px;
       font-style:italic;
+
       line-height:1.55;
 
       color:var(--muted);
     }
 
-    /* HERO IMAGE */
+
+    /* ─────────────────────────────
+       HERO IMAGE
+    ───────────────────────────── */
 
     .hero-figure{
       width:100%;
+
       margin:0;
     }
 
@@ -184,12 +224,12 @@
       display:block;
 
       width:100%;
-      height:680px;
+      height:650px;
 
       object-fit:cover;
       object-position:center;
 
-      filter:saturate(0.92) contrast(0.98);
+      filter:saturate(0.94) contrast(0.98);
     }
 
     .image-caption{
@@ -198,11 +238,14 @@
       align-items:center;
 
       gap:2rem;
-      margin-top:12px;
+
+      margin-top:10px;
 
       font-family:'Cormorant Garamond',serif;
+
       font-size:10px;
       letter-spacing:0.16em;
+
       text-transform:uppercase;
 
       color:var(--muted);
@@ -216,30 +259,37 @@
       color:var(--accent);
     }
 
-    /* ARTICLE BODY */
+
+    /* ─────────────────────────────
+       ARTICLE
+    ───────────────────────────── */
 
     .article-wrap{
       width:100%;
-      padding:4.2rem 0 4.8rem;
+
+      padding:4.5rem 0 5.5rem;
     }
 
     .article-body{
-      width:min(720px,86vw);
+      width:min(690px,86vw);
+
       margin:0 auto;
     }
 
     .article-body p{
       font-family:'Cormorant Garamond',serif;
-      font-size:20px;
-      line-height:1.58;
+
+      font-size:19px;
+      line-height:1.65;
 
       color:#393734;
 
-      margin:0 0 0.95rem;
+      margin:0 0 1.15rem;
     }
 
     .article-body strong{
       color:var(--ink);
+
       font-weight:500;
     }
 
@@ -247,81 +297,91 @@
       font-style:italic;
     }
 
-    /* OPENING PARAGRAPH + DROP CAP */
 
-    .opening-paragraph{
-      margin-bottom:1.15rem !important;
-    }
+    /* ─────────────────────────────
+       DROP CAP
+    ───────────────────────────── */
 
     .opening-paragraph::first-letter{
       float:left;
 
       font-family:'Cormorant Garamond',serif;
-      font-size:76px;
+
+      font-size:68px;
       font-weight:400;
 
       line-height:0.72;
 
       margin:
-        0.08em
-        0.12em
-        0.12em
+        0.09em
+        0.11em
+        0.10em
         0;
 
       color:var(--ink);
     }
 
-    /* SECTION HEADINGS */
+
+    /* ─────────────────────────────
+       QUIET SECTION LABEL
+    ───────────────────────────── */
 
     .article-heading{
-      margin:2.5rem 0 1.15rem;
-      padding-top:1.4rem;
+      margin:2.8rem 0 1.25rem;
+
+      padding-top:1.5rem;
 
       border-top:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
-      font-size:11px;
-      letter-spacing:0.28em;
+
+      font-size:10.5px;
+      letter-spacing:0.27em;
+
       text-transform:uppercase;
 
       color:var(--accent);
     }
 
-    /* EDITORIAL CALLOUTS */
 
-    .editorial-callout{
-      width:100%;
-      max-width:610px;
+    /* ─────────────────────────────
+       QUIET EDITORIAL EMPHASIS
+    ───────────────────────────── */
 
+    .quiet-emphasis{
       margin:1.8rem auto;
-      padding:1.15rem 1rem;
+
+      padding:1.25rem 0;
 
       border-top:0.5px solid var(--rule);
       border-bottom:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
-      font-size:24px;
-      font-style:italic;
-      font-weight:400;
 
-      line-height:1.22;
+      font-size:23px;
+      font-style:italic;
+
+      line-height:1.3;
+
       text-align:center;
 
       color:var(--ink);
     }
 
-    /* CHAUMET IMAGE */
+
+    /* ─────────────────────────────
+       CHAUMET ARCHIVE IMAGE
+    ───────────────────────────── */
 
     .secondary-figure{
       width:100vw;
-      max-width:none;
 
       position:relative;
       left:50%;
 
       transform:translateX(-50%);
 
-      margin:2rem 0 2.1rem;
+      margin:2.8rem 0;
 
       background:var(--cream);
     }
@@ -336,101 +396,108 @@
       object-position:center;
 
       background:var(--cream);
+
       mix-blend-mode:multiply;
 
       filter:
-        saturate(0.94)
-        contrast(0.97)
-        brightness(1.015);
+        saturate(0.95)
+        contrast(0.98)
+        brightness(1.01);
     }
 
     .secondary-figure .image-caption{
       width:90%;
+
       margin:10px auto 0;
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-
-      font-family:'Cormorant Garamond',serif;
-      font-size:10px;
-      letter-spacing:0.17em;
-      text-transform:uppercase;
-
-      color:var(--muted);
     }
 
-    .secondary-figure .credit{
-      color:var(--accent);
-    }
 
-    /* FINAL STATEMENT */
+    /* ─────────────────────────────
+       FINAL STATEMENT
+    ───────────────────────────── */
 
     .final-statement{
-      margin-top:2rem;
-      padding:1.35rem 1rem;
+      margin-top:2.2rem;
+
+      padding:1.4rem 0;
 
       border-top:0.5px solid var(--rule);
       border-bottom:0.5px solid var(--rule);
 
       font-family:'Cormorant Garamond',serif;
-      font-size:24px;
+
+      font-size:23px;
       font-style:italic;
 
-      line-height:1.25;
+      line-height:1.35;
+
       text-align:center;
 
       color:var(--ink);
     }
 
-    /* SOURCES */
+
+    /* ─────────────────────────────
+       SOURCES
+    ───────────────────────────── */
 
     .sources{
-      margin-top:2.2rem;
-      padding-top:1.7rem;
+      margin-top:3rem;
+
+      padding-top:2rem;
 
       border-top:0.5px solid var(--rule);
     }
 
     .sources-title{
-      margin-bottom:1.35rem;
+      margin-bottom:1.5rem;
 
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
       letter-spacing:0.3em;
+
       text-transform:uppercase;
 
       color:var(--muted);
     }
 
     .source{
-      margin-bottom:0.9rem;
+      margin-bottom:0.95rem;
 
       font-family:'Cormorant Garamond',serif;
-      font-size:15px;
-      line-height:1.48;
+
+      font-size:14.5px;
+      line-height:1.5;
 
       color:var(--muted);
     }
 
     .source strong{
       color:var(--ink);
+
       font-weight:500;
     }
 
-    /* BACK */
+
+    /* ─────────────────────────────
+       BACK
+    ───────────────────────────── */
 
     .back-wrap{
       display:flex;
+
       justify-content:center;
 
-      padding:0 10vw 4vw;
+      padding:0 10vw 4.5vw;
     }
 
     .back-link{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
       letter-spacing:0.25em;
+
       text-transform:uppercase;
 
       color:var(--muted);
@@ -447,7 +514,10 @@
       color:var(--ink);
     }
 
-    /* FOOTER */
+
+    /* ─────────────────────────────
+       FOOTER
+    ───────────────────────────── */
 
     footer{
       background:#05242b;
@@ -456,9 +526,11 @@
       padding:3.5vw 10vw;
 
       display:grid;
+
       grid-template-columns:1.2fr 1fr 1fr;
 
       gap:3rem;
+
       align-items:center;
 
       border-top:0.5px solid rgba(255,255,255,0.08);
@@ -466,8 +538,10 @@
 
     .ft-logo{
       font-family:'Cormorant Garamond',serif;
+
       font-size:13px;
       letter-spacing:0.22em;
+
       text-transform:uppercase;
 
       color:var(--cream);
@@ -477,37 +551,49 @@
 
     .ft-sub{
       font-size:13.5px;
+
       color:rgba(250,248,244,0.45);
+
       line-height:1.6;
+
       max-width:260px;
     }
 
     .ft-cities{
       font-family:'Cormorant Garamond',serif;
+
       font-size:10.5px;
       letter-spacing:0.22em;
+
       text-transform:uppercase;
 
       color:rgba(250,248,244,0.4);
 
       text-align:center;
+
       white-space:nowrap;
     }
 
     .ft-right{
       display:flex;
+
       flex-direction:column;
+
       align-items:flex-end;
+
       gap:8px;
     }
 
     .ft-link{
       font-family:'Cormorant Garamond',serif;
+
       font-size:11px;
       letter-spacing:0.2em;
+
       text-transform:uppercase;
 
       color:rgba(250,248,244,0.5);
+
       text-decoration:none;
 
       transition:color 0.2s ease;
@@ -519,8 +605,10 @@
 
     .ft-copy{
       font-family:'Cormorant Garamond',serif;
+
       font-size:10px;
       letter-spacing:0.2em;
+
       text-transform:uppercase;
 
       color:rgba(250,248,244,0.2);
@@ -528,7 +616,10 @@
       margin-top:4px;
     }
 
-    /* MOBILE */
+
+    /* ─────────────────────────────
+       MOBILE
+    ───────────────────────────── */
 
     @media(max-width:800px){
 
@@ -548,15 +639,19 @@
         padding:
           calc(56px + 12vw)
           7vw
-          10vw;
+          9vw;
       }
 
       h1{
         font-size:42px;
       }
 
+      .article-deck{
+        font-size:17px;
+      }
+
       .hero-figure img{
-        height:440px;
+        height:430px;
       }
 
       .hero-figure .image-caption{
@@ -565,16 +660,18 @@
 
       .image-caption{
         display:block;
+
         line-height:1.6;
       }
 
       .image-caption .credit{
         display:block;
+
         margin-top:4px;
       }
 
       .article-wrap{
-        padding:3.2rem 0 4.5rem;
+        padding:3.5rem 0 4.5rem;
       }
 
       .article-body{
@@ -582,59 +679,56 @@
       }
 
       .article-body p{
-        font-size:19px;
-        margin-bottom:0.9rem;
+        font-size:18.5px;
+
+        margin-bottom:1rem;
       }
 
       .opening-paragraph::first-letter{
-        font-size:64px;
-
-        margin:
-          0.08em
-          0.10em
-          0.12em
-          0;
+        font-size:60px;
       }
 
       .article-heading{
-        margin-top:2.2rem;
-        padding-top:1.2rem;
+        margin-top:2.4rem;
+
+        padding-top:1.25rem;
       }
 
-      .editorial-callout{
+      .quiet-emphasis{
         margin:1.6rem auto;
-        padding:1rem 0.5rem;
-        font-size:22px;
+
+        padding:1.1rem 0;
+
+        font-size:21px;
       }
 
       .secondary-figure{
-        margin:1.8rem 0 2rem;
+        margin:2.4rem 0;
       }
 
       .secondary-figure .image-caption{
         width:86%;
+
         display:block;
+
         line-height:1.6;
       }
 
       .secondary-figure .credit{
         display:block;
+
         margin-top:4px;
       }
 
       .final-statement{
-        margin-top:1.8rem;
-        padding:1.2rem 0.5rem;
-        font-size:22px;
-      }
-
-      .sources{
-        margin-top:2rem;
+        font-size:21px;
       }
 
       footer{
         grid-template-columns:1fr;
+
         gap:2rem;
+
         padding:8vw;
       }
 
@@ -654,6 +748,7 @@
 
 
 <body>
+
 
   <!-- NAV -->
 
@@ -769,26 +864,23 @@
 
       <p>
         And yet jewelry is entering one of the most technologically
-        disruptive periods in its history.
+        disruptive periods in its history. Lab-grown diamonds are
+        becoming increasingly mainstream, artificial intelligence is
+        entering gemological grading, blockchain is being used to document
+        provenance, and historic maisons are being asked to prove not only
+        that their pieces are beautiful, but where their materials came
+        from and why their designs deserve their value.
       </p>
 
 
-      <p>
-        Lab-grown diamonds are becoming increasingly mainstream,
-        artificial intelligence is entering gemological grading,
-        blockchain is being used to document provenance, and historic
-        maisons are being asked to prove not only that their pieces are
-        beautiful, but where their materials came from and why their
-        designs deserve their value.
-      </p>
-
-
-      <div class="editorial-callout">
+      <div class="quiet-emphasis">
         What fascinates me is that this has not made heritage irrelevant.
         It may have made it more valuable.
       </div>
 
 
+
+      <!-- HERITAGE -->
 
       <div class="article-heading">
         The Archive Isn't Standing Still
@@ -815,24 +907,19 @@
       <p>
         The interesting part is that the house did not abandon its history
         to appear modern. It used the bee — one of its established symbols —
-        to communicate something new.
-      </p>
-
-
-      <p>
-        That feels increasingly important in jewelry. Innovation works best
-        when it does not erase the archive, but gives the archive another
-        reason to exist.
+        to communicate something new. That feels increasingly important in
+        jewelry. Innovation works best when it does not erase the archive,
+        but gives the archive another reason to exist.
       </p>
 
 
       <p>
         This return to history is happening across the industry. Boucheron,
-        Cartier, Chaumet and other major maisons continue to revisit archival
-        motifs and historic design codes. The archive is no longer simply a
-        room filled with old sketches. It has become an active brand asset:
-        something that can be reinterpreted, protected and continuously
-        brought back into contemporary culture.
+        Cartier, Chaumet and other major maisons continue to revisit
+        archival motifs and historic design codes. The archive is no
+        longer simply a room filled with old sketches. It has become an
+        active brand asset: something that can be reinterpreted, protected
+        and continuously brought back into contemporary culture.
       </p>
 
 
@@ -842,6 +929,8 @@
       </p>
 
 
+
+      <!-- CHAUMET ARCHIVE IMAGE -->
 
       <figure class="secondary-figure">
 
@@ -866,6 +955,8 @@
 
 
 
+      <!-- OSCAR MASSIN -->
+
       <div class="article-heading">
         Reviving Oscar Massin
       </div>
@@ -873,29 +964,20 @@
 
       <p>
         Oscar Massin is perhaps the clearest example of heritage being
-        revived rather than preserved behind glass.
+        revived rather than preserved behind glass. Massin was a major
+        19th-century French jeweler known for technical innovation and
+        elaborate diamond work. His creations appeared at the Universal
+        Expositions in Paris, and he developed techniques that allowed
+        precious metal to take on an almost lace-like quality.
       </p>
 
 
       <p>
-        Massin was a major 19th-century French jeweler known for technical
-        innovation and elaborate diamond work. His creations appeared at
-        the Universal Expositions in Paris, and he developed techniques
-        that allowed precious metal to take on an almost lace-like quality.
-      </p>
-
-
-      <p>
-        He retired in 1892. More than a century later, the name was
-        brought back to life.
-      </p>
-
-
-      <p>
-        But the revived Oscar Massin did not simply reproduce antique
-        jewelry. Instead, the new house turned toward lab-grown diamonds,
-        recycled gold and recycled platinum — taking the identity of a
-        historic French jeweler and rebuilding it around a distinctly
+        He retired in 1892. More than a century later, the name was brought
+        back to life — but the revived Oscar Massin did not simply reproduce
+        antique jewelry. Instead, the new house turned toward lab-grown
+        diamonds, recycled gold and recycled platinum, taking the identity
+        of a historic French jeweler and rebuilding it around a distinctly
         contemporary idea of responsible luxury.
       </p>
 
@@ -918,7 +1000,7 @@
       </p>
 
 
-      <div class="editorial-callout">
+      <div class="quiet-emphasis">
         Does authenticity mean doing exactly what a founder did,
         or continuing to think the way they thought?
       </div>
@@ -932,24 +1014,19 @@
       </p>
 
 
-      <div class="editorial-callout">
+      <p>
+        That leads to a larger question. A laboratory-grown diamond has
+        essentially the same chemical and physical characteristics as a
+        natural diamond, but its relationship with rarity is fundamentally
+        different. Lab-grown stones can be produced rather than discovered
+        after billions of years of geological formation, and as production
+        has increased they have become significantly more accessible.
+      </p>
+
+
+      <div class="quiet-emphasis">
         If rarity can now be manufactured, where does value actually come from?
       </div>
-
-
-      <p>
-        A laboratory-grown diamond has essentially the same chemical and
-        physical characteristics as a natural diamond, but its relationship
-        with rarity is fundamentally different. Lab-grown stones can be
-        produced rather than discovered after billions of years of
-        geological formation.
-      </p>
-
-
-      <p>
-        As production has increased, they have also become significantly
-        more accessible.
-      </p>
 
 
       <p>
@@ -960,21 +1037,17 @@
 
 
       <p>
-        And this is where I think design becomes even more important.
-        Imagine two visually similar stones. If the material itself is no
-        longer enough to create enormous differentiation, then the setting,
-        silhouette, craftsmanship, authorship and story surrounding that
-        stone become increasingly responsible for creating value.
-      </p>
-
-
-      <p>
-        In other words, perhaps the future of jewelry is not simply about
-        <strong>what the object contains</strong>, but
+        And this is where design becomes even more important. If two stones
+        can appear visually similar, the setting, silhouette, craftsmanship,
+        authorship and story surrounding them become increasingly responsible
+        for creating value. Perhaps the future of jewelry is therefore not
+        simply about <strong>what the object contains</strong>, but
         <strong>who imagined it</strong>.
       </p>
 
 
+
+      <!-- DESIGN -->
 
       <div class="article-heading">
         When Design Becomes an Asset
@@ -982,13 +1055,9 @@
 
 
       <p>
-        For luxury houses, design has always been creative. But it is also legal.
-      </p>
-
-
-      <p>
-        Industrial design protection can cover the visual appearance of
-        jewelry — including its shape, lines, patterns and ornamental
+        For luxury houses, design has always been creative. But it is also
+        legal. Industrial design protection can cover the visual appearance
+        of jewelry — including its shape, lines, patterns and ornamental
         characteristics — while trademarks protect distinctive signs
         associated with a maison. The World Intellectual Property
         Organization specifically recognizes jewelry among the products
@@ -1004,24 +1073,19 @@
 
       <p>
         Think about how quickly certain pieces can be recognized without
-        seeing their logo. Cartier's Love bracelet. Van Cleef &amp; Arpels'
-        Alhambra. Boucheron's Quatre. Bulgari's Serpenti.
-      </p>
-
-
-      <p>
-        Their value is not contained entirely in the quantity of gold or
-        the carat weight of their stones. Part of what the customer is
-        purchasing is recognition, and that recognition has been built
-        over decades.
+        seeing their logo: Cartier's Love bracelet, Van Cleef &amp; Arpels'
+        Alhambra, Boucheron's Quatre, Bulgari's Serpenti. Their value is not
+        contained entirely in the quantity of gold or the carat weight of
+        their stones. Part of what the customer is purchasing is recognition,
+        and that recognition has been built over decades.
       </p>
 
 
       <p>
         This makes archives enormously valuable. A historic motif can be
         brought back, altered, placed into a new collection and introduced
-        to an entirely new generation without completely losing the
-        meaning accumulated around it.
+        to an entirely new generation without completely losing the meaning
+        accumulated around it.
       </p>
 
 
@@ -1035,6 +1099,8 @@
       </p>
 
 
+
+      <!-- TECHNOLOGY -->
 
       <div class="article-heading">
         Can Technology Prove Authenticity?
@@ -1050,16 +1116,15 @@
 
       <p>
         Cartier joined LVMH and Prada in creating the Aura Blockchain
-        Consortium, which was designed to provide luxury products with
-        secure digital information around authenticity, ownership and
-        provenance.
+        Consortium, designed to provide luxury products with secure
+        digital information around authenticity, ownership and provenance.
+        The diamond industry is undergoing a similar transformation.
       </p>
 
 
       <p>
-        The diamond industry is undergoing a similar transformation.
         GIA has invested in Tracr, a blockchain-based platform designed
-        to strengthen diamond provenance and traceability. GIA has also
+        to strengthen diamond provenance and traceability. It has also
         worked with IBM Research on artificial intelligence capable of
         assisting diamond clarity grading by analysing imagery against
         its enormous database of previously graded stones.
@@ -1076,19 +1141,17 @@
 
       <p>
         But perhaps this is not a rejection of traditional jewelry culture
-        at all. It is an extension of it.
+        at all. It is an extension of it. For centuries, hallmarks existed
+        to communicate origin and trust. Certificates did the same.
+        Archives allowed maisons to trace pieces created decades earlier.
+        Blockchain and artificial intelligence simply introduce new tools
+        into a very old obsession: proving that an object is what it claims
+        to be.
       </p>
 
 
-      <p>
-        For centuries, hallmarks existed to communicate origin and trust.
-        Certificates did the same. Archives allowed maisons to trace pieces
-        created decades earlier. Blockchain and artificial intelligence are
-        simply introducing new tools into a very old obsession: proving
-        that an object is what it claims to be.
-      </p>
 
-
+      <!-- SUSTAINABILITY -->
 
       <div class="article-heading">
         Sustainability Isn't as Simple as Natural vs. Lab-Grown
@@ -1097,49 +1160,43 @@
 
       <p>
         Lab-grown diamonds are often presented as the sustainable answer
-        to mined stones. The reality is more complicated.
+        to mined stones, but the reality is more complicated. Growing
+        diamonds requires significant amounts of energy, meaning their
+        environmental footprint can vary dramatically depending on where
+        and how they are produced.
       </p>
 
 
       <p>
-        Growing diamonds requires significant amounts of energy, meaning
-        their environmental footprint can vary dramatically depending on
-        where and how they are produced. A laboratory powered primarily
-        by renewable electricity presents a very different environmental
-        equation from one operating on a fossil-fuel-heavy grid.
+        A laboratory powered primarily by renewable electricity presents
+        a very different environmental equation from one operating on a
+        fossil-fuel-heavy grid. So "lab-grown" does not automatically mean
+        "sustainable." Transparency may ultimately become more important
+        than the simple distinction between a stone created underground
+        and one created above it.
       </p>
 
 
       <p>
-        So "lab-grown" does not automatically mean "sustainable." That is
-        why transparency may ultimately become more important than the
-        simple distinction between a stone created underground and one
-        created above it.
-      </p>
-
-
-      <p>
-        Different jewelry companies are already taking very different
-        approaches. Pandora has pushed heavily into lab-grown diamonds and
-        has begun communicating carbon-footprint information alongside
-        them. Oscar Massin has made lab-grown stones and recycled precious
-        metals part of the identity of its revived maison.
+        Different jewelry companies are already taking different approaches.
+        Pandora has pushed heavily into lab-grown diamonds and has begun
+        communicating carbon-footprint information alongside them. Oscar
+        Massin has made lab-grown stones and recycled precious metals part
+        of the identity of its revived maison.
       </p>
 
 
       <p>
         Chaumet, meanwhile, has not abandoned natural stones. Instead, it
         has focused part of its sustainability strategy on traceability
-        and responsible sourcing, including traceable gold.
+        and responsible sourcing, including traceable gold. Neither
+        approach represents the entire future of jewelry, and perhaps
+        that is the point.
       </p>
 
 
-      <p>
-        Neither approach represents the entire future of jewelry.
-        And perhaps that is the point.
-      </p>
 
-
+      <!-- CONCLUSION -->
 
       <div class="article-heading">
         So, What Makes Jewelry Valuable Now?
@@ -1148,10 +1205,6 @@
 
       <p>
         There may not be one future for jewelry. There may be several.
-      </p>
-
-
-      <p>
         One future values natural diamonds because they are scarce,
         ancient and impossible to reproduce geologically. Another values
         lab-grown stones because technology makes diamonds more accessible
@@ -1176,14 +1229,10 @@
 
 
       <p>
-        That is what makes jewelry so interesting right now.
-      </p>
-
-
-      <p>
-        The stone still matters. But increasingly, value is being created
-        around it — through design, provenance, intellectual property,
-        craftsmanship, transparency and the story a house is able to protect.
+        That is what makes jewelry so interesting right now. The stone
+        still matters, but increasingly value is being created around it —
+        through design, provenance, intellectual property, craftsmanship,
+        transparency and the story a house is able to protect.
       </p>
 
 
@@ -1199,7 +1248,10 @@
 
 
 
+      <!-- SOURCES -->
+
       <div class="sources">
+
 
         <div class="sources-title">
           Sources
@@ -1207,58 +1259,84 @@
 
 
         <div class="source">
+
           <strong>Vogue — Oscar Massin Revival</strong> —
+
           <em>
             Reviving a Heritage Jewelry House—This Time With Lab-Grown Diamonds.
           </em>
+
           Used for Oscar Massin's history, the revival of the maison,
           Sandrine de Laage's reinterpretation of archival techniques and
           its use of lab-grown diamonds and recycled precious metals.
+
         </div>
 
 
         <div class="source">
+
           <strong>Vogue — Lab-Grown Diamonds</strong> —
+
           Reporting on the growing presence of laboratory-grown diamonds
-          in contemporary fine jewelry and changing consumer attitudes toward them.
+          in contemporary fine jewelry and changing consumer attitudes
+          toward them.
+
         </div>
 
 
         <div class="source">
+
           <strong>Chaumet / LVMH</strong> —
+
           Information on Chaumet's introduction of High Jewelry creations
-          using traceable gold and the maison's broader responsible-sourcing efforts.
+          using traceable gold and the maison's broader responsible-sourcing
+          efforts.
+
         </div>
 
 
         <div class="source">
+
           <strong>WIPO</strong> —
+
           Industrial-design guidance used for the discussion of jewelry
           design as intellectual property and the role of industrial-design
           rights in protecting the visual appearance of products.
+
         </div>
 
 
         <div class="source">
+
           <strong>Cartier / Richemont</strong> —
+
           Cartier, LVMH and Prada's creation of the Aura Blockchain
           Consortium and the use of blockchain technology to support
           authenticity and traceability within luxury.
+
         </div>
 
 
         <div class="source">
+
           <strong>GIA + IBM Research</strong> —
+
           Research into the application of artificial intelligence to
           diamond clarity grading.
+
         </div>
 
 
         <div class="source">
+
           <strong>GIA / Tracr</strong> —
+
           GIA's involvement with Tracr and the use of blockchain
-          technology to strengthen natural-diamond provenance and traceability.
+          technology to strengthen natural-diamond provenance and
+          traceability.
+
         </div>
+
 
       </div>
 
@@ -1268,6 +1346,8 @@
   </main>
 
 
+
+  <!-- BACK -->
 
   <div class="back-wrap">
 
@@ -1279,13 +1359,17 @@
 
 
 
+  <!-- FOOTER -->
+
   <footer>
+
 
     <div>
 
       <div class="ft-logo">
         J'adore le Concept
       </div>
+
 
       <div class="ft-sub">
         A curated perspective on fashion, luxury,
@@ -1315,6 +1399,7 @@
       </div>
 
     </div>
+
 
   </footer>
 
