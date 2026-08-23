@@ -1,204 +1,1121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&family=Corinthia&display=swap" rel="stylesheet"/>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Italiana&family=Corinthia&display=swap"
+  rel="stylesheet"
+/>
+
 <title>Photography — J'adore Le Concept</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--cream:#faf8f4;--off:#f4f1eb;--ink:#1a1814;--muted:#6a6460;--rule:#d8d4cc;--accent:#b89a7a;--dark:#12100e;}
-html{scroll-behavior:smooth;}
-body{background:var(--cream);color:var(--ink);font-family:'EB Garamond',Georgia,serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,244,0.96);backdrop-filter:blur(4px);border-bottom:0.5px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
-.nav-links{display:flex;gap:28px;}
-.nav-links a{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-/* ── SPREAD ── */
+:root{
+  --cream:#faf8f4;
+  --off:#f4f1eb;
+  --ink:#1a1814;
+  --muted:#6a6460;
+  --rule:#d8d4cc;
+  --accent:#b89a7a;
+  --dark:#12100e;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+
+  font-family:'EB Garamond',Georgia,serif;
+
+  font-size:17px;
+  line-height:1.75;
+
+  -webkit-font-smoothing:antialiased;
+}
+
+
+/* ─────────────────────────────
+   NAV
+───────────────────────────── */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  z-index:100;
+
+  background:rgba(250,248,244,0.96);
+
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+
+  border-bottom:0.5px solid var(--rule);
+
+  height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 5vw;
+}
+
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:12px;
+  letter-spacing:0.22em;
+
+  text-transform:uppercase;
+
+  color:var(--ink);
+  text-decoration:none;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+  letter-spacing:0.18em;
+
+  text-transform:uppercase;
+
+  color:var(--muted);
+  text-decoration:none;
+
+  transition:color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--ink);
+}
+
+
+/* ─────────────────────────────
+   DOLCE & GABBANA SPREAD
+───────────────────────────── */
+
 .spread{
   display:grid;
   grid-template-columns:1fr 1fr;
+
   border-bottom:0.5px solid var(--rule);
+
   padding-top:56px;
   margin-top:4vh;
 }
+
+
+/* 2 x 2 IMAGE GRID */
+
 .spread-photos{
   display:grid;
   grid-template-columns:1fr 1fr;
+
   gap:4px;
   padding:4px;
+
   background:var(--cream);
 }
-.spread-photo{overflow:hidden;aspect-ratio:1/1;background:var(--cream);}
-.spread-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.6s ease;}
-.spread-photo:hover img{transform:scale(1.04);}
-.spread-text{padding:6vw 7vw;display:flex;flex-direction:column;justify-content:center;}
-.spread-heading{font-family:'Corinthia',cursive;font-size:clamp(56px,6vw,88px);font-weight:400;line-height:1.0;margin-bottom:1.2rem;color:var(--ink);}
-.spread-subheader{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-style:italic;margin-top:-1rem;margin-bottom:2.2rem;white-space:nowrap;}
-.spread-body{font-size:15.5px;line-height:2.0;color:var(--muted);letter-spacing:0.04em;margin-bottom:1.4rem;}
 
-/* ── PHOTO STRIP ── */
-.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;padding:4px;background:var(--cream);border-bottom:0.5px solid var(--rule);}
-.strip-photo{overflow:hidden;aspect-ratio:2/3;background:var(--cream);}
-.strip-photo img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.5s ease;}
-.strip-photo:hover img{transform:scale(1.06);}
+.spread-photo{
+  overflow:hidden;
 
-/* ── SECTION DIVIDER ── */
-.chapter-divider{display:flex;align-items:center;gap:2rem;padding:3.5vw 10vw;border-bottom:0.5px solid var(--rule);}
-.chapter-divider-label{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
-.chapter-divider-line{flex:1;height:0.5px;background:var(--rule);}
-.chapter-divider-next{font-family:'Corinthia',cursive;font-size:clamp(32px,3.5vw,50px);color:var(--ink);white-space:nowrap;}
+  aspect-ratio:1 / 1;
 
-/* ── VENICE ── */
-.venice-lace-title{position:relative;width:100%;overflow:hidden;border-bottom:0.5px solid var(--rule);}
-.venice-lace-title img{width:100%;height:auto;display:block;}
-.venice-lace-overlay{position:absolute;bottom:0;right:0;padding:4vw 5vw 4vw 10vw;text-align:right;}
-.venice-main-title{font-family:'Corinthia',cursive;font-size:clamp(64px,8vw,120px);font-weight:400;line-height:0.9;color:#faf8f4;}
-.venice-main-title em{font-style:italic;}
+  background:var(--cream);
+}
 
-/* Venice gondola + caption side by side */
-.venice-hero-row{display:grid;grid-template-columns:380px 1fr;gap:0;border-bottom:0.5px solid var(--rule);align-items:stretch;}
-.venice-hero{width:380px;height:420px;overflow:hidden;background:var(--cream);}
-.venice-hero img{width:100%;height:100%;object-fit:cover;object-position:35% center;display:block;}
-.venice-side-text{padding:5vw 6vw;display:flex;align-items:center;border-left:0.5px solid var(--rule);}
-.venice-side-text p{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;letter-spacing:0.04em;color:var(--muted);line-height:1.85;max-width:480px;}
+.spread-photo img{
+  width:100%;
+  height:100%;
 
-/* Venice grid */
-.venice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:4px;background:var(--cream);border-bottom:0.5px solid var(--rule);}
-.venice-photo{overflow:hidden;background:var(--cream);}
-.venice-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
-.venice-photo:hover img{transform:scale(1.03);}
-.venice-photo.sq{aspect-ratio:1/1;}
+  object-fit:contain;
 
-/* SPINNING LOGO STAMP */
-.logo-stamp{display:flex;justify-content:center;align-items:center;padding:4.5vw 10vw;border-bottom:0.5px solid var(--rule);}
-.stamp-spin{animation:spinStamp 12s linear infinite;transform-origin:center;}
-@keyframes spinStamp{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+  display:block;
 
-/* FOOTER */
-footer{background:#05242b;color:var(--cream);padding:3.5vw 10vw;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:3rem;align-items:center;border-top:0.5px solid rgba(255,255,255,0.08);}
-.ft-logo{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream);margin-bottom:0.6rem;}
-.ft-sub{font-size:13.5px;color:rgba(250,248,244,0.45);line-height:1.6;max-width:260px;}
-.ft-cities{font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(250,248,244,0.4);text-align:center;white-space:nowrap;}
-.ft-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
-.ft-link{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,244,0.5);text-decoration:none;transition:color 0.2s;}
-.ft-link:hover{color:var(--cream);}
-.ft-copy{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,248,244,0.2);margin-top:4px;}
+  transition:transform 0.6s ease;
+}
+
+.spread-photo:hover img{
+  transform:scale(1.04);
+}
+
+
+/* FIX FOR ATELIER IMAGE */
+
+.spread-photo img.fill-photo{
+  object-fit:cover;
+  object-position:center;
+}
+
+
+/* SPREAD TEXT */
+
+.spread-text{
+  padding:6vw 7vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.spread-heading{
+  font-family:'Corinthia',cursive;
+
+  font-size:clamp(56px,6vw,88px);
+
+  font-weight:400;
+  line-height:1;
+
+  margin-bottom:1.2rem;
+
+  color:var(--ink);
+}
+
+.spread-subheader{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+  letter-spacing:0.18em;
+
+  text-transform:uppercase;
+
+  color:var(--muted);
+
+  font-style:italic;
+
+  margin-top:-1rem;
+  margin-bottom:2.2rem;
+
+  white-space:nowrap;
+}
+
+.spread-body{
+  font-size:15.5px;
+
+  line-height:2;
+
+  color:var(--muted);
+
+  letter-spacing:0.04em;
+
+  margin-bottom:1.4rem;
+}
+
+
+/* ─────────────────────────────
+   PHOTO STRIP
+───────────────────────────── */
+
+.strip{
+  display:grid;
+
+  grid-template-columns:repeat(7,1fr);
+
+  gap:4px;
+
+  padding:4px;
+
+  background:var(--cream);
+
+  border-bottom:0.5px solid var(--rule);
+}
+
+.strip-photo{
+  overflow:hidden;
+
+  aspect-ratio:2 / 3;
+
+  background:var(--cream);
+}
+
+.strip-photo img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  display:block;
+
+  transition:transform 0.5s ease;
+}
+
+.strip-photo:hover img{
+  transform:scale(1.06);
+}
+
+
+/* ─────────────────────────────
+   SECTION DIVIDER
+───────────────────────────── */
+
+.chapter-divider{
+  display:flex;
+  align-items:center;
+
+  gap:2rem;
+
+  padding:3.5vw 10vw;
+
+  border-bottom:0.5px solid var(--rule);
+}
+
+.chapter-divider-label{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+  letter-spacing:0.3em;
+
+  text-transform:uppercase;
+
+  color:var(--muted);
+
+  white-space:nowrap;
+}
+
+.chapter-divider-line{
+  flex:1;
+
+  height:0.5px;
+
+  background:var(--rule);
+}
+
+.chapter-divider-next{
+  font-family:'Corinthia',cursive;
+
+  font-size:clamp(32px,3.5vw,50px);
+
+  color:var(--ink);
+
+  white-space:nowrap;
+}
+
+
+/* ─────────────────────────────
+   VENICE TITLE IMAGE
+───────────────────────────── */
+
+.venice-lace-title{
+  position:relative;
+
+  width:100%;
+
+  overflow:hidden;
+
+  border-bottom:0.5px solid var(--rule);
+}
+
+.venice-lace-title img{
+  width:100%;
+  height:auto;
+
+  display:block;
+}
+
+.venice-lace-overlay{
+  position:absolute;
+
+  bottom:0;
+  right:0;
+
+  padding:4vw 5vw 4vw 10vw;
+
+  text-align:right;
+}
+
+.venice-main-title{
+  font-family:'Corinthia',cursive;
+
+  font-size:clamp(64px,8vw,120px);
+
+  font-weight:400;
+
+  line-height:0.9;
+
+  color:#faf8f4;
+}
+
+.venice-main-title em{
+  font-style:italic;
+}
+
+
+/* ─────────────────────────────
+   VENICE GONDOLA + TEXT
+   UPDATED
+───────────────────────────── */
+
+.venice-hero-row{
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:2.2rem;
+
+  padding:4rem 8vw 4.5rem;
+
+  border-bottom:0.5px solid var(--rule);
+
+  background:var(--cream);
+}
+
+
+/* CENTERED IMAGE */
+
+.venice-hero{
+  width:min(520px,78vw);
+  height:440px;
+
+  overflow:hidden;
+
+  background:var(--cream);
+}
+
+.venice-hero img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:35% center;
+
+  display:block;
+}
+
+
+/* TEXT UNDER IMAGE */
+
+.venice-side-text{
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+
+  padding:0;
+
+  border-left:none;
+}
+
+.venice-side-text p{
+  width:100%;
+  max-width:900px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:17px;
+  font-style:italic;
+
+  letter-spacing:0.04em;
+
+  color:var(--muted);
+
+  line-height:1.85;
+
+  text-align:center;
+}
+
+
+/* ─────────────────────────────
+   VENICE GRID
+───────────────────────────── */
+
+.venice-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:4px;
+
+  padding:4px;
+
+  background:var(--cream);
+
+  border-bottom:0.5px solid var(--rule);
+}
+
+.venice-photo{
+  overflow:hidden;
+
+  background:var(--cream);
+}
+
+.venice-photo img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:transform 0.5s ease;
+}
+
+.venice-photo:hover img{
+  transform:scale(1.03);
+}
+
+.venice-photo.sq{
+  aspect-ratio:1 / 1;
+}
+
+
+/* ─────────────────────────────
+   SPINNING LOGO
+───────────────────────────── */
+
+.logo-stamp{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  padding:4.5vw 10vw;
+
+  border-bottom:0.5px solid var(--rule);
+}
+
+.stamp-spin{
+  animation:spinStamp 12s linear infinite;
+
+  transform-origin:center;
+}
+
+@keyframes spinStamp{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* ─────────────────────────────
+   FOOTER
+───────────────────────────── */
+
+footer{
+  background:#05242b;
+
+  color:var(--cream);
+
+  padding:3.5vw 10vw;
+
+  display:grid;
+
+  grid-template-columns:1.2fr 1fr 1fr;
+
+  gap:3rem;
+
+  align-items:center;
+
+  border-top:0.5px solid rgba(255,255,255,0.08);
+}
+
+.ft-logo{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:13px;
+  letter-spacing:0.22em;
+
+  text-transform:uppercase;
+
+  color:var(--cream);
+
+  margin-bottom:0.6rem;
+}
+
+.ft-sub{
+  font-size:13.5px;
+
+  color:rgba(250,248,244,0.45);
+
+  line-height:1.6;
+
+  max-width:260px;
+}
+
+.ft-cities{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:10.5px;
+  letter-spacing:0.22em;
+
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,0.4);
+
+  text-align:center;
+
+  white-space:nowrap;
+}
+
+.ft-right{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:8px;
+}
+
+.ft-link{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+  letter-spacing:0.2em;
+
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,0.5);
+
+  text-decoration:none;
+
+  transition:color 0.2s;
+}
+
+.ft-link:hover{
+  color:var(--cream);
+}
+
+.ft-copy{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:10px;
+  letter-spacing:0.2em;
+
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,0.2);
+
+  margin-top:4px;
+}
+
+
+/* ─────────────────────────────
+   MOBILE
+───────────────────────────── */
+
+@media(max-width:800px){
+
+  nav{
+    padding:0 5vw;
+  }
+
+  .nav-links{
+    gap:14px;
+  }
+
+  .nav-links a{
+    font-size:9px;
+  }
+
+
+  /* D&G */
+
+  .spread{
+    grid-template-columns:1fr;
+  }
+
+  .spread-text{
+    padding:9vw 8vw;
+  }
+
+  .spread-subheader{
+    white-space:normal;
+  }
+
+
+  /* STRIP */
+
+  .strip{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+
+  /* VENICE */
+
+  .chapter-divider{
+    padding:8vw;
+  }
+
+  .venice-hero-row{
+    padding:3rem 8vw 3.5rem;
+
+    gap:1.8rem;
+  }
+
+  .venice-hero{
+    width:100%;
+    height:420px;
+  }
+
+  .venice-side-text p{
+    font-size:16px;
+
+    line-height:1.75;
+
+    text-align:left;
+  }
+
+  .venice-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+
+  /* FOOTER */
+
+  footer{
+    grid-template-columns:1fr;
+
+    gap:2rem;
+
+    padding:8vw;
+  }
+
+  .ft-cities{
+    text-align:left;
+  }
+
+  .ft-right{
+    align-items:flex-start;
+  }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
 
+
+<!-- NAV -->
+
 <nav>
-  <a href="index.html" class="nav-logo">J'adore Le Concept</a>
+
+  <a href="index.html" class="nav-logo">
+    J'adore Le Concept
+  </a>
+
+
   <div class="nav-links">
-    <a href="archive.html">Archive</a>
-    <a href="essays.html">Essays</a>
-    <a href="photography.html" class="active">Photography</a>
-    <a href="about.html">About</a>
-    <a href="about.html#contact">Contact</a>
+
+    <a href="archive.html">
+      Archive
+    </a>
+
+    <a href="essays.html">
+      Essays
+    </a>
+
+    <a href="photography.html" class="active">
+      Photography
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="about.html#contact">
+      Contact
+    </a>
+
   </div>
+
 </nav>
 
-<!-- 2x2 GRID + TEXT -->
+
+
+<!-- ─────────────────────────────
+     DOLCE & GABBANA
+───────────────────────────── -->
+
 <div class="spread">
+
+
   <div class="spread-photos">
-    <div class="spread-photo"><img src="IMG_6950.png" alt="Silver Rose Dress"/></div>
-    <div class="spread-photo"><img src="IMG_6962.png" alt="D&G Embroidered Piece"/></div>
-    <div class="spread-photo"><img src="IMG_7020.png" alt="D&G Exhibition Room"/></div>
-    <div class="spread-photo"><img src="IMG_9470.png" alt="D&G Atelier"/></div>
+
+    <div class="spread-photo">
+
+      <img
+        src="IMG_6950.png"
+        alt="Silver Rose Dress"
+      />
+
+    </div>
+
+
+    <div class="spread-photo">
+
+      <img
+        src="IMG_6962.png"
+        alt="D&G Embroidered Piece"
+      />
+
+    </div>
+
+
+    <div class="spread-photo">
+
+      <img
+        src="IMG_7020.png"
+        alt="D&G Exhibition Room"
+      />
+
+    </div>
+
+
+    <div class="spread-photo">
+
+      <img
+        src="IMG_9470.png"
+        alt="D&G Atelier"
+        class="fill-photo"
+      />
+
+    </div>
+
   </div>
+
+
+
   <div class="spread-text">
-    <h2 class="spread-heading">The Full Silhouette.</h2>
-    <p class="spread-subheader">Fashion: Through The Looking Glass — Inside Dolce &amp; Gabbana - Milano</p>
-    <p class="spread-body">Each look is presented as a complete composition, where structure, styling, and ornament are treated as equally important. What emerges is not just a garment, but a fully realised image shaped through proportion, texture, and detail.</p>
-    <p class="spread-body">Dolce &amp; Gabbana's visual language is rooted in contrast, tradition and spectacle, discipline and excess. Each piece reflects a deeply Italian narrative, where craftsmanship is not hidden but emphasized, and ornament becomes a form of storytelling. The garments do not simply dress the body; they construct identity, drawing from history, religion, and theatre to create something both timeless and deliberately exaggerated.</p>
+
+    <h2 class="spread-heading">
+      The Full Silhouette.
+    </h2>
+
+
+    <p class="spread-subheader">
+      Fashion: Through The Looking Glass — Inside Dolce &amp; Gabbana - Milano
+    </p>
+
+
+    <p class="spread-body">
+      Each look is presented as a complete composition, where structure,
+      styling, and ornament are treated as equally important. What emerges
+      is not just a garment, but a fully realised image shaped through
+      proportion, texture, and detail.
+    </p>
+
+
+    <p class="spread-body">
+      Dolce &amp; Gabbana's visual language is rooted in contrast,
+      tradition and spectacle, discipline and excess. Each piece reflects
+      a deeply Italian narrative, where craftsmanship is not hidden but
+      emphasized, and ornament becomes a form of storytelling. The garments
+      do not simply dress the body; they construct identity, drawing from
+      history, religion, and theatre to create something both timeless and
+      deliberately exaggerated.
+    </p>
+
   </div>
+
+
 </div>
+
+
 
 <!-- 7-PHOTO STRIP -->
+
 <div class="strip">
-  <div class="strip-photo"><img src="IMG_6956.png" alt="Rosary Detail"/></div>
-  <div class="strip-photo"><img src="IMG_6957.png" alt="Red Velvet Buttons" style="object-position:left center;"/></div>
-  <div class="strip-photo"><img src="IMG_6987.png" alt="White Baroque" style="object-position:30% center;"/></div>
-  <div class="strip-photo"><img src="IMG_6963.png" alt="D&G Cape"/></div>
-  <div class="strip-photo"><img src="IMG_6942.png" alt="Gold Frame Gown"/></div>
-  <div class="strip-photo"><img src="IMG_7002.png" alt="Jewelled Shoes"/></div>
-  <div class="strip-photo"><img src="IMG_7019.png" alt="Opera Score"/></div>
+
+  <div class="strip-photo">
+    <img src="IMG_6956.png" alt="Rosary Detail"/>
+  </div>
+
+  <div class="strip-photo">
+    <img
+      src="IMG_6957.png"
+      alt="Red Velvet Buttons"
+      style="object-position:left center;"
+    />
+  </div>
+
+  <div class="strip-photo">
+    <img
+      src="IMG_6987.png"
+      alt="White Baroque"
+      style="object-position:30% center;"
+    />
+  </div>
+
+  <div class="strip-photo">
+    <img src="IMG_6963.png" alt="D&G Cape"/>
+  </div>
+
+  <div class="strip-photo">
+    <img src="IMG_6942.png" alt="Gold Frame Gown"/>
+  </div>
+
+  <div class="strip-photo">
+    <img src="IMG_7002.png" alt="Jewelled Shoes"/>
+  </div>
+
+  <div class="strip-photo">
+    <img src="IMG_7019.png" alt="Opera Score"/>
+  </div>
+
 </div>
+
+
 
 <!-- VENICE DIVIDER -->
+
 <div class="chapter-divider">
-  <span class="chapter-divider-label">Venice</span>
+
+  <span class="chapter-divider-label">
+    Venice
+  </span>
+
   <div class="chapter-divider-line"></div>
-  <span class="chapter-divider-next">Italy.</span>
+
+  <span class="chapter-divider-next">
+    Italy.
+  </span>
+
 </div>
 
-<!-- LACE with title overlay -->
+
+
+<!-- VENICE LACE TITLE -->
+
 <div class="venice-lace-title">
-  <img src="DSC01134.png" alt="Venice lace detail"/>
+
+  <img
+    src="DSC01134.png"
+    alt="Venice lace detail"
+  />
+
+
   <div class="venice-lace-overlay">
-    <h2 class="venice-main-title">Inside<br/><em>Venice Carnival.</em></h2>
+
+    <h2 class="venice-main-title">
+      Inside<br/>
+      <em>Venice Carnival.</em>
+    </h2>
+
   </div>
+
 </div>
 
-<!-- GONDOLA + CAPTION -->
+
+
+<!-- CENTERED GONDOLA + TEXT UNDER -->
+
 <div class="venice-hero-row">
+
+
   <div class="venice-hero">
-    <img src="IMG_6505.png" alt="Venice fog gondolas" style="object-position:35% center;"/>
+
+    <img
+      src="IMG_6505.png"
+      alt="Venice fog gondolas"
+    />
+
   </div>
+
+
   <div class="venice-side-text">
-    <p>Each winter, Venice shifts from a quiet, fog-covered city into a world of masquerade, ornament, and theatrical fashion · Carnival transforms the canals into a living spectacle where craftsmanship, fantasy, and identity blur together.</p>
+
+    <p>
+      Each winter, Venice shifts from a quiet, fog-covered city into a
+      world of masquerade, ornament, and theatrical fashion · Carnival
+      transforms the canals into a living spectacle where craftsmanship,
+      fantasy, and identity blur together.
+    </p>
+
   </div>
+
+
 </div>
 
-<!-- VENICE GRID: 8 photos, 4 cols x 2 rows -->
+
+
+<!-- VENICE GRID -->
+
 <div class="venice-grid">
-  <div class="venice-photo sq"><img src="IMG_6640.png" alt="Silver carnival duo"/></div>
-  <div class="venice-photo sq"><img src="IMG_6720.png" alt="Moon lady gondolas"/></div>
-  <div class="venice-photo sq"><img src="IMG_6651.png" alt="Jester mask"/></div>
-  <div class="venice-photo sq"><img src="IMG_6635.png" alt="Horned warriors"/></div>
-  <div class="venice-photo sq"><img src="IMG_6745.png" alt="Pink Bridge of Sighs"/></div>
-  <div class="venice-photo sq"><img src="IMG_6718.png" alt="Tarot fortune teller"/></div>
-  <div class="venice-photo sq"><img src="IMG_6736.png" alt="Colourful duo with dog"/></div>
-  <div class="venice-photo sq"><img src="IMG_6713.png" alt="Blue costume St Mark"/></div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6640.png" alt="Silver carnival duo"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6720.png" alt="Moon lady gondolas"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6651.png" alt="Jester mask"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6635.png" alt="Horned warriors"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6745.png" alt="Pink Bridge of Sighs"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6718.png" alt="Tarot fortune teller"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6736.png" alt="Colourful duo with dog"/>
+  </div>
+
+  <div class="venice-photo sq">
+    <img src="IMG_6713.png" alt="Blue costume St Mark"/>
+  </div>
+
 </div>
 
-<!-- SPINNING LOGO STAMP -->
+
+
+<!-- SPINNING LOGO -->
+
 <div class="logo-stamp">
-  <svg class="stamp-spin" width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+
+  <svg
+    class="stamp-spin"
+    width="110"
+    height="110"
+    viewBox="0 0 110 110"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+
     <defs>
-      <path id="cp-photo" d="M55,55 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
+
+      <path
+        id="cp-photo"
+        d="
+        M55,55
+        m-38,0
+        a38,38 0 1,1 76,0
+        a38,38 0 1,1 -76,0
+        "
+      />
+
     </defs>
-    <text font-family="'Cormorant Garamond',serif" font-size="9.5" fill="#1a1814" letter-spacing="8.6">
-      <textPath href="#cp-photo">J'ADORE LE CONCEPT</textPath>
+
+
+    <text
+      font-family="'Cormorant Garamond',serif"
+      font-size="9.5"
+      fill="#1a1814"
+      letter-spacing="8.6"
+    >
+
+      <textPath href="#cp-photo">
+        J'ADORE LE CONCEPT
+      </textPath>
+
     </text>
+
   </svg>
+
 </div>
+
+
+
+<!-- FOOTER -->
 
 <footer>
+
   <div class="ft-col ft-brand">
-    <div class="ft-logo">J'adore Le Concept</div>
-    <p class="ft-sub">A continuing exploration of fashion, luxury, and structure.</p>
+
+    <div class="ft-logo">
+      J'adore Le Concept
+    </div>
+
+    <p class="ft-sub">
+      A continuing exploration of fashion, luxury, and structure.
+    </p>
+
   </div>
+
+
   <div class="ft-col ft-center">
-    <p class="ft-cities">Barcelona · Paris · Los Angeles · New York · Athens</p>
+
+    <p class="ft-cities">
+      Barcelona · Paris · Los Angeles · New York · Athens
+    </p>
+
   </div>
+
+
   <div class="ft-col ft-right">
-    <a href="mailto:anaisdoroshina1@gmail.com" class="ft-link">anaisdoroshina1@gmail.com</a>
-    <a href="#" class="ft-link">LinkedIn</a>
-    <p class="ft-copy">Est. 2024</p>
+
+    <a
+      href="mailto:anaisdoroshina1@gmail.com"
+      class="ft-link"
+    >
+      anaisdoroshina1@gmail.com
+    </a>
+
+    <a href="#" class="ft-link">
+      LinkedIn
+    </a>
+
+    <p class="ft-copy">
+      Est. 2024
+    </p>
+
   </div>
+
 </footer>
 
+
+
 <script>
-fetch('footer.html').then(r=>r.text()).then(html=>{
-  const el=document.querySelector('footer');
-  if(el) el.outerHTML=html;
-});
+
+fetch('footer.html')
+  .then(r => r.text())
+  .then(html => {
+
+    const el = document.querySelector('footer');
+
+    if(el){
+      el.outerHTML = html;
+    }
+
+  });
+
 </script>
+
+
 </body>
+
 </html>
