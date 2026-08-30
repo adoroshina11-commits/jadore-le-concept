@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -30,20 +29,10 @@
   --off:#f4f1eb;
   --ink:#1a1814;
   --muted:#6a6460;
-  --soft:#9c958e;
   --rule:#d8d4cc;
-
   --accent:#b89a7a;
-  --accent-soft:#ead8cb;
-  --accent-pale:#f2e7df;
-
-  --rose:#8d675d;
-  --mauve:#765d63;
-  --camel:#a47762;
-
+  --peach:#efe1d6;
   --teal:#05242b;
-  --teal-soft:#1d4b4d;
-  --green:#354f4b;
 }
 
 html{
@@ -137,20 +126,18 @@ nav{
 .about-hero{
   min-height:100vh;
 
-  position:relative;
-
   display:grid;
-  grid-template-columns:0.85fr 1.15fr;
+  grid-template-columns:0.8fr 1.2fr;
 
   padding-top:56px;
-
-  overflow:hidden;
 
   border-bottom:0.5px solid var(--rule);
 }
 
 
-/* LEFT COLOR PANEL */
+/* =========================================================
+   LEFT PEACH PANEL
+========================================================= */
 
 .about-visual{
   position:relative;
@@ -161,62 +148,79 @@ nav{
   align-items:center;
   justify-content:center;
 
+  overflow:hidden;
+
   background:
+    radial-gradient(
+      circle at 20% 85%,
+      rgba(255,224,210,0.55),
+      transparent 31%
+    ),
     linear-gradient(
       145deg,
-      #f2e7df 0%,
-      #ecd8cc 55%,
-      #e2c5b4 100%
+      #f7ece5 0%,
+      #f0ded2 48%,
+      #ead2c3 100%
     );
-
-  overflow:hidden;
 }
 
 
-/* GIANT A */
+/* giant script A */
 
 .about-a{
+  position:relative;
+
   font-family:'Corinthia',cursive;
 
-  font-size:clamp(260px,34vw,520px);
+  font-size:clamp(300px,34vw,530px);
 
-  line-height:1;
+  font-weight:400;
 
-  color:rgba(168,119,88,0.52);
+  line-height:0.8;
 
-  transform:rotate(-10deg);
+  color:rgba(178,132,101,0.60);
+
+  transform:rotate(-8deg) translateY(-1vh);
 
   user-select:none;
 }
 
 
-/* DECORATIVE STAR */
+/* little star */
 
 .about-star{
   position:absolute;
 
-  top:14%;
-  left:15%;
+  top:10vh;
+  left:4.5vw;
 
-  font-family:'Cormorant Garamond',serif;
+  color:#b88d70;
 
-  font-size:24px;
+  font-size:27px;
 
-  color:#9b705a;
+  opacity:0.8;
 
-  opacity:0.75;
+  animation:floatStar 4s ease-in-out infinite;
+}
 
-  animation:starFloat 4s ease-in-out infinite;
+@keyframes floatStar{
+  0%,100%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform:translateY(-7px) rotate(12deg);
+  }
 }
 
 
-/* EST */
+/* est */
 
 .about-est{
   position:absolute;
 
+  left:3.5vw;
   bottom:5vh;
-  left:5vw;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -225,15 +229,15 @@ nav{
 
   text-transform:uppercase;
 
-  color:#7e6a5f;
+  color:#625750;
 }
 
 
-/* RIGHT CONTENT */
+/* =========================================================
+   BIO SIDE
+========================================================= */
 
 .about-content{
-  position:relative;
-
   padding:7vw 9vw 7vw 7vw;
 
   display:flex;
@@ -242,7 +246,7 @@ nav{
 }
 
 .about-kicker{
-  margin-bottom:2rem;
+  margin-bottom:1.5rem;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -251,54 +255,49 @@ nav{
 
   text-transform:uppercase;
 
-  color:var(--accent);
+  color:var(--muted);
 }
 
 .about-heading{
-  max-width:650px;
-
-  margin-bottom:2.8rem;
+  margin-bottom:2.4rem;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(48px,5.5vw,82px);
+  font-size:clamp(54px,6vw,86px);
 
   font-weight:300;
 
-  line-height:0.95;
+  line-height:0.88;
 
-  letter-spacing:-0.03em;
+  letter-spacing:-0.035em;
 
   color:var(--ink);
 }
 
 .about-heading em{
   font-style:italic;
-  color:var(--muted);
+  font-weight:300;
 }
 
-
-/* BIO */
-
 .about-para{
-  max-width:610px;
+  max-width:620px;
 
-  margin-bottom:1.25rem;
+  margin-bottom:1.2rem;
 
   font-family:'EB Garamond',Georgia,serif;
 
   font-size:17px;
 
-  line-height:1.9;
+  line-height:1.8;
 
-  color:var(--muted);
+  color:var(--ink);
 }
 
 .bio-rule{
-  width:65px;
+  width:80px;
   height:0.5px;
 
-  margin:1.2rem 0 2rem;
+  margin:1.3rem 0 1.8rem;
 
   background:var(--accent);
 }
@@ -308,6 +307,8 @@ nav{
 
   display:inline-block;
 
+  padding-bottom:3px;
+
   font-family:'Cormorant Garamond',serif;
 
   font-size:11px;
@@ -316,26 +317,23 @@ nav{
   text-transform:uppercase;
 
   color:var(--ink);
-
   text-decoration:none;
-
-  padding-bottom:3px;
 
   border-bottom:0.5px solid var(--ink);
 
   transition:
     letter-spacing 0.2s ease,
-    color 0.2s ease;
+    opacity 0.2s ease;
 }
 
 .cta:hover{
-  color:var(--accent);
   letter-spacing:0.29em;
+  opacity:0.6;
 }
 
 
 /* =========================================================
-   MOVING PASSIONS RIBBON
+   MOVING PASSIONS — ALL BLACK
 ========================================================= */
 
 .passions{
@@ -343,11 +341,11 @@ nav{
 
   overflow:hidden;
 
-  padding:3rem 0;
-
-  border-bottom:0.5px solid var(--rule);
+  padding:2.3rem 0;
 
   background:var(--cream);
+
+  border-bottom:0.5px solid var(--rule);
 }
 
 .passions-track{
@@ -359,7 +357,7 @@ nav{
 
   white-space:nowrap;
 
-  animation:passionScroll 28s linear infinite;
+  animation:passionScroll 30s linear infinite;
 }
 
 .passions-group{
@@ -370,53 +368,26 @@ nav{
 }
 
 .passion{
+  padding:0 1.5rem;
+
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(30px,3.2vw,48px);
+  font-size:clamp(28px,3vw,44px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:1;
 
-  padding:0 1.5rem;
-
   color:var(--ink);
 }
 
-
-/* COLOR VARIATION */
-
-.passion:nth-child(1){
-  color:var(--rose);
-}
-
-.passion:nth-child(3){
-  color:var(--teal-soft);
-}
-
-.passion:nth-child(5){
-  color:#b58b72;
-}
-
-.passion:nth-child(7){
-  color:var(--mauve);
-}
-
-.passion:nth-child(9){
-  color:var(--green);
-}
-
-.passion:nth-child(11){
-  color:var(--camel);
-}
-
 .passion-star{
-  font-size:11px;
+  font-size:10px;
 
   color:var(--accent);
 
-  opacity:0.85;
+  opacity:0.9;
 }
 
 @keyframes passionScroll{
@@ -448,43 +419,34 @@ nav{
   display:grid;
   grid-template-columns:0.9fr 1.1fr;
 
-  gap:9vw;
+  gap:8vw;
 
   align-items:center;
 
   overflow:hidden;
 
   border-bottom:0.5px solid var(--rule);
-
-  background:
-    radial-gradient(
-      circle at 13% 80%,
-      rgba(234,216,203,0.48) 0,
-      rgba(234,216,203,0.48) 8%,
-      transparent 8.2%
-    ),
-    var(--cream);
 }
 
 
-/* LEFT */
+/* heading */
 
 .contact-intro{
   position:relative;
 }
 
 .contact-heading{
-  position:relative;
-
   width:max-content;
+
+  position:relative;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(58px,6.5vw,95px);
+  font-size:clamp(60px,7vw,100px);
 
   font-weight:300;
 
-  line-height:0.82;
+  line-height:0.83;
 
   letter-spacing:-0.045em;
 
@@ -496,65 +458,78 @@ nav{
 
   position:relative;
 
-  margin-left:0.3em;
+  margin-left:0.1em;
 
   font-style:italic;
   font-weight:300;
 
-  color:#b99574;
+  color:var(--accent);
 
-  transform:rotate(-3deg);
+  transform:rotate(-2deg);
 }
 
 
-/* HAND DRAWN UNDERLINE */
+/* curved underline */
 
 .contact-heading em::after{
   content:'';
 
   position:absolute;
 
-  left:1%;
-  right:-4%;
-  bottom:-13px;
+  left:0;
+  right:-8px;
+  bottom:-15px;
 
-  height:8px;
+  height:9px;
 
-  border-top:1px solid rgba(184,154,122,0.7);
+  border-top:1px solid var(--accent);
 
   border-radius:50%;
 
-  transform:rotate(-2deg);
+  transform:rotate(-3deg);
 }
 
 
-/* STAR */
+/* star */
 
 .contact-star{
   position:absolute;
 
-  top:-18px;
-  right:-35px;
+  top:-15px;
+  right:-42px;
+
+  font-size:20px;
+
+  color:var(--accent);
+
+  animation:floatStar 4s ease-in-out infinite;
+}
+
+
+/* giant pale ampersand */
+
+.contact-wrap::after{
+  content:'&';
+
+  position:absolute;
+
+  right:-2vw;
+  bottom:-10vw;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:18px;
+  font-size:24vw;
 
-  color:#b89a7a;
+  font-weight:300;
+  font-style:italic;
 
-  animation:starFloat 4s ease-in-out infinite;
-}
+  line-height:1;
 
-@keyframes starFloat{
+  color:rgba(184,154,122,0.07);
 
-  0%,100%{
-    transform:translateY(0) rotate(0deg);
-  }
+  transform:rotate(-8deg);
 
-  50%{
-    transform:translateY(-7px) rotate(15deg);
-  }
-
+  pointer-events:none;
 }
 
 
@@ -565,12 +540,10 @@ nav{
 .contact-details{
   position:relative;
 
-  padding-left:1rem;
+  z-index:2;
 }
 
 .contact-item{
-  position:relative;
-
   padding:1.35rem 0;
 
   border-bottom:0.5px solid var(--rule);
@@ -588,64 +561,32 @@ nav{
 
   text-transform:uppercase;
 
-  color:#c29d80;
+  color:var(--accent);
 }
 
-.contact-link{
-  display:inline-block;
-
-  font-family:'EB Garamond',Georgia,serif;
-
-  font-size:17px;
-
-  color:var(--ink);
-
-  text-decoration:none;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.contact-link:hover{
-  color:#a67d65;
-
-  transform:translateX(6px);
-}
-
+.contact-link,
 .contact-text{
   font-family:'EB Garamond',Georgia,serif;
 
   font-size:17px;
 
-  color:var(--muted);
+  color:var(--ink);
 }
 
+.contact-link{
+  display:inline-block;
 
-/* HUGE BACKGROUND AMPERSAND */
+  text-decoration:none;
 
-.contact-wrap::after{
-  content:'&';
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
 
-  position:absolute;
+.contact-link:hover{
+  transform:translateX(5px);
 
-  right:-1.5vw;
-  bottom:-8vw;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:23vw;
-
-  font-weight:300;
-  font-style:italic;
-
-  line-height:1;
-
-  color:rgba(184,154,122,0.055);
-
-  transform:rotate(-8deg);
-
-  pointer-events:none;
+  color:var(--accent);
 }
 
 
@@ -656,11 +597,11 @@ nav{
 .logo-stamp{
   min-height:245px;
 
-  position:relative;
-
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+
+  position:relative;
 
   padding:4vw 10vw;
 
@@ -686,8 +627,6 @@ nav{
   animation:spinStamp 15s linear infinite;
 
   transform-origin:center;
-
-  opacity:0.72;
 }
 
 .stamp-spin svg{
@@ -702,13 +641,11 @@ nav{
 
   font-family:'Corinthia',cursive;
 
-  font-size:40px;
-
-  font-weight:400;
+  font-size:44px;
 
   color:var(--accent);
 
-  transform:rotate(-9deg);
+  transform:rotate(-8deg);
 
   z-index:2;
 }
@@ -832,20 +769,26 @@ footer{
   }
 
 
-  /* ABOUT */
-
   .about-hero{
     grid-template-columns:1fr;
-
-    min-height:auto;
   }
 
   .about-visual{
-    min-height:380px;
+    min-height:420px;
   }
 
   .about-a{
     font-size:330px;
+  }
+
+  .about-star{
+    top:8vh;
+    left:8vw;
+  }
+
+  .about-est{
+    left:8vw;
+    bottom:5vh;
   }
 
   .about-content{
@@ -853,9 +796,7 @@ footer{
   }
 
   .about-heading{
-    font-size:54px;
-
-    margin-bottom:2rem;
+    font-size:58px;
   }
 
   .about-para{
@@ -863,20 +804,16 @@ footer{
   }
 
 
-  /* MOVING PASSIONS */
-
   .passions{
-    padding:2.5rem 0;
+    padding:2rem 0;
   }
 
   .passion{
-    font-size:31px;
+    font-size:30px;
 
     padding:0 1rem;
   }
 
-
-  /* CONTACT */
 
   .contact-wrap{
     grid-template-columns:1fr;
@@ -887,19 +824,13 @@ footer{
   }
 
   .contact-heading{
-    font-size:64px;
+    font-size:65px;
   }
 
   .contact-heading em{
     margin-left:0;
   }
 
-  .contact-details{
-    padding-left:0;
-  }
-
-
-  /* STAMP */
 
   .logo-stamp{
     min-height:190px;
@@ -911,11 +842,9 @@ footer{
   }
 
   .stamp-center{
-    font-size:36px;
+    font-size:38px;
   }
 
-
-  /* FOOTER */
 
   footer{
     grid-template-columns:1fr;
@@ -940,7 +869,7 @@ footer{
 
 
 <!-- =======================================================
-     NAVIGATION
+     NAV
 ======================================================= -->
 
 <nav>
@@ -948,6 +877,7 @@ footer{
   <a href="index.html" class="nav-logo">
     Anaïs Doroshina
   </a>
+
 
   <div class="nav-links">
 
@@ -1008,10 +938,12 @@ footer{
       About
     </div>
 
+
     <h1 class="about-heading">
       Anaïs<br/>
       <em>Doroshina.</em>
     </h1>
+
 
     <p class="about-para">
       My first introduction to fashion came long before I understood
@@ -1020,11 +952,13 @@ footer{
       me to look closely.
     </p>
 
+
     <p class="about-para">
       Growing up among five siblings and a family of entrepreneurs,
       I learned to adapt, create, and approach the world with curiosity.
       Business taught me structure; art taught me observation.
     </p>
+
 
     <p class="about-para">
       I collect passions the way others collect objects. Photography,
@@ -1034,7 +968,9 @@ footer{
       might otherwise be forgotten.
     </p>
 
+
     <div class="bio-rule"></div>
+
 
     <a href="#contact" class="cta">
       Get in Touch →
@@ -1059,109 +995,47 @@ footer{
 
     <div class="passions-group">
 
-      <span class="passion">
-        Photography
-      </span>
+      <span class="passion">Photography</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion-star">
-        ✦
-      </span>
+      <span class="passion">Writing</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion">
-        Writing
-      </span>
+      <span class="passion">Jewelry Making</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion-star">
-        ✦
-      </span>
+      <span class="passion">Design</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion">
-        Jewelry Making
-      </span>
+      <span class="passion">Fashion</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion-star">
-        ✦
-      </span>
-
-      <span class="passion">
-        Design
-      </span>
-
-      <span class="passion-star">
-        ✦
-      </span>
-
-      <span class="passion">
-        Fashion
-      </span>
-
-      <span class="passion-star">
-        ✦
-      </span>
-
-      <span class="passion">
-        Culture
-      </span>
-
-      <span class="passion-star">
-        ✦
-      </span>
+      <span class="passion">Culture</span>
+      <span class="passion-star">✦</span>
 
     </div>
 
 
 
-    <!-- duplicate for seamless movement -->
-
     <div class="passions-group" aria-hidden="true">
 
-      <span class="passion">
-        Photography
-      </span>
+      <span class="passion">Photography</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion-star">
-        ✦
-      </span>
+      <span class="passion">Writing</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion">
-        Writing
-      </span>
+      <span class="passion">Jewelry Making</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion-star">
-        ✦
-      </span>
+      <span class="passion">Design</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion">
-        Jewelry Making
-      </span>
+      <span class="passion">Fashion</span>
+      <span class="passion-star">✦</span>
 
-      <span class="passion-star">
-        ✦
-      </span>
-
-      <span class="passion">
-        Design
-      </span>
-
-      <span class="passion-star">
-        ✦
-      </span>
-
-      <span class="passion">
-        Fashion
-      </span>
-
-      <span class="passion-star">
-        ✦
-      </span>
-
-      <span class="passion">
-        Culture
-      </span>
-
-      <span class="passion-star">
-        ✦
-      </span>
+      <span class="passion">Culture</span>
+      <span class="passion-star">✦</span>
 
     </div>
 
@@ -1182,7 +1056,6 @@ footer{
 
   <div class="contact-intro">
 
-
     <h2 class="contact-heading">
 
       Let's<br/>
@@ -1197,7 +1070,6 @@ footer{
       </em>
 
     </h2>
-
 
   </div>
 
@@ -1229,10 +1101,7 @@ footer{
         LinkedIn
       </span>
 
-      <a
-        href="#"
-        class="contact-link"
-      >
+      <a href="#" class="contact-link">
         Anaïs Doroshina
       </a>
 
@@ -1277,7 +1146,6 @@ footer{
         viewBox="0 0 130 130"
         xmlns="http://www.w3.org/2000/svg"
       >
-
 
         <defs>
 
@@ -1335,7 +1203,6 @@ footer{
 
   <div>
 
-
     <div class="ft-logo">
       Anaïs Doroshina
     </div>
@@ -1346,13 +1213,11 @@ footer{
       behind them.
     </p>
 
-
   </div>
 
 
 
   <div class="ft-right">
-
 
     <a
       href="mailto:anaisdoroshina1@gmail.com"
@@ -1361,19 +1226,13 @@ footer{
       anaisdoroshina1@gmail.com
     </a>
 
-
-    <a
-      href="#"
-      class="ft-link"
-    >
+    <a href="#" class="ft-link">
       LinkedIn
     </a>
-
 
     <p class="ft-copy">
       Est. 2024
     </p>
-
 
   </div>
 
