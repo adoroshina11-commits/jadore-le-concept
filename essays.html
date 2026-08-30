@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
   rel="stylesheet"
 />
 
@@ -137,12 +137,13 @@ nav{
 }
 
 
-/* faint editorial columns like homepage */
+/* faint editorial grid */
 
 .essays-section::before{
   content:'';
 
   position:absolute;
+
   inset:56px 0 0;
 
   z-index:-1;
@@ -194,9 +195,6 @@ nav{
   background:var(--rule);
 }
 
-
-/* tiny accent detail */
-
 .label-mark{
   color:var(--accent);
 
@@ -240,9 +238,7 @@ nav{
 
   overflow:hidden;
 
-  transition:
-    background 0.25s ease,
-    padding 0.25s ease;
+  transition:background 0.25s ease;
 }
 
 .card:hover{
@@ -252,9 +248,6 @@ nav{
 .card:nth-child(3n){
   border-right:none;
 }
-
-
-/* CLICKABLE */
 
 a.card{
   text-decoration:none;
@@ -314,7 +307,7 @@ a.card{
 }
 
 
-/* very faint hover number */
+/* faint hover number */
 
 .card::after{
   content:attr(data-number);
@@ -345,7 +338,7 @@ a.card{
 
 
 /* =========================================================
-   SPINNING MARK
+   SPINNING AD STAMP
 ========================================================= */
 
 .logo-stamp{
@@ -364,42 +357,9 @@ a.card{
   overflow:hidden;
 }
 
-
-/* fine line entering stamp from top */
-
-.logo-stamp::before{
-  content:'';
-
-  position:absolute;
-
-  top:0;
-
-  width:1px;
-  height:68px;
-
-  background:var(--rule);
-}
-
-
-/* fine line leaving stamp */
-
-.logo-stamp::after{
-  content:'';
-
-  position:absolute;
-
-  bottom:0;
-
-  width:1px;
-  height:68px;
-
-  background:var(--rule);
-}
-
-
 .stamp{
-  width:112px;
-  height:112px;
+  width:130px;
+  height:130px;
 
   position:relative;
 
@@ -407,7 +367,6 @@ a.card{
   align-items:center;
   justify-content:center;
 }
-
 
 .stamp-spin{
   position:absolute;
@@ -421,7 +380,6 @@ a.card{
   opacity:0.72;
 }
 
-
 .stamp-spin svg{
   width:100%;
   height:100%;
@@ -429,21 +387,21 @@ a.card{
   overflow:visible;
 }
 
-
 .stamp-center{
   position:absolute;
 
-  font-family:'Cormorant Garamond',serif;
+  font-family:'Corinthia',cursive;
 
-  font-size:11px;
+  font-size:40px;
 
-  font-style:italic;
-
-  letter-spacing:0.1em;
+  font-weight:400;
 
   color:var(--accent);
-}
 
+  transform:rotate(-9deg);
+
+  z-index:2;
+}
 
 @keyframes spinStamp{
 
@@ -480,7 +438,6 @@ footer{
   border-top:0.5px solid rgba(255,255,255,0.08);
 }
 
-
 .ft-logo{
   margin-bottom:0.8rem;
 
@@ -493,9 +450,6 @@ footer{
 
   color:var(--cream);
 }
-
-
-/* same softer style as homepage */
 
 .ft-sub{
   max-width:410px;
@@ -512,7 +466,6 @@ footer{
   color:rgba(250,248,244,0.5);
 }
 
-
 .ft-right{
   display:flex;
   flex-direction:column;
@@ -521,7 +474,6 @@ footer{
 
   gap:8px;
 }
-
 
 .ft-link{
   font-family:'Cormorant Garamond',serif;
@@ -538,11 +490,9 @@ footer{
   transition:color 0.2s ease;
 }
 
-
 .ft-link:hover{
   color:var(--cream);
 }
-
 
 .ft-copy{
   margin-top:6px;
@@ -616,8 +566,6 @@ footer{
   }
 
 
-  /* ESSAYS */
-
   .essays-section{
     padding:
       110px
@@ -652,21 +600,21 @@ footer{
   }
 
 
-  /* STAMP */
-
   .logo-stamp{
     min-height:190px;
 
     padding:10vw 0;
   }
 
-  .logo-stamp::before,
-  .logo-stamp::after{
-    height:45px;
+  .stamp{
+    width:115px;
+    height:115px;
   }
 
+  .stamp-center{
+    font-size:36px;
+  }
 
-  /* FOOTER */
 
   footer{
     grid-template-columns:1fr;
@@ -902,7 +850,7 @@ footer{
 
 
 <!-- =======================================================
-     ROTATING ANAÏS DOROSHINA STAMP
+     ROTATING AD STAMP
 ======================================================= -->
 
 <div class="logo-stamp">
@@ -915,7 +863,7 @@ footer{
 
 
       <svg
-        viewBox="0 0 120 120"
+        viewBox="0 0 130 130"
         xmlns="http://www.w3.org/2000/svg"
       >
 
@@ -925,10 +873,10 @@ footer{
           <path
             id="circlePath"
             d="
-              M60,60
-              m-42,0
-              a42,42 0 1,1 84,0
-              a42,42 0 1,1 -84,0
+              M65,65
+              m-46,0
+              a46,46 0 1,1 92,0
+              a46,46 0 1,1 -92,0
             "
           />
 
@@ -937,8 +885,8 @@ footer{
 
         <text
           font-family="'Cormorant Garamond',serif"
-          font-size="8.6"
-          letter-spacing="3.1"
+          font-size="8.5"
+          letter-spacing="3.2"
           fill="#6a6460"
         >
 
