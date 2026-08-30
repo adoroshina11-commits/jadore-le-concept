@@ -3,495 +3,686 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Essays — J'adore le Concept</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+  rel="stylesheet"
+/>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400&display=swap"
-    rel="stylesheet"
-  >
-
+<title>Essays — Anaïs Doroshina</title>
 
-  <style>
+<style>
 
-    /* ─────────────────────────────
-       VARIABLES
-    ───────────────────────────── */
+/* =========================================================
+   BASE
+========================================================= */
 
-    :root{
-      --cream:#faf8f4;
-      --off:#f4f1eb;
-      --ink:#282724;
-      --muted:#969087;
-      --accent:#c9aa91;
-      --rule:#e5e0d8;
-      --teal:#05242b;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+:root{
+  --cream:#faf8f4;
+  --off:#f4f1eb;
+  --ink:#1a1814;
+  --muted:#6a6460;
+  --soft:#9c958e;
+  --rule:#d8d4cc;
+  --accent:#b89a7a;
+  --dark:#05242b;
+}
 
-    /* ─────────────────────────────
-       RESET
-    ───────────────────────────── */
+html{
+  scroll-behavior:smooth;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+body{
+  background:var(--cream);
+  color:var(--ink);
 
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      background:var(--cream);
-      color:var(--ink);
-      font-family:'Inter',sans-serif;
-      font-weight:300;
-    }
+  font-family:'EB Garamond',Georgia,serif;
 
+  font-size:17px;
+  line-height:1.75;
 
-    /* ─────────────────────────────
-       NAV
-    ───────────────────────────── */
+  -webkit-font-smoothing:antialiased;
 
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
+  overflow-x:hidden;
+}
 
-      z-index:100;
 
-      background:rgba(250,248,244,0.96);
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-      border-bottom:0.5px solid var(--rule);
+nav{
+  position:fixed;
 
-      height:56px;
+  top:0;
+  left:0;
+  right:0;
 
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+  z-index:100;
 
-      padding:0 5vw;
-    }
+  height:56px;
 
-    .nav-logo{
-      font-family:'Cormorant Garamond',serif;
-      font-size:12px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-      color:var(--ink);
-      text-decoration:none;
-    }
+  padding:0 5vw;
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:28px;
-    }
+  background:rgba(250,248,244,0.96);
 
-    .nav-links a{
-      font-family:'Cormorant Garamond',serif;
-      font-size:11px;
-      letter-spacing:0.18em;
-      text-transform:uppercase;
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
 
-      color:var(--muted);
-      text-decoration:none;
+  border-bottom:0.5px solid var(--rule);
+}
 
-      transition:color 0.2s ease;
-    }
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
 
-    .nav-links a:hover,
-    .nav-links a.active{
-      color:var(--ink);
-    }
+  font-size:12px;
+  letter-spacing:0.22em;
 
+  text-transform:uppercase;
 
-    /* ─────────────────────────────
-       ESSAYS / ARCHIVE GRID
-    ───────────────────────────── */
+  color:var(--ink);
+  text-decoration:none;
+}
 
-    .essays-section{
-      padding:6vw 10vw 2vw;
-      padding-top:calc(56px + 5vw);
-    }
+.nav-links{
+  display:flex;
+  align-items:center;
 
-    .label{
-      font-family:'Cormorant Garamond',serif;
-      font-size:11px;
-      letter-spacing:0.3em;
-      text-transform:uppercase;
+  gap:28px;
+}
 
-      color:var(--muted);
+.nav-links a{
+  font-family:'Cormorant Garamond',serif;
 
-      display:flex;
-      align-items:center;
-      gap:16px;
+  font-size:11px;
+  letter-spacing:0.18em;
 
-      margin-bottom:3.5rem;
-    }
+  text-transform:uppercase;
 
-    .label::after{
-      content:'';
-      flex:1;
-      height:0.5px;
-      background:var(--rule);
-    }
+  color:var(--muted);
+  text-decoration:none;
 
+  transition:color 0.2s ease;
+}
 
-    /* GRID */
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--ink);
+}
 
-    .archive-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
 
-      border-top:0.5px solid var(--rule);
-    }
+/* =========================================================
+   ESSAYS SECTION
+========================================================= */
 
+.essays-section{
+  position:relative;
 
-    /* CARDS */
+  padding:
+    calc(56px + 5vw)
+    10vw
+    2vw;
+}
 
-    .card{
-      min-height:203px;
 
-      padding:2.2rem 2rem;
+/* faint editorial columns like homepage */
 
-      border-right:0.5px solid var(--rule);
-      border-bottom:0.5px solid var(--rule);
+.essays-section::before{
+  content:'';
 
-      display:flex;
-      flex-direction:column;
+  position:absolute;
+  inset:56px 0 0;
 
-      transition:background 0.25s ease;
-    }
+  z-index:-1;
 
-    .card:hover{
-      background:var(--off);
-    }
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent calc(10vw - 0.5px),
+      rgba(216,212,204,0.28) calc(10vw - 0.5px),
+      rgba(216,212,204,0.28) 10vw
+    );
 
-    .card:nth-child(3n){
-      border-right:none;
-    }
+  opacity:0.35;
 
+  pointer-events:none;
+}
 
-    /* CLICKABLE CARDS */
 
-    a.card{
-      text-decoration:none;
-      color:inherit;
-      cursor:pointer;
-    }
+/* =========================================================
+   SECTION LABEL
+========================================================= */
 
-    .card-n{
-      font-family:'Cormorant Garamond',serif;
-      font-size:11px;
-      letter-spacing:0.2em;
+.label{
+  display:flex;
+  align-items:center;
 
-      color:var(--muted);
+  gap:16px;
 
-      margin-bottom:1.2rem;
-    }
+  margin-bottom:3.5rem;
 
-    .card-t{
-      font-family:'Cormorant Garamond',serif;
-      font-size:18px;
-      font-style:italic;
-      font-weight:400;
+  font-family:'Cormorant Garamond',serif;
 
-      line-height:1.3;
+  font-size:11px;
+  letter-spacing:0.3em;
 
-      color:var(--ink);
+  text-transform:uppercase;
 
-      margin-bottom:1rem;
+  color:var(--muted);
+}
 
-      max-width:330px;
-    }
+.label::after{
+  content:'';
 
-    .card-tag{
-      font-family:'Cormorant Garamond',serif;
-      font-size:10.5px;
-      letter-spacing:0.2em;
-      text-transform:uppercase;
+  flex:1;
 
-      color:var(--accent);
+  height:0.5px;
 
-      margin-top:auto;
-    }
+  background:var(--rule);
+}
 
 
-    /* ─────────────────────────────
-       LOGO STAMP
-    ───────────────────────────── */
+/* tiny accent detail */
 
-    .logo-stamp{
-      display:flex;
-      justify-content:center;
-      align-items:center;
+.label-mark{
+  color:var(--accent);
 
-      padding:4vw 0 4.5vw;
-    }
+  font-size:8px;
 
-    .stamp{
-      width:105px;
-      height:105px;
+  margin-left:-5px;
+}
 
-      position:relative;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
+/* =========================================================
+   GRID
+========================================================= */
 
-    .stamp-spin{
-      position:absolute;
+.archive-grid{
+  display:grid;
 
-      width:100%;
-      height:100%;
+  grid-template-columns:repeat(3,1fr);
 
-      animation:spinStamp 12s linear infinite;
-      transform-origin:center;
-    }
+  border-top:0.5px solid var(--rule);
 
-    .stamp-spin svg{
-      width:100%;
-      height:100%;
-      overflow:visible;
-    }
+  background:rgba(250,248,244,0.88);
+}
 
-    .stamp-center{
-      font-family:'Cormorant Garamond',serif;
 
-      font-size:8px;
-      letter-spacing:0.2em;
-      text-transform:uppercase;
+/* =========================================================
+   CARDS
+========================================================= */
 
-      color:var(--muted);
-    }
+.card{
+  min-height:203px;
 
-    @keyframes spinStamp{
+  padding:2.2rem 2rem;
 
-      from{
-        transform:rotate(0deg);
-      }
+  border-right:0.5px solid var(--rule);
+  border-bottom:0.5px solid var(--rule);
 
-      to{
-        transform:rotate(360deg);
-      }
+  display:flex;
+  flex-direction:column;
 
-    }
+  position:relative;
 
+  overflow:hidden;
 
-    /* ─────────────────────────────
-       FOOTER
-    ───────────────────────────── */
+  transition:
+    background 0.25s ease,
+    padding 0.25s ease;
+}
 
-    footer{
-      background:#05242b;
-      color:var(--cream);
+.card:hover{
+  background:var(--off);
+}
 
-      padding:3.5vw 10vw;
+.card:nth-child(3n){
+  border-right:none;
+}
 
-      display:grid;
-      grid-template-columns:1.2fr 1fr 1fr;
 
-      gap:3rem;
-      align-items:center;
+/* CLICKABLE */
 
-      border-top:0.5px solid rgba(255,255,255,0.08);
-    }
+a.card{
+  text-decoration:none;
+  color:inherit;
 
-    .ft-logo{
-      font-family:'Cormorant Garamond',serif;
+  cursor:pointer;
+}
 
-      font-size:13px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
 
-      color:var(--cream);
+/* ARTICLE NUMBER */
 
-      margin-bottom:0.6rem;
-    }
+.card-n{
+  margin-bottom:1.2rem;
 
-    .ft-sub{
-      font-size:13.5px;
+  font-family:'Cormorant Garamond',serif;
 
-      color:rgba(250,248,244,0.45);
+  font-size:11px;
+  letter-spacing:0.2em;
 
-      line-height:1.6;
+  color:var(--muted);
+}
 
-      max-width:260px;
-    }
 
-    .ft-cities{
-      font-family:'Cormorant Garamond',serif;
+/* TITLE */
 
-      font-size:10.5px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
+.card-t{
+  max-width:330px;
 
-      color:rgba(250,248,244,0.4);
+  margin-bottom:1rem;
 
-      text-align:center;
+  font-family:'Cormorant Garamond',serif;
 
-      white-space:nowrap;
-    }
+  font-size:18px;
 
-    .ft-right{
-      display:flex;
-      flex-direction:column;
+  font-style:italic;
+  font-weight:400;
 
-      align-items:flex-end;
+  line-height:1.3;
 
-      gap:8px;
-    }
+  color:var(--ink);
+}
 
-    .ft-link{
-      font-family:'Cormorant Garamond',serif;
 
-      font-size:11px;
-      letter-spacing:0.2em;
-      text-transform:uppercase;
+/* TAG */
 
-      color:rgba(250,248,244,0.5);
+.card-tag{
+  margin-top:auto;
 
-      text-decoration:none;
+  font-family:'Cormorant Garamond',serif;
 
-      transition:color 0.2s ease;
-    }
+  font-size:10.5px;
+  letter-spacing:0.2em;
 
-    .ft-link:hover{
-      color:var(--cream);
-    }
+  text-transform:uppercase;
 
-    .ft-copy{
-      font-family:'Cormorant Garamond',serif;
+  color:var(--accent);
+}
 
-      font-size:10px;
-      letter-spacing:0.2em;
-      text-transform:uppercase;
 
-      color:rgba(250,248,244,0.2);
+/* very faint hover number */
 
-      margin-top:4px;
-    }
+.card::after{
+  content:attr(data-number);
 
+  position:absolute;
 
-    /* ─────────────────────────────
-       TABLET
-    ───────────────────────────── */
+  right:1rem;
+  bottom:-1.2rem;
 
-    @media(max-width:900px){
+  font-family:'Cormorant Garamond',serif;
 
-      .archive-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
+  font-size:88px;
 
-      .card:nth-child(3n){
-        border-right:0.5px solid var(--rule);
-      }
+  font-style:italic;
 
-      .card:nth-child(2n){
-        border-right:none;
-      }
+  line-height:1;
 
-    }
+  color:rgba(184,154,122,0);
 
+  pointer-events:none;
 
-    /* ─────────────────────────────
-       MOBILE
-    ───────────────────────────── */
+  transition:color 0.3s ease;
+}
 
-    @media(max-width:650px){
+.card:hover::after{
+  color:rgba(184,154,122,0.055);
+}
 
-      nav{
-        height:auto;
 
-        min-height:56px;
+/* =========================================================
+   SPINNING MARK
+========================================================= */
 
-        padding:14px 5vw;
+.logo-stamp{
+  min-height:245px;
 
-        align-items:flex-start;
+  position:relative;
 
-        gap:20px;
-      }
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-      .nav-logo{
-        font-size:10px;
-        white-space:nowrap;
-      }
+  padding:4vw 10vw;
 
-      .nav-links{
-        gap:11px;
+  border-bottom:0.5px solid var(--rule);
 
-        flex-wrap:wrap;
+  overflow:hidden;
+}
 
-        justify-content:flex-end;
-      }
 
-      .nav-links a{
-        font-size:8.5px;
-      }
+/* fine line entering stamp from top */
 
-      .essays-section{
-        padding:110px 7vw 4vw;
-      }
+.logo-stamp::before{
+  content:'';
 
-      .label{
-        margin-bottom:2rem;
-      }
+  position:absolute;
 
-      .archive-grid{
-        grid-template-columns:1fr;
-      }
+  top:0;
 
-      .card{
-        border-right:none !important;
+  width:1px;
+  height:68px;
 
-        padding:2rem 1.2rem;
+  background:var(--rule);
+}
 
-        min-height:180px;
-      }
 
-      .card-t{
-        font-size:20px;
+/* fine line leaving stamp */
 
-        max-width:100%;
-      }
+.logo-stamp::after{
+  content:'';
 
-      .logo-stamp{
-        padding:10vw 0;
-      }
+  position:absolute;
 
-      footer{
-        grid-template-columns:1fr;
+  bottom:0;
 
-        gap:2rem;
+  width:1px;
+  height:68px;
 
-        padding:9vw 8vw;
-      }
+  background:var(--rule);
+}
 
-      .ft-cities{
-        text-align:left;
-      }
 
-      .ft-right{
-        align-items:flex-start;
-      }
+.stamp{
+  width:112px;
+  height:112px;
 
-    }
+  position:relative;
 
-  </style>
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+.stamp-spin{
+  position:absolute;
+
+  inset:0;
+
+  animation:spinStamp 15s linear infinite;
+
+  transform-origin:center;
+
+  opacity:0.72;
+}
+
+
+.stamp-spin svg{
+  width:100%;
+  height:100%;
+
+  overflow:visible;
+}
+
+
+.stamp-center{
+  position:absolute;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+
+  font-style:italic;
+
+  letter-spacing:0.1em;
+
+  color:var(--accent);
+}
+
+
+@keyframes spinStamp{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  padding:4vw 10vw;
+
+  display:grid;
+
+  grid-template-columns:1.3fr 1fr;
+
+  gap:4rem;
+
+  align-items:end;
+
+  background:var(--dark);
+
+  color:var(--cream);
+
+  border-top:0.5px solid rgba(255,255,255,0.08);
+}
+
+
+.ft-logo{
+  margin-bottom:0.8rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:13px;
+  letter-spacing:0.22em;
+
+  text-transform:uppercase;
+
+  color:var(--cream);
+}
+
+
+/* same softer style as homepage */
+
+.ft-sub{
+  max-width:410px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:15px;
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.65;
+
+  color:rgba(250,248,244,0.5);
+}
+
+
+.ft-right{
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:8px;
+}
+
+
+.ft-link{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+  letter-spacing:0.18em;
+
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,0.55);
+
+  text-decoration:none;
+
+  transition:color 0.2s ease;
+}
+
+
+.ft-link:hover{
+  color:var(--cream);
+}
+
+
+.ft-copy{
+  margin-top:6px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:9px;
+  letter-spacing:0.24em;
+
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,0.25);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+  .archive-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .card:nth-child(3n){
+    border-right:0.5px solid var(--rule);
+  }
+
+  .card:nth-child(2n){
+    border-right:none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:650px){
+
+  nav{
+    height:auto;
+
+    min-height:56px;
+
+    padding:14px 5vw;
+
+    align-items:flex-start;
+
+    gap:20px;
+  }
+
+  .nav-logo{
+    font-size:10px;
+
+    white-space:nowrap;
+  }
+
+  .nav-links{
+    gap:11px;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+  }
+
+  .nav-links a{
+    font-size:8.5px;
+  }
+
+
+  /* ESSAYS */
+
+  .essays-section{
+    padding:
+      110px
+      7vw
+      4vw;
+  }
+
+  .label{
+    margin-bottom:2rem;
+  }
+
+  .archive-grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    min-height:180px;
+
+    padding:2rem 1.2rem;
+
+    border-right:none !important;
+  }
+
+  .card-t{
+    max-width:100%;
+
+    font-size:20px;
+  }
+
+  .card::after{
+    font-size:70px;
+  }
+
+
+  /* STAMP */
+
+  .logo-stamp{
+    min-height:190px;
+
+    padding:10vw 0;
+  }
+
+  .logo-stamp::before,
+  .logo-stamp::after{
+    height:45px;
+  }
+
+
+  /* FOOTER */
+
+  footer{
+    grid-template-columns:1fr;
+
+    gap:2.5rem;
+
+    padding:10vw 8vw;
+  }
+
+  .ft-right{
+    align-items:flex-start;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -499,298 +690,338 @@
 <body>
 
 
-  <!-- ─────────────────────────
-       NAV
-  ───────────────────────── -->
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
 
-  <nav>
+<nav>
 
-    <a href="index.html" class="nav-logo">
-      J'adore le Concept
+  <a href="index.html" class="nav-logo">
+    Anaïs Doroshina
+  </a>
+
+
+  <div class="nav-links">
+
+    <a href="archive.html">
+      Archive
     </a>
 
+    <a href="essays.html" class="active">
+      Essays
+    </a>
 
-    <div class="nav-links">
+    <a href="photography.html">
+      Photography
+    </a>
 
-      <a href="archive.html">
-        Archive
-      </a>
+    <a href="about.html">
+      About
+    </a>
 
-      <a href="essays.html" class="active">
-        Essays
-      </a>
+    <a href="about.html#contact">
+      Contact
+    </a>
 
-      <a href="photography.html">
-        Photography
-      </a>
+  </div>
 
-      <a href="about.html">
-        About
-      </a>
+</nav>
 
-      <a href="contact.html">
-        Contact
-      </a>
 
-    </div>
 
-  </nav>
+<!-- =======================================================
+     ESSAYS
+======================================================= -->
 
+<section class="essays-section">
 
 
-  <!-- ─────────────────────────
-       ESSAYS
-  ───────────────────────── -->
+  <div class="label">
 
-  <section class="essays-section">
+    The Edit.
 
-
-    <div class="label">
-      The Edit.
-    </div>
-
-
-    <div class="archive-grid">
-
-
-      <!-- 001 -->
-
-      <div class="card">
-
-        <div class="card-n">
-          001
-        </div>
-
-        <div class="card-t">
-          When a Fashion House Becomes a Cultural Institution
-        </div>
-
-        <div class="card-tag">
-          Brand Identity
-        </div>
-
-      </div>
-
-
-
-      <!-- 002 — CLICKABLE -->
-
-      <a
-        href="essay-002.html"
-        class="card"
-        aria-label="Read Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars"
-      >
-
-        <div class="card-n">
-          002
-        </div>
-
-        <div class="card-t">
-          Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars
-        </div>
-
-        <div class="card-tag">
-          Experience
-        </div>
-
-      </a>
-
-
-
-      <!-- 003 — CLICKABLE -->
-
-      <a
-        href="essay-003.html"
-        class="card"
-        aria-label="Read Gucci x Alpine: When a Fashion House Buys Into Formula One"
-      >
-
-        <div class="card-n">
-          003
-        </div>
-
-        <div class="card-t">
-          Gucci x Alpine: When a Fashion House Buys Into Formula One
-        </div>
-
-        <div class="card-tag">
-          Brand Strategy
-        </div>
-
-      </a>
-
-
-
-      <!-- 004 -->
-
-      <div class="card">
-
-        <div class="card-n">
-          004
-        </div>
-
-        <div class="card-t">
-          From Product to World-Building: The Future of Luxury Branding
-        </div>
-
-        <div class="card-tag">
-          Strategy
-        </div>
-
-      </div>
-
-
-
-      <!-- 005 — CLICKABLE + UPDATED -->
-
-      <a
-        href="essay-005.html"
-        class="card"
-        aria-label="Read Jewelry After Rarity: How Heritage Houses Are Redefining Authenticity"
-      >
-
-        <div class="card-n">
-          005
-        </div>
-
-        <div class="card-t">
-          Jewelry After Rarity: How Heritage Houses Are Redefining Authenticity
-        </div>
-
-        <div class="card-tag">
-          Innovation · Heritage
-        </div>
-
-      </a>
-
-
-
-      <!-- 006 -->
-
-      <div class="card">
-
-        <div class="card-n">
-          006
-        </div>
-
-        <div class="card-t">
-          How Fashion Houses Use Space, Sound, and Experience to Build Desire
-        </div>
-
-        <div class="card-tag">
-          Culture
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ─────────────────────────
-       ROTATING LOGO STAMP
-  ───────────────────────── -->
-
-  <div class="logo-stamp">
-
-    <div class="stamp">
-
-      <div class="stamp-spin">
-
-        <svg viewBox="0 0 120 120">
-
-          <defs>
-
-            <path
-              id="circlePath"
-              d="
-              M 60,60
-              m -42,0
-              a 42,42 0 1,1 84,0
-              a 42,42 0 1,1 -84,0
-              "
-            />
-
-          </defs>
-
-
-          <text
-            font-family="Cormorant Garamond, serif"
-            font-size="9"
-            letter-spacing="4"
-            fill="#969087"
-          >
-
-            <textPath href="#circlePath">
-              J'ADORE LE CONCEPT · J'ADORE LE CONCEPT ·
-            </textPath>
-
-          </text>
-
-        </svg>
-
-      </div>
-
-
-      <div class="stamp-center">
-        JLC
-      </div>
-
-    </div>
+    <span class="label-mark">
+      ✦
+    </span>
 
   </div>
 
 
 
-  <!-- ─────────────────────────
-       FOOTER
-  ───────────────────────── -->
-
-  <footer>
+  <div class="archive-grid">
 
 
-    <div>
+    <!-- 001 -->
 
-      <div class="ft-logo">
-        J'adore le Concept
+    <div
+      class="card"
+      data-number="01"
+    >
+
+      <div class="card-n">
+        001
       </div>
 
-      <div class="ft-sub">
-        A curated perspective on fashion, luxury,
-        and the structures behind them.
+      <div class="card-t">
+        When a Fashion House Becomes a Cultural Institution
+      </div>
+
+      <div class="card-tag">
+        Brand Identity
+      </div>
+
+    </div>
+
+
+
+    <!-- 002 -->
+
+    <a
+      href="essay-002.html"
+      class="card"
+      data-number="02"
+      aria-label="Read Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars"
+    >
+
+      <div class="card-n">
+        002
+      </div>
+
+      <div class="card-t">
+        Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars
+      </div>
+
+      <div class="card-tag">
+        Experience
+      </div>
+
+    </a>
+
+
+
+    <!-- 003 -->
+
+    <a
+      href="essay-003.html"
+      class="card"
+      data-number="03"
+      aria-label="Read Gucci x Alpine: When a Fashion House Buys Into Formula One"
+    >
+
+      <div class="card-n">
+        003
+      </div>
+
+      <div class="card-t">
+        Gucci x Alpine: When a Fashion House Buys Into Formula One
+      </div>
+
+      <div class="card-tag">
+        Brand Strategy
+      </div>
+
+    </a>
+
+
+
+    <!-- 004 -->
+
+    <div
+      class="card"
+      data-number="04"
+    >
+
+      <div class="card-n">
+        004
+      </div>
+
+      <div class="card-t">
+        From Product to World-Building: The Future of Luxury Branding
+      </div>
+
+      <div class="card-tag">
+        Strategy
       </div>
 
     </div>
 
 
 
-    <div class="ft-cities">
-      Paris · Barcelona · Athens
-    </div>
+    <!-- 005 -->
+
+    <a
+      href="essay-005.html"
+      class="card"
+      data-number="05"
+      aria-label="Read Jewelry After Rarity: How Heritage Houses Are Redefining Authenticity"
+    >
+
+      <div class="card-n">
+        005
+      </div>
+
+      <div class="card-t">
+        Jewelry After Rarity: How Heritage Houses Are Redefining Authenticity
+      </div>
+
+      <div class="card-tag">
+        Innovation · Heritage
+      </div>
+
+    </a>
 
 
 
-    <div class="ft-right">
+    <!-- 006 -->
 
-      <a href="about.html" class="ft-link">
-        About
-      </a>
+    <div
+      class="card"
+      data-number="06"
+    >
 
-      <a href="contact.html" class="ft-link">
-        Contact
-      </a>
+      <div class="card-n">
+        006
+      </div>
 
-      <div class="ft-copy">
-        © 2026 J'adore le Concept
+      <div class="card-t">
+        How Fashion Houses Use Space, Sound, and Experience to Build Desire
+      </div>
+
+      <div class="card-tag">
+        Culture
       </div>
 
     </div>
 
 
-  </footer>
+  </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     ROTATING ANAÏS DOROSHINA STAMP
+======================================================= -->
+
+<div class="logo-stamp">
+
+
+  <div class="stamp">
+
+
+    <div class="stamp-spin">
+
+
+      <svg
+        viewBox="0 0 120 120"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+
+        <defs>
+
+          <path
+            id="circlePath"
+            d="
+              M60,60
+              m-42,0
+              a42,42 0 1,1 84,0
+              a42,42 0 1,1 -84,0
+            "
+          />
+
+        </defs>
+
+
+        <text
+          font-family="'Cormorant Garamond',serif"
+          font-size="8.6"
+          letter-spacing="3.1"
+          fill="#6a6460"
+        >
+
+          <textPath href="#circlePath">
+
+            ANAÏS DOROSHINA · FASHION &amp; LUXURY ·
+
+          </textPath>
+
+        </text>
+
+
+      </svg>
+
+
+    </div>
+
+
+    <div class="stamp-center">
+      AD
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+
+  <div>
+
+
+    <div class="ft-logo">
+      Anaïs Doroshina
+    </div>
+
+
+    <p class="ft-sub">
+      A curated perspective on fashion, luxury and the structures
+      behind them.
+    </p>
+
+
+  </div>
+
+
+
+  <div class="ft-right">
+
+
+    <a
+      href="mailto:anaisdoroshina1@gmail.com"
+      class="ft-link"
+    >
+      anaisdoroshina1@gmail.com
+    </a>
+
+
+    <a
+      href="#"
+      class="ft-link"
+    >
+      LinkedIn
+    </a>
+
+
+    <p class="ft-copy">
+      Est. 2024
+    </p>
+
+
+  </div>
+
+
+</footer>
 
 
 </body>
