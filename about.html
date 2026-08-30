@@ -32,10 +32,18 @@
   --muted:#6a6460;
   --soft:#9c958e;
   --rule:#d8d4cc;
+
   --accent:#b89a7a;
   --accent-soft:#ead8cb;
   --accent-pale:#f2e7df;
+
+  --rose:#8d675d;
+  --mauve:#765d63;
+  --camel:#a47762;
+
   --teal:#05242b;
+  --teal-soft:#1d4b4d;
+  --green:#354f4b;
 }
 
 html{
@@ -58,12 +66,11 @@ body{
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 nav{
   position:fixed;
-
   top:0;
   left:0;
   right:0;
@@ -133,7 +140,6 @@ nav{
   position:relative;
 
   display:grid;
-
   grid-template-columns:0.85fr 1.15fr;
 
   padding-top:56px;
@@ -144,7 +150,7 @@ nav{
 }
 
 
-/* LEFT COLOUR PANEL */
+/* LEFT COLOR PANEL */
 
 .about-visual{
   position:relative;
@@ -152,17 +158,22 @@ nav{
   min-height:calc(100vh - 56px);
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
-  background:var(--accent-pale);
+  background:
+    linear-gradient(
+      145deg,
+      #f2e7df 0%,
+      #ecd8cc 55%,
+      #e2c5b4 100%
+    );
 
   overflow:hidden;
 }
 
 
-/* giant decorative A */
+/* GIANT A */
 
 .about-a{
   font-family:'Corinthia',cursive;
@@ -171,7 +182,7 @@ nav{
 
   line-height:1;
 
-  color:rgba(184,154,122,0.62);
+  color:rgba(168,119,88,0.52);
 
   transform:rotate(-10deg);
 
@@ -179,7 +190,7 @@ nav{
 }
 
 
-/* small star */
+/* DECORATIVE STAR */
 
 .about-star{
   position:absolute;
@@ -191,9 +202,11 @@ nav{
 
   font-size:24px;
 
-  color:var(--accent);
+  color:#9b705a;
 
-  opacity:0.7;
+  opacity:0.75;
+
+  animation:starFloat 4s ease-in-out infinite;
 }
 
 
@@ -212,7 +225,7 @@ nav{
 
   text-transform:uppercase;
 
-  color:var(--muted);
+  color:#7e6a5f;
 }
 
 
@@ -224,13 +237,9 @@ nav{
   padding:7vw 9vw 7vw 7vw;
 
   display:flex;
-
   flex-direction:column;
   justify-content:center;
 }
-
-
-/* small label */
 
 .about-kicker{
   margin-bottom:2rem;
@@ -244,9 +253,6 @@ nav{
 
   color:var(--accent);
 }
-
-
-/* headline */
 
 .about-heading{
   max-width:650px;
@@ -268,12 +274,11 @@ nav{
 
 .about-heading em{
   font-style:italic;
-
   color:var(--muted);
 }
 
 
-/* bio */
+/* BIO */
 
 .about-para{
   max-width:610px;
@@ -289,9 +294,6 @@ nav{
   color:var(--muted);
 }
 
-
-/* little line */
-
 .bio-rule{
   width:65px;
   height:0.5px;
@@ -300,9 +302,6 @@ nav{
 
   background:var(--accent);
 }
-
-
-/* CTA */
 
 .cta{
   width:max-content;
@@ -323,54 +322,117 @@ nav{
   padding-bottom:3px;
 
   border-bottom:0.5px solid var(--ink);
+
+  transition:
+    letter-spacing 0.2s ease,
+    color 0.2s ease;
+}
+
+.cta:hover{
+  color:var(--accent);
+  letter-spacing:0.29em;
 }
 
 
 /* =========================================================
-   PASSIONS — CLEAN, NO BOXES
+   MOVING PASSIONS RIBBON
 ========================================================= */
 
 .passions{
-  padding:5vw 10vw;
+  position:relative;
 
-  display:flex;
-  justify-content:center;
+  overflow:hidden;
+
+  padding:3rem 0;
 
   border-bottom:0.5px solid var(--rule);
 
   background:var(--cream);
 }
 
-.passions-line{
+.passions-track{
   display:flex;
 
-  flex-wrap:wrap;
+  width:max-content;
 
-  justify-content:center;
   align-items:center;
 
-  gap:1rem 1.4rem;
+  white-space:nowrap;
 
-  max-width:1100px;
+  animation:passionScroll 28s linear infinite;
+}
 
-  text-align:center;
+.passions-group{
+  display:flex;
+  align-items:center;
+
+  flex-shrink:0;
 }
 
 .passion{
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(24px,2.7vw,42px);
+  font-size:clamp(30px,3.2vw,48px);
 
   font-weight:300;
   font-style:italic;
 
+  line-height:1;
+
+  padding:0 1.5rem;
+
   color:var(--ink);
 }
 
-.passion-dot{
-  font-size:10px;
+
+/* COLOR VARIATION */
+
+.passion:nth-child(1){
+  color:var(--rose);
+}
+
+.passion:nth-child(3){
+  color:var(--teal-soft);
+}
+
+.passion:nth-child(5){
+  color:#b58b72;
+}
+
+.passion:nth-child(7){
+  color:var(--mauve);
+}
+
+.passion:nth-child(9){
+  color:var(--green);
+}
+
+.passion:nth-child(11){
+  color:var(--camel);
+}
+
+.passion-star{
+  font-size:11px;
 
   color:var(--accent);
+
+  opacity:0.85;
+}
+
+@keyframes passionScroll{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+.passions:hover .passions-track{
+  animation-play-state:paused;
 }
 
 
@@ -384,52 +446,132 @@ nav{
   padding:8vw 10vw;
 
   display:grid;
+  grid-template-columns:0.9fr 1.1fr;
 
-  grid-template-columns:1fr 1fr;
+  gap:9vw;
 
-  gap:8vw;
+  align-items:center;
 
-  align-items:start;
+  overflow:hidden;
 
   border-bottom:0.5px solid var(--rule);
 
-  background:var(--cream);
+  background:
+    radial-gradient(
+      circle at 13% 80%,
+      rgba(234,216,203,0.48) 0,
+      rgba(234,216,203,0.48) 8%,
+      transparent 8.2%
+    ),
+    var(--cream);
 }
 
 
-/* heading */
+/* LEFT */
+
+.contact-intro{
+  position:relative;
+}
 
 .contact-heading{
-  max-width:500px;
+  position:relative;
+
+  width:max-content;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(48px,6vw,88px);
+  font-size:clamp(58px,6.5vw,95px);
 
   font-weight:300;
 
-  line-height:0.92;
+  line-height:0.82;
 
-  letter-spacing:-0.035em;
+  letter-spacing:-0.045em;
 
   color:var(--ink);
 }
 
 .contact-heading em{
-  font-style:italic;
+  display:inline-block;
 
-  color:var(--accent);
+  position:relative;
+
+  margin-left:0.3em;
+
+  font-style:italic;
+  font-weight:300;
+
+  color:#b99574;
+
+  transform:rotate(-3deg);
 }
 
 
-/* right side */
+/* HAND DRAWN UNDERLINE */
+
+.contact-heading em::after{
+  content:'';
+
+  position:absolute;
+
+  left:1%;
+  right:-4%;
+  bottom:-13px;
+
+  height:8px;
+
+  border-top:1px solid rgba(184,154,122,0.7);
+
+  border-radius:50%;
+
+  transform:rotate(-2deg);
+}
+
+
+/* STAR */
+
+.contact-star{
+  position:absolute;
+
+  top:-18px;
+  right:-35px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:18px;
+
+  color:#b89a7a;
+
+  animation:starFloat 4s ease-in-out infinite;
+}
+
+@keyframes starFloat{
+
+  0%,100%{
+    transform:translateY(0) rotate(0deg);
+  }
+
+  50%{
+    transform:translateY(-7px) rotate(15deg);
+  }
+
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
 
 .contact-details{
-  padding-top:0.8rem;
+  position:relative;
+
+  padding-left:1rem;
 }
 
 .contact-item{
-  padding:1.25rem 0;
+  position:relative;
+
+  padding:1.35rem 0;
 
   border-bottom:0.5px solid var(--rule);
 }
@@ -441,15 +583,17 @@ nav{
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:9.5px;
-  letter-spacing:0.3em;
+  font-size:9px;
+  letter-spacing:0.32em;
 
   text-transform:uppercase;
 
-  color:var(--accent);
+  color:#c29d80;
 }
 
 .contact-link{
+  display:inline-block;
+
   font-family:'EB Garamond',Georgia,serif;
 
   font-size:17px;
@@ -459,14 +603,14 @@ nav{
   text-decoration:none;
 
   transition:
-    color 0.2s ease,
-    padding-left 0.2s ease;
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .contact-link:hover{
-  color:var(--accent);
+  color:#a67d65;
 
-  padding-left:0.4rem;
+  transform:translateX(6px);
 }
 
 .contact-text{
@@ -478,25 +622,28 @@ nav{
 }
 
 
-/* giant soft decorative ampersand */
+/* HUGE BACKGROUND AMPERSAND */
 
 .contact-wrap::after{
   content:'&';
 
   position:absolute;
 
-  right:-1vw;
-  bottom:-5vw;
+  right:-1.5vw;
+  bottom:-8vw;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:20vw;
+  font-size:23vw;
 
+  font-weight:300;
   font-style:italic;
 
   line-height:1;
 
-  color:rgba(184,154,122,0.05);
+  color:rgba(184,154,122,0.055);
+
+  transform:rotate(-8deg);
 
   pointer-events:none;
 }
@@ -587,7 +734,6 @@ footer{
   padding:4vw 10vw;
 
   display:grid;
-
   grid-template-columns:1.3fr 1fr;
 
   gap:4rem;
@@ -717,18 +863,16 @@ footer{
   }
 
 
-  /* PASSIONS */
+  /* MOVING PASSIONS */
 
   .passions{
-    padding:12vw 8vw;
-  }
-
-  .passions-line{
-    gap:0.7rem 1rem;
+    padding:2.5rem 0;
   }
 
   .passion{
-    font-size:28px;
+    font-size:31px;
+
+    padding:0 1rem;
   }
 
 
@@ -737,13 +881,21 @@ footer{
   .contact-wrap{
     grid-template-columns:1fr;
 
-    gap:3rem;
+    gap:4rem;
 
-    padding:13vw 8vw;
+    padding:14vw 8vw;
   }
 
   .contact-heading{
-    font-size:56px;
+    font-size:64px;
+  }
+
+  .contact-heading em{
+    margin-left:0;
+  }
+
+  .contact-details{
+    padding-left:0;
   }
 
 
@@ -788,7 +940,7 @@ footer{
 
 
 <!-- =======================================================
-     NAV
+     NAVIGATION
 ======================================================= -->
 
 <nav>
@@ -796,7 +948,6 @@ footer{
   <a href="index.html" class="nav-logo">
     Anaïs Doroshina
   </a>
-
 
   <div class="nav-links">
 
@@ -833,45 +984,34 @@ footer{
 <section class="about-hero">
 
 
-  <!-- COLOUR / LETTER SIDE -->
-
   <div class="about-visual">
-
 
     <div class="about-star">
       ✦
     </div>
 
-
     <div class="about-a">
       A
     </div>
-
 
     <div class="about-est">
       Est. 2024
     </div>
 
-
   </div>
 
 
 
-  <!-- BIO -->
-
   <div class="about-content">
-
 
     <div class="about-kicker">
       About
     </div>
 
-
     <h1 class="about-heading">
       Anaïs<br/>
       <em>Doroshina.</em>
     </h1>
-
 
     <p class="about-para">
       My first introduction to fashion came long before I understood
@@ -880,13 +1020,11 @@ footer{
       me to look closely.
     </p>
 
-
     <p class="about-para">
       Growing up among five siblings and a family of entrepreneurs,
       I learned to adapt, create, and approach the world with curiosity.
       Business taught me structure; art taught me observation.
     </p>
-
 
     <p class="about-para">
       I collect passions the way others collect objects. Photography,
@@ -896,14 +1034,11 @@ footer{
       might otherwise be forgotten.
     </p>
 
-
     <div class="bio-rule"></div>
-
 
     <a href="#contact" class="cta">
       Get in Touch →
     </a>
-
 
   </div>
 
@@ -913,57 +1048,123 @@ footer{
 
 
 <!-- =======================================================
-     PASSIONS — NO BOXES
+     MOVING PASSIONS
 ======================================================= -->
 
 <section class="passions">
 
 
-  <div class="passions-line">
+  <div class="passions-track">
 
-    <span class="passion">
-      Photography
-    </span>
 
-    <span class="passion-dot">
-      ✦
-    </span>
+    <div class="passions-group">
 
-    <span class="passion">
-      Writing
-    </span>
+      <span class="passion">
+        Photography
+      </span>
 
-    <span class="passion-dot">
-      ✦
-    </span>
+      <span class="passion-star">
+        ✦
+      </span>
 
-    <span class="passion">
-      Jewelry Making
-    </span>
+      <span class="passion">
+        Writing
+      </span>
 
-    <span class="passion-dot">
-      ✦
-    </span>
+      <span class="passion-star">
+        ✦
+      </span>
 
-    <span class="passion">
-      Design
-    </span>
+      <span class="passion">
+        Jewelry Making
+      </span>
 
-    <span class="passion-dot">
-      ✦
-    </span>
+      <span class="passion-star">
+        ✦
+      </span>
 
-    <span class="passion">
-      Fashion
-    </span>
+      <span class="passion">
+        Design
+      </span>
 
-    <span class="passion-dot">
-      ✦
-    </span>
+      <span class="passion-star">
+        ✦
+      </span>
 
-    <span class="passion">
-      Culture
-    </span>
+      <span class="passion">
+        Fashion
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+      <span class="passion">
+        Culture
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+    </div>
+
+
+
+    <!-- duplicate for seamless movement -->
+
+    <div class="passions-group" aria-hidden="true">
+
+      <span class="passion">
+        Photography
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+      <span class="passion">
+        Writing
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+      <span class="passion">
+        Jewelry Making
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+      <span class="passion">
+        Design
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+      <span class="passion">
+        Fashion
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+      <span class="passion">
+        Culture
+      </span>
+
+      <span class="passion-star">
+        ✦
+      </span>
+
+    </div>
+
 
   </div>
 
@@ -979,12 +1180,22 @@ footer{
 <section class="contact-wrap" id="contact">
 
 
-  <div>
+  <div class="contact-intro">
 
 
     <h2 class="contact-heading">
+
       Let's<br/>
-      <em>connect.</em>
+
+      <em>
+        connect.
+
+        <span class="contact-star">
+          ✦
+        </span>
+
+      </em>
+
     </h2>
 
 
@@ -1050,7 +1261,7 @@ footer{
 
 
 <!-- =======================================================
-     AD STAMP
+     SPINNING AD STAMP
 ======================================================= -->
 
 <div class="logo-stamp">
