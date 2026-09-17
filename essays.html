@@ -103,22 +103,31 @@ nav{
 
 
 /* =========================================================
-   ESSAYS
+   ESSAYS HERO
 ========================================================= */
 
 .essays{
-  padding:calc(56px + 5vw) 10vw 0;
+  padding:
+    calc(56px + 5.5vw)
+    10vw
+    0;
 }
 
 
-/* THE EDIT */
+/* =========================================================
+   CENTERED THE EDIT
+========================================================= */
 
 .label{
+  width:100%;
+
   display:flex;
   align-items:center;
-  gap:16px;
+  justify-content:center;
 
-  min-height:75px;
+  gap:24px;
+
+  margin-bottom:3.2rem;
 
   font-family:'Cormorant Garamond',serif;
   font-size:11px;
@@ -126,20 +135,31 @@ nav{
   text-transform:uppercase;
 
   color:var(--muted);
+}
 
-  border-bottom:0.5px solid var(--rule);
+.label::before,
+.label::after{
+  content:'';
+
+  flex:1;
+
+  height:0.5px;
+
+  background:var(--rule);
+}
+
+.label-text{
+  display:flex;
+  align-items:center;
+
+  gap:14px;
+
+  white-space:nowrap;
 }
 
 .label-star{
   color:var(--accent);
   font-size:9px;
-}
-
-.label::after{
-  content:'';
-  flex:1;
-  height:0.5px;
-  background:var(--rule);
 }
 
 
@@ -151,6 +171,7 @@ nav{
   display:grid;
   grid-template-columns:repeat(3,1fr);
 
+  border-top:0.5px solid var(--rule);
   border-bottom:0.5px solid var(--rule);
 }
 
@@ -173,9 +194,7 @@ nav{
   text-decoration:none;
   color:inherit;
 
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+  transition:background 0.25s ease;
 }
 
 .card:nth-child(3n){
@@ -222,7 +241,7 @@ nav{
 }
 
 
-/* TAG */
+/* CATEGORY */
 
 .card-tag{
   margin-top:auto;
@@ -236,7 +255,7 @@ nav{
 }
 
 
-/* SMALL HOVER ARROW */
+/* HOVER ARROW */
 
 .card::after{
   content:'→';
@@ -267,11 +286,11 @@ nav{
 
 
 /* =========================================================
-   SPINNING AD STAMP
+   AD STAMP AREA
 ========================================================= */
 
 .logo-stamp{
-  min-height:250px;
+  height:185px;
 
   position:relative;
 
@@ -279,12 +298,15 @@ nav{
   justify-content:center;
   align-items:center;
 
-  padding:4vw 10vw;
+  padding:1.8rem 10vw 1.4rem;
 }
 
+
+/* STAMP */
+
 .stamp{
-  width:130px;
-  height:130px;
+  width:105px;
+  height:105px;
 
   position:relative;
 
@@ -307,6 +329,7 @@ nav{
 .stamp-spin svg{
   width:100%;
   height:100%;
+
   overflow:visible;
 }
 
@@ -314,7 +337,7 @@ nav{
   position:absolute;
 
   font-family:'Corinthia',cursive;
-  font-size:40px;
+  font-size:36px;
   font-weight:400;
 
   color:var(--accent);
@@ -382,9 +405,7 @@ footer{
 .ft-right{
   display:flex;
   flex-direction:column;
-
   align-items:flex-end;
-
   gap:8px;
 }
 
@@ -433,12 +454,25 @@ footer{
     font-size:8.5px;
   }
 
+
   .essays{
     padding:
       calc(56px + 10vw)
       7vw
       0;
   }
+
+
+  .label{
+    gap:14px;
+    margin-bottom:2.4rem;
+  }
+
+  .label::before,
+  .label::after{
+    min-width:20px;
+  }
+
 
   .archive-grid{
     grid-template-columns:1fr;
@@ -466,18 +500,21 @@ footer{
     font-size:18px;
   }
 
+
   .logo-stamp{
-    min-height:190px;
+    height:165px;
+    padding:1.5rem 0;
   }
 
   .stamp{
-    width:115px;
-    height:115px;
+    width:100px;
+    height:100px;
   }
 
   .stamp-center{
-    font-size:36px;
+    font-size:34px;
   }
+
 
   footer{
     grid-template-columns:1fr;
@@ -494,6 +531,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 
@@ -545,19 +583,27 @@ footer{
 <main class="essays">
 
 
+  <!-- CENTERED THE EDIT -->
+
   <div class="label">
 
-    <span>
-      The Edit.
-    </span>
+    <div class="label-text">
 
-    <span class="label-star">
-      ✦
-    </span>
+      <span>
+        The Edit.
+      </span>
+
+      <span class="label-star">
+        ✦
+      </span>
+
+    </div>
 
   </div>
 
 
+
+  <!-- ESSAY GRID -->
 
   <div class="archive-grid">
 
@@ -662,7 +708,7 @@ footer{
 
 
 
-    <!-- 006 — MET GALA -->
+    <!-- 006 -->
 
     <a href="essay-006.html" class="card">
 
@@ -779,10 +825,7 @@ footer{
       anaisdoroshina1@gmail.com
     </a>
 
-    <a
-      href="#"
-      class="ft-link"
-    >
+    <a href="#" class="ft-link">
       LinkedIn
     </a>
 
