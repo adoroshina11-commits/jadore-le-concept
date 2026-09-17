@@ -94,11 +94,8 @@ nav{
   font-size:11px;
   letter-spacing:.18em;
   text-transform:uppercase;
-
   color:var(--muted);
-
   text-decoration:none;
-
   transition:color .2s ease;
 }
 
@@ -109,12 +106,30 @@ nav{
 
 
 /* =========================================================
-   MAIN PAGE WIDTH
+   PAGE WIDTH
 ========================================================= */
 
 .page{
   width:min(88vw,1120px);
   margin:0 auto;
+}
+
+
+/* =========================================================
+   IMAGE CREDITS
+========================================================= */
+
+.image-credit{
+  margin-top:.55rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:9px;
+  line-height:1.5;
+
+  letter-spacing:.15em;
+  text-transform:uppercase;
+
+  color:#948a82;
 }
 
 
@@ -351,44 +366,24 @@ nav{
 
 
 /* =========================================================
-   SAVAGE BEAUTY
+   INDIVIDUAL IMAGE POSITIONS
 ========================================================= */
 
 .savage-image img{
   object-position:center center;
 }
 
-
-/* =========================================================
-   HEAVENLY BODIES
-========================================================= */
-
 .heavenly-image img{
   object-position:center center;
 }
-
-
-/* =========================================================
-   GILDED GLAMOUR
-========================================================= */
 
 .gilded-image img{
   object-position:center center;
 }
 
-
-/* =========================================================
-   SLEEPING BEAUTIES
-========================================================= */
-
 .sleeping-image img{
   object-position:center center;
 }
-
-
-/* =========================================================
-   SUPERFINE
-========================================================= */
 
 .superfine-image img{
   object-position:center 18%;
@@ -396,7 +391,7 @@ nav{
 
 
 /* =========================================================
-   CAMP — 2019 FEATURE
+   2019 CAMP
 ========================================================= */
 
 .camp-section{
@@ -409,14 +404,35 @@ nav{
   border-top:.5px solid var(--rule);
 }
 
-.camp-top{
+.camp-grid{
   display:grid;
 
   grid-template-columns:1fr 1fr;
 
   gap:3.4rem;
 
-  align-items:start;
+  align-items:center;
+}
+
+
+/* Gaga is LEFT and centered against full text block */
+
+.camp-feature-image{
+  width:100%;
+
+  align-self:center;
+}
+
+.camp-feature-image img{
+  display:block;
+
+  width:100%;
+
+  height:340px;
+
+  object-fit:cover;
+
+  object-position:center;
 }
 
 .camp-copy{
@@ -439,43 +455,17 @@ nav{
   margin-bottom:0;
 }
 
-.camp-feature-image img{
-  display:block;
-
-  width:100%;
-
-  height:340px;
-
-  object-fit:cover;
-
-  object-position:center;
-}
-
-.camp-caption{
-  margin-top:.55rem;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:9px;
-
-  letter-spacing:.16em;
-
-  text-transform:uppercase;
-
-  color:var(--muted);
-}
-
 
 /* =========================================================
    2026 COSTUME ART
 ========================================================= */
 
 .costume-section{
-  align-items:start;
+  align-items:center;
 }
 
 .costume-section .timeline-image img{
-  height:450px;
+  height:430px;
 
   object-fit:cover;
 
@@ -649,10 +639,6 @@ nav{
   color:var(--muted);
 
   text-decoration:none;
-}
-
-.back a:hover{
-  color:var(--ink);
 }
 
 
@@ -905,7 +891,7 @@ footer{
     padding:2.8rem 0;
   }
 
-  .camp-top{
+  .camp-grid{
     grid-template-columns:1fr;
 
     gap:2rem;
@@ -1021,8 +1007,12 @@ footer{
 
       <img
         src="kylie-purple.jpg"
-        alt="Kylie and Kendall Jenner at the 2019 Met Gala"
+        alt="2019 Met Gala Camp fashion"
       >
+
+      <p class="image-credit">
+        Met Gala, 2019 · Photo: Angela Weiss / AFP via Getty Images
+      </p>
 
     </div>
 
@@ -1113,6 +1103,10 @@ footer{
         alt="Alexander McQueen Savage Beauty exhibition"
       >
 
+      <p class="image-credit">
+        Alexander McQueen: Savage Beauty · Photo © Sølve Sundsbø / Art + Commerce
+      </p>
+
     </div>
 
 
@@ -1168,6 +1162,10 @@ footer{
         alt="Heavenly Bodies fashion exhibition"
       >
 
+      <p class="image-credit">
+        Heavenly Bodies: Fashion and the Catholic Imagination · The Metropolitan Museum of Art
+      </p>
+
     </div>
 
 
@@ -1219,8 +1217,26 @@ footer{
 
 <section class="camp-section">
 
-  <div class="camp-top">
+  <div class="camp-grid">
 
+
+    <!-- IMAGE LEFT + VERTICALLY CENTERED -->
+
+    <div class="camp-feature-image">
+
+      <img
+        src="gaga-lady.jpg"
+        alt="2019 Met Gala Camp fashion"
+      >
+
+      <p class="image-credit">
+        Met Gala, 2019 · Camp: Notes on Fashion · Photo: Getty Images
+      </p>
+
+    </div>
+
+
+    <!-- TEXT RIGHT -->
 
     <div class="camp-copy">
 
@@ -1275,20 +1291,6 @@ footer{
 
     </div>
 
-
-    <div class="camp-feature-image">
-
-      <img
-        src="gaga-lady.jpg"
-        alt="Lady Gaga at the 2019 Met Gala"
-      >
-
-      <p class="camp-caption">
-        Met Gala, 2019 · Camp: Notes on Fashion
-      </p>
-
-    </div>
-
   </div>
 
 </section>
@@ -1312,8 +1314,12 @@ footer{
 
       <img
         src="gildedglamour.jpg"
-        alt="Gilded Age fashion inspiration"
+        alt="Gilded Age fashion reference"
       >
+
+      <p class="image-credit">
+        Gilded Age fashion reference · Image source: archival reference
+      </p>
 
     </div>
 
@@ -1366,8 +1372,12 @@ footer{
 
       <img
         src="sleeping-beauty.jpg"
-        alt="Sleeping Beauties fashion exhibition"
+        alt="Sleeping Beauties Reawakening Fashion"
       >
+
+      <p class="image-credit">
+        Sleeping Beauties: Reawakening Fashion · The Metropolitan Museum of Art
+      </p>
 
     </div>
 
@@ -1419,8 +1429,12 @@ footer{
 
       <img
         src="superfine.jpg"
-        alt="Superfine Tailoring Black Style Met Gala"
+        alt="Superfine Tailoring Black Style"
       >
+
+      <p class="image-credit">
+        Met Gala, 2025 · Superfine: Tailoring Black Style · Photo: Getty Images
+      </p>
 
     </div>
 
@@ -1466,8 +1480,12 @@ footer{
 
       <img
         src="paint-emma.jpg"
-        alt="Emma Chamberlain at the 2026 Met Gala"
+        alt="Hand-painted Mugler gown at the 2026 Met Gala"
       >
+
+      <p class="image-credit">
+        Met Gala, 2026 · Custom Mugler · Hand-painted by Anna Deller-Yee · Photo: Ryan Lowry
+      </p>
 
     </div>
 
@@ -1596,89 +1614,57 @@ footer{
 
   <p>
     The Metropolitan Museum of Art —
-    <a
-      href="https://www.metmuseum.org/exhibitions/listings/2011/alexander-mcqueen"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.metmuseum.org/exhibitions/listings/2011/alexander-mcqueen" target="_blank" rel="noopener noreferrer">
       Alexander McQueen: Savage Beauty
     </a>
   </p>
 
   <p>
     The Metropolitan Museum of Art —
-    <a
-      href="https://www.metmuseum.org/exhibitions/listings/2018/heavenly-bodies"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.metmuseum.org/exhibitions/listings/2018/heavenly-bodies" target="_blank" rel="noopener noreferrer">
       Heavenly Bodies: Fashion and the Catholic Imagination
     </a>
   </p>
 
   <p>
     The Metropolitan Museum of Art —
-    <a
-      href="https://www.metmuseum.org/exhibitions/listings/2019/camp-notes-on-fashion"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.metmuseum.org/exhibitions/listings/2019/camp-notes-on-fashion" target="_blank" rel="noopener noreferrer">
       Camp: Notes on Fashion
     </a>
   </p>
 
   <p>
     Vogue —
-    <a
-      href="https://www.vogue.com/article/the-met-gala-2022-dress-code-gilded-glamour"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.vogue.com/article/the-met-gala-2022-dress-code-gilded-glamour" target="_blank" rel="noopener noreferrer">
       The Met Gala 2022 Dress Code: Gilded Glamour
     </a>
   </p>
 
   <p>
     The Metropolitan Museum of Art —
-    <a
-      href="https://www.metmuseum.org/exhibitions/sleeping-beauties-reawakening-fashion"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.metmuseum.org/exhibitions/sleeping-beauties-reawakening-fashion" target="_blank" rel="noopener noreferrer">
       Sleeping Beauties: Reawakening Fashion
     </a>
   </p>
 
   <p>
     The Metropolitan Museum of Art —
-    <a
-      href="https://www.metmuseum.org/exhibitions/superfine-tailoring-black-style"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.metmuseum.org/exhibitions/superfine-tailoring-black-style" target="_blank" rel="noopener noreferrer">
       Superfine: Tailoring Black Style
     </a>
   </p>
 
   <p>
     The Metropolitan Museum of Art —
-    <a
-      href="https://www.metmuseum.org/exhibitions/costume-art"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href="https://www.metmuseum.org/exhibitions/costume-art" target="_blank" rel="noopener noreferrer">
       Costume Art
     </a>
   </p>
 
   <p>
     Vogue —
-    <a
-      href="https://www.vogue.com/article/emma-chamberlain-met-gala-2026"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Emma Chamberlain's Met Gala 2026 Look
+    <a href="https://www.vogue.com/article/emma-chamberlain-met-gala-2026" target="_blank" rel="noopener noreferrer">
+      Emma Chamberlain’s Hand-Painted Mugler Gown
     </a>
   </p>
 
