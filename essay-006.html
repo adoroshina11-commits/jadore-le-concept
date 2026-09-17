@@ -39,8 +39,8 @@ body{
   background:var(--cream);
   color:var(--ink);
   font-family:'EB Garamond',Georgia,serif;
-  font-size:17px;
-  line-height:1.72;
+  font-size:16px;
+  line-height:1.62;
   -webkit-font-smoothing:antialiased;
 }
 
@@ -68,7 +68,7 @@ nav{
 
   padding:0 5vw;
 
-  background:rgba(250,248,244,.96);
+  background:rgba(250,248,244,.97);
 
   backdrop-filter:blur(5px);
   -webkit-backdrop-filter:blur(5px);
@@ -109,31 +109,45 @@ nav{
 
 
 /* =========================================================
+   MAIN PAGE WIDTH
+========================================================= */
+
+.page{
+  width:min(88vw,1120px);
+  margin:0 auto;
+}
+
+
+/* =========================================================
    HERO
 ========================================================= */
 
 .article-hero{
-  padding:
-    calc(56px + 6vw)
-    10vw
-    5vw;
+  padding-top:calc(56px + 4.3rem);
+  padding-bottom:2.8rem;
 
   border-bottom:.5px solid var(--rule);
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:.82fr 1.18fr;
-  gap:5vw;
+
+  grid-template-columns:280px 1fr;
+
+  gap:3.4rem;
 
   align-items:center;
+}
+
+.hero-image{
+  width:100%;
 }
 
 .hero-image img{
   display:block;
 
   width:100%;
-  height:500px;
+  height:265px;
 
   object-fit:cover;
   object-position:center top;
@@ -142,51 +156,52 @@ nav{
 .article-meta{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:12px;
 
-  margin-bottom:2rem;
+  margin-bottom:1.1rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:.28em;
+  font-size:9px;
+  letter-spacing:.27em;
   text-transform:uppercase;
 
   color:var(--accent);
 }
 
 .article-meta .star{
-  font-size:8px;
+  font-size:7px;
 }
 
 .article-title{
-  max-width:850px;
+  max-width:720px;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(46px,5vw,76px);
+
+  font-size:clamp(40px,4.2vw,62px);
+
   font-weight:300;
   font-style:italic;
 
-  line-height:1;
+  line-height:.98;
 
   letter-spacing:-.035em;
 
   color:var(--ink);
 }
 
-
-/* SMALLER MIU-MIU STYLE SUBTITLE */
-
 .article-intro{
-  max-width:610px;
+  max-width:590px;
 
-  margin-top:2rem;
+  margin-top:1.25rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:17px;
+
+  font-size:15px;
+
   font-weight:300;
   font-style:italic;
 
-  line-height:1.65;
+  line-height:1.55;
 
   color:#8b8179;
 }
@@ -196,58 +211,72 @@ nav{
    INTRODUCTION
 ========================================================= */
 
-.article-body{
-  width:min(100% - 40px,720px);
+.introduction{
+  width:min(100% - 40px,700px);
 
   margin:0 auto;
 
-  padding:4.5rem 0;
+  padding:2.8rem 0 3.2rem;
 }
 
-.article-body p{
-  margin-bottom:1.45rem;
+.introduction p{
+  margin-bottom:1.15rem;
 
   font-family:'EB Garamond',serif;
-  font-size:18px;
 
-  line-height:1.78;
+  font-size:16.5px;
+
+  line-height:1.67;
 
   color:#292621;
 }
 
-.article-body.introduction p:first-of-type::first-letter{
+.introduction p:last-child{
+  margin-bottom:0;
+}
+
+.introduction p:first-of-type::first-letter{
   float:left;
 
-  margin:.06em .14em .04em 0;
+  margin:.06em .13em .02em 0;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:5rem;
+
+  font-size:4.6rem;
+
   font-weight:300;
 
-  line-height:.75;
+  line-height:.73;
 
   color:var(--accent);
 }
 
 
 /* =========================================================
-   TIMELINE SECTIONS
+   TIMELINE
 ========================================================= */
 
 .timeline{
-  width:min(100% - 12vw,1180px);
+  width:min(88vw,1120px);
 
   margin:0 auto;
 }
 
+
+/* =========================================================
+   TIMELINE ROW
+========================================================= */
+
 .timeline-section{
   display:grid;
-  grid-template-columns:.82fr 1.18fr;
-  gap:5vw;
+
+  grid-template-columns:280px 1fr;
+
+  gap:3.4rem;
 
   align-items:center;
 
-  padding:4.5rem 0;
+  padding:2.35rem 0;
 
   border-top:.5px solid var(--rule);
 }
@@ -260,7 +289,8 @@ nav{
   display:block;
 
   width:100%;
-  max-height:610px;
+
+  height:290px;
 
   object-fit:cover;
 }
@@ -270,40 +300,47 @@ nav{
 }
 
 .timeline-content{
-  max-width:600px;
+  max-width:650px;
 }
 
 .year{
-  margin-bottom:.55rem;
+  margin-bottom:.3rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:.28em;
+
+  font-size:9px;
+
+  letter-spacing:.27em;
+
   text-transform:uppercase;
 
   color:var(--accent);
 }
 
 .section-title{
-  margin-bottom:1.5rem;
+  margin-bottom:.8rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:36px;
+
+  font-size:29px;
+
   font-weight:300;
+
   font-style:italic;
 
-  line-height:1.1;
+  line-height:1.05;
 
   color:var(--ink);
 }
 
 .timeline-content p{
-  margin-bottom:1.3rem;
+  margin-bottom:.8rem;
 
   font-family:'EB Garamond',serif;
-  font-size:18px;
 
-  line-height:1.72;
+  font-size:15.5px;
+
+  line-height:1.58;
 
   color:#292621;
 }
@@ -314,98 +351,135 @@ nav{
 
 
 /* =========================================================
-   CAMP SECTION
+   SAVAGE BEAUTY
+========================================================= */
+
+.savage-image img{
+  object-position:center center;
+}
+
+
+/* =========================================================
+   HEAVENLY BODIES
+========================================================= */
+
+.heavenly-image img{
+  object-position:center center;
+}
+
+
+/* =========================================================
+   GILDED GLAMOUR
+========================================================= */
+
+.gilded-image img{
+  object-position:center center;
+}
+
+
+/* =========================================================
+   SLEEPING BEAUTIES
+========================================================= */
+
+.sleeping-image img{
+  object-position:center center;
+}
+
+
+/* =========================================================
+   SUPERFINE
+========================================================= */
+
+.superfine-image img{
+  object-position:center 18%;
+}
+
+
+/* =========================================================
+   CAMP — 2019 FEATURE
 ========================================================= */
 
 .camp-section{
-  width:min(100% - 12vw,1180px);
+  width:min(88vw,1120px);
 
   margin:0 auto;
 
-  padding:4.5rem 0;
+  padding:2.7rem 0;
 
   border-top:.5px solid var(--rule);
 }
 
-.camp-heading{
-  width:min(100%,720px);
+.camp-top{
+  display:grid;
 
-  margin:0 auto 3rem;
+  grid-template-columns:1fr 1fr;
+
+  gap:3.4rem;
+
+  align-items:start;
 }
 
-.camp-heading .year{
-  margin-bottom:.55rem;
+.camp-copy{
+  max-width:520px;
 }
 
-.camp-heading p{
-  margin-bottom:1.35rem;
+.camp-copy p{
+  margin-bottom:.85rem;
 
   font-family:'EB Garamond',serif;
-  font-size:18px;
 
-  line-height:1.76;
+  font-size:15.5px;
+
+  line-height:1.6;
 
   color:#292621;
 }
 
-.camp-images{
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-
-  gap:16px;
-
-  margin:3rem 0;
+.camp-copy p:last-child{
+  margin-bottom:0;
 }
 
-.camp-image{
-  overflow:hidden;
-}
-
-.camp-image img{
+.camp-feature-image img{
   display:block;
 
   width:100%;
-  height:580px;
+
+  height:340px;
 
   object-fit:cover;
-}
 
-.camp-image:first-child img{
   object-position:center;
 }
 
-.camp-image:last-child img{
-  object-position:center top;
-}
-
 .camp-caption{
-  grid-column:1 / -1;
-
-  margin-top:.25rem;
+  margin-top:.55rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  line-height:1.5;
-  letter-spacing:.14em;
+
+  font-size:9px;
+
+  letter-spacing:.16em;
+
+  text-transform:uppercase;
 
   color:var(--muted);
 }
 
-.camp-copy{
-  width:min(100%,720px);
 
-  margin:0 auto;
+/* =========================================================
+   2026 COSTUME ART
+========================================================= */
+
+.costume-section{
+  align-items:start;
 }
 
-.camp-copy p{
-  margin-bottom:1.35rem;
+.costume-section .timeline-image img{
+  height:450px;
 
-  font-family:'EB Garamond',serif;
-  font-size:18px;
+  object-fit:cover;
 
-  line-height:1.76;
-
-  color:#292621;
+  object-position:center top;
 }
 
 
@@ -414,55 +488,66 @@ nav{
 ========================================================= */
 
 .conclusion{
-  width:min(100% - 40px,720px);
+  width:min(100% - 40px,700px);
 
   margin:0 auto;
 
-  padding:5rem 0;
+  padding:3.3rem 0 2.8rem;
+
+  border-top:.5px solid var(--rule);
 }
 
 .conclusion-label{
-  margin-bottom:1rem;
+  margin-bottom:.55rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:.28em;
+
+  font-size:9px;
+
+  letter-spacing:.27em;
+
   text-transform:uppercase;
 
   color:var(--accent);
 }
 
 .conclusion h2{
-  margin-bottom:2rem;
+  margin-bottom:1.3rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:36px;
+
+  font-size:30px;
+
   font-weight:300;
+
   font-style:italic;
 
-  line-height:1.15;
+  line-height:1.1;
 }
 
 .conclusion p{
-  margin-bottom:1.45rem;
+  margin-bottom:1rem;
 
   font-family:'EB Garamond',serif;
-  font-size:18px;
 
-  line-height:1.78;
+  font-size:16.5px;
+
+  line-height:1.67;
 
   color:#292621;
 }
 
 
-/* FINAL CENTERED STATEMENT */
+/* =========================================================
+   FINAL STATEMENT
+========================================================= */
 
 .final-statement{
-  width:min(100% - 12vw,1180px);
+  width:min(88vw,1120px);
 
-  margin:0 auto 5rem;
+  margin:0 auto 3rem;
 
-  padding:3.5rem 6vw;
+  padding:2.5rem 5vw;
 
   border-top:.5px solid var(--rule);
   border-bottom:.5px solid var(--rule);
@@ -471,16 +556,19 @@ nav{
 }
 
 .final-statement p{
-  max-width:1050px;
+  max-width:900px;
 
   margin:0 auto;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(27px,3vw,42px);
+
+  font-size:clamp(25px,2.5vw,36px);
+
   font-weight:300;
+
   font-style:italic;
 
-  line-height:1.4;
+  line-height:1.35;
 
   color:var(--ink);
 }
@@ -491,33 +579,35 @@ nav{
 ========================================================= */
 
 .sources{
-  width:min(100% - 40px,720px);
+  width:min(100% - 40px,700px);
 
   margin:0 auto;
 
-  padding:3.5rem 0 5rem;
-
-  border-top:.5px solid var(--rule);
+  padding:2.6rem 0 3.5rem;
 }
 
 .sources-title{
-  margin-bottom:1.4rem;
+  margin-bottom:1rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
-  letter-spacing:.28em;
+
+  font-size:9px;
+
+  letter-spacing:.27em;
+
   text-transform:uppercase;
 
   color:var(--accent);
 }
 
 .sources p{
-  margin-bottom:.7rem;
+  margin-bottom:.5rem;
 
   font-family:'EB Garamond',serif;
-  font-size:14px;
 
-  line-height:1.55;
+  font-size:13px;
+
+  line-height:1.5;
 
   color:var(--muted);
 }
@@ -540,7 +630,7 @@ nav{
 ========================================================= */
 
 .back{
-  padding:2rem 10vw;
+  padding:1.6rem 10vw;
 
   border-top:.5px solid var(--rule);
 
@@ -549,8 +639,11 @@ nav{
 
 .back a{
   font-family:'Cormorant Garamond',serif;
-  font-size:10px;
+
+  font-size:9px;
+
   letter-spacing:.25em;
+
   text-transform:uppercase;
 
   color:var(--muted);
@@ -568,26 +661,32 @@ nav{
 ========================================================= */
 
 .logo-stamp{
-  height:185px;
+  height:150px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 }
 
 .stamp{
   position:relative;
 
-  width:105px;
-  height:105px;
+  width:95px;
+
+  height:95px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 }
 
 .stamp-spin{
   position:absolute;
+
   inset:0;
 
   animation:spinStamp 15s linear infinite;
@@ -597,6 +696,7 @@ nav{
 
 .stamp-spin svg{
   width:100%;
+
   height:100%;
 
   overflow:visible;
@@ -608,7 +708,8 @@ nav{
   z-index:2;
 
   font-family:'Corinthia',cursive;
-  font-size:36px;
+
+  font-size:33px;
 
   color:var(--accent);
 
@@ -616,6 +717,7 @@ nav{
 }
 
 @keyframes spinStamp{
+
   from{
     transform:rotate(0deg);
   }
@@ -623,6 +725,7 @@ nav{
   to{
     transform:rotate(360deg);
   }
+
 }
 
 
@@ -631,9 +734,10 @@ nav{
 ========================================================= */
 
 footer{
-  padding:4vw 10vw;
+  padding:3.5vw 10vw;
 
   display:grid;
+
   grid-template-columns:1.3fr 1fr;
 
   gap:4rem;
@@ -646,11 +750,14 @@ footer{
 }
 
 .ft-logo{
-  margin-bottom:.8rem;
+  margin-bottom:.7rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:13px;
+
   letter-spacing:.22em;
+
   text-transform:uppercase;
 }
 
@@ -658,17 +765,21 @@ footer{
   max-width:410px;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:15px;
+
   font-weight:300;
+
   font-style:italic;
 
-  line-height:1.65;
+  line-height:1.6;
 
   color:rgba(250,248,244,.5);
 }
 
 .ft-right{
   display:flex;
+
   flex-direction:column;
 
   align-items:flex-end;
@@ -678,8 +789,11 @@ footer{
 
 .ft-link{
   font-family:'Cormorant Garamond',serif;
+
   font-size:11px;
+
   letter-spacing:.18em;
+
   text-transform:uppercase;
 
   color:rgba(250,248,244,.55);
@@ -695,8 +809,11 @@ footer{
   margin-top:6px;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:9px;
+
   letter-spacing:.24em;
+
   text-transform:uppercase;
 
   color:rgba(250,248,244,.25);
@@ -714,7 +831,7 @@ footer{
   }
 
   .nav-links{
-    gap:12px;
+    gap:11px;
   }
 
   .nav-links a{
@@ -722,91 +839,103 @@ footer{
   }
 
 
-  .article-hero{
-    padding:
-      calc(56px + 10vw)
-      7vw
-      10vw;
+  .page,
+  .timeline,
+  .camp-section{
+    width:86%;
   }
+
+
+  .article-hero{
+    padding-top:calc(56px + 2.8rem);
+    padding-bottom:2.4rem;
+  }
+
 
   .hero-grid{
     grid-template-columns:1fr;
 
-    gap:2.5rem;
+    gap:2rem;
   }
 
   .hero-image img{
     height:auto;
+    max-height:430px;
   }
 
+
   .article-title{
-    font-size:clamp(42px,12vw,62px);
+    font-size:clamp(39px,11vw,58px);
   }
 
   .article-intro{
-    font-size:16px;
+    font-size:15px;
   }
 
 
-  .article-body{
-    padding:3.5rem 0;
-  }
-
-
-  .timeline{
+  .introduction{
     width:86%;
+
+    padding:2.7rem 0;
   }
+
 
   .timeline-section{
     grid-template-columns:1fr;
 
-    gap:2rem;
+    gap:1.7rem;
 
-    padding:3.5rem 0;
+    padding:2.8rem 0;
   }
 
-  .timeline-image img{
+  .timeline-image img,
+  .costume-section .timeline-image img{
+    height:auto;
+
     max-height:none;
   }
 
 
   .section-title{
-    font-size:31px;
+    font-size:29px;
   }
 
 
   .camp-section{
-    width:86%;
-
-    padding:3.5rem 0;
+    padding:2.8rem 0;
   }
 
-  .camp-images{
+  .camp-top{
     grid-template-columns:1fr;
+
+    gap:2rem;
   }
 
-  .camp-image img{
+  .camp-feature-image img{
     height:auto;
-  }
-
-  .camp-caption{
-    grid-column:auto;
   }
 
 
   .conclusion{
-    padding:4rem 0;
+    width:86%;
+
+    padding:3rem 0 2.5rem;
   }
 
 
   .final-statement{
     width:86%;
 
-    padding:2.7rem 1rem;
+    padding:2.2rem 1rem;
   }
 
   .final-statement p{
-    font-size:26px;
+    font-size:25px;
+  }
+
+
+  .sources{
+    width:86%;
   }
 
 
@@ -885,10 +1014,8 @@ footer{
 
 <header class="article-hero">
 
-  <div class="hero-grid">
+  <div class="page hero-grid">
 
-
-    <!-- KYLIE + KENDALL HERO IMAGE -->
 
     <div class="hero-image">
 
@@ -906,13 +1033,9 @@ footer{
 
         <span>006</span>
 
-        <span class="star">
-          ✦
-        </span>
+        <span class="star">✦</span>
 
-        <span>
-          Culture · Identity
-        </span>
+        <span>Culture · Identity</span>
 
       </div>
 
@@ -942,7 +1065,7 @@ footer{
      INTRODUCTION
 ===================================================== -->
 
-<article class="article-body introduction">
+<article class="introduction">
 
   <p>
     Every first Monday in May, fashion enters a museum and is asked to
@@ -976,19 +1099,14 @@ footer{
 
 
 <!-- =====================================================
-     TIMELINE
+     2011 — SAVAGE BEAUTY
 ===================================================== -->
 
 <div class="timeline">
 
-
-  <!-- ===================================================
-       2011 — SAVAGE BEAUTY
-  ==================================================== -->
-
   <section class="timeline-section">
 
-    <div class="timeline-image portrait">
+    <div class="timeline-image savage-image">
 
       <img
         src="savage.jpg"
@@ -1037,13 +1155,13 @@ footer{
 
 
 
-  <!-- ===================================================
-       2018 — HEAVENLY BODIES
-  ==================================================== -->
+<!-- =====================================================
+     2018 — HEAVENLY BODIES
+===================================================== -->
 
   <section class="timeline-section">
 
-    <div class="timeline-image">
+    <div class="timeline-image heavenly-image">
 
       <img
         src="heavenly.jpg"
@@ -1101,93 +1219,75 @@ footer{
 
 <section class="camp-section">
 
+  <div class="camp-top">
 
-  <div class="camp-heading">
 
-    <div class="year">
-      2019
+    <div class="camp-copy">
+
+      <div class="year">
+        2019
+      </div>
+
+      <h2 class="section-title">
+        Camp: Notes on Fashion
+      </h2>
+
+      <p>
+        Of every Met Gala, 2019 remains my favorite. Perhaps because it
+        understood something fashion occasionally forgets: beauty does not
+        always need to be tasteful.
+      </p>
+
+      <p>
+        Camp: Notes on Fashion took Susan Sontag's 1964 essay as its framework
+        and explored an aesthetic built from irony, humor, parody, artifice,
+        theatricality and exaggeration. More than 250 objects traced the way
+        camp moved between marginal culture and the mainstream.
+      </p>
+
+      <p>
+        It was the perfect theme for the Met Gala because camp cannot survive
+        through restraint. It needs performance. It needs too much. On the
+        pink carpet, feathers became enormous, silhouettes became absurd and
+        getting dressed became theatre.
+      </p>
+
+      <p>
+        Lady Gaga turned her arrival into a performance rather than a single
+        look, using the staircase itself as a stage. Nearby, feathers, crystals,
+        saturated color and exaggerated proportions transformed familiar ideas
+        of glamour into something knowingly excessive.
+      </p>
+
+      <p>
+        That is why 2019 still feels different to me. Camp allowed fashion to
+        stop pretending that seriousness is the only route to significance.
+        Something could be ridiculous and intelligent at the same time.
+        Artificiality did not have to be hidden. It could be celebrated.
+      </p>
+
+      <p>
+        More importantly, camp questions who gets to decide what counts as
+        “good taste.” The Met's exhibition connected camp with challenges to
+        conventional ideas around taste, gender, race and sexuality. What looks
+        excessive from one perspective can look liberating from another.
+      </p>
+
     </div>
 
-    <h2 class="section-title">
-      Camp: Notes on Fashion
-    </h2>
 
-    <p>
-      Of every Met Gala, 2019 remains my favorite. Perhaps because it
-      understood something fashion occasionally forgets: beauty does not
-      always need to be tasteful.
-    </p>
-
-    <p>
-      Camp: Notes on Fashion took Susan Sontag's 1964 essay as its framework
-      and explored an aesthetic built from irony, humor, parody, artifice,
-      theatricality and exaggeration. More than 250 objects traced the way
-      camp moved between marginal culture and the mainstream.
-    </p>
-
-    <p>
-      It was the perfect theme for the Met Gala because camp cannot survive
-      through restraint. It needs performance. It needs too much. On the
-      pink carpet, feathers became enormous, silhouettes became absurd and
-      getting dressed became theatre.
-    </p>
-
-  </div>
-
-
-
-  <!-- LADY GAGA IMAGE -->
-
-  <div class="camp-images">
-
-    <div class="camp-image">
+    <div class="camp-feature-image">
 
       <img
         src="gaga-lady.jpg"
-        alt="Lady Gaga on the pink steps at the 2019 Met Gala"
+        alt="Lady Gaga at the 2019 Met Gala"
       >
 
-    </div>
-
-    <div class="camp-image">
-
-      <img
-        src="kylie-purple.jpg"
-        alt="Kylie and Kendall Jenner at the 2019 Met Gala"
-      >
+      <p class="camp-caption">
+        Met Gala, 2019 · Camp: Notes on Fashion
+      </p>
 
     </div>
-
-    <p class="camp-caption">
-      MET GALA, 2019 · CAMP: NOTES ON FASHION
-    </p>
-
-  </div>
-
-
-
-  <div class="camp-copy">
-
-    <p>
-      Lady Gaga turned her arrival into a performance rather than a single
-      look, using the staircase itself as a stage. Nearby, feathers, crystals,
-      saturated color and exaggerated proportions transformed familiar ideas
-      of glamour into something knowingly excessive.
-    </p>
-
-    <p>
-      That is why 2019 still feels different to me. Camp allowed fashion to
-      stop pretending that seriousness is the only route to significance.
-      Something could be ridiculous and intelligent at the same time.
-      Artificiality did not have to be hidden. It could be celebrated.
-    </p>
-
-    <p>
-      More importantly, camp questions who gets to decide what counts as
-      “good taste.” The Met's exhibition connected camp with challenges to
-      conventional ideas around taste, gender, race and sexuality. What looks
-      excessive from one perspective can look liberating from another.
-    </p>
 
   </div>
 
@@ -1202,13 +1302,13 @@ footer{
 <div class="timeline">
 
 
-  <!-- ===================================================
-       2022 — GILDED GLAMOUR
-  ==================================================== -->
+<!-- =====================================================
+     2022 — GILDED GLAMOUR
+===================================================== -->
 
   <section class="timeline-section">
 
-    <div class="timeline-image">
+    <div class="timeline-image gilded-image">
 
       <img
         src="gildedglamour.jpg"
@@ -1256,13 +1356,13 @@ footer{
 
 
 
-  <!-- ===================================================
-       2024 — SLEEPING BEAUTIES
-  ==================================================== -->
+<!-- =====================================================
+     2024 — SLEEPING BEAUTIES
+===================================================== -->
 
   <section class="timeline-section">
 
-    <div class="timeline-image">
+    <div class="timeline-image sleeping-image">
 
       <img
         src="sleeping-beauty.jpg"
@@ -1309,13 +1409,13 @@ footer{
 
 
 
-  <!-- ===================================================
-       2025 — SUPERFINE
-  ==================================================== -->
+<!-- =====================================================
+     2025 — SUPERFINE
+===================================================== -->
 
   <section class="timeline-section">
 
-    <div class="timeline-image portrait">
+    <div class="timeline-image superfine-image">
 
       <img
         src="superfine.jpg"
@@ -1356,15 +1456,13 @@ footer{
 
 
 
-  <!-- ===================================================
-       2026 — COSTUME ART
-  ==================================================== -->
+<!-- =====================================================
+     2026 — COSTUME ART
+===================================================== -->
 
-  <section class="timeline-section">
+  <section class="timeline-section costume-section">
 
-    <!-- EMMA NOW ON LEFT -->
-
-    <div class="timeline-image portrait">
+    <div class="timeline-image">
 
       <img
         src="paint-emma.jpg"
@@ -1472,7 +1570,7 @@ footer{
 
 
 <!-- =====================================================
-     FINAL CENTERED STATEMENT
+     FINAL STATEMENT
 ===================================================== -->
 
 <div class="final-statement">
@@ -1589,7 +1687,7 @@ footer{
 
 
 <!-- =====================================================
-     BACK TO ESSAYS
+     BACK
 ===================================================== -->
 
 <div class="back">
@@ -1603,7 +1701,7 @@ footer{
 
 
 <!-- =====================================================
-     SPINNING AD STAMP
+     AD STAMP
 ===================================================== -->
 
 <div class="logo-stamp">
@@ -1631,7 +1729,6 @@ footer{
 
         </defs>
 
-
         <text
           font-family="'Cormorant Garamond',serif"
           font-size="8.5"
@@ -1648,7 +1745,6 @@ footer{
       </svg>
 
     </div>
-
 
     <div class="stamp-center">
       AD
