@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+<title>The Met Gala as a Mirror — Anaïs Doroshina</title>
+
+<style>
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --cream:#faf8f4;
+  --off:#f4f1eb;
+  --ink:#1a1814;
+  --muted:#6a6460;
+  --rule:#d8d4cc;
+  --accent:#b89a7a;
+  --teal:#05242b;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'EB Garamond', Georgia, serif;
+  font-size:17px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+
+  height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 5vw;
+
+  background:rgba(250,248,244,.96);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+  transition:color .2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   ARTICLE HERO
+========================================================= */
+
+.article-hero{
+  padding:
+    calc(56px + 7vw)
+    10vw
+    5.5vw;
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.article-meta{
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  margin-bottom:2.6rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.article-meta .star{
+  font-size:8px;
+}
+
+.article-title{
+  max-width:1000px;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,6vw,86px);
+  font-weight:300;
+  font-style:italic;
+  line-height:.98;
+  letter-spacing:-.035em;
+
+  color:var(--ink);
+}
+
+.article-intro{
+  max-width:690px;
+
+  margin-top:3rem;
+  margin-left:auto;
+
+  font-family:'EB Garamond',serif;
+  font-size:20px;
+  line-height:1.65;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   ARTICLE BODY
+========================================================= */
+
+.article-body{
+  width:min(100% - 40px, 720px);
+  margin:0 auto;
+
+  padding:5rem 0;
+}
+
+.article-body p{
+  margin-bottom:1.5rem;
+
+  font-family:'EB Garamond',serif;
+  font-size:18px;
+  line-height:1.78;
+
+  color:#292621;
+}
+
+.article-body p:first-of-type::first-letter{
+  float:left;
+
+  margin:.05em .13em 0 0;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:5.2rem;
+  font-weight:300;
+  line-height:.72;
+
+  color:var(--accent);
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.year-section{
+  margin-top:5rem;
+}
+
+.year{
+  margin-bottom:.6rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.section-title{
+  margin-bottom:1.7rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  font-weight:300;
+  font-style:italic;
+  line-height:1.15;
+
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   PULL QUOTES
+========================================================= */
+
+.pullquote{
+  margin:4.5rem auto;
+
+  padding:2.4rem 0;
+
+  border-top:.5px solid var(--rule);
+  border-bottom:.5px solid var(--rule);
+
+  text-align:center;
+}
+
+.pullquote p{
+  max-width:600px;
+
+  margin:0 auto;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:29px;
+  font-weight:300;
+  font-style:italic;
+  line-height:1.35;
+
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   FULL-WIDTH IMAGE
+========================================================= */
+
+.image-wide{
+  width:min(100% - 12vw, 1180px);
+
+  margin:1rem auto 5rem;
+}
+
+.image-wide img{
+  display:block;
+
+  width:100%;
+  max-height:680px;
+
+  object-fit:cover;
+}
+
+.caption{
+  margin-top:.8rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  line-height:1.5;
+  letter-spacing:.14em;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   2019 IMAGE PAIR
+========================================================= */
+
+.camp-images{
+  width:min(100% - 12vw, 1180px);
+
+  margin:1rem auto 5rem;
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:16px;
+
+  align-items:stretch;
+}
+
+.camp-image{
+  overflow:hidden;
+}
+
+.camp-image img{
+  display:block;
+
+  width:100%;
+  height:600px;
+
+  object-fit:cover;
+}
+
+.camp-image:first-child img{
+  object-position:center;
+}
+
+.camp-image:last-child img{
+  object-position:center top;
+}
+
+.camp-caption{
+  grid-column:1 / -1;
+
+  margin-top:.2rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  line-height:1.5;
+  letter-spacing:.14em;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.article-divider{
+  width:min(100% - 40px,720px);
+
+  height:.5px;
+
+  margin:0 auto;
+
+  background:var(--rule);
+}
+
+
+/* =========================================================
+   2026 FEATURE
+========================================================= */
+
+.final-feature{
+  padding:5rem 0 0;
+}
+
+.final-image{
+  width:min(100% - 12vw, 980px);
+
+  margin:0 auto;
+}
+
+.final-image img{
+  display:block;
+
+  width:100%;
+  max-height:850px;
+
+  object-fit:contain;
+
+  background:var(--cream);
+}
+
+.final-image .caption{
+  max-width:720px;
+}
+
+
+/* =========================================================
+   CONCLUSION
+========================================================= */
+
+.conclusion{
+  width:min(100% - 40px,720px);
+
+  margin:0 auto;
+
+  padding:5rem 0 6rem;
+}
+
+.conclusion-label{
+  margin-bottom:1rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.conclusion h2{
+  margin-bottom:2rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+  font-weight:300;
+  font-style:italic;
+  line-height:1.15;
+}
+
+.conclusion p{
+  margin-bottom:1.5rem;
+
+  font-family:'EB Garamond',serif;
+  font-size:18px;
+  line-height:1.78;
+
+  color:#292621;
+}
+
+.final-line{
+  margin-top:3.5rem !important;
+
+  font-family:'Cormorant Garamond',serif !important;
+  font-size:29px !important;
+  font-style:italic;
+  line-height:1.4 !important;
+
+  color:var(--ink) !important;
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.sources{
+  width:min(100% - 40px,720px);
+
+  margin:0 auto;
+
+  padding:3.5rem 0 5rem;
+
+  border-top:.5px solid var(--rule);
+}
+
+.sources-title{
+  margin-bottom:1.4rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.sources p{
+  margin-bottom:.7rem;
+
+  font-family:'EB Garamond',serif;
+  font-size:14px;
+  line-height:1.55;
+
+  color:var(--muted);
+}
+
+.sources a{
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:.5px solid var(--rule);
+}
+
+.sources a:hover{
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   BACK TO ESSAYS
+========================================================= */
+
+.back{
+  padding:2rem 10vw;
+
+  border-top:.5px solid var(--rule);
+
+  text-align:center;
+}
+
+.back a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+
+  color:var(--muted);
+
+  text-decoration:none;
+}
+
+.back a:hover{
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   AD STAMP
+========================================================= */
+
+.logo-stamp{
+  height:185px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.stamp{
+  position:relative;
+
+  width:105px;
+  height:105px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.stamp-spin{
+  position:absolute;
+  inset:0;
+
+  animation:spinStamp 15s linear infinite;
+
+  opacity:.72;
+}
+
+.stamp-spin svg{
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+.stamp-center{
+  position:absolute;
+
+  z-index:2;
+
+  font-family:'Corinthia',cursive;
+  font-size:36px;
+
+  color:var(--accent);
+
+  transform:rotate(-9deg);
+}
+
+@keyframes spinStamp{
+  from{transform:rotate(0deg);}
+  to{transform:rotate(360deg);}
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  padding:4vw 10vw;
+
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+
+  gap:4rem;
+
+  align-items:end;
+
+  background:var(--teal);
+
+  color:var(--cream);
+}
+
+.ft-logo{
+  margin-bottom:.8rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.ft-sub{
+  max-width:410px;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;
+  font-weight:300;
+  font-style:italic;
+  line-height:1.65;
+
+  color:rgba(250,248,244,.5);
+}
+
+.ft-right{
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:8px;
+}
+
+.ft-link{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,.55);
+
+  text-decoration:none;
+}
+
+.ft-link:hover{
+  color:var(--cream);
+}
+
+.ft-copy{
+  margin-top:6px;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:9px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,.25);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  nav{
+    padding:0 5vw;
+  }
+
+  .nav-links{
+    gap:12px;
+  }
+
+  .nav-links a{
+    font-size:8px;
+  }
+
+  .article-hero{
+    padding:
+      calc(56px + 14vw)
+      7vw
+      12vw;
+  }
+
+  .article-title{
+    font-size:clamp(42px,13vw,65px);
+  }
+
+  .article-intro{
+    margin-top:2rem;
+
+    font-size:18px;
+  }
+
+  .article-body{
+    padding:3.5rem 0;
+  }
+
+  .year-section{
+    margin-top:4rem;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .pullquote{
+    margin:3.5rem 0;
+  }
+
+  .pullquote p{
+    font-size:25px;
+  }
+
+  .camp-images{
+    width:86%;
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+  }
+
+  .camp-image img{
+    height:auto;
+    max-height:none;
+  }
+
+  .camp-caption{
+    grid-column:auto;
+  }
+
+  .image-wide,
+  .final-image{
+    width:86%;
+  }
+
+  .conclusion{
+    padding:4rem 0;
+  }
+
+  .final-line{
+    font-size:25px !important;
+  }
+
+  footer{
+    grid-template-columns:1fr;
+
+    gap:2.5rem;
+
+    padding:10vw 8vw;
+  }
+
+  .ft-right{
+    align-items:flex-start;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .stamp-spin{
+    animation:none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+  <a href="index.html" class="nav-logo">
+    Anaïs Doroshina
+  </a>
+
+  <div class="nav-links">
+
+    <a href="archive.html">
+      Archive
+    </a>
+
+    <a href="essays.html" class="active">
+      Essays
+    </a>
+
+    <a href="photography.html">
+      Photography
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="about.html#contact">
+      Contact
+    </a>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="article-hero">
+
+  <div class="article-meta">
+    <span>006</span>
+    <span class="star">✦</span>
+    <span>Culture · Identity</span>
+  </div>
+
+  <h1 class="article-title">
+    The Met Gala as a Mirror:<br>
+    How Fashion Reinvents What We Consider Beautiful
+  </h1>
+
+  <p class="article-intro">
+    Once a year, the steps of the Metropolitan Museum of Art become
+    something more than a red carpet. They become a temporary definition
+    of what fashion considers beautiful, provocative, relevant, or worthy
+    of remembering.
+  </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<article class="article-body">
+
+  <p>
+    Every first Monday in May, fashion enters a museum and is asked to
+    explain itself. The Met Gala is often reduced to spectacle: celebrities,
+    impossible gowns, viral photographs and the inevitable debate over who
+    understood the theme. But underneath the spectacle is something more
+    revealing. Each Costume Institute exhibition chooses a question that
+    fashion believes is worth asking at that particular moment.
+  </p>
+
+  <p>
+    Look at those questions over time and the Gala begins to resemble a
+    mirror. Not one that simply reflects what we already consider beautiful,
+    but one that reveals how unstable the definition of beauty has always
+    been. At the Met, fashion has been asked to confront religion, technology,
+    history, identity, excess, nature and, most recently, its own place
+    within art.
+  </p>
+
+  <p>
+    The Met Gala does not single-handedly determine what fashion becomes
+    next. Its influence is more subtle than that. It crystallizes the
+    conversations already moving through the industry and places them on
+    one of fashion's most visible stages. What appears on those steps tells
+    us something about what fashion is ready to celebrate, question or
+    reconsider.
+  </p>
+
+
+  <!-- 2011 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2011
+    </div>
+
+    <h2 class="section-title">
+      Savage Beauty
+    </h2>
+
+    <p>
+      Alexander McQueen: Savage Beauty marked an important shift in the way
+      fashion could be presented inside a museum. The Costume Institute
+      described McQueen's work as extending fashion beyond utility and into
+      a conceptual expression of culture, politics and identity.
+    </p>
+
+    <p>
+      That distinction matters. Clothing was no longer being preserved
+      simply because it was beautiful, technically impressive or historically
+      important. It could carry ideas. A dress could be disturbing. A
+      silhouette could be political. Beauty itself could be uncomfortable.
+    </p>
+
+    <p>
+      McQueen's work had always existed in that tension. Romance sat beside
+      violence; historical references beside technological experimentation;
+      beauty beside decay. The exhibition demonstrated that fashion did not
+      have to resolve those contradictions to deserve a place in a museum.
+      The contradictions were precisely what made it interesting.
+    </p>
+
+  </section>
+
+
+  <!-- 2018 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2018
+    </div>
+
+    <h2 class="section-title">
+      Heavenly Bodies
+    </h2>
+
+    <p>
+      Seven years later, Heavenly Bodies: Fashion and the Catholic
+      Imagination expanded the conversation again. Fashion was placed in
+      dialogue with medieval art and the visual traditions of Catholicism,
+      while papal robes and accessories from the Sistine Chapel sacristy
+      appeared alongside modern fashion.
+    </p>
+
+    <p>
+      Religion and fashion may seem like opposing worlds: one associated
+      with devotion and permanence, the other with consumption and constant
+      change. Yet both understand the power of image, ritual, symbolism and
+      dress. Clothing can establish hierarchy, communicate belonging and
+      transform a body into something larger than itself.
+    </p>
+
+    <p>
+      The result was a Met Gala in which beauty became almost devotional.
+      Gold, embroidery, halos, crosses and ecclesiastical silhouettes turned
+      fashion into a language of belief. The clothes were not simply
+      decorative. They showed how deeply cultural memory can remain embedded
+      in the way we dress.
+    </p>
+
+  </section>
+
+
+  <div class="pullquote">
+    <p>
+      Beauty at the Met has never stayed still. That is exactly what makes
+      it worth watching.
+    </p>
+  </div>
+
+
+  <!-- 2019 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2019
+    </div>
+
+    <h2 class="section-title">
+      Camp: Notes on Fashion
+    </h2>
+
+    <p>
+      Of every Met Gala, 2019 remains my favorite. Perhaps because it
+      understood something fashion occasionally forgets: beauty does not
+      always need to be tasteful.
+    </p>
+
+    <p>
+      Camp: Notes on Fashion took Susan Sontag's 1964 essay as its framework
+      and explored an aesthetic built from irony, humor, parody, artifice,
+      theatricality and exaggeration. More than 250 objects traced the way
+      camp moved between marginal culture and the mainstream.
+    </p>
+
+    <p>
+      It was the perfect theme for the Met Gala because camp cannot survive
+      through restraint. It needs performance. It needs too much. On the
+      pink carpet, feathers became enormous, silhouettes became absurd and
+      getting dressed became theatre.
+    </p>
+
+  </section>
+
+</article>
+
+
+
+<!-- =====================================================
+     2019 IMAGES
+===================================================== -->
+
+<div class="camp-images">
+
+  <div class="camp-image">
+    <img
+      src="gaga-lady.jpg"
+      alt="Lady Gaga on the pink steps at the 2019 Met Gala"
+    >
+  </div>
+
+  <div class="camp-image">
+    <img
+      src="kylie-purple.jpg"
+      alt="Kylie and Kendall Jenner at the 2019 Met Gala"
+    >
+  </div>
+
+  <p class="camp-caption">
+    MET GALA, 2019 · CAMP: NOTES ON FASHION
+  </p>
+
+</div>
+
+
+
+<!-- =====================================================
+     CAMP CONTINUED
+===================================================== -->
+
+<article class="article-body" style="padding-top:0;">
+
+  <p>
+    Lady Gaga turned her arrival into a performance rather than a single
+    look, using the staircase itself as a stage. Nearby, feathers, crystals,
+    saturated color and exaggerated proportions transformed familiar ideas
+    of glamour into something knowingly excessive.
+  </p>
+
+  <p>
+    That is why 2019 still feels different to me. Camp allowed fashion to
+    stop pretending that seriousness is the only route to significance.
+    Something could be ridiculous and intelligent at the same time.
+    Artificiality did not have to be hidden. It could be celebrated.
+  </p>
+
+  <p>
+    More importantly, camp questions who gets to decide what counts as
+    “good taste.” The Met's exhibition connected camp with challenges to
+    conventional ideas around taste, gender, race and sexuality. What looks
+    excessive from one perspective can look liberating from another.
+  </p>
+
+
+  <div class="pullquote">
+    <p>
+      2019 did not ask fashion to behave. It asked fashion to perform.
+    </p>
+  </div>
+
+
+  <!-- 2022 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2022
+    </div>
+
+    <h2 class="section-title">
+      Gilded Glamour
+    </h2>
+
+    <p>
+      By 2022, the fantasy had changed. The dress code for In America:
+      An Anthology of Fashion was “Gilded Glamour, White Tie,” drawing
+      attention toward the grandeur of America's Gilded Age.
+    </p>
+
+    <p>
+      Visually, it offered everything fashion loves about history:
+      corsetry, opera gloves, elaborate trains, jewels and references to
+      an era of extraordinary wealth. Yet the beauty of the Gilded Age
+      cannot be separated from its contradictions. Rapid industrialization
+      created enormous fortunes while inequality remained embedded beneath
+      the surface.
+    </p>
+
+    <p>
+      That tension makes 2022 more interesting than nostalgia alone. Fashion
+      has always borrowed from history, but borrowing also involves choosing
+      what to remember. A silhouette can romanticize an era while ignoring
+      the conditions that produced it.
+    </p>
+
+  </section>
+
+
+  <div class="pullquote">
+    <p>
+      When fashion romanticizes the past, what exactly does it choose to
+      remember?
+    </p>
+  </div>
+
+
+  <!-- 2024 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2024
+    </div>
+
+    <h2 class="section-title">
+      Sleeping Beauties
+    </h2>
+
+    <p>
+      Sleeping Beauties: Reawakening Fashion turned the conversation inward.
+      Once clothing enters a museum collection, it changes. A garment once
+      touched skin, moved through rooms and carried scent, sound and memory.
+      Behind glass, it becomes still.
+    </p>
+
+    <p>
+      The exhibition used conservation research and technologies including
+      artificial intelligence, computer-generated imagery, projection,
+      sound and other sensory techniques to suggest experiences that fragile
+      historical garments could no longer physically provide.
+    </p>
+
+    <p>
+      Nature became the exhibition's central metaphor: fashion as something
+      cyclical, fragile and temporary. In an industry built around the new,
+      Sleeping Beauties asked what happens when clothing survives long after
+      the moment for which it was created.
+    </p>
+
+  </section>
+
+
+  <!-- 2025 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2025
+    </div>
+
+    <h2 class="section-title">
+      Superfine
+    </h2>
+
+    <p>
+      With Superfine: Tailoring Black Style, the conversation moved again,
+      this time toward identity. Through the history of Black dandyism,
+      clothing became a way of examining self-fashioning, distinction,
+      resistance and the politics of being seen.
+    </p>
+
+    <p>
+      This is perhaps one of the clearest examples of how far the Met Gala's
+      definition of fashion has expanded. Beauty is no longer treated as
+      something purely visual. Style can communicate history. Tailoring can
+      construct identity. The act of dressing can become a way of claiming
+      space within cultures that have not always offered it equally.
+    </p>
+
+  </section>
+
+
+  <!-- 2026 -->
+
+  <section class="year-section">
+
+    <div class="year">
+      2026
+    </div>
+
+    <h2 class="section-title">
+      Costume Art
+    </h2>
+
+    <p>
+      Then came the most direct statement yet.
+    </p>
+
+    <p>
+      The 2026 exhibition, Costume Art, explores representations of the
+      dressed body by pairing garments from the Costume Institute with
+      artworks from across the Met's collection. Its inaugural setting in
+      the museum's new Costume Institute galleries makes the relationship
+      between fashion and art architectural as well as conceptual.
+    </p>
+
+    <p>
+      The Gala dress code reduced that argument to three words:
+      “Fashion is Art.”
+    </p>
+
+    <p>
+      After decades of exhibitions placing fashion beside history,
+      technology, religion, politics and identity, the statement almost
+      feels inevitable. Fashion no longer needs to borrow legitimacy from
+      art. The body itself becomes the gallery, and the garment becomes
+      the work.
+    </p>
+
+  </section>
+
+</article>
+
+
+
+<!-- =====================================================
+     EMMA CHAMBERLAIN — 2026
+===================================================== -->
+
+<section class="final-feature">
+
+  <div class="final-image">
+
+    <img
+      src="paint-emma.jpg"
+      alt="Emma Chamberlain in a hand-painted Mugler gown at the 2026 Met Gala"
+    >
+
+    <p class="caption">
+      EMMA CHAMBERLAIN · MET GALA, 2026 · COSTUME ART
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     2026 CONTINUED + CONCLUSION
+===================================================== -->
+
+<section class="conclusion">
+
+  <p>
+    Emma Chamberlain's custom Mugler gown made that idea unusually literal.
+    Designed by Miguel Castro Freitas and hand-painted by artist Anna
+    Deller-Yee, the dress transformed fabric into a painted surface.
+    References sent to the Mugler team included works by Van Gogh and
+    Munch; Deller-Yee spent 40 hours painting the gown using 30 base colors.
+  </p>
+
+  <p>
+    Here, the distinction between painting and dress becomes almost
+    irrelevant. The artwork cannot be separated from the person wearing it.
+    It changes as Chamberlain moves. It has a front, a back, a texture and
+    a relationship with the body beneath it. Fashion becomes a canvas that
+    refuses to remain still.
+  </p>
+
+  <div class="conclusion-label">
+    A Moving Definition
+  </div>
+
+  <h2>
+    What does the Met Gala actually change?
+  </h2>
+
+  <p>
+    It would be too simple to argue that one night in New York dictates
+    what the world will consider beautiful next. Fashion does not move in
+    such a straight line. The Gala reflects conversations already happening
+    across designers, museums, culture and society.
+  </p>
+
+  <p>
+    But that is exactly why it matters. The Met chooses which conversations
+    deserve preservation and amplification. Looking across its exhibitions,
+    a pattern emerges. Fashion moves from object to idea; from beauty to
+    identity; from decoration to history; from something we wear to
+    something through which we understand ourselves.
+  </p>
+
+  <p>
+    The definition of beauty changes with it.
+  </p>
+
+  <p class="final-line">
+    Perhaps the Met Gala does not tell us what beauty will become.
+    It tells us what fashion is ready to reconsider.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOURCES
+===================================================== -->
+
+<section class="sources">
+
+  <div class="sources-title">
+    Sources
+  </div>
+
+  <p>
+    The Metropolitan Museum of Art —
+    <a href="https://www.metmuseum.org/exhibitions/listings/2011/alexander-mcqueen" target="_blank">
+      Alexander McQueen: Savage Beauty
+    </a>
+  </p>
+
+  <p>
+    The Metropolitan Museum of Art —
+    <a href="https://www.metmuseum.org/exhibitions/listings/2018/heavenly-bodies" target="_blank">
+      Heavenly Bodies: Fashion and the Catholic Imagination
+    </a>
+  </p>
+
+  <p>
+    The Metropolitan Museum of Art —
+    <a href="https://www.metmuseum.org/exhibitions/listings/2019/camp-notes-on-fashion" target="_blank">
+      Camp: Notes on Fashion
+    </a>
+  </p>
+
+  <p>
+    Vogue —
+    <a href="https://www.vogue.com/article/the-met-gala-2022-dress-code-gilded-glamour" target="_blank">
+      The Met Gala 2022 Dress Code: Gilded Glamour
+    </a>
+  </p>
+
+  <p>
+    The Metropolitan Museum of Art —
+    <a href="https://www.metmuseum.org/exhibitions/sleeping-beauties-reawakening-fashion" target="_blank">
+      Sleeping Beauties: Reawakening Fashion
+    </a>
+  </p>
+
+  <p>
+    The Metropolitan Museum of Art —
+    <a href="https://www.metmuseum.org/exhibitions/costume-art" target="_blank">
+      Costume Art
+    </a>
+  </p>
+
+  <p>
+    Vogue —
+    <a href="https://www.vogue.com/article/emma-chamberlain-met-gala-2026" target="_blank">
+      The Story Behind Emma Chamberlain's Hand-Painted Gown for the Met Gala 2026
+    </a>
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     BACK
+===================================================== -->
+
+<div class="back">
+
+  <a href="essays.html">
+    ← Back to Essays
+  </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     AD STAMP
+===================================================== -->
+
+<div class="logo-stamp">
+
+  <div class="stamp">
+
+    <div class="stamp-spin">
+
+      <svg
+        viewBox="0 0 130 130"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <defs>
+
+          <path
+            id="circlePath"
+            d="
+              M65,65
+              m-46,0
+              a46,46 0 1,1 92,0
+              a46,46 0 1,1 -92,0
+            "
+          />
+
+        </defs>
+
+        <text
+          font-family="'Cormorant Garamond',serif"
+          font-size="8.5"
+          letter-spacing="3.2"
+          fill="#6a6460"
+        >
+
+          <textPath href="#circlePath">
+            ANAÏS DOROSHINA · FASHION &amp; LUXURY ·
+          </textPath>
+
+        </text>
+
+      </svg>
+
+    </div>
+
+    <div class="stamp-center">
+      AD
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div>
+
+    <div class="ft-logo">
+      Anaïs Doroshina
+    </div>
+
+    <p class="ft-sub">
+      A curated perspective on fashion, luxury and the structures behind them.
+    </p>
+
+  </div>
+
+  <div class="ft-right">
+
+    <a
+      href="mailto:anaisdoroshina1@gmail.com"
+      class="ft-link"
+    >
+      anaisdoroshina1@gmail.com
+    </a>
+
+    <a href="#" class="ft-link">
+      LinkedIn
+    </a>
+
+    <p class="ft-copy">
+      Est. 2024
+    </p>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
