@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 
 <title>Essays — Anaïs Doroshina</title>
 
@@ -30,10 +26,9 @@
   --off:#f4f1eb;
   --ink:#1a1814;
   --muted:#6a6460;
-  --soft:#9c958e;
   --rule:#d8d4cc;
   --accent:#b89a7a;
-  --dark:#05242b;
+  --teal:#05242b;
 }
 
 html{
@@ -43,15 +38,10 @@ html{
 body{
   background:var(--cream);
   color:var(--ink);
-
   font-family:'EB Garamond',Georgia,serif;
-
   font-size:17px;
   line-height:1.75;
-
   -webkit-font-smoothing:antialiased;
-
-  overflow-x:hidden;
 }
 
 
@@ -61,11 +51,9 @@ body{
 
 nav{
   position:fixed;
-
   top:0;
   left:0;
   right:0;
-
   z-index:100;
 
   height:56px;
@@ -86,34 +74,25 @@ nav{
 
 .nav-logo{
   font-family:'Cormorant Garamond',serif;
-
   font-size:12px;
   letter-spacing:0.22em;
-
   text-transform:uppercase;
-
   color:var(--ink);
   text-decoration:none;
 }
 
 .nav-links{
   display:flex;
-  align-items:center;
-
   gap:28px;
 }
 
 .nav-links a{
   font-family:'Cormorant Garamond',serif;
-
   font-size:11px;
   letter-spacing:0.18em;
-
   text-transform:uppercase;
-
   color:var(--muted);
   text-decoration:none;
-
   transition:color 0.2s ease;
 }
 
@@ -124,148 +103,102 @@ nav{
 
 
 /* =========================================================
-   ESSAYS SECTION
+   ESSAYS
 ========================================================= */
 
-.essays-section{
-  position:relative;
-
-  padding:
-    calc(56px + 5vw)
-    10vw
-    2vw;
+.essays{
+  padding:calc(56px + 5vw) 10vw 0;
 }
 
 
-/* faint editorial grid */
-
-.essays-section::before{
-  content:'';
-
-  position:absolute;
-
-  inset:56px 0 0;
-
-  z-index:-1;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent calc(10vw - 0.5px),
-      rgba(216,212,204,0.28) calc(10vw - 0.5px),
-      rgba(216,212,204,0.28) 10vw
-    );
-
-  opacity:0.35;
-
-  pointer-events:none;
-}
-
-
-/* =========================================================
-   SECTION LABEL
-========================================================= */
+/* THE EDIT */
 
 .label{
   display:flex;
   align-items:center;
-
   gap:16px;
 
-  margin-bottom:3.5rem;
+  min-height:75px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:11px;
-  letter-spacing:0.3em;
-
+  letter-spacing:0.30em;
   text-transform:uppercase;
 
   color:var(--muted);
+
+  border-bottom:0.5px solid var(--rule);
+}
+
+.label-star{
+  color:var(--accent);
+  font-size:9px;
 }
 
 .label::after{
   content:'';
-
   flex:1;
-
   height:0.5px;
-
   background:var(--rule);
-}
-
-.label-mark{
-  color:var(--accent);
-
-  font-size:8px;
-
-  margin-left:-5px;
 }
 
 
 /* =========================================================
-   GRID
+   ESSAY GRID
 ========================================================= */
 
 .archive-grid{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
 
-  border-top:0.5px solid var(--rule);
-
-  background:rgba(250,248,244,0.88);
+  border-bottom:0.5px solid var(--rule);
 }
 
 
-/* =========================================================
-   CARDS
-========================================================= */
+/* CARD */
 
 .card{
-  min-height:203px;
+  position:relative;
 
-  padding:2.2rem 2rem;
+  min-height:215px;
 
-  border-right:0.5px solid var(--rule);
-  border-bottom:0.5px solid var(--rule);
+  padding:2.7rem 2.2rem;
 
   display:flex;
   flex-direction:column;
 
-  position:relative;
+  border-right:0.5px solid var(--rule);
+  border-bottom:0.5px solid var(--rule);
 
-  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
 
-  transition:background 0.25s ease;
-}
-
-.card:hover{
-  background:var(--off);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .card:nth-child(3n){
   border-right:none;
 }
 
-a.card{
-  text-decoration:none;
-  color:inherit;
+.card:nth-child(n+4){
+  border-bottom:none;
+}
 
-  cursor:pointer;
+.card:hover{
+  background:var(--off);
 }
 
 
-/* ARTICLE NUMBER */
+/* NUMBER */
 
 .card-n{
-  margin-bottom:1.2rem;
+  margin-bottom:1.45rem;
 
   font-family:'Cormorant Garamond',serif;
-
-  font-size:11px;
-  letter-spacing:0.2em;
+  font-size:9px;
+  letter-spacing:0.28em;
 
   color:var(--muted);
 }
@@ -274,18 +207,16 @@ a.card{
 /* TITLE */
 
 .card-t{
-  max-width:330px;
+  max-width:350px;
 
-  margin-bottom:1rem;
+  margin-bottom:1.8rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:18px;
-
+  font-weight:300;
   font-style:italic;
-  font-weight:400;
 
-  line-height:1.3;
+  line-height:1.35;
 
   color:var(--ink);
 }
@@ -297,43 +228,41 @@ a.card{
   margin-top:auto;
 
   font-family:'Cormorant Garamond',serif;
-
-  font-size:10.5px;
-  letter-spacing:0.2em;
-
+  font-size:10px;
+  letter-spacing:0.25em;
   text-transform:uppercase;
 
   color:var(--accent);
 }
 
 
-/* faint hover number */
+/* SMALL HOVER ARROW */
 
 .card::after{
-  content:attr(data-number);
+  content:'→';
 
   position:absolute;
 
-  right:1rem;
-  bottom:-1.2rem;
+  right:2rem;
+  bottom:2rem;
 
   font-family:'Cormorant Garamond',serif;
+  font-size:14px;
 
-  font-size:88px;
+  color:var(--accent);
 
-  font-style:italic;
+  opacity:0;
 
-  line-height:1;
+  transform:translateX(-6px);
 
-  color:rgba(184,154,122,0);
-
-  pointer-events:none;
-
-  transition:color 0.3s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .card:hover::after{
-  color:rgba(184,154,122,0.055);
+  opacity:1;
+  transform:translateX(0);
 }
 
 
@@ -342,7 +271,7 @@ a.card{
 ========================================================= */
 
 .logo-stamp{
-  min-height:245px;
+  min-height:250px;
 
   position:relative;
 
@@ -351,10 +280,6 @@ a.card{
   align-items:center;
 
   padding:4vw 10vw;
-
-  border-bottom:0.5px solid var(--rule);
-
-  overflow:hidden;
 }
 
 .stamp{
@@ -370,7 +295,6 @@ a.card{
 
 .stamp-spin{
   position:absolute;
-
   inset:0;
 
   animation:spinStamp 15s linear infinite;
@@ -383,7 +307,6 @@ a.card{
 .stamp-spin svg{
   width:100%;
   height:100%;
-
   overflow:visible;
 }
 
@@ -391,9 +314,7 @@ a.card{
   position:absolute;
 
   font-family:'Corinthia',cursive;
-
   font-size:40px;
-
   font-weight:400;
 
   color:var(--accent);
@@ -424,28 +345,23 @@ footer{
   padding:4vw 10vw;
 
   display:grid;
-
   grid-template-columns:1.3fr 1fr;
 
   gap:4rem;
 
   align-items:end;
 
-  background:var(--dark);
+  background:var(--teal);
 
   color:var(--cream);
-
-  border-top:0.5px solid rgba(255,255,255,0.08);
 }
 
 .ft-logo{
   margin-bottom:0.8rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:13px;
   letter-spacing:0.22em;
-
   text-transform:uppercase;
 
   color:var(--cream);
@@ -455,12 +371,9 @@ footer{
   max-width:410px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:15px;
-
   font-weight:300;
   font-style:italic;
-
   line-height:1.65;
 
   color:rgba(250,248,244,0.5);
@@ -477,17 +390,13 @@ footer{
 
 .ft-link{
   font-family:'Cormorant Garamond',serif;
-
   font-size:11px;
   letter-spacing:0.18em;
-
   text-transform:uppercase;
 
   color:rgba(250,248,244,0.55);
 
   text-decoration:none;
-
-  transition:color 0.2s ease;
 }
 
 .ft-link:hover{
@@ -498,10 +407,8 @@ footer{
   margin-top:6px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:9px;
   letter-spacing:0.24em;
-
   text-transform:uppercase;
 
   color:rgba(250,248,244,0.25);
@@ -509,72 +416,28 @@ footer{
 
 
 /* =========================================================
-   TABLET
-========================================================= */
-
-@media(max-width:900px){
-
-  .archive-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .card:nth-child(3n){
-    border-right:0.5px solid var(--rule);
-  }
-
-  .card:nth-child(2n){
-    border-right:none;
-  }
-
-}
-
-
-/* =========================================================
    MOBILE
 ========================================================= */
 
-@media(max-width:650px){
+@media(max-width:800px){
 
   nav{
-    height:auto;
-
-    min-height:56px;
-
-    padding:14px 5vw;
-
-    align-items:flex-start;
-
-    gap:20px;
-  }
-
-  .nav-logo{
-    font-size:10px;
-
-    white-space:nowrap;
+    padding:0 5vw;
   }
 
   .nav-links{
-    gap:11px;
-
-    flex-wrap:wrap;
-
-    justify-content:flex-end;
+    gap:13px;
   }
 
   .nav-links a{
     font-size:8.5px;
   }
 
-
-  .essays-section{
+  .essays{
     padding:
-      110px
+      calc(56px + 10vw)
       7vw
-      4vw;
-  }
-
-  .label{
-    margin-bottom:2rem;
+      0;
   }
 
   .archive-grid{
@@ -582,28 +445,29 @@ footer{
   }
 
   .card{
-    min-height:180px;
+    min-height:190px;
 
     padding:2rem 1.2rem;
 
-    border-right:none !important;
+    border-right:none;
+    border-bottom:0.5px solid var(--rule);
+  }
+
+  .card:nth-child(n+4){
+    border-bottom:0.5px solid var(--rule);
+  }
+
+  .card:last-child{
+    border-bottom:none;
   }
 
   .card-t{
     max-width:100%;
-
-    font-size:20px;
+    font-size:18px;
   }
-
-  .card::after{
-    font-size:70px;
-  }
-
 
   .logo-stamp{
     min-height:190px;
-
-    padding:10vw 0;
   }
 
   .stamp{
@@ -614,7 +478,6 @@ footer{
   .stamp-center{
     font-size:36px;
   }
-
 
   footer{
     grid-template-columns:1fr;
@@ -631,23 +494,21 @@ footer{
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =======================================================
+<!-- =====================================================
      NAVIGATION
-======================================================= -->
+===================================================== -->
 
 <nav>
 
   <a href="index.html" class="nav-logo">
     Anaïs Doroshina
   </a>
-
 
   <div class="nav-links">
 
@@ -677,18 +538,20 @@ footer{
 
 
 
-<!-- =======================================================
+<!-- =====================================================
      ESSAYS
-======================================================= -->
+===================================================== -->
 
-<section class="essays-section">
+<main class="essays">
 
 
   <div class="label">
 
-    The Edit.
+    <span>
+      The Edit.
+    </span>
 
-    <span class="label-mark">
+    <span class="label-star">
       ✦
     </span>
 
@@ -701,10 +564,7 @@ footer{
 
     <!-- 001 -->
 
-    <div
-      class="card"
-      data-number="01"
-    >
+    <a href="essay-001.html" class="card">
 
       <div class="card-n">
         001
@@ -718,18 +578,13 @@ footer{
         Brand Identity
       </div>
 
-    </div>
+    </a>
 
 
 
     <!-- 002 -->
 
-    <a
-      href="essay-002.html"
-      class="card"
-      data-number="02"
-      aria-label="Read Why Luxury Brands Are Opening Cafés, Hotels, and Jazz Bars"
-    >
+    <a href="essay-002.html" class="card">
 
       <div class="card-n">
         002
@@ -749,19 +604,14 @@ footer{
 
     <!-- 003 -->
 
-    <a
-      href="essay-003.html"
-      class="card"
-      data-number="03"
-      aria-label="Read Gucci x Alpine: When a Fashion House Buys Into Formula One"
-    >
+    <a href="essay-003.html" class="card">
 
       <div class="card-n">
         003
       </div>
 
       <div class="card-t">
-        Gucci x Alpine: When a Fashion House Buys Into Formula One
+        Gucci × Alpine: When a Fashion House Buys Into Formula One
       </div>
 
       <div class="card-tag">
@@ -774,10 +624,7 @@ footer{
 
     <!-- 004 -->
 
-    <div
-      class="card"
-      data-number="04"
-    >
+    <a href="essay-004.html" class="card">
 
       <div class="card-n">
         004
@@ -791,18 +638,13 @@ footer{
         Strategy
       </div>
 
-    </div>
+    </a>
 
 
 
     <!-- 005 -->
 
-    <a
-      href="essay-005.html"
-      class="card"
-      data-number="05"
-      aria-label="Read Jewelry After Rarity: How Heritage Houses Are Redefining Authenticity"
-    >
+    <a href="essay-005.html" class="card">
 
       <div class="card-n">
         005
@@ -820,38 +662,35 @@ footer{
 
 
 
-    <!-- 006 -->
+    <!-- 006 — MET GALA -->
 
-    <div
-      class="card"
-      data-number="06"
-    >
+    <a href="essay-006.html" class="card">
 
       <div class="card-n">
         006
       </div>
 
       <div class="card-t">
-        How Fashion Houses Use Space, Sound, and Experience to Build Desire
+        The Met Gala as a Mirror: How Fashion Reinvents What We Consider Beautiful
       </div>
 
       <div class="card-tag">
-        Culture
+        Culture · Identity
       </div>
 
-    </div>
+    </a>
 
 
   </div>
 
 
-</section>
+</main>
 
 
 
-<!-- =======================================================
-     ROTATING AD STAMP
-======================================================= -->
+<!-- =====================================================
+     SPINNING AD STAMP
+===================================================== -->
 
 <div class="logo-stamp">
 
@@ -861,12 +700,10 @@ footer{
 
     <div class="stamp-spin">
 
-
       <svg
         viewBox="0 0 130 130"
         xmlns="http://www.w3.org/2000/svg"
       >
-
 
         <defs>
 
@@ -891,16 +728,12 @@ footer{
         >
 
           <textPath href="#circlePath">
-
             ANAÏS DOROSHINA · FASHION &amp; LUXURY ·
-
           </textPath>
 
         </text>
 
-
       </svg>
-
 
     </div>
 
@@ -917,33 +750,27 @@ footer{
 
 
 
-<!-- =======================================================
+<!-- =====================================================
      FOOTER
-======================================================= -->
+===================================================== -->
 
 <footer>
 
 
   <div>
 
-
     <div class="ft-logo">
       Anaïs Doroshina
     </div>
 
-
     <p class="ft-sub">
-      A curated perspective on fashion, luxury and the structures
-      behind them.
+      A curated perspective on fashion, luxury and the structures behind them.
     </p>
-
 
   </div>
 
 
-
   <div class="ft-right">
-
 
     <a
       href="mailto:anaisdoroshina1@gmail.com"
@@ -952,7 +779,6 @@ footer{
       anaisdoroshina1@gmail.com
     </a>
 
-
     <a
       href="#"
       class="ft-link"
@@ -960,11 +786,9 @@ footer{
       LinkedIn
     </a>
 
-
     <p class="ft-copy">
       Est. 2024
     </p>
-
 
   </div>
 
@@ -973,5 +797,4 @@ footer{
 
 
 </body>
-
 </html>
