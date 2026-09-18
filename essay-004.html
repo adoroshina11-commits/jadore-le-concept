@@ -105,59 +105,29 @@ nav{
 
 
 /* =========================================================
-   GENERAL
-========================================================= */
-
-.timeline{
-  width:min(88vw,1120px);
-  margin:0 auto;
-}
-
-.image-credit{
-  margin-top:.55rem;
-
-  font-family:'Cormorant Garamond',serif;
-  font-size:9px;
-  line-height:1.45;
-
-  letter-spacing:.15em;
-  text-transform:uppercase;
-
-  color:#948a82;
-}
-
-
-/* =========================================================
    HERO
 ========================================================= */
 
 .article-hero{
-  min-height:680px;
+  min-height:700px;
 
-  padding-top:calc(56px + 3.4rem);
-  padding-bottom:3.5rem;
+  padding-top:56px;
 
-  display:flex;
-  align-items:center;
+  display:grid;
+
+  grid-template-columns:minmax(500px,.9fr) minmax(600px,1.1fr);
+
+  align-items:stretch;
 
   border-bottom:.5px solid var(--rule);
 }
 
-.hero-grid{
-  width:min(90vw,1320px);
-  margin:0 auto;
-
-  display:grid;
-
-  grid-template-columns:minmax(0,1.45fr) minmax(390px,.85fr);
-
-  gap:5.5rem;
-
-  align-items:center;
-}
-
 .hero-copy{
-  min-width:0;
+  padding:6.2rem 5vw 5rem 5.5vw;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .article-meta{
@@ -165,7 +135,7 @@ nav{
   align-items:center;
   gap:13px;
 
-  margin-bottom:1.7rem;
+  margin-bottom:1.6rem;
 
   font-family:'Cormorant Garamond',serif;
   font-size:9px;
@@ -177,24 +147,24 @@ nav{
 }
 
 .article-title{
-  max-width:800px;
+  max-width:720px;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(52px,5vw,76px);
+  font-size:clamp(55px,5vw,82px);
 
   font-weight:300;
   font-style:italic;
 
-  line-height:.98;
+  line-height:.96;
 
-  letter-spacing:-.04em;
+  letter-spacing:-.045em;
 
   color:var(--ink);
 }
 
 .article-intro{
-  max-width:720px;
+  max-width:620px;
 
   margin-top:2rem;
 
@@ -204,26 +174,57 @@ nav{
   font-weight:300;
   font-style:italic;
 
-  line-height:1.65;
+  line-height:1.62;
 
-  color:#9a9189;
+  color:#918880;
 }
 
 
 /* HERO IMAGE */
 
 .hero-image{
-  width:100%;
+  position:relative;
+
+  min-height:644px;
+
+  overflow:hidden;
 }
 
 .hero-image img{
   display:block;
 
   width:100%;
-  height:480px;
+  height:100%;
 
   object-fit:cover;
   object-position:center;
+}
+
+.hero-image .image-credit{
+  position:absolute;
+
+  right:1.4rem;
+  bottom:.8rem;
+
+  color:rgba(255,255,255,.8);
+
+  text-shadow:0 1px 4px rgba(0,0,0,.2);
+}
+
+
+/* =========================================================
+   IMAGE CREDITS
+========================================================= */
+
+.image-credit{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  letter-spacing:.22em;
+  text-transform:uppercase;
+
+  color:#8d857e;
 }
 
 
@@ -231,16 +232,20 @@ nav{
    INTRODUCTION
 ========================================================= */
 
+.introduction-wrap{
+  border-bottom:.5px solid var(--rule);
+}
+
 .introduction{
-  width:min(100% - 40px,700px);
+  width:min(100% - 40px,780px);
 
   margin:0 auto;
 
-  padding:3rem 0 3.3rem;
+  padding:3.5rem 0 3.8rem;
 }
 
 .introduction p{
-  margin-bottom:1.15rem;
+  margin-bottom:1rem;
 
   font-size:16.5px;
   line-height:1.67;
@@ -252,14 +257,14 @@ nav{
   margin-bottom:0;
 }
 
-.introduction p:first-of-type::first-letter{
+.introduction p:first-child::first-letter{
   float:left;
 
-  margin:.06em .13em .02em 0;
+  margin:.05em .13em .02em 0;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:4.6rem;
+  font-size:4.8rem;
   font-weight:300;
 
   line-height:.73;
@@ -269,38 +274,21 @@ nav{
 
 
 /* =========================================================
-   TIMELINE / IMAGE SECTIONS
+   TEXT SECTIONS
 ========================================================= */
 
-.timeline-section{
-  display:grid;
+.text-section{
+  width:min(100% - 40px,760px);
 
-  grid-template-columns:300px 1fr;
+  margin:0 auto;
 
-  gap:3.6rem;
+  padding:3.3rem 0;
 
-  align-items:center;
-
-  padding:2.6rem 0;
-
-  border-top:.5px solid var(--rule);
-}
-
-.timeline-image img{
-  display:block;
-
-  width:100%;
-  height:330px;
-
-  object-fit:cover;
-}
-
-.timeline-content{
-  max-width:650px;
+  border-bottom:.5px solid var(--rule);
 }
 
 .section-label{
-  margin-bottom:.35rem;
+  margin-bottom:.45rem;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -313,65 +301,16 @@ nav{
 }
 
 .section-title{
-  margin-bottom:.9rem;
+  margin-bottom:1.1rem;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:29px;
+  font-size:30px;
 
   font-weight:300;
   font-style:italic;
 
   line-height:1.08;
-}
-
-.timeline-content p{
-  margin-bottom:.8rem;
-
-  font-size:15.5px;
-  line-height:1.6;
-
-  color:#292621;
-}
-
-.timeline-content p:last-child{
-  margin-bottom:0;
-}
-
-
-/* LAVENDER IMAGE */
-
-.timeline-image.lavender img{
-  height:300px;
-  object-position:center;
-}
-
-
-/* LV EXHIBITION — KEEP WIDE FEEL */
-
-.timeline-image.lv-image img{
-  height:auto;
-  max-height:none;
-  object-fit:contain;
-}
-
-
-/* =========================================================
-   TEXT-ONLY SECTIONS
-========================================================= */
-
-.text-section{
-  width:min(100% - 40px,700px);
-
-  margin:0 auto;
-
-  padding:2.8rem 0;
-
-  border-top:.5px solid var(--rule);
-}
-
-.text-section .section-title{
-  margin-bottom:1rem;
 }
 
 .text-section p{
@@ -389,7 +328,192 @@ nav{
 
 
 /* =========================================================
-   QUESTION / STATEMENT BREAK
+   FULL-BLEED EDITORIAL IMAGE
+========================================================= */
+
+.full-image{
+  width:100%;
+
+  margin:0;
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.full-image img{
+  display:block;
+
+  width:100%;
+  height:auto;
+}
+
+.full-image-credit{
+  padding:.65rem 3vw .7rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  letter-spacing:.22em;
+  text-transform:uppercase;
+
+  color:#8d857e;
+}
+
+
+/* LAVENDER */
+
+.lavender-image img{
+  width:100%;
+
+  height:520px;
+
+  object-fit:cover;
+
+  object-position:center 48%;
+}
+
+
+/* LV */
+
+.lv-image img{
+  width:100%;
+
+  height:auto;
+
+  object-fit:contain;
+}
+
+
+/* =========================================================
+   JACQUEMUS EDITORIAL SECTION
+========================================================= */
+
+.editorial-section{
+  width:min(88vw,1120px);
+
+  margin:0 auto;
+
+  padding:3.4rem 0 3.8rem;
+
+  display:grid;
+
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+
+  gap:7rem;
+
+  align-items:center;
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.editorial-copy{
+  max-width:610px;
+}
+
+.editorial-copy p{
+  margin-bottom:.85rem;
+
+  font-size:15.5px;
+  line-height:1.62;
+
+  color:#292621;
+}
+
+.editorial-copy p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   EDITORIAL QUOTE
+========================================================= */
+
+.editorial-quote{
+  padding:2.4rem 1.6rem;
+
+  border-top:.5px solid var(--accent);
+  border-bottom:.5px solid var(--accent);
+
+  text-align:center;
+}
+
+.quote-label{
+  display:block;
+
+  margin-bottom:1.2rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  letter-spacing:.28em;
+  text-transform:uppercase;
+
+  color:#948b83;
+}
+
+.editorial-quote p{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(25px,2.4vw,34px);
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.22;
+
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   LV TEXT — TWO COLUMN
+========================================================= */
+
+.lv-copy{
+  width:min(88vw,1120px);
+
+  margin:0 auto;
+
+  padding:3.2rem 0 3.7rem;
+
+  display:grid;
+
+  grid-template-columns:.9fr 1.1fr;
+
+  gap:6rem;
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.lv-heading{
+  max-width:420px;
+}
+
+.lv-heading .section-title{
+  font-size:31px;
+}
+
+.lv-body{
+  padding-top:1.3rem;
+}
+
+.lv-body p{
+  margin-bottom:.9rem;
+
+  font-size:15.5px;
+  line-height:1.62;
+
+  color:#292621;
+}
+
+.lv-body p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   LARGE STATEMENT BREAK
 ========================================================= */
 
 .statement-break{
@@ -397,22 +521,21 @@ nav{
 
   margin:0 auto;
 
-  padding:3.1rem 5vw;
-
-  border-top:.5px solid var(--rule);
-  border-bottom:.5px solid var(--rule);
+  padding:3.8rem 5vw;
 
   text-align:center;
+
+  border-bottom:.5px solid var(--rule);
 }
 
 .statement-small{
   display:block;
 
-  margin-bottom:.7rem;
+  margin-bottom:1rem;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:9px;
+  font-size:8px;
 
   letter-spacing:.28em;
   text-transform:uppercase;
@@ -421,13 +544,13 @@ nav{
 }
 
 .statement-text{
-  max-width:800px;
+  max-width:820px;
 
   margin:0 auto;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(25px,2.6vw,36px);
+  font-size:clamp(27px,2.7vw,38px);
 
   font-weight:300;
   font-style:italic;
@@ -443,13 +566,13 @@ nav{
 ========================================================= */
 
 .conclusion{
-  width:min(100% - 40px,700px);
+  width:min(100% - 40px,760px);
 
   margin:0 auto;
 
-  padding:3.3rem 0 2.8rem;
+  padding:4rem 0 3.2rem;
 
-  border-top:.5px solid var(--rule);
+  border-bottom:.5px solid var(--rule);
 }
 
 .conclusion-label{
@@ -466,11 +589,11 @@ nav{
 }
 
 .conclusion h2{
-  margin-bottom:1.3rem;
+  margin-bottom:1.4rem;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:30px;
+  font-size:31px;
 
   font-weight:300;
   font-style:italic;
@@ -495,14 +618,13 @@ nav{
 .final-statement{
   width:min(88vw,1120px);
 
-  margin:0 auto 3rem;
+  margin:0 auto;
 
-  padding:2.8rem 5vw;
-
-  border-top:.5px solid var(--rule);
-  border-bottom:.5px solid var(--rule);
+  padding:3.7rem 5vw;
 
   text-align:center;
+
+  border-bottom:.5px solid var(--rule);
 }
 
 .final-statement p{
@@ -512,12 +634,12 @@ nav{
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(25px,2.5vw,36px);
+  font-size:clamp(27px,2.7vw,39px);
 
   font-weight:300;
   font-style:italic;
 
-  line-height:1.35;
+  line-height:1.32;
 }
 
 
@@ -530,7 +652,7 @@ nav{
 
   margin:0 auto;
 
-  padding:2.6rem 0 3.5rem;
+  padding:3rem 0 3.8rem;
 }
 
 .sources-title{
@@ -743,25 +865,38 @@ footer{
 
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
 @media(max-width:1050px){
 
-  .hero-grid{
-    width:88%;
+  .article-hero{
+    grid-template-columns:1fr 1fr;
+  }
 
-    grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
-
-    gap:3.5rem;
+  .hero-copy{
+    padding-left:5vw;
+    padding-right:4vw;
   }
 
   .article-title{
-    font-size:clamp(46px,5.4vw,68px);
+    font-size:clamp(48px,5.5vw,67px);
+  }
+
+  .editorial-section{
+    gap:4rem;
+  }
+
+  .lv-copy{
+    gap:4rem;
   }
 
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:800px){
 
@@ -783,24 +918,13 @@ footer{
   .article-hero{
     min-height:auto;
 
-    padding-top:calc(56px + 3rem);
-    padding-bottom:3rem;
-  }
-
-  .hero-grid{
-    width:86%;
+    padding-top:56px;
 
     grid-template-columns:1fr;
-
-    gap:2.5rem;
   }
 
   .hero-copy{
-    order:1;
-  }
-
-  .hero-image{
-    order:2;
+    padding:3.8rem 7vw 3rem;
   }
 
   .article-title{
@@ -811,32 +935,82 @@ footer{
     font-size:16px;
   }
 
+  .hero-image{
+    min-height:auto;
+  }
+
   .hero-image img{
     width:100%;
     height:auto;
   }
 
+  .hero-image .image-credit{
+    position:static;
 
-  /* ARTICLE */
+    padding:.6rem 7vw;
 
-  .timeline{
+    color:#8d857e;
+
+    text-shadow:none;
+  }
+
+
+  /* INTRO */
+
+  .introduction{
     width:86%;
+
+    padding:3rem 0;
   }
 
-  .timeline-section{
-    grid-template-columns:1fr;
 
-    gap:2rem;
-  }
+  /* FULL IMAGES */
 
-  .timeline-image img,
-  .timeline-image.lavender img,
-  .timeline-image.lv-image img{
-    width:100%;
+  .lavender-image img{
     height:auto;
   }
 
-  .introduction,
+  .full-image-credit{
+    padding:.6rem 7vw;
+  }
+
+
+  /* JACQUEMUS */
+
+  .editorial-section{
+    width:86%;
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+    padding:3rem 0;
+  }
+
+  .editorial-quote{
+    padding:2.2rem 1rem;
+  }
+
+
+  /* LV */
+
+  .lv-copy{
+    width:86%;
+
+    grid-template-columns:1fr;
+
+    gap:.5rem;
+
+    padding:3rem 0;
+  }
+
+  .lv-body{
+    padding-top:.4rem;
+  }
+
+
+  /* OTHER ARTICLE SECTIONS */
+
   .text-section,
   .conclusion,
   .sources{
@@ -926,55 +1100,57 @@ footer{
 
 <header class="article-hero">
 
-  <div class="hero-grid">
 
+  <!-- HERO COPY -->
 
-    <div class="hero-copy">
+  <div class="hero-copy">
 
-      <div class="article-meta">
+    <div class="article-meta">
 
-        <span>004</span>
+      <span>004</span>
 
-        <span>✦</span>
+      <span>✦</span>
 
-        <span>Strategy · Brand Culture</span>
-
-      </div>
-
-
-      <h1 class="article-title">
-        Beyond the Product:<br>
-        Why Luxury Brands Are Building Worlds
-      </h1>
-
-
-      <p class="article-intro">
-        A handbag can be copied. A silhouette can become a trend.
-        Even a logo can become overexposed. What is considerably
-        harder to reproduce is an entire world. As luxury expands
-        beyond the object into architecture, art, hospitality,
-        film and experience, the most powerful brands are no
-        longer simply asking what they should sell. They are asking
-        what it should feel like to enter their universe.
-      </p>
+      <span>Strategy · Brand Culture</span>
 
     </div>
 
 
-    <div class="hero-image">
+    <h1 class="article-title">
+      Beyond the Product:<br>
+      Why Luxury Brands<br>
+      Are Building Worlds
+    </h1>
 
-      <img
-        src="main-jacq.jpg"
-        alt="Jacquemus runway at Casa Malaparte"
-      >
 
-      <p class="image-credit">
-        Jacquemus · La Casa · Casa Malaparte, Capri
-      </p>
-
-    </div>
+    <p class="article-intro">
+      A handbag can be copied. A silhouette can become a trend.
+      Even a logo can become overexposed. What is considerably harder
+      to reproduce is an entire world. As luxury expands beyond the
+      object into architecture, art, hospitality, film and experience,
+      the most powerful brands are no longer simply asking what they
+      should sell. They are asking what it should feel like to enter
+      their universe.
+    </p>
 
   </div>
+
+
+  <!-- HUGE HERO IMAGE -->
+
+  <div class="hero-image">
+
+    <img
+      src="main-jacq.jpg"
+      alt="Jacquemus runway at Casa Malaparte"
+    >
+
+    <p class="image-credit">
+      Jacquemus · La Casa · Casa Malaparte, Capri
+    </p>
+
+  </div>
+
 
 </header>
 
@@ -984,48 +1160,47 @@ footer{
      INTRODUCTION
 ===================================================== -->
 
-<article class="introduction">
+<div class="introduction-wrap">
 
-  <p>
-    For most of luxury's history, the product sat at the centre of the
-    brand. The dress demonstrated craftsmanship. The handbag became an
-    icon. The watch communicated precision. The perfume condensed an
-    identity into a bottle.
-  </p>
+  <article class="introduction">
 
-  <p>
-    Those objects still matter. Without exceptional products, luxury
-    eventually becomes theatre without substance. But the relationship
-    between product and brand is changing.
-  </p>
+    <p>
+      For most of luxury's history, the product sat at the centre of
+      the brand. The dress demonstrated craftsmanship. The handbag
+      became an icon. The watch communicated precision. The perfume
+      condensed an identity into a bottle.
+    </p>
 
-  <p>
-    A consumer can now encounter a fashion house dozens of times without
-    purchasing anything. They might watch its runway show on a screen,
-    save a campaign, visit an exhibition, walk through an architectural
-    installation or recognise the visual language of an image before
-    seeing the logo.
-  </p>
+    <p>
+      Those objects still matter. Without exceptional products,
+      luxury eventually becomes theatre without substance. But the
+      relationship between product and brand is changing. A consumer
+      can now encounter a fashion house dozens of times without
+      purchasing anything — through a runway show, an exhibition,
+      a café, a film or a single image on social media.
+    </p>
 
-  <p>
-    Luxury has therefore acquired another task: creating a universe
-    coherent enough that every one of those encounters feels as though
-    it belongs to the same place.
-  </p>
+    <p>
+      Luxury has therefore acquired another task: creating a universe
+      coherent enough that every encounter feels as though it belongs
+      to the same place.
+    </p>
 
-  <p>
-    This is world-building. It is not simply marketing, and it is not
-    the same as putting a logo on more categories. At its strongest,
-    world-building transforms a collection of products, spaces and
-    images into a recognizable cultural language.
-  </p>
+    <p>
+      This is world-building. It is not simply marketing, and it is
+      not the same as putting a logo on more categories. At its
+      strongest, world-building transforms a collection of products,
+      spaces and images into a recognizable cultural language.
+    </p>
 
-</article>
+  </article>
+
+</div>
 
 
 
 <!-- =====================================================
-     01 — THE OBJECT
+     OBJECT
 ===================================================== -->
 
 <section class="text-section">
@@ -1045,11 +1220,11 @@ footer{
   </p>
 
   <p>
-    That distinction has become more complicated. Fashion imagery travels
-    instantly. Trends move from runway to mass market at extraordinary
-    speed. Products are endlessly photographed, referenced and imitated.
-    A recognizable aesthetic can spread far beyond the company that
-    created it.
+    That distinction has become more complicated. Fashion imagery
+    travels instantly. Trends move from runway to mass market at
+    extraordinary speed. Products are endlessly photographed,
+    referenced and imitated. A recognizable aesthetic can spread
+    far beyond the company that created it.
   </p>
 
   <p>
@@ -1067,8 +1242,8 @@ footer{
 
   <p>
     Together, they create something much harder to replicate than an
-    individual product: context. The object becomes an entry point into
-    a larger system of meaning.
+    individual product: context. The object becomes an entry point
+    into a larger system of meaning.
   </p>
 
 </section>
@@ -1076,88 +1251,84 @@ footer{
 
 
 <!-- =====================================================
-     QUESTION BREAK
+     HUGE JACQUEMUS IMAGE
 ===================================================== -->
 
-<section class="statement-break">
+<figure class="full-image lavender-image">
 
-  <span class="statement-small">
-    The Strategic Shift
-  </span>
+  <img
+    src="lavendar.jpg"
+    alt="Jacquemus runway through lavender fields in Provence"
+  >
 
-  <p class="statement-text">
-    The question is no longer only, “What does this brand make?”
-    Increasingly, it is: “What world does this brand allow you to enter?”
-  </p>
+  <figcaption class="full-image-credit">
+    Jacquemus · Le Coup de Soleil · Provence
+  </figcaption>
 
-</section>
+</figure>
 
 
 
 <!-- =====================================================
-     02 — JACQUEMUS
+     JACQUEMUS EDITORIAL SECTION
 ===================================================== -->
 
-<div class="timeline">
+<section class="editorial-section">
 
-  <section class="timeline-section">
 
-    <div class="timeline-image lavender">
+  <div class="editorial-copy">
 
-      <img
-        src="lavendar.jpg"
-        alt="Jacquemus runway through a lavender field in Provence"
-      >
-
-      <p class="image-credit">
-        Jacquemus · Le Coup de Soleil · Provence
-      </p>
-
+    <div class="section-label">
+      01 · Geography as Identity
     </div>
 
+    <h2 class="section-title">
+      Sometimes a location can communicate more than a campaign.
+    </h2>
 
-    <div class="timeline-content">
+    <p>
+      Few contemporary brands demonstrate world-building as clearly
+      as Jacquemus. The house has developed a visual vocabulary that
+      extends far beyond clothing — southern light, landscape,
+      architecture, scale and a carefully controlled sense of the surreal.
+    </p>
 
-      <div class="section-label">
-        Geography as Identity
-      </div>
+    <p>
+      Its runway locations have become part of that vocabulary.
+      Lavender fields in Provence, wheat fields outside Paris,
+      the salt flats of the Camargue, Versailles, Fondation Maeght
+      and Casa Malaparte transform the conventional fashion show
+      into an exercise in place-making.
+    </p>
 
-      <h2 class="section-title">
-        Sometimes a location can communicate more than a campaign.
-      </h2>
+    <p>
+      These locations do more than create photographs. They establish
+      geography as part of the brand identity. A model moving through
+      lavender or descending the steps of Casa Malaparte does not need
+      to stand beside a giant logo — the environment itself communicates
+      the brand.
+    </p>
 
-      <p>
-        Few contemporary brands demonstrate world-building as clearly
-        as Jacquemus. The house has developed a visual vocabulary that
-        extends far beyond clothing: southern light, landscape,
-        architecture, scale, sensuality and a carefully controlled
-        sense of the surreal.
-      </p>
+  </div>
 
-      <p>
-        Its runway locations have become part of that vocabulary.
-        Lavender fields in Provence, wheat fields outside Paris,
-        the salt flats of the Camargue, Versailles, Fondation Maeght
-        and Casa Malaparte have transformed the conventional fashion
-        show into an exercise in place-making.
-      </p>
 
-      <p>
-        These locations do more than create photographs. They establish
-        geography as part of the brand identity.
-      </p>
+  <aside class="editorial-quote">
 
-      <p>
-        A model moving through lavender or descending the monumental
-        steps of Casa Malaparte does not need to stand beside a giant
-        logo. The environment itself communicates the brand.
-      </p>
+    <span class="quote-label">
+      The Strategic Shift
+    </span>
 
-    </div>
+    <p>
+      The question is no longer only,<br>
+      “What does this brand make?”<br><br>
+      Increasingly, it is:<br>
+      “What world does this brand allow you to enter?”
+    </p>
 
-  </section>
+  </aside>
 
-</div>
+
+</section>
 
 
 
@@ -1180,8 +1351,8 @@ footer{
   </p>
 
   <p>
-    When an identity becomes sufficiently coherent, consumers begin to
-    recognize its codes intuitively. Colour, landscape, casting,
+    When an identity becomes sufficiently coherent, consumers begin
+    to recognize its codes intuitively. Colour, landscape, casting,
     architecture, photography, music and tone can communicate ownership
     without relying on a monogram.
   </p>
@@ -1202,68 +1373,76 @@ footer{
 
 
 <!-- =====================================================
-     03 — LOUIS VUITTON
+     HUGE LOUIS VUITTON IMAGE
 ===================================================== -->
 
-<div class="timeline">
+<figure class="full-image lv-image">
 
-  <section class="timeline-section">
+  <img
+    src="lv-blue.jpg"
+    alt="Louis Vuitton immersive heritage exhibition"
+  >
 
-    <div class="timeline-image lv-image">
+  <figcaption class="full-image-credit">
+    Louis Vuitton · Immersive Heritage Exhibition
+  </figcaption>
 
-      <img
-        src="lv-blue.jpg"
-        alt="Louis Vuitton immersive heritage exhibition"
-      >
+</figure>
 
-      <p class="image-credit">
-        Louis Vuitton · Immersive Heritage Exhibition
-      </p>
 
+
+<!-- =====================================================
+     LOUIS VUITTON TEXT
+===================================================== -->
+
+<section class="lv-copy">
+
+
+  <div class="lv-heading">
+
+    <div class="section-label">
+      02 · From Store to Cultural Space
     </div>
 
+    <h2 class="section-title">
+      The boutique is becoming something larger than a point of sale.
+    </h2>
 
-    <div class="timeline-content">
+  </div>
 
-      <div class="section-label">
-        From Store to Cultural Space
-      </div>
 
-      <h2 class="section-title">
-        The boutique is becoming something larger than a point of sale.
-      </h2>
+  <div class="lv-body">
 
-      <p>
-        Louis Vuitton provides a different model of world-building.
-        The house has spent decades connecting fashion with travel,
-        architecture and contemporary art, allowing those associations
-        to extend well beyond conventional retail.
-      </p>
+    <p>
+      Louis Vuitton provides a different model of world-building.
+      The house has spent decades connecting fashion with travel,
+      architecture and contemporary art, allowing those associations
+      to extend well beyond conventional retail.
+    </p>
 
-      <p>
-        Its cultural ecosystem now includes exhibitions, artistic
-        collaborations, publishing, architectural projects and spaces
-        dedicated to presenting the history and creative vocabulary
-        of the house.
-      </p>
+    <p>
+      Its cultural ecosystem now includes exhibitions, artistic
+      collaborations, publishing, architectural projects and spaces
+      dedicated to presenting the history and creative vocabulary
+      of the house.
+    </p>
 
-      <p>
-        In these environments, products appear alongside archive
-        material, craftsmanship, images, objects and storytelling.
-        The visitor is not simply shown what Louis Vuitton sells.
-        They are shown how the brand understands itself.
-      </p>
+    <p>
+      In these environments, products appear alongside archive material,
+      craftsmanship, images, objects and storytelling. The visitor is
+      not simply shown what Louis Vuitton sells. They are shown how
+      the brand understands itself.
+    </p>
 
-      <p>
-        The distinction between store, exhibition, museum and brand
-        communication begins to dissolve.
-      </p>
+    <p>
+      The distinction between store, exhibition, museum and brand
+      communication begins to dissolve.
+    </p>
 
-    </div>
+  </div>
 
-  </section>
 
-</div>
+</section>
 
 
 
@@ -1300,9 +1479,9 @@ footer{
   </p>
 
   <p>
-    This changes the role of cultural association. A painting
-    referenced in a collection is inspiration. A sustained exhibition
-    programme or cultural institution is infrastructure.
+    This changes the role of cultural association. A painting referenced
+    in a collection is inspiration. A sustained exhibition programme
+    or cultural institution is infrastructure.
   </p>
 
   <p>
@@ -1345,8 +1524,8 @@ footer{
 
   <p>
     From a traditional retail perspective, some of those interactions
-    appear economically insignificant. From a brand perspective, they
-    can be enormously valuable.
+    appear economically insignificant. From a brand perspective,
+    they can be enormously valuable.
   </p>
 
   <p>
@@ -1356,9 +1535,10 @@ footer{
   </p>
 
   <p>
-    World-building creates a ladder of participation. At one end sits
-    the spectator. At the other sits the collector or high-spending
-    client. Both can understand and participate in the same universe.
+    World-building creates a ladder of participation. At one end
+    sits the spectator. At the other sits the collector or
+    high-spending client. Both can understand and participate in
+    the same universe.
   </p>
 
 </section>
@@ -1366,7 +1546,7 @@ footer{
 
 
 <!-- =====================================================
-     STATEMENT
+     PARTICIPATION STATEMENT
 ===================================================== -->
 
 <section class="statement-break">
@@ -1376,8 +1556,9 @@ footer{
   </span>
 
   <p class="statement-text">
-    The audience for luxury is now much larger than the group of people
-    buying it. World-building gives that audience somewhere to belong.
+    The audience for luxury is now much larger than the group of
+    people buying it. World-building gives that audience somewhere
+    to belong.
   </p>
 
 </section>
@@ -1385,7 +1566,7 @@ footer{
 
 
 <!-- =====================================================
-     THEME PARK RISK
+     THEME PARK
 ===================================================== -->
 
 <section class="text-section">
@@ -1409,12 +1590,12 @@ footer{
   </p>
 
   <p>
-    The strategy works only when those extensions feel connected to
-    an authentic central identity. A Mediterranean landscape makes
-    sense for Jacquemus because place, sunlight and southern France
-    are embedded in the brand's vocabulary. Travel makes sense for
-    Louis Vuitton because the house's history began with trunks and
-    has repeatedly returned to the idea of movement.
+    The strategy works only when those extensions feel connected
+    to an authentic central identity. A Mediterranean landscape
+    makes sense for Jacquemus because place, sunlight and southern
+    France are embedded in the brand's vocabulary. Travel makes
+    sense for Louis Vuitton because the house's history began with
+    trunks and has repeatedly returned to the idea of movement.
   </p>
 
   <p>
@@ -1425,8 +1606,8 @@ footer{
   <p>
     A branded restaurant does not automatically create culture.
     An artist collaboration does not automatically create artistic
-    credibility. A monumental store does not automatically make a
-    brand culturally important.
+    credibility. A monumental store does not automatically make
+    a brand culturally important.
   </p>
 
   <p>
@@ -1453,8 +1634,8 @@ footer{
   </h2>
 
   <p>
-    World-building creates another paradox. A successful luxury brand
-    needs codes.
+    World-building creates another paradox. A successful luxury
+    brand needs codes.
   </p>
 
   <p>
@@ -1488,8 +1669,8 @@ footer{
   </p>
 
   <p>
-    A strong brand world is therefore not a mood board. It is a
-    system capable of generating new ideas.
+    A strong brand world is therefore not a mood board.
+    It is a system capable of generating new ideas.
   </p>
 
 </section>
@@ -1497,7 +1678,7 @@ footer{
 
 
 <!-- =====================================================
-     THE MOAT
+     BRAND MOAT
 ===================================================== -->
 
 <section class="text-section">
@@ -1511,8 +1692,8 @@ footer{
   </h2>
 
   <p>
-    This may be the most strategically important consequence of
-    world-building.
+    This may be the most strategically important consequence
+    of world-building.
   </p>
 
   <p>
@@ -1534,9 +1715,9 @@ footer{
   </p>
 
   <p>
-    That accumulated universe becomes a form of competitive
-    protection — not because competitors are legally prevented from
-    imitating it, but because authenticity takes time.
+    That accumulated universe becomes a form of competitive protection —
+    not because competitors are legally prevented from imitating it,
+    but because authenticity takes time.
   </p>
 
   <p>
@@ -1577,11 +1758,11 @@ footer{
   </p>
 
   <p>
-    The modern luxury house is becoming part retailer, part
-    storyteller, part cultural producer and part architect of
-    experience. Its competitive advantage may depend not simply
-    on making desirable things, but on constructing a coherent
-    universe in which those things acquire meaning.
+    The modern luxury house is becoming part retailer, part storyteller,
+    part cultural producer and part architect of experience. Its
+    competitive advantage may depend not simply on making desirable
+    things, but on constructing a coherent universe in which those
+    things acquire meaning.
   </p>
 
   <p>
@@ -1656,8 +1837,8 @@ footer{
 
   <p>
     <span class="source-name">McKinsey &amp; Company</span> —
-    research on luxury consumer behaviour, experience,
-    digital engagement and changing expectations of luxury brands.
+    research on luxury consumer behaviour, experience, digital
+    engagement and changing expectations of luxury brands.
   </p>
 
   <p>
