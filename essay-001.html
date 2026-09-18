@@ -146,11 +146,17 @@ nav{
 
 .hero-grid{
   display:grid;
+
+  /* IMAGE LEFT — TEXT RIGHT */
   grid-template-columns:280px 1fr;
 
   gap:3.4rem;
 
   align-items:center;
+}
+
+.hero-image{
+  align-self:center;
 }
 
 .hero-image img{
@@ -268,6 +274,10 @@ nav{
   border-top:.5px solid var(--rule);
 }
 
+.timeline-image{
+  align-self:center;
+}
+
 .timeline-image img{
   display:block;
 
@@ -276,6 +286,33 @@ nav{
 
   object-fit:cover;
 }
+
+
+/* =========================================================
+   FULL / UNCROPPED INFOGRAPHICS
+========================================================= */
+
+.timeline-image.infographic img{
+  width:100%;
+  height:auto;
+
+  max-height:470px;
+
+  object-fit:contain;
+
+  /* Makes white PNG backgrounds visually merge
+     with the cream page */
+  mix-blend-mode:multiply;
+}
+
+
+/* GIA graphic also blends into the page if its
+   PNG contains a white background */
+
+.timeline-image.transparent-image img{
+  mix-blend-mode:multiply;
+}
+
 
 .timeline-content{
   max-width:650px;
@@ -747,6 +784,10 @@ footer{
     height:auto;
   }
 
+  .timeline-image.infographic img{
+    max-height:none;
+  }
+
   .introduction,
   .text-section,
   .conclusion,
@@ -835,19 +876,24 @@ footer{
 
   <div class="page hero-grid">
 
+
+    <!-- EDIT #1: NEW HERO IMAGE -->
+
     <div class="hero-image">
 
       <img
-        src="rough-diamonds.jpg"
-        alt="Rough diamonds"
+        src="lab-grown.jpg"
+        alt="Natural and laboratory-grown diamonds"
       >
 
       <p class="image-credit">
-        Rough Diamonds · Diamond Industry
+        Natural &amp; Laboratory-Grown Diamonds · Comparative Reference
       </p>
 
     </div>
 
+
+    <!-- EDIT #2: TEXT REMAINS ON RIGHT -->
 
     <div class="hero-copy">
 
@@ -1056,7 +1102,7 @@ footer{
 
   <section class="timeline-section">
 
-    <div class="timeline-image">
+    <div class="timeline-image transparent-image">
 
       <img
         src="gia.png"
@@ -1116,11 +1162,16 @@ footer{
 
   <section class="timeline-section">
 
-    <div class="timeline-image">
+    <!-- EDIT #3:
+         ENTIRE INFOGRAPHIC IS SHOWN.
+         NO CROPPING.
+         WHITE BACKGROUND BLENDS INTO PAGE. -->
+
+    <div class="timeline-image infographic">
 
       <img
         src="price-comapre.png"
-        alt="Online diamond price comparison"
+        alt="Natural and laboratory-grown diamond price comparison"
       >
 
       <p class="image-credit">
