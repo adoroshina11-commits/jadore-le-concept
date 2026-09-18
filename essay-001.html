@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+<title>The Diamond Was Never Just a Stone — Anaïs Doroshina</title>
+
+<style>
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --cream:#faf8f4;
+  --off:#f4f1eb;
+  --ink:#1a1814;
+  --muted:#6a6460;
+  --rule:#d8d4cc;
+  --accent:#b89a7a;
+  --teal:#05242b;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+
+  height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 5vw;
+
+  background:rgba(250,248,244,.97);
+
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   WIDTH
+========================================================= */
+
+.page,
+.timeline{
+  width:min(88vw,1120px);
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   IMAGE CREDIT
+========================================================= */
+
+.image-credit{
+  margin-top:.55rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:9px;
+  line-height:1.5;
+
+  letter-spacing:.15em;
+  text-transform:uppercase;
+
+  color:#948a82;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.article-hero{
+  padding-top:calc(56px + 4.3rem);
+  padding-bottom:2.8rem;
+
+  border-bottom:.5px solid var(--rule);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:280px 1fr;
+
+  gap:3.4rem;
+
+  align-items:center;
+}
+
+.hero-image img{
+  display:block;
+
+  width:100%;
+  height:265px;
+
+  object-fit:cover;
+}
+
+.article-meta{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  margin-bottom:1.1rem;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:9px;
+  letter-spacing:.27em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.article-title{
+  max-width:760px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(40px,4.2vw,62px);
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:.98;
+
+  letter-spacing:-.035em;
+}
+
+.article-intro{
+  max-width:590px;
+
+  margin-top:1.25rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:15px;
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.55;
+
+  color:#8b8179;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introduction{
+  width:min(100% - 40px,700px);
+
+  margin:0 auto;
+
+  padding:2.8rem 0 3.2rem;
+}
+
+.introduction p{
+  margin-bottom:1.15rem;
+
+  font-size:16.5px;
+  line-height:1.67;
+
+  color:#292621;
+}
+
+.introduction p:last-child{
+  margin-bottom:0;
+}
+
+.introduction p:first-of-type::first-letter{
+  float:left;
+
+  margin:.06em .13em .02em 0;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:4.6rem;
+  font-weight:300;
+
+  line-height:.73;
+
+  color:var(--accent);
+}
+
+
+/* =========================================================
+   ARTICLE SECTIONS
+========================================================= */
+
+.timeline-section{
+  display:grid;
+
+  grid-template-columns:280px 1fr;
+
+  gap:3.4rem;
+
+  align-items:center;
+
+  padding:2.35rem 0;
+
+  border-top:.5px solid var(--rule);
+}
+
+.timeline-image img{
+  display:block;
+
+  width:100%;
+  height:290px;
+
+  object-fit:cover;
+}
+
+.timeline-content{
+  max-width:650px;
+}
+
+.section-label{
+  margin-bottom:.3rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:9px;
+  letter-spacing:.27em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.section-title{
+  margin-bottom:.8rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:29px;
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.05;
+}
+
+.timeline-content p{
+  margin-bottom:.8rem;
+
+  font-size:15.5px;
+  line-height:1.58;
+
+  color:#292621;
+}
+
+.timeline-content p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================================================
+   STATISTIC BREAK
+========================================================= */
+
+.stat-break{
+  width:min(88vw,1120px);
+
+  margin:0 auto;
+
+  padding:2.7rem 5vw;
+
+  border-top:.5px solid var(--rule);
+  border-bottom:.5px solid var(--rule);
+
+  text-align:center;
+}
+
+.stat-number{
+  display:block;
+
+  margin-bottom:.4rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(52px,6vw,82px);
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1;
+
+  color:var(--accent);
+}
+
+.stat-text{
+  max-width:650px;
+
+  margin:0 auto;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:18px;
+  font-style:italic;
+
+  line-height:1.45;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   CONCLUSION
+========================================================= */
+
+.conclusion{
+  width:min(100% - 40px,700px);
+
+  margin:0 auto;
+
+  padding:3.3rem 0 2.8rem;
+
+  border-top:.5px solid var(--rule);
+}
+
+.conclusion-label{
+  margin-bottom:.55rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:9px;
+  letter-spacing:.27em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.conclusion h2{
+  margin-bottom:1.3rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:30px;
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.1;
+}
+
+.conclusion p{
+  margin-bottom:1rem;
+
+  font-size:16.5px;
+  line-height:1.67;
+
+  color:#292621;
+}
+
+
+/* =========================================================
+   FINAL STATEMENT
+========================================================= */
+
+.final-statement{
+  width:min(88vw,1120px);
+
+  margin:0 auto 3rem;
+
+  padding:2.5rem 5vw;
+
+  border-top:.5px solid var(--rule);
+  border-bottom:.5px solid var(--rule);
+
+  text-align:center;
+}
+
+.final-statement p{
+  max-width:900px;
+
+  margin:0 auto;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(25px,2.5vw,36px);
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.35;
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.sources{
+  width:min(100% - 40px,700px);
+
+  margin:0 auto;
+
+  padding:2.6rem 0 3.5rem;
+}
+
+.sources-title{
+  margin-bottom:1rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:9px;
+  letter-spacing:.27em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+}
+
+.sources p{
+  margin-bottom:.6rem;
+
+  font-size:13px;
+  line-height:1.5;
+
+  color:var(--muted);
+}
+
+.source-name{
+  font-style:italic;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.back{
+  padding:1.6rem 10vw;
+
+  border-top:.5px solid var(--rule);
+
+  text-align:center;
+}
+
+.back a{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:9px;
+
+  letter-spacing:.25em;
+  text-transform:uppercase;
+
+  color:var(--muted);
+
+  text-decoration:none;
+}
+
+
+/* =========================================================
+   AD STAMP
+========================================================= */
+
+.logo-stamp{
+  height:150px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.stamp{
+  position:relative;
+
+  width:95px;
+  height:95px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.stamp-spin{
+  position:absolute;
+
+  inset:0;
+
+  animation:spinStamp 15s linear infinite;
+
+  opacity:.72;
+}
+
+.stamp-spin svg{
+  width:100%;
+  height:100%;
+
+  overflow:visible;
+}
+
+.stamp-center{
+  position:absolute;
+
+  z-index:2;
+
+  font-family:'Corinthia',cursive;
+
+  font-size:33px;
+
+  color:var(--accent);
+
+  transform:rotate(-9deg);
+}
+
+@keyframes spinStamp{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+  padding:3.5vw 10vw;
+
+  display:grid;
+
+  grid-template-columns:1.3fr 1fr;
+
+  gap:4rem;
+
+  align-items:end;
+
+  background:var(--teal);
+
+  color:var(--cream);
+}
+
+.ft-logo{
+  margin-bottom:.7rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:13px;
+
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.ft-sub{
+  max-width:410px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:15px;
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.6;
+
+  color:rgba(250,248,244,.5);
+}
+
+.ft-right{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-end;
+
+  gap:8px;
+}
+
+.ft-link{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,.55);
+
+  text-decoration:none;
+}
+
+.ft-copy{
+  margin-top:6px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:9px;
+
+  letter-spacing:.24em;
+  text-transform:uppercase;
+
+  color:rgba(250,248,244,.25);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  .nav-links{
+    gap:11px;
+  }
+
+  .nav-links a{
+    font-size:8px;
+  }
+
+  .page,
+  .timeline{
+    width:86%;
+  }
+
+  .article-hero{
+    padding-top:calc(56px + 2.8rem);
+  }
+
+  .hero-grid,
+  .timeline-section{
+    grid-template-columns:1fr;
+
+    gap:2rem;
+  }
+
+  .hero-image img,
+  .timeline-image img{
+    height:auto;
+  }
+
+  .introduction,
+  .conclusion,
+  .sources{
+    width:86%;
+  }
+
+  .final-statement,
+  .stat-break{
+    width:86%;
+  }
+
+  footer{
+    grid-template-columns:1fr;
+
+    gap:2.5rem;
+
+    padding:10vw 8vw;
+  }
+
+  .ft-right{
+    align-items:flex-start;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .stamp-spin{
+    animation:none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+  <a href="index.html" class="nav-logo">
+    Anaïs Doroshina
+  </a>
+
+  <div class="nav-links">
+
+    <a href="archive.html">
+      Archive
+    </a>
+
+    <a href="essays.html" class="active">
+      Essays
+    </a>
+
+    <a href="photography.html">
+      Photography
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="about.html#contact">
+      Contact
+    </a>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="article-hero">
+
+  <div class="page hero-grid">
+
+
+    <div class="hero-image">
+
+      <img
+        src="diamond-hero.jpg"
+        alt="Loose diamonds"
+      >
+
+      <p class="image-credit">
+        Diamond Industry · Editorial Image
+      </p>
+
+    </div>
+
+
+    <div class="hero-copy">
+
+      <div class="article-meta">
+
+        <span>001</span>
+
+        <span>✦</span>
+
+        <span>Luxury · Industry</span>
+
+      </div>
+
+
+      <h1 class="article-title">
+        The Diamond Was Never Just a Stone:<br>
+        How an Industry Manufactured Rarity
+      </h1>
+
+
+      <p class="article-intro">
+        For more than a century, the diamond industry sold us something
+        larger than carbon. It sold rarity, permanence and the idea that
+        love could be measured in carats. Lab-grown diamonds are forcing
+        us to ask how much of that value belonged to the stone — and how
+        much belonged to the story.
+      </p>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<article class="introduction">
+
+  <p>
+    A diamond seems like the perfect luxury object. It is small, durable,
+    visually spectacular and surrounded by a language of rarity. We are
+    taught to understand it through carat, cut, clarity and colour, but
+    behind those measurements sits another, less visible quality: belief.
+  </p>
+
+  <p>
+    For generations, consumers have been taught that a diamond is valuable
+    because nature made very few of them and because acquiring one requires
+    access to something exceptional. Yet the modern diamond market was never
+    shaped by geology alone. Supply was organised, distribution was controlled,
+    advertising attached diamonds to marriage and permanence, and an ordinary
+    mineral became one of the most emotionally loaded luxury products in the
+    world.
+  </p>
+
+  <p>
+    Now technology has complicated that story. A laboratory can produce a
+    diamond with essentially the same chemical composition, crystal structure,
+    optical properties and physical properties as one extracted from the
+    earth. The difference is no longer simply what the object is. It is where
+    it came from, how long it took to form and what we are willing to believe
+    that origin is worth.
+  </p>
+
+</article>
+
+
+
+<!-- =====================================================
+     SECTION 01
+===================================================== -->
+
+<div class="timeline">
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="debeers-history.jpg"
+        alt="Historic diamond sorting and distribution"
+      >
+
+      <p class="image-credit">
+        De Beers Diamond Trade · Historical Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        The Old System
+      </div>
+
+      <h2 class="section-title">
+        Rarity was never purely geological.
+      </h2>
+
+      <p>
+        For much of the twentieth century, De Beers occupied an extraordinary
+        position in the diamond market. It did not simply own mines. Through
+        its own production, joint ventures, purchasing agreements and its
+        Central Selling Organisation, the company controlled the route through
+        which much of the world's rough-diamond supply reached buyers.
+      </p>
+
+      <p>
+        The European Commission later described De Beers as having controlled
+        more than 80 percent of worldwide rough-diamond supply for much of the
+        twentieth century. GIA's history of rough-diamond distribution similarly
+        estimates that De Beers commanded roughly 75 to 80 percent of world
+        rough-diamond sales through much of the last century.
+      </p>
+
+      <p>
+        That distinction matters. De Beers did not need to own 80 percent of
+        every mine in order to exert enormous influence over the market. Control
+        over distribution meant influence over how much rough entered the market,
+        who could purchase it and how the industry's supply was organised.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+<!-- =====================================================
+     SECTION 02
+===================================================== -->
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="diamond-advertising.jpg"
+        alt="Vintage diamond advertising"
+      >
+
+      <p class="image-credit">
+        De Beers Advertising · Historical Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        Selling Permanence
+      </div>
+
+      <h2 class="section-title">
+        Then the stone became a promise.
+      </h2>
+
+      <p>
+        Controlling supply was only part of the equation. Diamonds also had
+        to mean something.
+      </p>
+
+      <p>
+        In 1947, copywriter Frances Gerety wrote four words for the De Beers
+        account at advertising agency N.W. Ayer: “A Diamond Is Forever.”
+        The campaign connected the physical durability of a diamond with
+        romantic permanence and helped reinforce the diamond engagement ring
+        as a cultural expectation.
+      </p>
+
+      <p>
+        It was an extraordinary piece of luxury storytelling because the
+        product became inseparable from the emotion attached to it. A diamond
+        was no longer merely purchased because it sparkled. It represented
+        commitment, status, adulthood and permanence.
+      </p>
+
+      <p>
+        The industry had transformed carbon into symbolism. That may ultimately
+        have been its most valuable achievement.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+
+<!-- =====================================================
+     STAT
+===================================================== -->
+
+<section class="stat-break">
+
+  <span class="stat-number">
+    80%+
+  </span>
+
+  <p class="stat-text">
+    For much of the twentieth century, De Beers controlled more than
+    80 percent of worldwide rough-diamond supply — not by owning every
+    mine, but through a powerful network of production, purchasing and
+    distribution.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION 03
+===================================================== -->
+
+<div class="timeline">
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="lab-diamond.jpg"
+        alt="Laboratory-grown diamond production"
+      >
+
+      <p class="image-credit">
+        Laboratory-Grown Diamond · Editorial Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        The Disruption
+      </div>
+
+      <h2 class="section-title">
+        What happens when we learn to make the stone?
+      </h2>
+
+      <p>
+        A laboratory-grown diamond is not cubic zirconia and it is not
+        moissanite. According to the Gemological Institute of America,
+        laboratory-grown diamonds have essentially the same chemical
+        composition, crystal structure, optical properties and physical
+        properties as natural diamonds.
+      </p>
+
+      <p>
+        Their histories, however, could hardly be more different. Natural
+        diamonds formed deep within the earth over immense geological periods.
+        Laboratory diamonds can be grown using high-pressure, high-temperature
+        technology or chemical vapour deposition. Modern production can create
+        gem-quality stones in periods measured in days or weeks rather than
+        geological time.
+      </p>
+
+      <p>
+        Suddenly, one of luxury's oldest equations becomes unstable. If two
+        stones can look effectively identical to the unaided eye, but one can
+        be produced repeatedly, what exactly is the consumer paying for when
+        choosing the other?
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+<!-- =====================================================
+     SECTION 04
+===================================================== -->
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="diamond-online.jpg"
+        alt="Diamonds being viewed and purchased online"
+      >
+
+      <p class="image-credit">
+        Digital Diamond Market · Editorial Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        From Counter to Screen
+      </div>
+
+      <h2 class="section-title">
+        The buying experience changed too.
+      </h2>
+
+      <p>
+        The traditional diamond purchase depended partly on information
+        asymmetry. The jeweller understood the stone; the consumer relied on
+        expertise, certification and trust. Today, that relationship is
+        increasingly digital.
+      </p>
+
+      <p>
+        Consumers can sit at home and filter enormous inventories by carat,
+        cut, colour, clarity, certification and price. Digital grading reports
+        can be accessed instantly. Stones can be compared side by side before
+        the buyer ever enters a boutique.
+      </p>
+
+      <p>
+        McKinsey has identified e-commerce as an increasingly important channel
+        for fine jewellery, particularly among younger consumers. The effect is
+        not simply convenience. Digital comparison makes pricing more visible.
+        A product once surrounded by mystery begins to behave more like a
+        transparent marketplace.
+      </p>
+
+      <p>
+        The diamond is still emotional. The process of buying one is becoming
+        considerably less mysterious.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+<!-- =====================================================
+     SECTION 05
+===================================================== -->
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="diamond-generation.jpg"
+        alt="Modern diamond jewellery"
+      >
+
+      <p class="image-credit">
+        Contemporary Diamond Jewellery · Editorial Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        A New Consumer
+      </div>
+
+      <h2 class="section-title">
+        Bigger stone. Smaller mythology.
+      </h2>
+
+      <p>
+        The most important change may not be technological at all. It may be
+        generational.
+      </p>
+
+      <p>
+        The Knot's research found that lab-grown centre stones represented
+        52 percent of engagement rings among its 2024 respondents. Its 2026
+        Real Weddings Study, covering U.S. couples married in 2025, put that
+        figure at 61 percent. In only a few years, what had been positioned as
+        an alternative had moved into the mainstream of its surveyed market.
+      </p>
+
+      <p>
+        The same research found another revealing shift: couples were buying
+        larger stones while average engagement-ring spending fell. Among its
+        2025 respondents, the average lab-grown centre stone was two carats,
+        compared with 1.6 carats for natural stones.
+      </p>
+
+      <p>
+        This does not necessarily mean younger consumers no longer care about
+        heritage or savoir-faire. It suggests something more complicated.
+        They may not automatically accept heritage as sufficient justification
+        for price.
+      </p>
+
+      <p>
+        Design, scale, personal meaning, transparency and accessibility can
+        compete with provenance. The story still matters. The consumer is
+        simply becoming more willing to choose which story deserves a premium.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+
+<!-- =====================================================
+     STAT 02
+===================================================== -->
+
+<section class="stat-break">
+
+  <span class="stat-number">
+    90%
+  </span>
+
+  <p class="stat-text">
+    De Beers said wholesale lab-grown diamond prices fell 90 percent
+    between the launch of Lightbox in 2018 and its decision to close
+    the jewellery brand in 2025.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION 06
+===================================================== -->
+
+<div class="timeline">
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="diamond-production.jpg"
+        alt="Diamond production and manufacturing"
+      >
+
+      <p class="image-credit">
+        Diamond Production · Editorial Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        Mass Production
+      </div>
+
+      <h2 class="section-title">
+        Accessibility has a price of its own.
+      </h2>
+
+      <p>
+        The success of laboratory-grown diamonds created the same problem
+        that confronts almost every product that becomes easier to manufacture:
+        abundance pushes against value.
+      </p>
+
+      <p>
+        In 2018, De Beers entered lab-grown jewellery itself through Lightbox,
+        initially pricing its stones on a simple per-carat basis. Seven years
+        later, the company announced that it intended to close the business.
+        De Beers said wholesale lab-grown diamond prices had fallen 90 percent
+        since Lightbox launched, as production expanded and competition
+        intensified.
+      </p>
+
+      <p>
+        That collapse exposes the paradox at the centre of the lab-grown
+        revolution. Accessibility is precisely what makes the product
+        attractive to consumers, but accessibility also removes one of the
+        foundations on which traditional luxury has historically been built:
+        scarcity.
+      </p>
+
+      <p>
+        When almost anyone can produce more of the material, value must migrate
+        somewhere else — toward design, brand, craftsmanship, provenance or
+        emotion.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+<!-- =====================================================
+     SECTION 07
+===================================================== -->
+
+  <section class="timeline-section">
+
+    <div class="timeline-image">
+
+      <img
+        src="diamond-ethics.jpg"
+        alt="Diamond mining and laboratory production"
+      >
+
+      <p class="image-credit">
+        Diamond Supply Chain · Editorial Reference
+      </p>
+
+    </div>
+
+
+    <div class="timeline-content">
+
+      <div class="section-label">
+        The Ethics Problem
+      </div>
+
+      <h2 class="section-title">
+        Neither side gets an easy moral victory.
+      </h2>
+
+      <p>
+        Lab-grown diamonds are frequently presented as the ethical answer to
+        mining, and the appeal is understandable. Mining industries can carry
+        serious environmental and human-rights risks, making traceability and
+        responsible sourcing increasingly important to consumers.
+      </p>
+
+      <p>
+        But “grown in a laboratory” should not automatically be read as
+        “sustainable.” Diamond growth requires significant energy. GIA notes
+        that the environmental impact of laboratory-grown diamonds depends in
+        part on whether that energy comes from fossil or renewable sources and
+        that there is no single definitive environmental answer for the entire
+        category.
+      </p>
+
+      <p>
+        Mass production also introduces a different question. If laboratory
+        diamonds are manufactured at enormous scale and sold at continuously
+        declining prices, they begin to participate in the same cycle of
+        abundance and consumption that luxury increasingly claims it wants
+        to move beyond.
+      </p>
+
+      <p>
+        The future of ethical jewellery may therefore depend less on a simple
+        choice between “mined” and “lab-grown” and more on transparency:
+        where a stone came from, how it was produced, what energy was used,
+        who benefited from its production and how honestly those facts are
+        communicated.
+      </p>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONCLUSION
+===================================================== -->
+
+<section class="conclusion">
+
+  <div class="conclusion-label">
+    After Rarity
+  </div>
+
+  <h2>
+    So what is a diamond actually worth?
+  </h2>
+
+  <p>
+    Perhaps that has always been the wrong question.
+  </p>
+
+  <p>
+    The history of diamonds demonstrates that luxury value has never existed
+    entirely inside the object. De Beers understood this exceptionally well.
+    Supply mattered, but so did distribution. Geology mattered, but so did
+    advertising. A stone became powerful because an industry constructed an
+    entire cultural language around it.
+  </p>
+
+  <p>
+    Lab-grown diamonds have not destroyed that language. They have exposed
+    how it works.
+  </p>
+
+  <p>
+    If the physical characteristics of a diamond can be reproduced while its
+    price falls dramatically, then natural-diamond producers can no longer
+    rely on sparkle alone. They must sell geological time, provenance,
+    traceability and rarity. Lab-grown producers face the opposite problem:
+    if their stones become increasingly abundant, they must build value
+    through design, branding, craftsmanship and meaning.
+  </p>
+
+  <p>
+    Both sides are therefore moving toward the same uncomfortable truth.
+    Carbon was never enough.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL STATEMENT
+===================================================== -->
+
+<div class="final-statement">
+
+  <p>
+    The diamond industry spent a century teaching us that the stone
+    was valuable because it was rare. Lab-grown diamonds are forcing
+    it to confront a different possibility: perhaps the rarest thing
+    was never the diamond. It was the story surrounding it.
+  </p>
+
+</div>
+
+
+
+<!-- =====================================================
+     SOURCES
+===================================================== -->
+
+<section class="sources">
+
+  <div class="sources-title">
+    Sources & Further Reading
+  </div>
+
+  <p>
+    <span class="source-name">European Commission</span> —
+    De Beers' historical position in the worldwide rough-diamond market
+    and the role of the Diamond Trading Company.
+  </p>
+
+  <p>
+    <span class="source-name">Gemological Institute of America</span> —
+    Rough Diamond Auctions: Sweeping Changes in Pricing and Distribution.
+  </p>
+
+  <p>
+    <span class="source-name">Gemological Institute of America</span> —
+    Laboratory-grown diamonds: chemical composition, crystal structure,
+    physical and optical properties.
+  </p>
+
+  <p>
+    <span class="source-name">Gemological Institute of America</span> —
+    HPHT and CVD diamond growth processes.
+  </p>
+
+  <p>
+    <span class="source-name">Federal Trade Commission</span> —
+    Jewelry Guides and disclosure standards for laboratory-grown diamonds.
+  </p>
+
+  <p>
+    <span class="source-name">De Beers Group</span> —
+    Announcement of the planned closure of Lightbox, May 2025, including
+    reported wholesale lab-grown diamond price declines.
+  </p>
+
+  <p>
+    <span class="source-name">McKinsey & Company</span> —
+    The Diamond Industry Is at an Inflection Point, November 2024.
+  </p>
+
+  <p>
+    <span class="source-name">The Knot</span> —
+    2024 Jewelry & Engagement Study and 2026 Real Weddings Study,
+    including lab-grown engagement-ring adoption, spending and carat data.
+  </p>
+
+  <p>
+    <span class="source-name">GIA Sustainability Report</span> —
+    Environmental considerations surrounding laboratory-grown diamond
+    production and energy use.
+  </p>
+
+  <p>
+    <span class="source-name">Auburn University</span> —
+    Why a Diamond Means Forever: The Creation of the Diamond Engagement
+    Ring Tradition in the United States, 1939–1996.
+  </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     BACK
+===================================================== -->
+
+<div class="back">
+
+  <a href="essays.html">
+    ← Back to Essays
+  </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     AD STAMP
+===================================================== -->
+
+<div class="logo-stamp">
+
+  <div class="stamp">
+
+    <div class="stamp-spin">
+
+      <svg
+        viewBox="0 0 130 130"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <defs>
+
+          <path
+            id="circlePath"
+            d="
+              M65,65
+              m-46,0
+              a46,46 0 1,1 92,0
+              a46,46 0 1,1 -92,0
+            "
+          />
+
+        </defs>
+
+        <text
+          font-family="'Cormorant Garamond',serif"
+          font-size="8.5"
+          letter-spacing="3.2"
+          fill="#6a6460"
+        >
+
+          <textPath href="#circlePath">
+            ANAÏS DOROSHINA · FASHION &amp; LUXURY ·
+          </textPath>
+
+        </text>
+
+      </svg>
+
+    </div>
+
+    <div class="stamp-center">
+      AD
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div>
+
+    <div class="ft-logo">
+      Anaïs Doroshina
+    </div>
+
+    <p class="ft-sub">
+      A curated perspective on fashion, luxury and the structures behind them.
+    </p>
+
+  </div>
+
+
+  <div class="ft-right">
+
+    <a
+      href="mailto:anaisdoroshina1@gmail.com"
+      class="ft-link"
+    >
+      anaisdoroshina1@gmail.com
+    </a>
+
+    <a
+      href="#"
+      class="ft-link"
+    >
+      LinkedIn
+    </a>
+
+    <p class="ft-copy">
+      Est. 2024
+    </p>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
