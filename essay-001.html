@@ -59,14 +59,20 @@ nav{
   left:0;
   right:0;
   z-index:100;
+
   height:56px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   padding:0 5vw;
+
   background:rgba(250,248,244,.97);
+
   backdrop-filter:blur(5px);
   -webkit-backdrop-filter:blur(5px);
+
   border-bottom:.5px solid var(--rule);
 }
 
@@ -99,7 +105,7 @@ nav{
 
 
 /* =========================================================
-   WIDTH
+   GENERAL WIDTH
 ========================================================= */
 
 .page,
@@ -115,32 +121,45 @@ nav{
 
 .image-credit{
   margin-top:.55rem;
+
   font-family:'Cormorant Garamond',serif;
   font-size:9px;
   line-height:1.5;
+
   letter-spacing:.15em;
   text-transform:uppercase;
+
   color:#948a82;
 }
 
 
 /* =========================================================
-   HERO
+   HERO — EDITORIAL SPLIT
 ========================================================= */
 
 .article-hero{
-  padding-top:calc(56px + 4.3rem);
-  padding-bottom:2.8rem;
+  min-height:650px;
+
+  padding-top:calc(56px + 3.4rem);
+  padding-bottom:3.5rem;
+
+  display:flex;
+  align-items:center;
+
   border-bottom:.5px solid var(--rule);
 }
 
 .hero-grid{
+  width:min(90vw,1320px);
+  margin:0 auto;
+
   display:grid;
 
-  /* TEXT LEFT / IMAGE RIGHT */
-  grid-template-columns:minmax(0,1fr) 340px;
+  /* LARGE TEXT LEFT / IMAGE RIGHT */
+  grid-template-columns:minmax(0,1.65fr) minmax(380px,.9fr);
 
-  gap:3.8rem;
+  gap:5.5rem;
+
   align-items:center;
 }
 
@@ -149,50 +168,61 @@ nav{
 
 .hero-copy{
   min-width:0;
+  align-self:center;
 }
 
 .article-meta{
   display:flex;
   align-items:center;
-  gap:12px;
-  margin-bottom:1.1rem;
+  gap:13px;
+
+  margin-bottom:1.7rem;
 
   font-family:'Cormorant Garamond',serif;
   font-size:9px;
-  letter-spacing:.27em;
+  font-weight:400;
+
+  letter-spacing:.29em;
   text-transform:uppercase;
 
   color:var(--accent);
 }
 
 .article-title{
-  max-width:760px;
+  max-width:820px;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(40px,4.2vw,62px);
+
+  font-size:clamp(52px,5.15vw,78px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:.98;
-  letter-spacing:-.035em;
+
+  letter-spacing:-.04em;
+
+  color:var(--ink);
 }
 
 .article-intro{
-  max-width:590px;
-  margin-top:1.25rem;
+  max-width:760px;
+
+  margin-top:2rem;
 
   font-family:'Cormorant Garamond',serif;
-  font-size:15px;
+
+  font-size:17px;
   font-weight:300;
   font-style:italic;
 
-  line-height:1.55;
-  color:#8b8179;
+  line-height:1.65;
+
+  color:#9a9189;
 }
 
 
-/* HERO IMAGE — FULL IMAGE, NO CROPPING */
+/* HERO IMAGE — NO CROPPING */
 
 .hero-image{
   width:100%;
@@ -205,9 +235,18 @@ nav{
   width:100%;
   height:auto;
 
-  max-height:430px;
-
   object-fit:contain;
+}
+
+.hero-image .image-credit{
+  margin-top:.7rem;
+
+  font-size:9px;
+  line-height:1.45;
+
+  letter-spacing:.18em;
+
+  color:#9a9189;
 }
 
 
@@ -217,14 +256,18 @@ nav{
 
 .introduction{
   width:min(100% - 40px,700px);
+
   margin:0 auto;
+
   padding:2.8rem 0 3.2rem;
 }
 
 .introduction p{
   margin-bottom:1.15rem;
+
   font-size:16.5px;
   line-height:1.67;
+
   color:#292621;
 }
 
@@ -234,13 +277,16 @@ nav{
 
 .introduction p:first-of-type::first-letter{
   float:left;
+
   margin:.06em .13em .02em 0;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:4.6rem;
   font-weight:300;
 
   line-height:.73;
+
   color:var(--accent);
 }
 
@@ -251,11 +297,15 @@ nav{
 
 .timeline-section{
   display:grid;
+
   grid-template-columns:280px 1fr;
+
   gap:3.4rem;
+
   align-items:center;
 
   padding:2.35rem 0;
+
   border-top:.5px solid var(--rule);
 }
 
@@ -280,7 +330,9 @@ nav{
   margin-bottom:.3rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:9px;
+
   letter-spacing:.27em;
   text-transform:uppercase;
 
@@ -291,6 +343,7 @@ nav{
   margin-bottom:.8rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:29px;
 
   font-weight:300;
@@ -301,8 +354,10 @@ nav{
 
 .timeline-content p{
   margin-bottom:.8rem;
+
   font-size:15.5px;
   line-height:1.58;
+
   color:#292621;
 }
 
@@ -312,7 +367,7 @@ nav{
 
 
 /* =========================================================
-   GIA IMAGE — FULL IMAGE / NO CROPPING
+   GIA IMAGE — FULL / NO CROPPING
 ========================================================= */
 
 .timeline-image.transparent-image img{
@@ -330,7 +385,7 @@ nav{
 
 
 /* =========================================================
-   PRICE INFOGRAPHIC — FULL IMAGE / NO CROPPING
+   PRICE COMPARISON — FULL / NO CROPPING
 ========================================================= */
 
 .timeline-image.infographic img{
@@ -348,14 +403,16 @@ nav{
 
 
 /* =========================================================
-   TEXT-ONLY SECTION
+   TEXT SECTIONS
 ========================================================= */
 
 .text-section{
   width:min(100% - 40px,700px);
+
   margin:0 auto;
 
   padding:2.7rem 0;
+
   border-top:.5px solid var(--rule);
 }
 
@@ -387,6 +444,7 @@ nav{
 
 .stat-break{
   width:min(88vw,1120px);
+
   margin:0 auto;
 
   padding:2.7rem 5vw;
@@ -399,27 +457,33 @@ nav{
 
 .stat-number{
   display:block;
+
   margin-bottom:.4rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:clamp(52px,6vw,82px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:1;
+
   color:var(--accent);
 }
 
 .stat-text{
   max-width:650px;
+
   margin:0 auto;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:18px;
   font-style:italic;
 
   line-height:1.45;
+
   color:var(--muted);
 }
 
@@ -430,6 +494,7 @@ nav{
 
 .conclusion{
   width:min(100% - 40px,700px);
+
   margin:0 auto;
 
   padding:3.3rem 0 2.8rem;
@@ -441,7 +506,9 @@ nav{
   margin-bottom:.55rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:9px;
+
   letter-spacing:.27em;
   text-transform:uppercase;
 
@@ -452,6 +519,7 @@ nav{
   margin-bottom:1.3rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:30px;
 
   font-weight:300;
@@ -476,6 +544,7 @@ nav{
 
 .final-statement{
   width:min(88vw,1120px);
+
   margin:0 auto 3rem;
 
   padding:2.5rem 5vw;
@@ -488,9 +557,11 @@ nav{
 
 .final-statement p{
   max-width:900px;
+
   margin:0 auto;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:clamp(25px,2.5vw,36px);
 
   font-weight:300;
@@ -506,6 +577,7 @@ nav{
 
 .sources{
   width:min(100% - 40px,700px);
+
   margin:0 auto;
 
   padding:2.6rem 0 3.5rem;
@@ -515,7 +587,9 @@ nav{
   margin-bottom:1rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:9px;
+
   letter-spacing:.27em;
   text-transform:uppercase;
 
@@ -550,12 +624,14 @@ nav{
 
 .back a{
   font-family:'Cormorant Garamond',serif;
+
   font-size:9px;
 
   letter-spacing:.25em;
   text-transform:uppercase;
 
   color:var(--muted);
+
   text-decoration:none;
 }
 
@@ -568,6 +644,7 @@ nav{
   height:150px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 }
@@ -579,12 +656,14 @@ nav{
   height:95px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 }
 
 .stamp-spin{
   position:absolute;
+
   inset:0;
 
   animation:spinStamp 15s linear infinite;
@@ -595,14 +674,17 @@ nav{
 .stamp-spin svg{
   width:100%;
   height:100%;
+
   overflow:visible;
 }
 
 .stamp-center{
   position:absolute;
+
   z-index:2;
 
   font-family:'Corinthia',cursive;
+
   font-size:33px;
 
   color:var(--accent);
@@ -611,6 +693,7 @@ nav{
 }
 
 @keyframes spinStamp{
+
   from{
     transform:rotate(0deg);
   }
@@ -618,6 +701,7 @@ nav{
   to{
     transform:rotate(360deg);
   }
+
 }
 
 
@@ -629,12 +713,15 @@ footer{
   padding:3.5vw 10vw;
 
   display:grid;
+
   grid-template-columns:1.3fr 1fr;
 
   gap:4rem;
+
   align-items:end;
 
   background:var(--teal);
+
   color:var(--cream);
 }
 
@@ -642,6 +729,7 @@ footer{
   margin-bottom:.7rem;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:13px;
 
   letter-spacing:.22em;
@@ -652,6 +740,7 @@ footer{
   max-width:410px;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:15px;
 
   font-weight:300;
@@ -664,6 +753,7 @@ footer{
 
 .ft-right{
   display:flex;
+
   flex-direction:column;
 
   align-items:flex-end;
@@ -673,6 +763,7 @@ footer{
 
 .ft-link{
   font-family:'Cormorant Garamond',serif;
+
   font-size:11px;
 
   letter-spacing:.18em;
@@ -691,6 +782,7 @@ footer{
   margin-top:6px;
 
   font-family:'Cormorant Garamond',serif;
+
   font-size:9px;
 
   letter-spacing:.24em;
@@ -701,8 +793,25 @@ footer{
 
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
 ========================================================= */
+
+@media(max-width:1050px){
+
+  .hero-grid{
+    width:88%;
+
+    grid-template-columns:minmax(0,1.4fr) minmax(300px,.8fr);
+
+    gap:3.5rem;
+  }
+
+  .article-title{
+    font-size:clamp(46px,5.4vw,68px);
+  }
+
+}
+
 
 @media(max-width:800px){
 
@@ -723,17 +832,23 @@ footer{
     width:86%;
   }
 
+
+  /* HERO */
+
   .article-hero{
-    padding-top:calc(56px + 2.8rem);
+    min-height:auto;
+
+    padding-top:calc(56px + 3rem);
+    padding-bottom:3rem;
   }
 
-  .hero-grid,
-  .timeline-section{
+  .hero-grid{
+    width:86%;
+
     grid-template-columns:1fr;
-    gap:2rem;
-  }
 
-  /* On mobile text appears first, image underneath */
+    gap:2.5rem;
+  }
 
   .hero-copy{
     order:1;
@@ -743,7 +858,28 @@ footer{
     order:2;
   }
 
-  .hero-image img,
+  .article-title{
+    font-size:clamp(43px,12vw,62px);
+  }
+
+  .article-intro{
+    font-size:16px;
+  }
+
+  .hero-image img{
+    width:100%;
+    height:auto;
+  }
+
+
+  /* ARTICLE */
+
+  .timeline-section{
+    grid-template-columns:1fr;
+
+    gap:2rem;
+  }
+
   .timeline-image img{
     width:100%;
     height:auto;
@@ -752,7 +888,9 @@ footer{
   .timeline-image.transparent-image img,
   .timeline-image.infographic img{
     height:auto;
+
     max-height:none;
+
     object-fit:contain;
   }
 
@@ -768,6 +906,9 @@ footer{
     width:86%;
   }
 
+
+  /* FOOTER */
+
   footer{
     grid-template-columns:1fr;
 
@@ -782,10 +923,13 @@ footer{
 
 }
 
+
 @media(prefers-reduced-motion:reduce){
+
   .stamp-spin{
     animation:none;
   }
+
 }
 
 </style>
@@ -808,15 +952,25 @@ footer{
 
   <div class="nav-links">
 
-    <a href="archive.html">Archive</a>
+    <a href="archive.html">
+      Archive
+    </a>
 
-    <a href="essays.html" class="active">Essays</a>
+    <a href="essays.html" class="active">
+      Essays
+    </a>
 
-    <a href="photography.html">Photography</a>
+    <a href="photography.html">
+      Photography
+    </a>
 
-    <a href="about.html">About</a>
+    <a href="about.html">
+      About
+    </a>
 
-    <a href="about.html#contact">Contact</a>
+    <a href="about.html#contact">
+      Contact
+    </a>
 
   </div>
 
@@ -830,7 +984,7 @@ footer{
 
 <header class="article-hero">
 
-  <div class="page hero-grid">
+  <div class="hero-grid">
 
 
     <!-- TEXT LEFT -->
@@ -865,7 +1019,7 @@ footer{
     </div>
 
 
-    <!-- IMAGE RIGHT — FULL IMAGE -->
+    <!-- IMAGE RIGHT -->
 
     <div class="hero-image">
 
@@ -1058,8 +1212,6 @@ footer{
 
   <section class="timeline-section">
 
-    <!-- FULL GIA IMAGE — NO CROPPING -->
-
     <div class="timeline-image transparent-image">
 
       <img
@@ -1119,8 +1271,6 @@ footer{
 ===================================================== -->
 
   <section class="timeline-section">
-
-    <!-- FULL PRICE IMAGE — NO CROPPING -->
 
     <div class="timeline-image infographic">
 
@@ -1524,7 +1674,7 @@ footer{
 
 
 <!-- =====================================================
-     BACK TO ESSAYS
+     BACK
 ===================================================== -->
 
 <div class="back">
@@ -1547,10 +1697,7 @@ footer{
 
     <div class="stamp-spin">
 
-      <svg
-        viewBox="0 0 130 130"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
 
         <defs>
 
