@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
 <title>The Diamond Was Never Just a Stone — Anaïs Doroshina</title>
 
@@ -485,6 +485,16 @@ nav{
   color:var(--muted);
 }
 
+.sources a{
+  text-decoration:none;
+  border-bottom:.5px solid var(--rule);
+}
+
+.sources a:hover{
+  color:var(--ink);
+  border-color:var(--accent);
+}
+
 .source-name{
   font-style:italic;
 }
@@ -654,6 +664,10 @@ footer{
   text-decoration:none;
 }
 
+.ft-link:hover{
+  color:var(--cream);
+}
+
 .ft-copy{
   margin-top:6px;
 
@@ -673,6 +687,10 @@ footer{
 ========================================================= */
 
 @media(max-width:800px){
+
+  nav{
+    padding:0 5vw;
+  }
 
   .nav-links{
     gap:11px;
@@ -795,7 +813,7 @@ footer{
 
       <img
         src="diamond-hero.jpg"
-        alt="Loose diamonds"
+        alt="Rough and polished diamonds"
       >
 
       <p class="image-credit">
@@ -877,7 +895,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 01
+     THE OLD SYSTEM
 ===================================================== -->
 
 <div class="timeline">
@@ -888,7 +906,7 @@ footer{
 
       <img
         src="debeers-history.jpg"
-        alt="Historic diamond sorting and distribution"
+        alt="Historical diamond sorting and distribution"
       >
 
       <p class="image-credit">
@@ -926,9 +944,10 @@ footer{
 
       <p>
         That distinction matters. De Beers did not need to own 80 percent of
-        every mine in order to exert enormous influence over the market. Control
-        over distribution meant influence over how much rough entered the market,
-        who could purchase it and how the industry's supply was organised.
+        every mine in order to exert enormous influence over the market.
+        Control over distribution meant influence over how much rough entered
+        the market, who could purchase it and how the industry's supply was
+        organised.
       </p>
 
     </div>
@@ -938,7 +957,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 02
+     SELLING PERMANENCE
 ===================================================== -->
 
   <section class="timeline-section">
@@ -1001,7 +1020,7 @@ footer{
 
 
 <!-- =====================================================
-     STAT
+     STATISTIC 01
 ===================================================== -->
 
 <section class="stat-break">
@@ -1022,7 +1041,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 03
+     THE DISRUPTION
 ===================================================== -->
 
 <div class="timeline">
@@ -1084,7 +1103,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 04
+     FROM COUNTER TO SCREEN
 ===================================================== -->
 
   <section class="timeline-section">
@@ -1147,7 +1166,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 05
+     A NEW CONSUMER
 ===================================================== -->
 
   <section class="timeline-section">
@@ -1156,7 +1175,7 @@ footer{
 
       <img
         src="diamond-generation.jpg"
-        alt="Modern diamond jewellery"
+        alt="Contemporary diamond engagement ring"
       >
 
       <p class="image-credit">
@@ -1218,7 +1237,7 @@ footer{
 
 
 <!-- =====================================================
-     STAT 02
+     STATISTIC 02
 ===================================================== -->
 
 <section class="stat-break">
@@ -1238,7 +1257,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 06
+     MASS PRODUCTION
 ===================================================== -->
 
 <div class="timeline">
@@ -1249,11 +1268,11 @@ footer{
 
       <img
         src="diamond-production.jpg"
-        alt="Diamond production and manufacturing"
+        alt="De Beers Lightbox laboratory-grown diamond jewellery"
       >
 
       <p class="image-credit">
-        Diamond Production · Editorial Reference
+        Lightbox · De Beers Group · Lab-Grown Diamond Reference
       </p>
 
     </div>
@@ -1305,7 +1324,7 @@ footer{
 
 
 <!-- =====================================================
-     SECTION 07
+     ETHICS
 ===================================================== -->
 
   <section class="timeline-section">
@@ -1314,11 +1333,11 @@ footer{
 
       <img
         src="diamond-ethics.jpg"
-        alt="Diamond mining and laboratory production"
+        alt="Large-scale diamond mine"
       >
 
       <p class="image-credit">
-        Diamond Supply Chain · Editorial Reference
+        Diamond Mining · Supply Chain &amp; Ethics Reference
       </p>
 
     </div>
@@ -1343,11 +1362,10 @@ footer{
 
       <p>
         But “grown in a laboratory” should not automatically be read as
-        “sustainable.” Diamond growth requires significant energy. GIA notes
-        that the environmental impact of laboratory-grown diamonds depends in
-        part on whether that energy comes from fossil or renewable sources and
-        that there is no single definitive environmental answer for the entire
-        category.
+        “sustainable.” Diamond growth requires significant energy. The
+        environmental impact of laboratory-grown diamonds can vary considerably
+        depending on the technology used, the energy source powering production
+        and the manufacturing practices behind the stone.
       </p>
 
       <p>
@@ -1447,7 +1465,7 @@ footer{
 <section class="sources">
 
   <div class="sources-title">
-    Sources & Further Reading
+    Sources &amp; Further Reading
   </div>
 
   <p>
@@ -1458,52 +1476,51 @@ footer{
 
   <p>
     <span class="source-name">Gemological Institute of America</span> —
-    Rough Diamond Auctions: Sweeping Changes in Pricing and Distribution.
+    historical changes in rough-diamond pricing and distribution,
+    including De Beers' position in the twentieth-century market.
   </p>
 
   <p>
     <span class="source-name">Gemological Institute of America</span> —
-    Laboratory-grown diamonds: chemical composition, crystal structure,
-    physical and optical properties.
+    research on the differences and similarities between natural and
+    laboratory-grown diamonds.
   </p>
 
   <p>
     <span class="source-name">Gemological Institute of America</span> —
-    HPHT and CVD diamond growth processes.
+    HPHT and CVD diamond-growth processes and identification.
   </p>
 
   <p>
     <span class="source-name">Federal Trade Commission</span> —
-    Jewelry Guides and disclosure standards for laboratory-grown diamonds.
+    Jewelry Guides and disclosure standards applying to laboratory-grown
+    and mined diamonds.
   </p>
 
   <p>
     <span class="source-name">De Beers Group</span> —
-    Announcement of the planned closure of Lightbox, May 2025, including
-    reported wholesale lab-grown diamond price declines.
+    announcement of the intended closure of Lightbox in May 2025,
+    including its reported decline in wholesale lab-grown diamond prices
+    since 2018.
   </p>
 
   <p>
-    <span class="source-name">McKinsey & Company</span> —
-    The Diamond Industry Is at an Inflection Point, November 2024.
+    <span class="source-name">McKinsey &amp; Company</span> —
+    analysis of the diamond industry's changing economics, consumer
+    behaviour, lab-grown competition, traceability and digital retail.
   </p>
 
   <p>
     <span class="source-name">The Knot</span> —
-    2024 Jewelry & Engagement Study and 2026 Real Weddings Study,
-    including lab-grown engagement-ring adoption, spending and carat data.
-  </p>
-
-  <p>
-    <span class="source-name">GIA Sustainability Report</span> —
-    Environmental considerations surrounding laboratory-grown diamond
-    production and energy use.
+    engagement-ring and Real Weddings research covering lab-grown diamond
+    adoption, centre-stone size and purchasing behaviour among U.S.
+    respondents.
   </p>
 
   <p>
     <span class="source-name">Auburn University</span> —
-    Why a Diamond Means Forever: The Creation of the Diamond Engagement
-    Ring Tradition in the United States, 1939–1996.
+    historical research on the creation and development of the diamond
+    engagement-ring tradition in the United States.
   </p>
 
 </section>
