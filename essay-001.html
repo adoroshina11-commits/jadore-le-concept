@@ -59,20 +59,14 @@ nav{
   left:0;
   right:0;
   z-index:100;
-
   height:56px;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   padding:0 5vw;
-
   background:rgba(250,248,244,.97);
-
   backdrop-filter:blur(5px);
   -webkit-backdrop-filter:blur(5px);
-
   border-bottom:.5px solid var(--rule);
 }
 
@@ -116,19 +110,16 @@ nav{
 
 
 /* =========================================================
-   IMAGE CREDIT
+   IMAGE CREDITS
 ========================================================= */
 
 .image-credit{
   margin-top:.55rem;
-
   font-family:'Cormorant Garamond',serif;
   font-size:9px;
   line-height:1.5;
-
   letter-spacing:.15em;
   text-transform:uppercase;
-
   color:#948a82;
 }
 
@@ -140,39 +131,30 @@ nav{
 .article-hero{
   padding-top:calc(56px + 4.3rem);
   padding-bottom:2.8rem;
-
   border-bottom:.5px solid var(--rule);
 }
 
 .hero-grid{
   display:grid;
 
-  /* IMAGE LEFT — TEXT RIGHT */
-  grid-template-columns:280px 1fr;
+  /* TEXT LEFT / IMAGE RIGHT */
+  grid-template-columns:minmax(0,1fr) 340px;
 
-  gap:3.4rem;
-
+  gap:3.8rem;
   align-items:center;
 }
 
-.hero-image{
-  align-self:center;
-}
 
-.hero-image img{
-  display:block;
+/* HERO TEXT */
 
-  width:100%;
-  height:265px;
-
-  object-fit:cover;
+.hero-copy{
+  min-width:0;
 }
 
 .article-meta{
   display:flex;
   align-items:center;
   gap:12px;
-
   margin-bottom:1.1rem;
 
   font-family:'Cormorant Garamond',serif;
@@ -187,31 +169,45 @@ nav{
   max-width:760px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:clamp(40px,4.2vw,62px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:.98;
-
   letter-spacing:-.035em;
 }
 
 .article-intro{
   max-width:590px;
-
   margin-top:1.25rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:15px;
   font-weight:300;
   font-style:italic;
 
   line-height:1.55;
-
   color:#8b8179;
+}
+
+
+/* HERO IMAGE — FULL IMAGE, NO CROPPING */
+
+.hero-image{
+  width:100%;
+  align-self:center;
+}
+
+.hero-image img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  max-height:430px;
+
+  object-fit:contain;
 }
 
 
@@ -221,18 +217,14 @@ nav{
 
 .introduction{
   width:min(100% - 40px,700px);
-
   margin:0 auto;
-
   padding:2.8rem 0 3.2rem;
 }
 
 .introduction p{
   margin-bottom:1.15rem;
-
   font-size:16.5px;
   line-height:1.67;
-
   color:#292621;
 }
 
@@ -242,16 +234,13 @@ nav{
 
 .introduction p:first-of-type::first-letter{
   float:left;
-
   margin:.06em .13em .02em 0;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:4.6rem;
   font-weight:300;
 
   line-height:.73;
-
   color:var(--accent);
 }
 
@@ -262,15 +251,11 @@ nav{
 
 .timeline-section{
   display:grid;
-
   grid-template-columns:280px 1fr;
-
   gap:3.4rem;
-
   align-items:center;
 
   padding:2.35rem 0;
-
   border-top:.5px solid var(--rule);
 }
 
@@ -287,33 +272,6 @@ nav{
   object-fit:cover;
 }
 
-
-/* =========================================================
-   FULL / UNCROPPED INFOGRAPHICS
-========================================================= */
-
-.timeline-image.infographic img{
-  width:100%;
-  height:auto;
-
-  max-height:470px;
-
-  object-fit:contain;
-
-  /* Makes white PNG backgrounds visually merge
-     with the cream page */
-  mix-blend-mode:multiply;
-}
-
-
-/* GIA graphic also blends into the page if its
-   PNG contains a white background */
-
-.timeline-image.transparent-image img{
-  mix-blend-mode:multiply;
-}
-
-
 .timeline-content{
   max-width:650px;
 }
@@ -322,7 +280,6 @@ nav{
   margin-bottom:.3rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:9px;
   letter-spacing:.27em;
   text-transform:uppercase;
@@ -334,7 +291,6 @@ nav{
   margin-bottom:.8rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:29px;
 
   font-weight:300;
@@ -345,10 +301,8 @@ nav{
 
 .timeline-content p{
   margin-bottom:.8rem;
-
   font-size:15.5px;
   line-height:1.58;
-
   color:#292621;
 }
 
@@ -358,16 +312,50 @@ nav{
 
 
 /* =========================================================
+   GIA IMAGE — FULL IMAGE / NO CROPPING
+========================================================= */
+
+.timeline-image.transparent-image img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  max-height:none;
+
+  object-fit:contain;
+
+  mix-blend-mode:multiply;
+}
+
+
+/* =========================================================
+   PRICE INFOGRAPHIC — FULL IMAGE / NO CROPPING
+========================================================= */
+
+.timeline-image.infographic img{
+  display:block;
+
+  width:100%;
+  height:auto;
+
+  max-height:none;
+
+  object-fit:contain;
+
+  mix-blend-mode:multiply;
+}
+
+
+/* =========================================================
    TEXT-ONLY SECTION
 ========================================================= */
 
 .text-section{
   width:min(100% - 40px,700px);
-
   margin:0 auto;
 
   padding:2.7rem 0;
-
   border-top:.5px solid var(--rule);
 }
 
@@ -399,7 +387,6 @@ nav{
 
 .stat-break{
   width:min(88vw,1120px);
-
   margin:0 auto;
 
   padding:2.7rem 5vw;
@@ -412,33 +399,27 @@ nav{
 
 .stat-number{
   display:block;
-
   margin-bottom:.4rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:clamp(52px,6vw,82px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:1;
-
   color:var(--accent);
 }
 
 .stat-text{
   max-width:650px;
-
   margin:0 auto;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:18px;
   font-style:italic;
 
   line-height:1.45;
-
   color:var(--muted);
 }
 
@@ -449,7 +430,6 @@ nav{
 
 .conclusion{
   width:min(100% - 40px,700px);
-
   margin:0 auto;
 
   padding:3.3rem 0 2.8rem;
@@ -461,7 +441,6 @@ nav{
   margin-bottom:.55rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:9px;
   letter-spacing:.27em;
   text-transform:uppercase;
@@ -473,7 +452,6 @@ nav{
   margin-bottom:1.3rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:30px;
 
   font-weight:300;
@@ -498,7 +476,6 @@ nav{
 
 .final-statement{
   width:min(88vw,1120px);
-
   margin:0 auto 3rem;
 
   padding:2.5rem 5vw;
@@ -511,11 +488,9 @@ nav{
 
 .final-statement p{
   max-width:900px;
-
   margin:0 auto;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:clamp(25px,2.5vw,36px);
 
   font-weight:300;
@@ -531,7 +506,6 @@ nav{
 
 .sources{
   width:min(100% - 40px,700px);
-
   margin:0 auto;
 
   padding:2.6rem 0 3.5rem;
@@ -541,7 +515,6 @@ nav{
   margin-bottom:1rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:9px;
   letter-spacing:.27em;
   text-transform:uppercase;
@@ -577,14 +550,12 @@ nav{
 
 .back a{
   font-family:'Cormorant Garamond',serif;
-
   font-size:9px;
 
   letter-spacing:.25em;
   text-transform:uppercase;
 
   color:var(--muted);
-
   text-decoration:none;
 }
 
@@ -597,7 +568,6 @@ nav{
   height:150px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 }
@@ -609,14 +579,12 @@ nav{
   height:95px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 }
 
 .stamp-spin{
   position:absolute;
-
   inset:0;
 
   animation:spinStamp 15s linear infinite;
@@ -627,17 +595,14 @@ nav{
 .stamp-spin svg{
   width:100%;
   height:100%;
-
   overflow:visible;
 }
 
 .stamp-center{
   position:absolute;
-
   z-index:2;
 
   font-family:'Corinthia',cursive;
-
   font-size:33px;
 
   color:var(--accent);
@@ -646,7 +611,6 @@ nav{
 }
 
 @keyframes spinStamp{
-
   from{
     transform:rotate(0deg);
   }
@@ -654,7 +618,6 @@ nav{
   to{
     transform:rotate(360deg);
   }
-
 }
 
 
@@ -666,15 +629,12 @@ footer{
   padding:3.5vw 10vw;
 
   display:grid;
-
   grid-template-columns:1.3fr 1fr;
 
   gap:4rem;
-
   align-items:end;
 
   background:var(--teal);
-
   color:var(--cream);
 }
 
@@ -682,7 +642,6 @@ footer{
   margin-bottom:.7rem;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:13px;
 
   letter-spacing:.22em;
@@ -693,7 +652,6 @@ footer{
   max-width:410px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:15px;
 
   font-weight:300;
@@ -706,7 +664,6 @@ footer{
 
 .ft-right{
   display:flex;
-
   flex-direction:column;
 
   align-items:flex-end;
@@ -716,7 +673,6 @@ footer{
 
 .ft-link{
   font-family:'Cormorant Garamond',serif;
-
   font-size:11px;
 
   letter-spacing:.18em;
@@ -735,7 +691,6 @@ footer{
   margin-top:6px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:9px;
 
   letter-spacing:.24em;
@@ -775,17 +730,30 @@ footer{
   .hero-grid,
   .timeline-section{
     grid-template-columns:1fr;
-
     gap:2rem;
+  }
+
+  /* On mobile text appears first, image underneath */
+
+  .hero-copy{
+    order:1;
+  }
+
+  .hero-image{
+    order:2;
   }
 
   .hero-image img,
   .timeline-image img{
+    width:100%;
     height:auto;
   }
 
+  .timeline-image.transparent-image img,
   .timeline-image.infographic img{
+    height:auto;
     max-height:none;
+    object-fit:contain;
   }
 
   .introduction,
@@ -815,11 +783,9 @@ footer{
 }
 
 @media(prefers-reduced-motion:reduce){
-
   .stamp-spin{
     animation:none;
   }
-
 }
 
 </style>
@@ -842,25 +808,15 @@ footer{
 
   <div class="nav-links">
 
-    <a href="archive.html">
-      Archive
-    </a>
+    <a href="archive.html">Archive</a>
 
-    <a href="essays.html" class="active">
-      Essays
-    </a>
+    <a href="essays.html" class="active">Essays</a>
 
-    <a href="photography.html">
-      Photography
-    </a>
+    <a href="photography.html">Photography</a>
 
-    <a href="about.html">
-      About
-    </a>
+    <a href="about.html">About</a>
 
-    <a href="about.html#contact">
-      Contact
-    </a>
+    <a href="about.html#contact">Contact</a>
 
   </div>
 
@@ -877,23 +833,7 @@ footer{
   <div class="page hero-grid">
 
 
-    <!-- EDIT #1: NEW HERO IMAGE -->
-
-    <div class="hero-image">
-
-      <img
-        src="lab-grown.jpg"
-        alt="Natural and laboratory-grown diamonds"
-      >
-
-      <p class="image-credit">
-        Natural &amp; Laboratory-Grown Diamonds · Comparative Reference
-      </p>
-
-    </div>
-
-
-    <!-- EDIT #2: TEXT REMAINS ON RIGHT -->
+    <!-- TEXT LEFT -->
 
     <div class="hero-copy">
 
@@ -920,6 +860,22 @@ footer{
         love could be measured in carats. Lab-grown diamonds are forcing
         us to ask how much of that value belonged to the stone — and how
         much belonged to the story.
+      </p>
+
+    </div>
+
+
+    <!-- IMAGE RIGHT — FULL IMAGE -->
+
+    <div class="hero-image">
+
+      <img
+        src="lab-grown.jpg"
+        alt="Natural and laboratory-grown diamonds"
+      >
+
+      <p class="image-credit">
+        Natural &amp; Laboratory-Grown Diamonds · Comparative Reference
       </p>
 
     </div>
@@ -1102,11 +1058,13 @@ footer{
 
   <section class="timeline-section">
 
+    <!-- FULL GIA IMAGE — NO CROPPING -->
+
     <div class="timeline-image transparent-image">
 
       <img
         src="gia.png"
-        alt="GIA reference for laboratory-grown diamonds"
+        alt="GIA laboratory-grown diamond grading report"
       >
 
       <p class="image-credit">
@@ -1162,10 +1120,7 @@ footer{
 
   <section class="timeline-section">
 
-    <!-- EDIT #3:
-         ENTIRE INFOGRAPHIC IS SHOWN.
-         NO CROPPING.
-         WHITE BACKGROUND BLENDS INTO PAGE. -->
+    <!-- FULL PRICE IMAGE — NO CROPPING -->
 
     <div class="timeline-image infographic">
 
@@ -1569,7 +1524,7 @@ footer{
 
 
 <!-- =====================================================
-     BACK
+     BACK TO ESSAYS
 ===================================================== -->
 
 <div class="back">
