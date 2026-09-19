@@ -54,12 +54,16 @@ a{
 
 /* =========================================================
    NAV
-   SAME 56PX NAV SYSTEM AS THE REST OF THE SITE
+   MATCHING THE REST OF THE WEBSITE
 ========================================================= */
 
 nav{
-    position:relative;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     z-index:1000;
+
     height:56px;
     padding:0 3.8vw;
 
@@ -105,32 +109,19 @@ nav{
     position:relative;
     width:100%;
 
-    /*
-       Shorter hero.
-       Tabi appears quickly when scrolling.
-    */
     height:650px;
     min-height:650px;
 
-    /*
-       IMPORTANT:
-       visible instead of hidden so the book can cross
-       naturally into the Tabi section.
-    */
+    margin-top:56px;
+
     overflow:visible;
 
-    /*
-       EXACT SAME COLOR AS BODY/TABI.
-       No separate hero panel.
-    */
     background:var(--cream);
 
     border-bottom:none;
+
     z-index:10;
 }
-
-
-/* subtle texture without changing the background colour */
 
 .hero::before{
     content:"";
@@ -159,14 +150,10 @@ nav{
     position:absolute;
     z-index:40;
 
-    /*
-       Shifted slightly right to create a clean separation
-       from the vintage photograph.
-    */
-    left:54%;
+    left:60%;
     top:56%;
 
-    width:45%;
+    width:43%;
 
     transform:translate(-50%,-50%);
     text-align:center;
@@ -190,42 +177,16 @@ nav{
     margin-top:34px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(13px,1.05vw,17px);
+
     line-height:1.4;
 
     font-style:italic;
+
     letter-spacing:.015em;
 
     color:#71675e;
-}
-
-
-/* =========================================================
-   HAND + FLOWER
-   PRESERVE ORIGINAL ASPECT RATIO
-========================================================= */
-
-.hero-hand{
-    position:absolute;
-    z-index:32;
-
-    left:23%;
-    top:-25%;
-
-    /*
-       Only width is controlled.
-       Height remains AUTO so the hand cannot stretch.
-    */
-    width:27%;
-    height:auto;
-
-    max-width:none;
-
-    object-fit:contain;
-
-    transform:rotate(-2deg);
-
-    pointer-events:none;
 }
 
 
@@ -252,20 +213,18 @@ nav{
 
 
 /* =========================================================
-   VINTAGE PHOTO
-
-   MOVED UP + RIGHT.
-   DOES NOT TOUCH THE TITLE.
+   LARGE VINTAGE PHOTO
+   NOW FILLS THE LEFT SIDE
 ========================================================= */
 
 .hero-photo{
     position:absolute;
     z-index:35;
 
-    left:13%;
-    top:-3%;
+    left:1.5%;
+    top:-8%;
 
-    width:24%;
+    width:38%;
     height:auto;
 
     max-width:none;
@@ -275,32 +234,6 @@ nav{
     transform:rotate(-5deg);
 
     filter:drop-shadow(0 8px 10px rgba(40,30,20,.11));
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   STATUE
-   ORIGINAL PROPORTIONS — NO DISTORTION
-========================================================= */
-
-.hero-statue{
-    position:absolute;
-    z-index:24;
-
-    left:-2%;
-    bottom:-2%;
-
-    width:20%;
-    height:auto;
-
-    max-width:none;
-
-    object-fit:contain;
-    object-position:left bottom;
-
-    transform:none;
 
     pointer-events:none;
 }
@@ -317,10 +250,6 @@ nav{
 
     right:-2.5%;
 
-    /*
-       Negative bottom deliberately allows the book
-       to cross the hero boundary.
-    */
     bottom:-95px;
 
     width:24%;
@@ -438,7 +367,6 @@ nav{
 
 /* =========================================================
    STARS
-   ONLY IN NEGATIVE SPACE
 ========================================================= */
 
 .star{
@@ -456,12 +384,6 @@ nav{
     color:#ca3340;
 }
 
-
-/*
-   None of these positions sit on top of the hand,
-   flower, photo, statue, woman or book.
-*/
-
 .star-1{
     left:47%;
     top:9%;
@@ -470,7 +392,7 @@ nav{
 }
 
 .star-2{
-    left:39%;
+    left:42%;
     top:27%;
     font-size:22px;
     transform:rotate(-11deg);
@@ -548,58 +470,7 @@ nav{
 
 
 /* =========================================================
-   TOP ARTISTIC SCRIBBLE
-========================================================= */
-
-.scribble-top{
-    position:absolute;
-    z-index:20;
-
-    right:2.5%;
-    top:7%;
-
-    width:17%;
-    height:115px;
-
-    transform:rotate(-7deg);
-}
-
-.scribble-top span{
-    position:absolute;
-    display:block;
-
-    width:100%;
-    height:60px;
-
-    border-top:2px solid #171411;
-
-    border-radius:50% 45% 55% 40%;
-}
-
-.scribble-top span:nth-child(1){
-    top:0;
-    left:0;
-    transform:rotate(-11deg) skewX(-16deg);
-}
-
-.scribble-top span:nth-child(2){
-    top:22px;
-    left:8px;
-    width:86%;
-    transform:rotate(12deg) skewX(15deg);
-}
-
-.scribble-top span:nth-child(3){
-    top:43px;
-    left:24px;
-    width:65%;
-    transform:rotate(-19deg);
-}
-
-
-/* =========================================================
    RED HANDWRITTEN QUOTE
-   MORE DIAGONAL + PLAYFUL
 ========================================================= */
 
 .red-note{
@@ -619,9 +490,6 @@ nav{
 
     color:#c3313c;
 
-    /*
-       Stronger angle, like handwritten marginalia.
-    */
     transform:rotate(-13deg);
 
     transform-origin:center;
@@ -631,122 +499,7 @@ nav{
 
 
 /* =========================================================
-   PINK ARCHIVE CARD
-========================================================= */
-
-.archive-card{
-    position:absolute;
-
-    z-index:50;
-
-    left:8%;
-    bottom:2%;
-
-    width:28%;
-
-    min-width:300px;
-    min-height:105px;
-
-    padding:18px 22px;
-
-    background:rgba(224,112,133,.92);
-
-    transform:rotate(4deg);
-}
-
-.archive-card-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.archive-card-brand{
-    font-family:'Cormorant Garamond',serif;
-    font-size:25px;
-    font-style:italic;
-    line-height:.8;
-}
-
-.archive-card-brand small{
-    display:block;
-    margin-top:7px;
-    font-size:7px;
-    font-style:normal;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-}
-
-.archive-card-number{
-    font-family:'Cormorant Garamond',serif;
-    font-size:17px;
-    letter-spacing:.12em;
-    white-space:nowrap;
-}
-
-.archive-card-places{
-    margin-top:13px;
-    margin-left:45%;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:7px;
-    line-height:1.55;
-
-    letter-spacing:.23em;
-
-    text-transform:uppercase;
-}
-
-
-/* =========================================================
-   LOWER ARTISTIC SQUIGGLE
-========================================================= */
-
-.lower-scribble{
-    position:absolute;
-
-    z-index:45;
-
-    left:43%;
-    bottom:2.5%;
-
-    width:12%;
-    height:52px;
-
-    transform:rotate(-4deg);
-}
-
-.lower-scribble span{
-    position:absolute;
-
-    left:0;
-
-    width:100%;
-    height:32px;
-
-    border-top:2px solid #171411;
-
-    border-radius:55% 40% 60% 35%;
-}
-
-.lower-scribble span:first-child{
-    top:7px;
-    transform:rotate(-10deg) skewX(-19deg);
-}
-
-.lower-scribble span:last-child{
-    top:20px;
-    left:12%;
-    width:82%;
-    transform:rotate(7deg) skewX(15deg);
-}
-
-
-/* =========================================================
-   ONLY REMAINING SMALL NOTE
-
-   "obsession / form / memory" IS COMPLETELY REMOVED.
+   SMALL EDITORIAL NOTE
 ========================================================= */
 
 .micro-note{
@@ -754,7 +507,9 @@ nav{
     z-index:18;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:9px;
+
     font-style:italic;
 
     color:#a2988f;
@@ -780,15 +535,8 @@ nav{
 
     height:900px;
 
-    /*
-       visible allows hero book/seal to visually bleed
-       into the beginning of this section.
-    */
     overflow:visible;
 
-    /*
-       SAME EXACT BACKGROUND AS HERO/BODY
-    */
     background:var(--cream);
 
     text-align:center;
@@ -813,8 +561,11 @@ nav{
 
 .tabi-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
+
     letter-spacing:.35em;
+
     color:#998b7c;
 }
 
@@ -838,6 +589,7 @@ nav{
     font-size:57px;
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.95;
@@ -1032,7 +784,6 @@ nav{
 
 /* =========================================================
    OTHER ARCHIVE OBJECTS
-   ONE CONTINUOUS BACKGROUND
 ========================================================= */
 
 .archive-object{
@@ -1043,7 +794,9 @@ nav{
     display:flex;
 
     flex-direction:column;
+
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -1052,11 +805,6 @@ nav{
 
     border-bottom:1px solid var(--rule);
 }
-
-/*
-   Removed alternating background.
-   Entire archive is now one continuous cream.
-*/
 
 .archive-object:nth-of-type(even){
     background:var(--cream);
@@ -1092,6 +840,7 @@ nav{
     font-size:clamp(43px,4.5vw,65px);
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.95;
@@ -1111,6 +860,7 @@ nav{
 
 .object-image{
     width:min(470px,50vw);
+
     height:350px;
 
     margin:35px auto 28px;
@@ -1186,6 +936,7 @@ nav{
     font-size:clamp(55px,7vw,95px);
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.9;
@@ -1291,12 +1042,13 @@ footer{
     .hero{
         height:620px;
         min-height:0;
+        margin-top:56px;
     }
 
     .hero-title-wrap{
-        left:50%;
+        left:54%;
         top:58%;
-        width:86%;
+        width:80%;
     }
 
     .hero-title{
@@ -1308,13 +1060,6 @@ footer{
         font-size:12px;
     }
 
-    .hero-hand{
-        left:8%;
-        top:-5%;
-        width:43%;
-        height:auto;
-    }
-
     .hero-woman{
         right:-16%;
         top:27%;
@@ -1323,16 +1068,9 @@ footer{
     }
 
     .hero-photo{
-        left:8%;
-        top:15%;
-        width:34%;
-        height:auto;
-    }
-
-    .hero-statue{
-        left:-5%;
-        bottom:-1%;
-        width:34%;
+        left:-3%;
+        top:3%;
+        width:50%;
         height:auto;
     }
 
@@ -1365,44 +1103,12 @@ footer{
         font-size:11px;
     }
 
-    .scribble-top{
-        display:none;
-    }
-
     .red-note{
         right:25%;
         top:29%;
         width:23%;
         font-size:22px;
         transform:rotate(-12deg);
-    }
-
-    .archive-card{
-        left:5%;
-        bottom:1%;
-
-        width:40%;
-        min-width:0;
-
-        min-height:75px;
-
-        padding:11px;
-    }
-
-    .archive-card-brand{
-        font-size:17px;
-    }
-
-    .archive-card-number{
-        font-size:10px;
-    }
-
-    .archive-card-places{
-        font-size:5px;
-    }
-
-    .lower-scribble{
-        display:none;
     }
 
     .micro-note{
@@ -1443,9 +1149,6 @@ footer{
         bottom:15%;
         font-size:23px;
     }
-
-
-    /* TABI */
 
     .tabi{
         height:800px;
@@ -1503,7 +1206,6 @@ footer{
         letter-spacing:.25em;
     }
 
-
     .archive-object{
         min-height:650px;
         padding:5rem 7vw;
@@ -1513,7 +1215,6 @@ footer{
         width:76vw;
         height:300px;
     }
-
 
     footer{
         grid-template-columns:1fr;
@@ -1560,19 +1261,7 @@ footer{
 <section class="hero">
 
 
-    <!-- ORIGINAL COLLAGE ASSETS -->
-
-    <img
-        src="cabinet-hand-flower.png"
-        class="hero-hand"
-        alt=""
-    >
-
-    <img
-        src="cabinet-woman.png"
-        class="hero-woman"
-        alt=""
-    >
+    <!-- LARGE VINTAGE PHOTO -->
 
     <img
         src="cabinet-vintage-photo.png"
@@ -1580,17 +1269,26 @@ footer{
         alt=""
     >
 
+
+    <!-- WOMAN -->
+
     <img
-        src="cabinet-statue.png"
-        class="hero-statue"
+        src="cabinet-woman.png"
+        class="hero-woman"
         alt=""
     >
+
+
+    <!-- BOOK -->
 
     <img
         src="cabinet-book.png"
         class="hero-book"
         alt=""
     >
+
+
+    <!-- WAX SEAL -->
 
     <img
         src="cabinet-seal.png"
@@ -1619,15 +1317,6 @@ footer{
         A PERSONAL<br>
         FASHION ARCHIVE
 
-    </div>
-
-
-    <!-- ARTISTIC TOP SCRIBBLE -->
-
-    <div class="scribble-top">
-        <span></span>
-        <span></span>
-        <span></span>
     </div>
 
 
@@ -1674,54 +1363,10 @@ footer{
     </div>
 
 
-    <!-- ARCHIVE CARD -->
-
-    <div class="archive-card">
-
-        <div class="archive-card-top">
-
-            <div class="archive-card-brand">
-
-                AD!
-
-                <small>
-                    Archive
-                </small>
-
-            </div>
-
-            <div class="archive-card-number">
-
-                001 — ∞
-
-            </div>
-
-        </div>
-
-
-        <div class="archive-card-places">
-
-            Barcelona<br>
-            Paris<br>
-            Beyond
-
-        </div>
-
-    </div>
-
-
     <!-- SMALL EDITORIAL NOTE -->
 
     <div class="micro-note micro-two">
         things worth keeping
-    </div>
-
-
-    <!-- LOWER HAND-DRAWN SQUIGGLE -->
-
-    <div class="lower-scribble">
-        <span></span>
-        <span></span>
     </div>
 
 
