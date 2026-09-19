@@ -12,105 +12,105 @@
 <style>
 
 /* =========================================================
-   RESET + VARIABLES
+   RESET
 ========================================================= */
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 :root{
-  --cream:#faf8f4;
-  --paper:#f6f1e8;
-  --off:#f2eee7;
-  --ink:#181512;
-  --muted:#6e6761;
-  --rule:#d8d2c8;
-  --accent:#b89a7a;
-  --pink:#df7083;
-  --red:#a22d2a;
-  --teal:#05242b;
+    --cream:#faf8f4;
+    --paper:#f6f1e8;
+    --off:#f2eee7;
+    --ink:#181512;
+    --muted:#6e6761;
+    --rule:#d8d2c8;
+    --accent:#b89a7a;
+    --pink:#df7083;
+    --red:#a22d2a;
+    --teal:#05242b;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:var(--cream);
-  color:var(--ink);
-  font-family:'EB Garamond',Georgia,serif;
-  font-size:16px;
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'EB Garamond',Georgia,serif;
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
 }
 
 img{
-  display:block;
-  max-width:100%;
+    display:block;
+    max-width:100%;
 }
 
 a{
-  color:inherit;
+    color:inherit;
 }
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
 
-  height:56px;
+    height:56px;
 
-  padding:0 4.6vw;
+    padding:0 4.6vw;
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-  background:rgba(250,248,244,.96);
+    background:rgba(250,248,244,.96);
 
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
 
-  border-bottom:.5px solid var(--rule);
+    border-bottom:.5px solid var(--rule);
 }
 
 .nav-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  text-decoration:none;
+    font-family:'Cormorant Garamond',serif;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    text-decoration:none;
 }
 
 .nav-links{
-  display:flex;
-  align-items:center;
-  gap:27px;
+    display:flex;
+    align-items:center;
+    gap:27px;
 }
 
 .nav-links a{
-  font-family:'Cormorant Garamond',serif;
-  font-size:9px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:#625b55;
+    font-family:'Cormorant Garamond',serif;
+    font-size:9px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#625b55;
 }
 
 .nav-links a:hover,
 .nav-links a.active{
-  color:var(--ink);
+    color:var(--ink);
 }
 
 
@@ -119,106 +119,115 @@ nav{
 ========================================================= */
 
 .cabinet-hero{
-  position:relative;
+    position:relative;
 
-  height:calc(100vh - 56px);
-  min-height:690px;
-  max-height:930px;
+    height:760px;
+    min-height:0;
+    max-height:none;
 
-  margin-top:56px;
+    margin-top:56px;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  background:
-    radial-gradient(circle at 22% 26%,rgba(169,139,107,.08),transparent 27%),
-    radial-gradient(circle at 76% 68%,rgba(177,148,119,.07),transparent 30%),
-    #f7f3eb;
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(255,255,255,.58) 0%,
+            rgba(255,255,255,.20) 45%,
+            transparent 72%
+        ),
+        #f6f2ea;
 
-  border-bottom:.5px solid #cfc8bd;
+    border-bottom:.5px solid #cec7bc;
 }
 
-
-/* paper texture */
-
 .cabinet-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
+    content:"";
 
-  pointer-events:none;
+    position:absolute;
+    inset:0;
 
-  opacity:.28;
+    z-index:1;
 
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(50,40,30,.022) 0,
-      rgba(50,40,30,.022) 1px,
-      transparent 1px,
-      transparent 4px
-    );
+    pointer-events:none;
+
+    opacity:.28;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(65,52,38,.018) 0,
+            rgba(65,52,38,.018) 1px,
+            transparent 1px,
+            transparent 4px
+        );
 }
 
 
 /* =========================================================
-   HERO CENTER TYPOGRAPHY
+   HERO CENTER TITLE
 ========================================================= */
 
 .hero-center{
-  position:absolute;
+    position:absolute;
 
-  left:50%;
-  top:48%;
+    z-index:30;
 
-  width:min(49vw,760px);
+    left:50%;
+    top:43%;
 
-  transform:translate(-50%,-50%);
+    width:650px;
 
-  z-index:30;
+    transform:translate(-50%,-50%);
 
-  text-align:center;
+    text-align:center;
 }
 
 .hero-title{
-  font-family:'Cormorant Garamond',serif;
+    margin:0;
 
-  font-size:clamp(83px,9.4vw,146px);
+    font-family:'Cormorant Garamond',serif;
 
-  font-weight:300;
-  font-style:italic;
+    font-size:112px;
 
-  line-height:.68;
+    font-weight:300;
+    font-style:italic;
 
-  letter-spacing:-.067em;
+    line-height:.69;
+
+    letter-spacing:-.07em;
+
+    color:#171411;
 }
 
 .hero-title span{
-  display:block;
+    display:block;
 }
 
 .hero-title .archive-line{
-  margin-top:.37em;
+    margin-top:.42em;
 
-  font-size:.52em;
+    font-size:.53em;
 
-  line-height:.9;
+    line-height:.9;
 
-  letter-spacing:-.045em;
+    letter-spacing:-.055em;
 }
 
 .hero-subtitle{
-  margin-top:3.1rem;
+    margin-top:3rem;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:10px;
+    font-size:10px;
 
-  line-height:1.7;
+    line-height:1.7;
 
-  letter-spacing:.35em;
+    letter-spacing:.34em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
+
+    color:#302c28;
 }
 
 
@@ -227,39 +236,38 @@ nav{
 ========================================================= */
 
 .hero-hand-flower{
-  position:absolute;
+    position:absolute;
 
-  z-index:15;
+    z-index:17;
 
-  top:-9%;
-  left:18%;
+    top:-2px;
+    left:20%;
 
-  width:25%;
+    width:255px;
+    height:auto;
 
-  max-width:400px;
+    transform:rotate(-2deg);
 
-  transform:rotate(-2deg);
-
-  pointer-events:none;
+    pointer-events:none;
 }
 
 
 /* =========================================================
-   RIGHT WOMAN
+   WOMAN
 ========================================================= */
 
 .hero-woman{
-  position:absolute;
+    position:absolute;
 
-  z-index:13;
+    z-index:13;
 
-  right:-1.5%;
-  bottom:-2%;
+    right:1.5%;
+    bottom:44px;
 
-  width:34%;
-  max-width:520px;
+    width:330px;
+    height:auto;
 
-  pointer-events:none;
+    pointer-events:none;
 }
 
 
@@ -268,19 +276,19 @@ nav{
 ========================================================= */
 
 .hero-statue{
-  position:absolute;
+    position:absolute;
 
-  z-index:7;
+    z-index:7;
 
-  left:-4%;
-  bottom:-8%;
+    left:-8px;
+    bottom:42px;
 
-  width:21%;
-  max-width:330px;
+    width:185px;
+    height:auto;
 
-  transform:rotate(-3deg);
+    transform:rotate(-2deg);
 
-  pointer-events:none;
+    pointer-events:none;
 }
 
 
@@ -289,21 +297,21 @@ nav{
 ========================================================= */
 
 .hero-vintage-photo{
-  position:absolute;
+    position:absolute;
 
-  z-index:18;
+    z-index:19;
 
-  left:7%;
-  top:29%;
+    left:7.5%;
+    top:250px;
 
-  width:13.5%;
-  max-width:210px;
+    width:150px;
+    height:auto;
 
-  transform:rotate(-5deg);
+    transform:rotate(-5deg);
 
-  filter:drop-shadow(0 7px 7px rgba(35,28,20,.13));
+    filter:drop-shadow(0 6px 7px rgba(40,30,20,.12));
 
-  pointer-events:none;
+    pointer-events:none;
 }
 
 
@@ -312,19 +320,19 @@ nav{
 ========================================================= */
 
 .hero-book{
-  position:absolute;
+    position:absolute;
 
-  z-index:20;
+    z-index:20;
 
-  right:-1.5%;
-  bottom:-5%;
+    right:-5px;
+    bottom:35px;
 
-  width:18%;
-  max-width:280px;
+    width:190px;
+    height:auto;
 
-  transform:rotate(-5deg);
+    transform:rotate(-5deg);
 
-  pointer-events:none;
+    pointer-events:none;
 }
 
 
@@ -333,21 +341,21 @@ nav{
 ========================================================= */
 
 .hero-seal{
-  position:absolute;
+    position:absolute;
 
-  z-index:35;
+    z-index:35;
 
-  right:20%;
-  bottom:-1.5%;
+    right:17.5%;
+    bottom:32px;
 
-  width:10.5%;
-  max-width:150px;
+    width:112px;
+    height:auto;
 
-  transform:rotate(-8deg);
+    transform:rotate(-7deg);
 
-  filter:drop-shadow(0 8px 7px rgba(40,15,10,.22));
+    filter:drop-shadow(0 7px 7px rgba(40,15,10,.18));
 
-  pointer-events:none;
+    pointer-events:none;
 }
 
 
@@ -356,304 +364,329 @@ nav{
 ========================================================= */
 
 .hero-left-note{
-  position:absolute;
+    position:absolute;
 
-  z-index:25;
+    z-index:27;
 
-  left:4.2%;
-  top:6%;
+    left:4.3%;
+    top:58px;
 
-  width:145px;
+    width:130px;
 
-  font-family:'Corinthia',cursive;
+    font-family:'Corinthia',cursive;
 
-  font-size:clamp(27px,2.2vw,38px);
+    font-size:34px;
 
-  line-height:.76;
+    line-height:.76;
 
-  transform:rotate(-8deg);
+    color:#191613;
+
+    transform:rotate(-7deg);
 }
 
 
 /* =========================================================
-   TOP PINK NOTE
+   PINK NOTE
 ========================================================= */
 
 .hero-pink-note{
-  position:absolute;
+    position:absolute;
 
-  z-index:26;
+    z-index:28;
 
-  left:56%;
-  top:5%;
+    left:56%;
+    top:55px;
 
-  width:230px;
+    width:225px;
 
-  padding:16px 23px;
+    padding:15px 19px;
 
-  background:rgba(222,111,131,.84);
+    background:#df7486;
 
-  transform:rotate(-6deg);
+    box-shadow:0 4px 8px rgba(40,30,20,.04);
 
-  box-shadow:0 5px 10px rgba(40,30,20,.05);
+    transform:rotate(-6deg);
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:16px;
-  font-style:italic;
+    font-size:15px;
 
-  line-height:1.25;
+    font-style:italic;
 
-  letter-spacing:.07em;
+    line-height:1.35;
 
-  text-align:center;
+    letter-spacing:.07em;
+
+    text-align:center;
 }
 
 .hero-pink-note::before{
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  left:25%;
-  top:-10px;
+    z-index:-1;
 
-  width:80px;
-  height:18px;
+    top:-11px;
+    left:50%;
 
-  background:rgba(229,215,186,.55);
+    width:78px;
+    height:19px;
 
-  transform:rotate(3deg);
+    transform:
+        translateX(-50%)
+        rotate(3deg);
+
+    background:rgba(224,210,181,.65);
 }
 
 
 /* =========================================================
-   RED HAND NOTE
+   RED NOTE
 ========================================================= */
 
 .hero-red-note{
-  position:absolute;
+    position:absolute;
 
-  z-index:32;
+    z-index:33;
 
-  right:3.5%;
-  top:44%;
+    right:2.8%;
+    top:350px;
 
-  width:105px;
+    width:95px;
 
-  font-family:'Corinthia',cursive;
+    font-family:'Corinthia',cursive;
 
-  font-size:25px;
+    font-size:24px;
 
-  line-height:.8;
+    line-height:.78;
 
-  color:#bd3034;
+    color:#c42f39;
 
-  transform:rotate(4deg);
+    transform:rotate(4deg);
 }
 
 
 /* =========================================================
-   LOWER LEFT PINK ARCHIVE CARD
+   ARCHIVE CARD
 ========================================================= */
 
 .hero-archive-card{
-  position:absolute;
+    position:absolute;
 
-  z-index:28;
+    z-index:29;
 
-  left:8.5%;
-  bottom:2%;
+    left:8%;
+    bottom:55px;
 
-  width:255px;
+    width:255px;
 
-  padding:18px 23px;
+    padding:17px 21px;
 
-  background:rgba(223,112,131,.9);
+    background:#df7184;
 
-  transform:rotate(5deg);
+    transform:rotate(5deg);
 
-  box-shadow:0 5px 12px rgba(40,30,20,.06);
+    box-shadow:0 5px 12px rgba(40,30,20,.05);
 }
 
 .archive-card-title{
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:24px;
-  font-style:italic;
+    font-size:23px;
 
-  line-height:1;
+    font-weight:400;
+    font-style:italic;
+
+    line-height:1;
+}
+
+.archive-card-title small{
+    font-size:.62em;
+    font-weight:400;
 }
 
 .archive-card-grid{
-  margin-top:13px;
+    margin-top:12px;
 
-  display:grid;
+    display:grid;
 
-  grid-template-columns:1fr 1fr;
+    grid-template-columns:.8fr 1fr;
 
-  gap:12px;
+    gap:12px;
 }
 
 .archive-card-grid span{
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:8px;
+    font-size:7px;
 
-  line-height:1.8;
+    line-height:1.75;
 
-  letter-spacing:.23em;
+    letter-spacing:.22em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 }
 
 
 /* =========================================================
-   BLACK SCRIBBLES
+   STAR
 ========================================================= */
 
 .hero-star{
-  position:absolute;
+    position:absolute;
 
-  z-index:24;
+    z-index:26;
 
-  left:49.5%;
-  top:6%;
+    left:49.3%;
+    top:58px;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:55px;
+    font-size:49px;
 
-  transform:rotate(10deg);
+    line-height:1;
+
+    transform:rotate(10deg);
 }
 
+
+/* =========================================================
+   TOP SCRIBBLE
+========================================================= */
+
 .hero-scribble{
-  position:absolute;
+    position:absolute;
 
-  z-index:23;
+    z-index:22;
 
-  right:1.5%;
-  top:2%;
+    right:2.5%;
+    top:36px;
 
-  width:150px;
-  height:90px;
+    width:135px;
+    height:74px;
 
-  border-top:3px solid var(--ink);
+    border-top:2px solid #171411;
 
-  border-radius:50%;
+    border-radius:50%;
 
-  transform:rotate(-15deg);
+    transform:rotate(-15deg);
 }
 
 .hero-scribble::before,
 .hero-scribble::after{
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  border-top:2px solid var(--ink);
+    border-top:2px solid #171411;
 
-  border-radius:50%;
+    border-radius:50%;
 }
 
 .hero-scribble::before{
-  width:155px;
-  height:60px;
+    width:142px;
+    height:56px;
 
-  left:-7px;
-  top:20px;
+    left:-8px;
+    top:18px;
 
-  transform:rotate(15deg);
+    transform:rotate(14deg);
 }
 
 .hero-scribble::after{
-  width:130px;
-  height:50px;
+    width:126px;
+    height:48px;
 
-  left:16px;
-  top:40px;
+    left:11px;
+    top:37px;
 
-  transform:rotate(-11deg);
-}
-
-
-.hero-underline{
-  position:absolute;
-
-  z-index:24;
-
-  left:42%;
-  bottom:11%;
-
-  width:150px;
-
-  border-top:3px solid var(--ink);
-
-  transform:rotate(-8deg);
-}
-
-.hero-underline::after{
-  content:"";
-
-  position:absolute;
-
-  width:130px;
-
-  top:9px;
-  left:16px;
-
-  border-top:2px solid var(--ink);
-
-  transform:rotate(9deg);
+    transform:rotate(-11deg);
 }
 
 
 /* =========================================================
-   HERO BOTTOM BAR
+   LOWER SKETCH
+========================================================= */
+
+.hero-underline{
+    position:absolute;
+
+    z-index:26;
+
+    left:42%;
+    bottom:85px;
+
+    width:145px;
+
+    border-top:2px solid #171411;
+
+    transform:rotate(-8deg);
+}
+
+.hero-underline::after{
+    content:"";
+
+    position:absolute;
+
+    left:14px;
+    top:8px;
+
+    width:128px;
+
+    border-top:2px solid #171411;
+
+    transform:rotate(9deg);
+}
+
+
+/* =========================================================
+   BOTTOM HERO BAR
 ========================================================= */
 
 .hero-bottom{
-  position:absolute;
+    position:absolute;
 
-  z-index:50;
+    z-index:50;
 
-  left:0;
-  right:0;
-  bottom:0;
+    left:0;
+    right:0;
+    bottom:0;
 
-  height:48px;
+    height:46px;
 
-  padding:0 4.5vw;
+    padding:0 4.5vw;
 
-  display:flex;
-  align-items:center;
+    display:flex;
+    align-items:center;
 
-  gap:20px;
+    gap:20px;
 
-  background:rgba(250,248,244,.96);
+    background:rgba(250,248,244,.96);
 
-  border-top:.5px solid #cfc8bd;
+    border-top:.5px solid #cbc4b9;
 }
 
 .hero-bottom span{
-  flex-shrink:0;
+    flex-shrink:0;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:8px;
+    font-size:7px;
 
-  letter-spacing:.34em;
+    letter-spacing:.34em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  color:#6e665f;
+    color:#6e665f;
 }
 
 .hero-bottom-line{
-  flex:1;
+    flex:1;
 
-  height:.5px;
+    height:.5px;
 
-  background:#bdb6ac;
+    background:#bdb6ac;
 }
 
 
@@ -662,396 +695,393 @@ nav{
 ========================================================= */
 
 .tabi-section{
-  position:relative;
+    position:relative;
 
-  min-height:830px;
+    min-height:830px;
 
-  padding:5.2rem 7vw 4.5rem;
+    padding:5.2rem 7vw 4.5rem;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  text-align:center;
+    text-align:center;
 
-  background:
-    radial-gradient(circle at 50% 42%,rgba(255,255,255,.7),transparent 38%),
-    var(--cream);
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255,255,255,.72),
+            transparent 38%
+        ),
+        var(--cream);
 
-  border-bottom:.5px solid var(--rule);
+    border-bottom:.5px solid var(--rule);
 }
 
-
-/* heading */
-
 .tabi-heading{
-  position:relative;
-  z-index:20;
+    position:relative;
+    z-index:20;
 }
 
 .object-number{
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:8px;
+    font-size:8px;
 
-  letter-spacing:.35em;
+    letter-spacing:.35em;
 
-  color:#9e8a74;
+    color:#9e8a74;
 }
 
 .object-house{
-  margin-top:1rem;
+    margin-top:1rem;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:12px;
+    font-size:12px;
 
-  letter-spacing:.4em;
+    letter-spacing:.4em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 }
 
 .object-title{
-  margin-top:.4rem;
+    margin-top:.4rem;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(45px,4.8vw,68px);
+    font-size:clamp(45px,4.8vw,68px);
 
-  font-weight:300;
-  font-style:italic;
+    font-weight:300;
+    font-style:italic;
 
-  line-height:.95;
+    line-height:.95;
 
-  letter-spacing:-.04em;
+    letter-spacing:-.04em;
 }
 
 .object-meta{
-  margin-top:.9rem;
+    margin-top:.9rem;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:8px;
+    font-size:8px;
 
-  letter-spacing:.34em;
+    letter-spacing:.34em;
 
-  color:#716a63;
+    color:#716a63;
 }
 
 
 /* main boots */
 
 .tabi-main{
-  position:relative;
+    position:relative;
 
-  z-index:15;
+    z-index:15;
 
-  width:min(27vw,390px);
+    width:min(27vw,390px);
+    height:315px;
 
-  height:315px;
+    margin:1.5rem auto 1.2rem;
 
-  margin:1.5rem auto 1.2rem;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .tabi-main img{
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
 
-  object-fit:contain;
+    object-fit:contain;
 
-  filter:drop-shadow(0 13px 11px rgba(70,60,50,.08));
+    filter:drop-shadow(0 13px 11px rgba(70,60,50,.08));
 }
 
 
-/* vintage photo left */
+/* vintage image */
 
 .tabi-vintage{
-  position:absolute;
+    position:absolute;
 
-  z-index:5;
+    z-index:5;
 
-  left:-2%;
-  bottom:2%;
+    left:-2%;
+    bottom:2%;
 
-  width:15.5%;
-  max-width:240px;
+    width:15.5%;
+    max-width:240px;
 
-  transform:rotate(-1deg);
+    transform:rotate(-1deg);
 
-  opacity:.73;
+    opacity:.73;
 
-  filter:grayscale(1);
+    filter:grayscale(1);
 }
 
 
 /* recognition note */
 
 .tabi-recognition{
-  position:absolute;
+    position:absolute;
 
-  z-index:12;
+    z-index:12;
 
-  left:13%;
-  top:37%;
+    left:13%;
+    top:37%;
 
-  width:14%;
-  max-width:210px;
+    width:14%;
+    max-width:210px;
 
-  transform:rotate(-4deg);
+    transform:rotate(-4deg);
 
-  filter:drop-shadow(0 5px 5px rgba(50,40,30,.05));
+    filter:drop-shadow(0 5px 5px rgba(50,40,30,.05));
 }
 
 
-/* sketch right */
+/* sketch */
 
 .tabi-sketch{
-  position:absolute;
+    position:absolute;
 
-  z-index:6;
+    z-index:6;
 
-  right:-1.5%;
-  top:27%;
+    right:-1.5%;
+    top:27%;
 
-  width:24%;
-  max-width:360px;
+    width:24%;
+    max-width:360px;
 
-  opacity:.34;
+    opacity:.34;
 
-  transform:rotate(2deg);
+    transform:rotate(2deg);
 }
 
 
-/* circle handwritten annotation */
+/* circle note */
 
 .tabi-circle-note{
-  position:absolute;
+    position:absolute;
 
-  z-index:11;
+    z-index:11;
 
-  right:18%;
-  top:55%;
+    right:18%;
+    top:55%;
 
-  width:185px;
-  height:110px;
+    width:185px;
+    height:110px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-  border:1px solid rgba(76,68,60,.3);
+    border:1px solid rgba(76,68,60,.3);
 
-  border-radius:50%;
+    border-radius:50%;
 
-  transform:rotate(-10deg);
+    transform:rotate(-10deg);
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:11px;
-  font-style:italic;
+    font-size:11px;
+    font-style:italic;
 
-  line-height:1.45;
+    line-height:1.45;
 
-  letter-spacing:.06em;
+    letter-spacing:.06em;
 
-  color:#655d56;
+    color:#655d56;
 }
 
 .tabi-circle-note::after{
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  right:-22px;
-  bottom:6px;
+    right:-22px;
+    bottom:6px;
 
-  width:45px;
+    width:45px;
 
-  border-top:1px solid rgba(76,68,60,.35);
+    border-top:1px solid rgba(76,68,60,.35);
 
-  transform:rotate(25deg);
+    transform:rotate(25deg);
 }
 
 
-/* Margiela signature */
+/* Margiela handwritten signature */
 
 .tabi-signature{
-  position:absolute;
+    position:absolute;
 
-  z-index:10;
+    z-index:10;
 
-  right:7%;
-  bottom:6%;
+    right:7%;
+    bottom:6%;
 
-  font-family:'Corinthia',cursive;
+    font-family:'Corinthia',cursive;
 
-  font-size:31px;
+    font-size:31px;
 
-  line-height:.7;
+    line-height:.7;
 
-  color:#887f76;
+    color:#887f76;
 
-  transform:rotate(-10deg);
+    transform:rotate(-10deg);
 }
 
 
-/* body */
+/* text */
 
 .tabi-copy{
-  position:relative;
+    position:relative;
 
-  z-index:20;
+    z-index:20;
 
-  max-width:600px;
+    max-width:600px;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  font-family:'EB Garamond',serif;
+    font-family:'EB Garamond',serif;
 
-  font-size:15.5px;
+    font-size:15.5px;
 
-  line-height:1.55;
+    line-height:1.55;
 
-  color:#37312d;
+    color:#37312d;
 }
 
 .tabi-rule{
-  width:55px;
-  height:.5px;
+    width:55px;
+    height:.5px;
 
-  margin:1.4rem auto;
+    margin:1.4rem auto;
 
-  background:#8c837a;
+    background:#8c837a;
 }
 
 .tabi-tags{
-  position:relative;
+    position:relative;
 
-  z-index:20;
+    z-index:20;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:8px;
+    font-size:8px;
 
-  letter-spacing:.4em;
+    letter-spacing:.4em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  color:#a2968a;
+    color:#a2968a;
 }
 
 
 /* =========================================================
-   002–009 SHARED ARCHIVE DESIGN
+   002 — 009
 ========================================================= */
 
 .archive-object{
-  position:relative;
+    position:relative;
 
-  min-height:720px;
+    min-height:720px;
 
-  padding:5.5rem 7vw;
+    padding:5.5rem 7vw;
 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-  text-align:center;
+    text-align:center;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  background:var(--cream);
+    background:var(--cream);
 
-  border-bottom:.5px solid var(--rule);
+    border-bottom:.5px solid var(--rule);
 }
 
 .archive-object.alt{
-  background:#f7f4ee;
+    background:#f7f4ee;
 }
 
 .archive-object .object-image{
-  width:min(37vw,510px);
-  height:340px;
+    width:min(37vw,510px);
+    height:340px;
 
-  margin:2rem auto 1.8rem;
+    margin:2rem auto 1.8rem;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .archive-object .object-image img{
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
 
-  object-fit:contain;
+    object-fit:contain;
 }
 
 .archive-object .object-copy{
-  max-width:610px;
+    max-width:610px;
 
-  margin:0 auto;
+    margin:0 auto;
 
-  font-size:15.5px;
+    font-size:15.5px;
 
-  line-height:1.57;
+    line-height:1.57;
 
-  color:#37312d;
+    color:#37312d;
 }
 
 .archive-object .object-rule{
-  width:55px;
-  height:.5px;
+    width:55px;
+    height:.5px;
 
-  margin:1.45rem auto;
+    margin:1.45rem auto;
 
-  background:#8d857d;
+    background:#8d857d;
 }
 
 .archive-object .object-theme{
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:8px;
+    font-size:8px;
 
-  letter-spacing:.38em;
+    letter-spacing:.38em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  color:#9e9389;
+    color:#9e9389;
 }
 
-
-/* small editorial annotations */
-
 .side-note{
-  position:absolute;
+    position:absolute;
 
-  font-family:'Corinthia',cursive;
+    font-family:'Corinthia',cursive;
 
-  font-size:30px;
+    font-size:30px;
 
-  line-height:.8;
+    line-height:.8;
 
-  color:#766e67;
+    color:#766e67;
 
-  opacity:.72;
+    opacity:.72;
 }
 
 .side-note.left{
-  left:8%;
-  top:52%;
+    left:8%;
+    top:52%;
 
-  transform:rotate(-8deg);
+    transform:rotate(-8deg);
 }
 
 .side-note.right{
-  right:8%;
-  top:51%;
+    right:8%;
+    top:51%;
 
-  transform:rotate(7deg);
+    transform:rotate(7deg);
 }
 
 
@@ -1060,121 +1090,121 @@ nav{
 ========================================================= */
 
 .archive-closing{
-  padding:8rem 8vw;
+    padding:8rem 8vw;
 
-  text-align:center;
+    text-align:center;
 
-  background:var(--off);
+    background:var(--off);
 
-  border-bottom:.5px solid var(--rule);
+    border-bottom:.5px solid var(--rule);
 }
 
 .closing-kicker{
-  margin-bottom:1.7rem;
+    margin-bottom:1.7rem;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:9px;
+    font-size:9px;
 
-  letter-spacing:.34em;
+    letter-spacing:.34em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  color:var(--accent);
+    color:var(--accent);
 }
 
 .closing-title{
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(54px,7vw,95px);
+    font-size:clamp(54px,7vw,95px);
 
-  font-weight:300;
-  font-style:italic;
+    font-weight:300;
+    font-style:italic;
 
-  line-height:.9;
+    line-height:.9;
 
-  letter-spacing:-.045em;
+    letter-spacing:-.045em;
 }
 
 .closing-copy{
-  max-width:550px;
+    max-width:550px;
 
-  margin:2.3rem auto 0;
+    margin:2.3rem auto 0;
 
-  font-size:15px;
+    font-size:15px;
 
-  line-height:1.65;
+    line-height:1.65;
 
-  color:var(--muted);
+    color:var(--muted);
 }
 
 .closing-sign{
-  margin-top:2rem;
+    margin-top:2rem;
 
-  font-family:'Corinthia',cursive;
+    font-family:'Corinthia',cursive;
 
-  font-size:38px;
+    font-size:38px;
 
-  color:var(--accent);
+    color:var(--accent);
 
-  transform:rotate(-4deg);
+    transform:rotate(-4deg);
 }
 
 
 /* =========================================================
-   AD SPINNING STAMP
+   SPINNING AD STAMP
 ========================================================= */
 
 .logo-stamp{
-  height:150px;
+    height:150px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .stamp{
-  position:relative;
+    position:relative;
 
-  width:95px;
-  height:95px;
+    width:95px;
+    height:95px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .stamp-spin{
-  position:absolute;
-  inset:0;
+    position:absolute;
+    inset:0;
 
-  animation:spinStamp 15s linear infinite;
+    animation:spinStamp 15s linear infinite;
 
-  opacity:.72;
+    opacity:.72;
 }
 
 .stamp-spin svg{
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
 
-  overflow:visible;
+    overflow:visible;
 }
 
 .stamp-center{
-  position:absolute;
+    position:absolute;
 
-  font-family:'Corinthia',cursive;
+    font-family:'Corinthia',cursive;
 
-  font-size:33px;
+    font-size:33px;
 
-  color:var(--accent);
+    color:var(--accent);
 
-  transform:rotate(-9deg);
+    transform:rotate(-9deg);
 }
 
 @keyframes spinStamp{
-  from{transform:rotate(0deg);}
-  to{transform:rotate(360deg);}
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
 }
 
 
@@ -1183,106 +1213,162 @@ nav{
 ========================================================= */
 
 footer{
-  padding:3.5vw 10vw;
+    padding:3.5vw 10vw;
 
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
 
-  gap:4rem;
+    gap:4rem;
 
-  align-items:end;
+    align-items:end;
 
-  background:var(--teal);
+    background:var(--teal);
 
-  color:var(--cream);
+    color:var(--cream);
 }
 
 .ft-logo{
-  margin-bottom:.7rem;
+    margin-bottom:.7rem;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:13px;
+    font-size:13px;
 
-  letter-spacing:.22em;
+    letter-spacing:.22em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 }
 
 .ft-sub{
-  max-width:410px;
+    max-width:410px;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:15px;
+    font-size:15px;
 
-  font-weight:300;
-  font-style:italic;
+    font-weight:300;
+    font-style:italic;
 
-  line-height:1.6;
+    line-height:1.6;
 
-  color:rgba(250,248,244,.5);
+    color:rgba(250,248,244,.5);
 }
 
 .ft-right{
-  display:flex;
-  flex-direction:column;
+    display:flex;
+    flex-direction:column;
 
-  align-items:flex-end;
+    align-items:flex-end;
 
-  gap:8px;
+    gap:8px;
 }
 
 .ft-link{
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:11px;
+    font-size:11px;
 
-  letter-spacing:.18em;
+    letter-spacing:.18em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  text-decoration:none;
+    text-decoration:none;
 
-  color:rgba(250,248,244,.55);
+    color:rgba(250,248,244,.55);
 }
 
 .ft-copy{
-  margin-top:6px;
+    margin-top:6px;
 
-  font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-  font-size:9px;
+    font-size:9px;
 
-  letter-spacing:.24em;
+    letter-spacing:.24em;
 
-  text-transform:uppercase;
+    text-transform:uppercase;
 
-  color:rgba(250,248,244,.25);
+    color:rgba(250,248,244,.25);
 }
 
 
 /* =========================================================
-   SHORTER DESKTOPS
+   LARGE DESKTOP
 ========================================================= */
 
-@media(min-width:801px) and (max-height:760px){
+@media(min-width:1450px){
 
-  .cabinet-hero{
-    min-height:640px;
-  }
+    .cabinet-hero{
+        height:770px;
+    }
 
-  .hero-center{
-    top:47%;
-  }
+    .hero-center{
+        top:43%;
+    }
 
-  .hero-title{
-    font-size:clamp(75px,8.4vw,120px);
-  }
+    .hero-hand-flower{
+        left:22%;
+    }
 
-  .hero-subtitle{
-    margin-top:2.5rem;
-  }
+    .hero-vintage-photo{
+        left:8%;
+    }
+
+    .hero-woman{
+        right:3%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALLER LAPTOP
+========================================================= */
+
+@media(min-width:801px) and (max-width:1150px){
+
+    .cabinet-hero{
+        height:680px;
+    }
+
+    .hero-center{
+        width:560px;
+    }
+
+    .hero-title{
+        font-size:92px;
+    }
+
+    .hero-hand-flower{
+        width:225px;
+        left:18%;
+    }
+
+    .hero-woman{
+        width:285px;
+        right:-1%;
+    }
+
+    .hero-statue{
+        width:160px;
+    }
+
+    .hero-vintage-photo{
+        width:125px;
+    }
+
+    .hero-book{
+        width:165px;
+    }
+
+    .hero-seal{
+        width:95px;
+        right:18%;
+    }
+
+    .hero-archive-card{
+        width:220px;
+    }
 
 }
 
@@ -1293,269 +1379,274 @@ footer{
 
 @media(max-width:800px){
 
-  nav{
-    padding:0 4vw;
-  }
+    nav{
+        padding:0 4vw;
+    }
 
-  .nav-links{
-    gap:9px;
-  }
+    .nav-links{
+        gap:9px;
+    }
 
-  .nav-links a{
-    font-size:7.5px;
-  }
+    .nav-links a{
+        font-size:7.5px;
+    }
 
 
-  /* hero */
+    /* HERO */
 
-  .cabinet-hero{
-    height:calc(100svh - 56px);
+    .cabinet-hero{
+        height:720px;
 
-    min-height:680px;
-    max-height:none;
-  }
+        min-height:0;
+        max-height:none;
+    }
 
-  .hero-center{
-    top:47%;
+    .hero-center{
+        left:50%;
+        top:42%;
 
-    width:88vw;
-  }
+        width:90vw;
+    }
 
-  .hero-title{
-    font-size:clamp(64px,20vw,95px);
-  }
+    .hero-title{
+        font-size:clamp(62px,19vw,90px);
+    }
 
-  .hero-subtitle{
-    margin-top:2.5rem;
+    .hero-title .archive-line{
+        margin-top:.45em;
+    }
 
-    font-size:8px;
+    .hero-subtitle{
+        margin-top:2.4rem;
 
-    letter-spacing:.25em;
-  }
+        font-size:7px;
 
+        letter-spacing:.27em;
+    }
 
-  .hero-hand-flower{
-    top:-3%;
-    left:11%;
+    .hero-hand-flower{
+        top:0;
+        left:12%;
 
-    width:38%;
-  }
+        width:39%;
+    }
 
-  .hero-woman{
-    right:-11%;
-    bottom:2%;
+    .hero-woman{
+        right:-9%;
+        bottom:43px;
 
-    width:53%;
+        width:52%;
+    }
 
-    opacity:.9;
-  }
+    .hero-statue{
+        left:-7%;
+        bottom:44px;
 
-  .hero-statue{
-    left:-11%;
-    bottom:0;
+        width:31%;
+    }
 
-    width:36%;
-  }
+    .hero-vintage-photo{
+        left:3%;
+        top:245px;
 
-  .hero-vintage-photo{
-    left:4%;
-    top:27%;
+        width:23%;
+    }
 
-    width:23%;
-  }
+    .hero-book{
+        right:-5%;
+        bottom:39px;
 
-  .hero-book{
-    right:-8%;
-    bottom:-1%;
+        width:28%;
+    }
 
-    width:31%;
-  }
+    .hero-seal{
+        right:19%;
+        bottom:42px;
 
-  .hero-seal{
-    right:23%;
-    bottom:2%;
+        width:17%;
+    }
 
-    width:18%;
-  }
+    .hero-left-note{
+        left:3%;
+        top:42px;
 
-  .hero-left-note{
-    left:2%;
-    top:5%;
+        width:85px;
 
-    width:95px;
+        font-size:23px;
+    }
 
-    font-size:24px;
-  }
+    .hero-pink-note{
+        left:57%;
+        top:40px;
 
-  .hero-pink-note{
-    left:55%;
-    top:4%;
+        width:140px;
 
-    width:145px;
+        padding:9px 10px;
 
-    padding:10px 12px;
+        font-size:10px;
+    }
 
-    font-size:11px;
-  }
+    .hero-red-note{
+        display:none;
+    }
 
-  .hero-red-note{
-    display:none;
-  }
+    .hero-star{
+        left:48%;
+        top:65px;
 
-  .hero-archive-card{
-    left:5%;
-    bottom:2%;
+        font-size:34px;
+    }
 
-    width:170px;
+    .hero-scribble{
+        right:-5%;
+        top:36px;
 
-    padding:11px 14px;
-  }
+        width:80px;
+    }
 
-  .archive-card-title{
-    font-size:18px;
-  }
+    .hero-archive-card{
+        left:4%;
+        bottom:53px;
 
-  .archive-card-grid span{
-    font-size:6px;
-  }
+        width:165px;
 
-  .hero-star{
-    left:48%;
-    top:8%;
+        padding:10px 12px;
+    }
 
-    font-size:38px;
-  }
+    .archive-card-title{
+        font-size:17px;
+    }
 
-  .hero-scribble{
-    right:-4%;
+    .archive-card-grid span{
+        font-size:5.5px;
+    }
 
-    width:90px;
-  }
+    .hero-underline{
+        left:38%;
+        bottom:90px;
 
-  .hero-underline{
-    left:37%;
-    bottom:14%;
+        width:85px;
+    }
 
-    width:90px;
-  }
+    .hero-bottom{
+        height:43px;
 
-  .hero-bottom{
-    gap:9px;
+        padding:0 3vw;
 
-    padding:0 3vw;
-  }
+        gap:8px;
+    }
 
-  .hero-bottom span{
-    font-size:6px;
+    .hero-bottom span{
+        font-size:5.5px;
 
-    letter-spacing:.2em;
-  }
+        letter-spacing:.18em;
+    }
 
 
-  /* Margiela */
+    /* MARGIELA */
 
-  .tabi-section{
-    min-height:760px;
+    .tabi-section{
+        min-height:760px;
 
-    padding:4.5rem 6vw;
-  }
+        padding:4.5rem 6vw;
+    }
 
-  .tabi-main{
-    width:min(55vw,340px);
+    .tabi-main{
+        width:min(55vw,340px);
 
-    height:280px;
+        height:280px;
 
-    margin-top:1.3rem;
-  }
+        margin-top:1.3rem;
+    }
 
-  .tabi-vintage{
-    left:-8%;
-    bottom:2%;
+    .tabi-vintage{
+        left:-8%;
+        bottom:2%;
 
-    width:29%;
+        width:29%;
 
-    opacity:.5;
-  }
+        opacity:.5;
+    }
 
-  .tabi-recognition{
-    left:3%;
-    top:41%;
+    .tabi-recognition{
+        left:3%;
+        top:41%;
 
-    width:25%;
-  }
+        width:25%;
+    }
 
-  .tabi-sketch{
-    right:-12%;
-    top:33%;
+    .tabi-sketch{
+        right:-12%;
+        top:33%;
 
-    width:42%;
+        width:42%;
 
-    opacity:.23;
-  }
+        opacity:.23;
+    }
 
-  .tabi-circle-note{
-    display:none;
-  }
+    .tabi-circle-note{
+        display:none;
+    }
 
-  .tabi-signature{
-    right:3%;
-    bottom:4%;
+    .tabi-signature{
+        right:3%;
+        bottom:4%;
 
-    font-size:24px;
-  }
+        font-size:24px;
+    }
 
-  .tabi-copy{
-    max-width:88%;
+    .tabi-copy{
+        max-width:88%;
 
-    font-size:14.5px;
-  }
+        font-size:14.5px;
+    }
 
 
-  /* rest */
+    /* OTHER OBJECTS */
 
-  .archive-object{
-    min-height:auto;
+    .archive-object{
+        min-height:auto;
 
-    padding:5.5rem 7vw;
-  }
+        padding:5.5rem 7vw;
+    }
 
-  .archive-object .object-image{
-    width:min(77vw,480px);
+    .archive-object .object-image{
+        width:min(77vw,480px);
 
-    height:300px;
-  }
+        height:300px;
+    }
 
-  .object-title{
-    font-size:clamp(42px,12vw,58px);
-  }
+    .object-title{
+        font-size:clamp(42px,12vw,58px);
+    }
 
-  .side-note{
-    display:none;
-  }
+    .side-note{
+        display:none;
+    }
 
 
-  /* footer */
+    /* FOOTER */
 
-  footer{
-    grid-template-columns:1fr;
+    footer{
+        grid-template-columns:1fr;
 
-    gap:2.5rem;
+        gap:2.5rem;
 
-    padding:10vw 8vw;
-  }
+        padding:10vw 8vw;
+    }
 
-  .ft-right{
-    align-items:flex-start;
-  }
+    .ft-right{
+        align-items:flex-start;
+    }
 
 }
 
 
 @media(prefers-reduced-motion:reduce){
 
-  .stamp-spin{
-    animation:none;
-  }
+    .stamp-spin{
+        animation:none;
+    }
 
 }
 
@@ -1572,33 +1663,33 @@ footer{
 
 <nav>
 
-  <a href="index.html" class="nav-logo">
-    Anaïs Doroshina
-  </a>
-
-  <div class="nav-links">
-
-    <a href="archive.html" class="active">
-      Archive
+    <a href="index.html" class="nav-logo">
+        Anaïs Doroshina
     </a>
 
-    <a href="essays.html">
-      Essays
-    </a>
+    <div class="nav-links">
 
-    <a href="photography.html">
-      Photography
-    </a>
+        <a href="archive.html" class="active">
+            Archive
+        </a>
 
-    <a href="about.html">
-      About
-    </a>
+        <a href="essays.html">
+            Essays
+        </a>
 
-    <a href="about.html#contact">
-      Contact
-    </a>
+        <a href="photography.html">
+            Photography
+        </a>
 
-  </div>
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="about.html#contact">
+            Contact
+        </a>
+
+    </div>
 
 </nav>
 
@@ -1611,170 +1702,177 @@ footer{
 <header class="cabinet-hero">
 
 
-  <!-- LEFT COLLAGE -->
+    <!-- STATUE -->
 
-  <img
-    src="cabinet-statue.png"
-    class="hero-statue"
-    alt=""
-  >
-
-  <img
-    src="cabinet-vintage-photo.png"
-    class="hero-vintage-photo"
-    alt=""
-  >
+    <img
+        src="cabinet-statue.png"
+        class="hero-statue"
+        alt=""
+    >
 
 
-  <!-- HAND + FLOWER -->
+    <!-- VINTAGE PHOTO -->
 
-  <img
-    src="cabinet-hand-flower.png"
-    class="hero-hand-flower"
-    alt=""
-  >
-
-
-  <!-- RIGHT FIGURE -->
-
-  <img
-    src="cabinet-woman.png"
-    class="hero-woman"
-    alt=""
-  >
+    <img
+        src="cabinet-vintage-photo.png"
+        class="hero-vintage-photo"
+        alt=""
+    >
 
 
-  <!-- BOOK -->
+    <!-- HAND + FLOWER -->
 
-  <img
-    src="cabinet-book.png"
-    class="hero-book"
-    alt=""
-  >
-
-
-  <!-- WAX SEAL -->
-
-  <img
-    src="cabinet-seal.png"
-    class="hero-seal"
-    alt=""
-  >
+    <img
+        src="cabinet-hand-flower.png"
+        class="hero-hand-flower"
+        alt=""
+    >
 
 
-  <!-- HANDWRITTEN LEFT -->
+    <!-- WOMAN -->
 
-  <div class="hero-left-note">
-    Objects,<br>
-    ideas,<br>
-    obsessions<br>
-    that shaped<br>
-    my eye.
-  </div>
+    <img
+        src="cabinet-woman.png"
+        class="hero-woman"
+        alt=""
+    >
 
 
-  <!-- PINK NOTE -->
+    <!-- BOOK -->
 
-  <div class="hero-pink-note">
-    A PERSONAL<br>
-    FASHION ARCHIVE
-  </div>
-
-
-  <!-- RED NOTE -->
-
-  <div class="hero-red-note">
-    Fashion<br>
-    as a way<br>
-    of keeping<br>
-    things alive.
-  </div>
+    <img
+        src="cabinet-book.png"
+        class="hero-book"
+        alt=""
+    >
 
 
-  <!-- SCRIBBLES -->
+    <!-- WAX SEAL -->
 
-  <div class="hero-star">
-    ✳
-  </div>
-
-  <div class="hero-scribble"></div>
-
-
-  <!-- MAIN TITLE -->
-
-  <div class="hero-center">
-
-    <h1 class="hero-title">
-
-      <span>
-        The Cabinet
-      </span>
-
-      <span class="archive-line">
-        The Archive
-      </span>
-
-    </h1>
-
-    <p class="hero-subtitle">
-      Not a history of fashion,<br>
-      but a personal one.
-    </p>
-
-  </div>
+    <img
+        src="cabinet-seal.png"
+        class="hero-seal"
+        alt=""
+    >
 
 
-  <!-- LOWER LEFT ARCHIVE CARD -->
+    <!-- LEFT NOTE -->
 
-  <div class="hero-archive-card">
-
-    <div class="archive-card-title">
-      AD! <small>Archive</small>
+    <div class="hero-left-note">
+        Objects,<br>
+        ideas,<br>
+        obsessions<br>
+        that shaped<br>
+        my eye.
     </div>
 
-    <div class="archive-card-grid">
 
-      <span>
-        001 — ∞
-      </span>
+    <!-- PINK NOTE -->
 
-      <span>
-        Barcelona<br>
-        Paris<br>
-        Beyond
-      </span>
+    <div class="hero-pink-note">
+        A PERSONAL<br>
+        FASHION ARCHIVE
+    </div>
+
+
+    <!-- RED NOTE -->
+
+    <div class="hero-red-note">
+        Fashion<br>
+        as a way<br>
+        of keeping<br>
+        things alive.
+    </div>
+
+
+    <!-- STAR -->
+
+    <div class="hero-star">
+        ✳
+    </div>
+
+
+    <!-- SCRIBBLE -->
+
+    <div class="hero-scribble"></div>
+
+
+    <!-- TITLE -->
+
+    <div class="hero-center">
+
+        <h1 class="hero-title">
+
+            <span>
+                The Cabinet
+            </span>
+
+            <span class="archive-line">
+                The Archive
+            </span>
+
+        </h1>
+
+
+        <p class="hero-subtitle">
+            Not a history of fashion,<br>
+            but a personal one.
+        </p>
 
     </div>
 
-  </div>
+
+    <!-- PINK ARCHIVE CARD -->
+
+    <div class="hero-archive-card">
+
+        <div class="archive-card-title">
+            AD! <small>Archive</small>
+        </div>
+
+        <div class="archive-card-grid">
+
+            <span>
+                001 — ∞
+            </span>
+
+            <span>
+                Barcelona<br>
+                Paris<br>
+                Beyond
+            </span>
+
+        </div>
+
+    </div>
 
 
-  <!-- LOWER SCRIBBLE -->
+    <!-- LOWER SKETCH -->
 
-  <div class="hero-underline"></div>
+    <div class="hero-underline"></div>
 
 
-  <!-- BOTTOM BAR -->
+    <!-- BOTTOM BAR -->
 
-  <div class="hero-bottom">
+    <div class="hero-bottom">
 
-    <span>
-      Scroll
-    </span>
+        <span>
+            Scroll
+        </span>
 
-    <div class="hero-bottom-line"></div>
+        <div class="hero-bottom-line"></div>
 
-    <span>
-      Enter the Archive
-    </span>
+        <span>
+            Enter the Archive
+        </span>
 
-    <div class="hero-bottom-line"></div>
+        <div class="hero-bottom-line"></div>
 
-    <span>
-      001 — 009
-    </span>
+        <span>
+            001 — 009
+        </span>
 
-  </div>
+    </div>
 
 </header>
 
@@ -1787,102 +1885,100 @@ footer{
 <section class="tabi-section">
 
 
-  <!-- HEADING -->
+    <div class="tabi-heading">
 
-  <div class="tabi-heading">
+        <span class="object-number">
+            001
+        </span>
 
-    <span class="object-number">
-      001
-    </span>
+        <div class="object-house">
+            Maison Margiela
+        </div>
 
-    <div class="object-house">
-      Maison Margiela
+        <h2 class="object-title">
+            Tabi Boot
+        </h2>
+
+        <div class="object-meta">
+            1989
+        </div>
+
     </div>
 
-    <h2 class="object-title">
-      Tabi Boot
-    </h2>
 
-    <div class="object-meta">
-      1989
-    </div>
-
-  </div>
-
-
-  <!-- LEFT ARCHIVAL PHOTO -->
-
-  <img
-    src="tabi-vintage-photo.png"
-    class="tabi-vintage"
-    alt=""
-  >
-
-
-  <!-- RECOGNITION NOTE -->
-
-  <img
-    src="tabi-recognition-note.png"
-    class="tabi-recognition"
-    alt="Recognition, Form, Anti-Luxury"
-  >
-
-
-  <!-- MAIN TABI -->
-
-  <div class="tabi-main">
+    <!-- LEFT ARCHIVAL PHOTO -->
 
     <img
-      src="tabi-boots.png"
-      alt="Maison Margiela Tabi boots"
+        src="tabi-vintage-photo.png"
+        class="tabi-vintage"
+        alt=""
     >
 
-  </div>
+
+    <!-- NOTE -->
+
+    <img
+        src="tabi-recognition-note.png"
+        class="tabi-recognition"
+        alt="Recognition, Form, Anti-Luxury"
+    >
 
 
-  <!-- RIGHT SKETCH -->
+    <!-- MAIN TABI -->
 
-  <img
-    src="tabi-sketch.png"
-    class="tabi-sketch"
-    alt=""
-  >
+    <div class="tabi-main">
 
+        <img
+            src="tabi-boots.png"
+            alt="Maison Margiela Tabi boots"
+        >
 
-  <!-- CIRCLED NOTE -->
-
-  <div class="tabi-circle-note">
-    AN OBJECT<br>
-    THAT BECAME A<br>
-    LANGUAGE.
-  </div>
+    </div>
 
 
-  <!-- SIGNATURE -->
+    <!-- SKETCH -->
 
-  <div class="tabi-signature">
-    Maison<br>
-    Martin<br>
-    Margiela
-  </div>
-
-
-  <!-- COPY -->
-
-  <p class="tabi-copy">
-    What began as a radical split-toe silhouette became one of
-    fashion's most recognizable objects. I love the Tabi because
-    its identity does not depend on a visible logo. The shape itself
-    became the house code.
-  </p>
+    <img
+        src="tabi-sketch.png"
+        class="tabi-sketch"
+        alt=""
+    >
 
 
-  <div class="tabi-rule"></div>
+    <!-- CIRCLE NOTE -->
+
+    <div class="tabi-circle-note">
+        AN OBJECT<br>
+        THAT BECAME A<br>
+        LANGUAGE.
+    </div>
 
 
-  <div class="tabi-tags">
-    Form &nbsp;·&nbsp; Identity &nbsp;·&nbsp; Anti-Luxury
-  </div>
+    <!-- SIGNATURE -->
+
+    <div class="tabi-signature">
+        Maison<br>
+        Martin<br>
+        Margiela
+    </div>
+
+
+    <!-- DESCRIPTION -->
+
+    <p class="tabi-copy">
+        What began as a radical split-toe silhouette became one of
+        fashion's most recognizable objects. I love the Tabi because
+        its identity does not depend on a visible logo. The shape itself
+        became the house code.
+    </p>
+
+
+    <div class="tabi-rule"></div>
+
+
+    <div class="tabi-tags">
+        Form &nbsp;·&nbsp; Identity &nbsp;·&nbsp; Anti-Luxury
+    </div>
 
 </section>
 
@@ -1894,55 +1990,55 @@ footer{
 
 <section class="archive-object alt">
 
-  <span class="object-number">
-    002
-  </span>
+    <span class="object-number">
+        002
+    </span>
 
-  <div class="object-house">
-    Christian Dior by John Galliano
-  </div>
+    <div class="object-house">
+        Christian Dior by John Galliano
+    </div>
 
-  <h2 class="object-title">
-    The Saddle Bag
-  </h2>
+    <h2 class="object-title">
+        The Saddle Bag
+    </h2>
 
-  <div class="object-meta">
-    Introduced · SS00
-  </div>
-
-
-  <div class="side-note left">
-    An accessory<br>
-    becomes<br>
-    an icon.
-  </div>
+    <div class="object-meta">
+        Introduced · SS00
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-saddle.jpg"
-      alt="Archival Dior Saddle Bag"
-    >
-
-  </div>
+    <div class="side-note left">
+        An accessory<br>
+        becomes<br>
+        an icon.
+    </div>
 
 
-  <p class="object-copy">
-    Few accessories demonstrate the power of silhouette as clearly
-    as the Saddle. Its asymmetric form turned a handbag into a visual
-    code: recognizable before the Dior name is even read. Galliano-era
-    editions are particularly fascinating because the same shape could
-    absorb embroidery, print, denim and ornament without losing its identity.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-saddle.jpg"
+            alt="Archival Dior Saddle Bag"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        Few accessories demonstrate the power of silhouette as clearly
+        as the Saddle. Its asymmetric form turned a handbag into a visual
+        code: recognizable before the Dior name is even read. Galliano-era
+        editions are particularly fascinating because the same shape could
+        absorb embroidery, print, denim and ornament without losing its identity.
+    </p>
 
 
-  <div class="object-theme">
-    Silhouette · Recognition · Collectibility
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Silhouette · Recognition · Collectibility
+    </div>
 
 </section>
 
@@ -1954,54 +2050,54 @@ footer{
 
 <section class="archive-object">
 
-  <span class="object-number">
-    003
-  </span>
+    <span class="object-number">
+        003
+    </span>
 
-  <div class="object-house">
-    Thierry Mugler
-  </div>
+    <div class="object-house">
+        Thierry Mugler
+    </div>
 
-  <h2 class="object-title">
-    La Chimère
-  </h2>
+    <h2 class="object-title">
+        La Chimère
+    </h2>
 
-  <div class="object-meta">
-    Haute Couture · FW97–98
-  </div>
-
-
-  <div class="side-note right">
-    Part dress.<br>
-    Part creature.<br>
-    Part sculpture.
-  </div>
+    <div class="object-meta">
+        Haute Couture · FW97–98
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-mugler.jpg"
-      alt="Thierry Mugler Chimère gown"
-    >
-
-  </div>
+    <div class="side-note right">
+        Part dress.<br>
+        Part creature.<br>
+        Part sculpture.
+    </div>
 
 
-  <p class="object-copy">
-    What fascinates me about the Chimère gown is that its fantasy
-    cannot really be separated from the extraordinary work required
-    to construct it. It represents fashion at the point where clothing
-    begins to behave like an object worthy of preservation.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-mugler.jpg"
+            alt="Thierry Mugler Chimère gown"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        What fascinates me about the Chimère gown is that its fantasy
+        cannot really be separated from the extraordinary work required
+        to construct it. It represents fashion at the point where clothing
+        begins to behave like an object worthy of preservation.
+    </p>
 
 
-  <div class="object-theme">
-    Craftsmanship · Fantasy · Transformation
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Craftsmanship · Fantasy · Transformation
+    </div>
 
 </section>
 
@@ -2013,54 +2109,54 @@ footer{
 
 <section class="archive-object alt">
 
-  <span class="object-number">
-    004
-  </span>
+    <span class="object-number">
+        004
+    </span>
 
-  <div class="object-house">
-    Alexander McQueen
-  </div>
+    <div class="object-house">
+        Alexander McQueen
+    </div>
 
-  <h2 class="object-title">
-    Armadillo Boot
-  </h2>
+    <h2 class="object-title">
+        Armadillo Boot
+    </h2>
 
-  <div class="object-meta">
-    Plato's Atlantis · SS10
-  </div>
-
-
-  <div class="side-note left">
-    Shoe?<br>
-    Sculpture?<br>
-    Creature?
-  </div>
+    <div class="object-meta">
+        Plato's Atlantis · SS10
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-mcqueen.jpg"
-      alt="Alexander McQueen Armadillo Boot"
-    >
-
-  </div>
+    <div class="side-note left">
+        Shoe?<br>
+        Sculpture?<br>
+        Creature?
+    </div>
 
 
-  <p class="object-copy">
-    The Armadillo boot pushes the accessory almost beyond wearability.
-    Its exaggerated structure changes the body, the walk and the
-    silhouette itself. Practicality was never the point. The object
-    exists somewhere between footwear, sculpture and image.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-mcqueen.jpg"
+            alt="Alexander McQueen Armadillo Boot"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        The Armadillo boot pushes the accessory almost beyond wearability.
+        Its exaggerated structure changes the body, the walk and the
+        silhouette itself. Practicality was never the point. The object
+        exists somewhere between footwear, sculpture and image.
+    </p>
 
 
-  <div class="object-theme">
-    Sculpture · Body · Spectacle
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Sculpture · Body · Spectacle
+    </div>
 
 </section>
 
@@ -2072,56 +2168,56 @@ footer{
 
 <section class="archive-object">
 
-  <span class="object-number">
-    005
-  </span>
+    <span class="object-number">
+        005
+    </span>
 
-  <div class="object-house">
-    Comme des Garçons
-  </div>
+    <div class="object-house">
+        Comme des Garçons
+    </div>
 
-  <h2 class="object-title">
-    Body Meets Dress,<br>
-    Dress Meets Body
-  </h2>
+    <h2 class="object-title">
+        Body Meets Dress,<br>
+        Dress Meets Body
+    </h2>
 
-  <div class="object-meta">
-    Rei Kawakubo · SS97
-  </div>
-
-
-  <div class="side-note right">
-    What if the<br>
-    garment changes<br>
-    the body?
-  </div>
+    <div class="object-meta">
+        Rei Kawakubo · SS97
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-cdg.jpg"
-      alt="Comme des Garçons Body Meets Dress Dress Meets Body"
-    >
-
-  </div>
+    <div class="side-note right">
+        What if the<br>
+        garment changes<br>
+        the body?
+    </div>
 
 
-  <p class="object-copy">
-    Padding appeared in places fashion traditionally tries to flatten,
-    narrow or conceal. The collection distorted the conventional silhouette
-    and forced the viewer to reconsider where the body ended and the garment
-    began. Beauty here was not about correcting the body. It was about
-    inventing another one.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-cdg.jpg"
+            alt="Comme des Garçons Body Meets Dress Dress Meets Body"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        Padding appeared in places fashion traditionally tries to flatten,
+        narrow or conceal. The collection distorted the conventional
+        silhouette and forced the viewer to reconsider where the body ended
+        and the garment began. Beauty here was not about correcting the body.
+        It was about inventing another one.
+    </p>
 
 
-  <div class="object-theme">
-    Body · Proportion · Provocation
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Body · Proportion · Provocation
+    </div>
 
 </section>
 
@@ -2133,54 +2229,54 @@ footer{
 
 <section class="archive-object alt">
 
-  <span class="object-number">
-    006
-  </span>
+    <span class="object-number">
+        006
+    </span>
 
-  <div class="object-house">
-    Elsa Schiaparelli × Salvador Dalí
-  </div>
+    <div class="object-house">
+        Elsa Schiaparelli × Salvador Dalí
+    </div>
 
-  <h2 class="object-title">
-    Lobster Dress
-  </h2>
+    <h2 class="object-title">
+        Lobster Dress
+    </h2>
 
-  <div class="object-meta">
-    1937
-  </div>
-
-
-  <div class="side-note left">
-    Fashion<br>
-    meets<br>
-    surrealism.
-  </div>
+    <div class="object-meta">
+        1937
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-schiaparelli.jpg"
-      alt="Schiaparelli Lobster Dress"
-    >
-
-  </div>
+    <div class="side-note left">
+        Fashion<br>
+        meets<br>
+        surrealism.
+    </div>
 
 
-  <p class="object-copy">
-    Schiaparelli understood that fashion could participate in the same
-    visual conversation as art. The lobster transforms an otherwise elegant
-    evening dress into something strange, humorous and deliberately provocative.
-    It is precisely that tension that makes the piece unforgettable.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-schiaparelli.jpg"
+            alt="Schiaparelli Lobster Dress"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        Schiaparelli understood that fashion could participate in the same
+        visual conversation as art. The lobster transforms an otherwise
+        elegant evening dress into something strange, humorous and deliberately
+        provocative. It is precisely that tension that makes the piece unforgettable.
+    </p>
 
 
-  <div class="object-theme">
-    Surrealism · Collaboration · Provocation
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Surrealism · Collaboration · Provocation
+    </div>
 
 </section>
 
@@ -2192,55 +2288,55 @@ footer{
 
 <section class="archive-object">
 
-  <span class="object-number">
-    007
-  </span>
+    <span class="object-number">
+        007
+    </span>
 
-  <div class="object-house">
-    Hermès
-  </div>
+    <div class="object-house">
+        Hermès
+    </div>
 
-  <h2 class="object-title">
-    Himalaya Birkin
-  </h2>
+    <h2 class="object-title">
+        Himalaya Birkin
+    </h2>
 
-  <div class="object-meta">
-    Collectible Luxury
-  </div>
-
-
-  <div class="side-note right">
-    When does<br>
-    an object<br>
-    become myth?
-  </div>
+    <div class="object-meta">
+        Collectible Luxury
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-birkin.jpg"
-      alt="Hermès Himalaya Birkin"
-    >
-
-  </div>
+    <div class="side-note right">
+        When does<br>
+        an object<br>
+        become myth?
+    </div>
 
 
-  <p class="object-copy">
-    The Himalaya Birkin interests me not simply because it is expensive,
-    but because it demonstrates how a luxury object acquires mythology.
-    Material rarity, craftsmanship, restricted availability, celebrity
-    ownership and auction culture accumulate around the bag until the
-    object becomes a collectible.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-birkin.jpg"
+            alt="Hermès Himalaya Birkin"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        The Himalaya Birkin interests me not simply because it is expensive,
+        but because it demonstrates how a luxury object acquires mythology.
+        Material rarity, craftsmanship, restricted availability, celebrity
+        ownership and auction culture accumulate around the bag until the
+        object becomes a collectible.
+    </p>
 
 
-  <div class="object-theme">
-    Scarcity · Mythology · Value
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Scarcity · Mythology · Value
+    </div>
 
 </section>
 
@@ -2252,55 +2348,55 @@ footer{
 
 <section class="archive-object alt">
 
-  <span class="object-number">
-    008
-  </span>
+    <span class="object-number">
+        008
+    </span>
 
-  <div class="object-house">
-    Guy Bourdin
-  </div>
+    <div class="object-house">
+        Guy Bourdin
+    </div>
 
-  <h2 class="object-title">
-    The Image Before the Product
-  </h2>
+    <h2 class="object-title">
+        The Image Before the Product
+    </h2>
 
-  <div class="object-meta">
-    French Fashion Photography · 1970s
-  </div>
-
-
-  <div class="side-note left">
-    Desire<br>
-    before<br>
-    explanation.
-  </div>
+    <div class="object-meta">
+        French Fashion Photography · 1970s
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-bourdin.jpg"
-      alt="Guy Bourdin fashion photography"
-    >
-
-  </div>
+    <div class="side-note left">
+        Desire<br>
+        before<br>
+        explanation.
+    </div>
 
 
-  <p class="object-copy">
-    Before I understood fashion photography as an industry, I understood
-    the feeling of it: impossible colour, strange framing and images in
-    which the product could become almost secondary to the world around it.
-    Bourdin demonstrates that fashion can create desire without needing
-    to explain it.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-bourdin.jpg"
+            alt="Guy Bourdin fashion photography"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        Before I understood fashion photography as an industry, I understood
+        the feeling of it: impossible colour, strange framing and images in
+        which the product could become almost secondary to the world around it.
+        Bourdin demonstrates that fashion can create desire without needing
+        to explain it.
+    </p>
 
 
-  <div class="object-theme">
-    Photography · Desire · Narrative
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Photography · Desire · Narrative
+    </div>
 
 </section>
 
@@ -2312,54 +2408,54 @@ footer{
 
 <section class="archive-object">
 
-  <span class="object-number">
-    009
-  </span>
+    <span class="object-number">
+        009
+    </span>
 
-  <div class="object-house">
-    Cartier
-  </div>
+    <div class="object-house">
+        Cartier
+    </div>
 
-  <h2 class="object-title">
-    Tutti Frutti
-  </h2>
+    <h2 class="object-title">
+        Tutti Frutti
+    </h2>
 
-  <div class="object-meta">
-    Art Deco · India → Paris
-  </div>
-
-
-  <div class="side-note right">
-    More can<br>
-    sometimes<br>
-    be more.
-  </div>
+    <div class="object-meta">
+        Art Deco · India → Paris
+    </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-cartier.jpg"
-      alt="Cartier Tutti Frutti jewelry"
-    >
-
-  </div>
+    <div class="side-note right">
+        More can<br>
+        sometimes<br>
+        be more.
+    </div>
 
 
-  <p class="object-copy">
-    I keep coming back to Tutti Frutti because it rejects the idea that
-    sophistication must always mean restraint. Carved coloured stones,
-    extraordinary combinations and dense ornament become harmonious
-    through craftsmanship.
-  </p>
+    <div class="object-image">
+
+        <img
+            src="archive-cartier.jpg"
+            alt="Cartier Tutti Frutti jewelry"
+        >
+
+    </div>
 
 
-  <div class="object-rule"></div>
+    <p class="object-copy">
+        I keep coming back to Tutti Frutti because it rejects the idea
+        that sophistication must always mean restraint. Carved coloured
+        stones, extraordinary combinations and dense ornament become
+        harmonious through craftsmanship.
+    </p>
 
 
-  <div class="object-theme">
-    Jewelry · Colour · Craftsmanship
-  </div>
+    <div class="object-rule"></div>
+
+
+    <div class="object-theme">
+        Jewelry · Colour · Craftsmanship
+    </div>
 
 </section>
 
@@ -2371,77 +2467,78 @@ footer{
 
 <section class="archive-closing">
 
-  <div class="closing-kicker">
-    001 — ∞
-  </div>
+    <div class="closing-kicker">
+        001 — ∞
+    </div>
 
-  <h2 class="closing-title">
-    The archive is<br>
-    never finished.
-  </h2>
+    <h2 class="closing-title">
+        The archive is<br>
+        never finished.
+    </h2>
 
-  <p class="closing-copy">
-    These objects do not form a complete history of fashion.
-    They form a personal one — pieces, images and ideas I return
-    to because each changed the language around it. The Cabinet
-    will continue to grow as my own understanding of fashion does.
-  </p>
+    <p class="closing-copy">
+        These objects do not form a complete history of fashion.
+        They form a personal one — pieces, images and ideas I return
+        to because each changed the language around it. The Cabinet
+        will continue to grow as my own understanding of fashion does.
+    </p>
 
-  <div class="closing-sign">
-    Anaïs
-  </div>
+    <div class="closing-sign">
+        Anaïs
+    </div>
 
 </section>
 
 
 
 <!-- =====================================================
-     SPINNING AD STAMP
+     AD STAMP
 ===================================================== -->
 
 <div class="logo-stamp">
 
-  <div class="stamp">
+    <div class="stamp">
 
-    <div class="stamp-spin">
+        <div class="stamp-spin">
 
-      <svg
-        viewBox="0 0 130 130"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+            <svg
+                viewBox="0 0 130 130"
+                xmlns="http://www.w3.org/2000/svg"
+            >
 
-        <defs>
+                <defs>
 
-          <path
-            id="circlePath"
-            d="M65,65 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"
-          />
+                    <path
+                        id="circlePath"
+                        d="M65,65 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"
+                    />
 
-        </defs>
+                </defs>
 
-        <text
-          font-family="'Cormorant Garamond',serif"
-          font-size="8.5"
-          letter-spacing="3.2"
-          fill="#6a6460"
-        >
 
-          <textPath href="#circlePath">
-            ANAÏS DOROSHINA · FASHION &amp; LUXURY ·
-          </textPath>
+                <text
+                    font-family="'Cormorant Garamond',serif"
+                    font-size="8.5"
+                    letter-spacing="3.2"
+                    fill="#6a6460"
+                >
 
-        </text>
+                    <textPath href="#circlePath">
+                        ANAÏS DOROSHINA · FASHION &amp; LUXURY ·
+                    </textPath>
 
-      </svg>
+                </text>
+
+            </svg>
+
+        </div>
+
+
+        <div class="stamp-center">
+            AD
+        </div>
 
     </div>
-
-
-    <div class="stamp-center">
-      AD
-    </div>
-
-  </div>
 
 </div>
 
@@ -2453,40 +2550,40 @@ footer{
 
 <footer>
 
-  <div>
+    <div>
 
-    <div class="ft-logo">
-      Anaïs Doroshina
+        <div class="ft-logo">
+            Anaïs Doroshina
+        </div>
+
+        <p class="ft-sub">
+            A curated perspective on fashion, luxury and the structures behind them.
+        </p>
+
     </div>
 
-    <p class="ft-sub">
-      A curated perspective on fashion, luxury and the structures behind them.
-    </p>
 
-  </div>
+    <div class="ft-right">
 
+        <a
+            href="mailto:anaisdoroshina1@gmail.com"
+            class="ft-link"
+        >
+            anaisdoroshina1@gmail.com
+        </a>
 
-  <div class="ft-right">
+        <a
+            href="#"
+            class="ft-link"
+        >
+            LinkedIn
+        </a>
 
-    <a
-      href="mailto:anaisdoroshina1@gmail.com"
-      class="ft-link"
-    >
-      anaisdoroshina1@gmail.com
-    </a>
+        <p class="ft-copy">
+            Est. 2024
+        </p>
 
-    <a
-      href="#"
-      class="ft-link"
-    >
-      LinkedIn
-    </a>
-
-    <p class="ft-copy">
-      Est. 2024
-    </p>
-
-  </div>
+    </div>
 
 </footer>
 
