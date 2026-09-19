@@ -54,7 +54,6 @@ a{
 
 /* =========================================================
    NAV
-   MATCHING THE REST OF THE WEBSITE
 ========================================================= */
 
 nav{
@@ -108,17 +107,13 @@ nav{
 .hero{
     position:relative;
     width:100%;
-
-    height:650px;
-    min-height:650px;
+    height:680px;
+    min-height:680px;
 
     margin-top:56px;
 
     overflow:visible;
-
     background:var(--cream);
-
-    border-bottom:none;
 
     z-index:10;
 }
@@ -150,8 +145,8 @@ nav{
     position:absolute;
     z-index:40;
 
-    left:60%;
-    top:56%;
+    left:62%;
+    top:54%;
 
     width:43%;
 
@@ -161,7 +156,6 @@ nav{
 
 .hero-title{
     font-family:'Cormorant Garamond',serif;
-
     font-size:clamp(92px,9vw,142px);
 
     font-weight:300;
@@ -177,13 +171,10 @@ nav{
     margin-top:34px;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:clamp(13px,1.05vw,17px);
-
     line-height:1.4;
 
     font-style:italic;
-
     letter-spacing:.015em;
 
     color:#71675e;
@@ -205,7 +196,6 @@ nav{
     height:auto;
 
     max-width:none;
-
     object-fit:contain;
 
     pointer-events:none;
@@ -214,24 +204,23 @@ nav{
 
 /* =========================================================
    LARGE VINTAGE PHOTO
-   NOW FILLS THE LEFT SIDE
+   BIGGER + LOWER + MORE CENTERED
 ========================================================= */
 
 .hero-photo{
     position:absolute;
     z-index:35;
 
-    left:1.5%;
-    top:-8%;
+    left:4%;
+    top:5%;
 
-    width:38%;
+    width:43%;
     height:auto;
 
     max-width:none;
-
     object-fit:contain;
 
-    transform:rotate(-5deg);
+    transform:rotate(-4deg);
 
     filter:drop-shadow(0 8px 10px rgba(40,30,20,.11));
 
@@ -249,14 +238,12 @@ nav{
     z-index:36;
 
     right:-2.5%;
-
     bottom:-95px;
 
     width:24%;
     height:auto;
 
     max-width:none;
-
     object-fit:contain;
 
     transform:rotate(-3deg);
@@ -282,7 +269,6 @@ nav{
     height:auto;
 
     max-width:none;
-
     object-fit:contain;
 
     transform:rotate(-5deg);
@@ -290,78 +276,6 @@ nav{
     filter:drop-shadow(0 6px 7px rgba(70,20,15,.16));
 
     pointer-events:none;
-}
-
-
-/* =========================================================
-   LEFT HANDWRITING
-========================================================= */
-
-.left-note{
-    position:absolute;
-    z-index:45;
-
-    left:3.2%;
-    top:9%;
-
-    width:13%;
-
-    font-family:'Corinthia',cursive;
-
-    font-size:clamp(29px,2.7vw,44px);
-
-    line-height:.69;
-
-    transform:rotate(-6deg);
-}
-
-
-/* =========================================================
-   PINK TOP NOTE
-========================================================= */
-
-.pink-note{
-    position:absolute;
-    z-index:48;
-
-    left:56%;
-    top:6%;
-
-    width:21%;
-
-    padding:14px 20px;
-
-    background:rgba(224,112,133,.90);
-
-    transform:rotate(-4deg);
-
-    text-align:center;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(13px,1.25vw,19px);
-
-    font-style:italic;
-
-    letter-spacing:.08em;
-
-    line-height:1.25;
-}
-
-.pink-note::before{
-    content:"";
-
-    position:absolute;
-
-    width:30%;
-    height:19px;
-
-    top:-9px;
-    left:35%;
-
-    background:rgba(218,202,168,.65);
-
-    transform:rotate(4deg);
 }
 
 
@@ -470,35 +384,6 @@ nav{
 
 
 /* =========================================================
-   RED HANDWRITTEN QUOTE
-========================================================= */
-
-.red-note{
-    position:absolute;
-    z-index:55;
-
-    right:28%;
-    top:24%;
-
-    width:12%;
-
-    font-family:'Corinthia',cursive;
-
-    font-size:clamp(23px,2vw,33px);
-
-    line-height:.70;
-
-    color:#c3313c;
-
-    transform:rotate(-13deg);
-
-    transform-origin:center;
-
-    text-align:left;
-}
-
-
-/* =========================================================
    SMALL EDITORIAL NOTE
 ========================================================= */
 
@@ -507,13 +392,10 @@ nav{
     z-index:18;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:9px;
-
     font-style:italic;
 
     color:#a2988f;
-
     letter-spacing:.02em;
 
     pointer-events:none;
@@ -528,12 +410,13 @@ nav{
 
 /* =========================================================
    001 — TABI
+   LOWER + DIVIDED FROM HERO
 ========================================================= */
 
 .tabi{
     position:relative;
 
-    height:900px;
+    height:960px;
 
     overflow:visible;
 
@@ -541,6 +424,7 @@ nav{
 
     text-align:center;
 
+    border-top:1px solid var(--rule);
     border-bottom:1px solid #ded8ce;
 
     z-index:1;
@@ -548,10 +432,10 @@ nav{
 
 .tabi-heading{
     position:absolute;
-
     z-index:20;
 
-    top:65px;
+    /* moved lower so it does not appear in hero */
+    top:125px;
     left:50%;
 
     transform:translateX(-50%);
@@ -561,11 +445,8 @@ nav{
 
 .tabi-number{
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
-
     letter-spacing:.35em;
-
     color:#998b7c;
 }
 
@@ -573,11 +454,9 @@ nav{
     margin-top:16px;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:13px;
 
     letter-spacing:.4em;
-
     text-transform:uppercase;
 }
 
@@ -585,15 +464,12 @@ nav{
     margin-top:5px;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:57px;
 
     font-weight:300;
-
     font-style:italic;
 
     line-height:.95;
-
     letter-spacing:-.045em;
 }
 
@@ -601,7 +477,6 @@ nav{
     margin-top:15px;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
 
     letter-spacing:.3em;
@@ -609,11 +484,10 @@ nav{
 
 .tabi-boots{
     position:absolute;
-
     z-index:18;
 
     left:50%;
-    top:235px;
+    top:295px;
 
     width:285px;
     height:360px;
@@ -627,7 +501,6 @@ nav{
 
 .tabi-vintage{
     position:absolute;
-
     z-index:4;
 
     left:-2%;
@@ -646,11 +519,10 @@ nav{
 
 .tabi-recognition{
     position:absolute;
-
     z-index:13;
 
     left:14%;
-    top:280px;
+    top:340px;
 
     width:180px;
 
@@ -659,11 +531,10 @@ nav{
 
 .tabi-sketch{
     position:absolute;
-
     z-index:4;
 
     right:-2%;
-    top:225px;
+    top:285px;
 
     width:25%;
 
@@ -672,34 +543,28 @@ nav{
 
 .tabi-circle{
     position:absolute;
-
     z-index:14;
 
     right:15%;
-    top:400px;
+    top:460px;
 
     width:205px;
     height:115px;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
     border:1px solid rgba(90,80,70,.3);
-
     border-radius:50%;
 
     transform:rotate(-8deg);
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:12px;
-
     font-style:italic;
 
     line-height:1.5;
-
     letter-spacing:.07em;
 
     color:#6b625a;
@@ -707,14 +572,12 @@ nav{
 
 .tabi-signature{
     position:absolute;
-
     z-index:15;
 
     right:8%;
     bottom:65px;
 
     font-family:'Corinthia',cursive;
-
     font-size:35px;
 
     line-height:.65;
@@ -726,18 +589,16 @@ nav{
 
 .tabi-copy{
     position:absolute;
-
     z-index:20;
 
     left:50%;
-    top:635px;
+    top:695px;
 
     width:min(610px,70%);
 
     transform:translateX(-50%);
 
     font-family:'EB Garamond',serif;
-
     font-size:16px;
 
     line-height:1.48;
@@ -760,22 +621,19 @@ nav{
 
 .tabi-tags{
     position:absolute;
-
     z-index:20;
 
     left:50%;
-    top:780px;
+    top:840px;
 
     transform:translateX(-50%);
 
     white-space:nowrap;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
 
     letter-spacing:.4em;
-
     text-transform:uppercase;
 
     color:#a0978d;
@@ -792,11 +650,9 @@ nav{
     padding:6rem 8vw;
 
     display:flex;
-
     flex-direction:column;
 
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -812,11 +668,8 @@ nav{
 
 .object-number{
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
-
     letter-spacing:.35em;
-
     color:#998b7c;
 }
 
@@ -824,11 +677,9 @@ nav{
     margin-top:15px;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:12px;
 
     letter-spacing:.38em;
-
     text-transform:uppercase;
 }
 
@@ -840,11 +691,9 @@ nav{
     font-size:clamp(43px,4.5vw,65px);
 
     font-weight:300;
-
     font-style:italic;
 
     line-height:.95;
-
     letter-spacing:-.04em;
 }
 
@@ -852,7 +701,6 @@ nav{
     margin-top:14px;
 
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
 
     letter-spacing:.3em;
@@ -860,7 +708,6 @@ nav{
 
 .object-image{
     width:min(470px,50vw);
-
     height:350px;
 
     margin:35px auto 28px;
@@ -872,7 +719,6 @@ nav{
     max-width:590px;
 
     font-size:16px;
-
     line-height:1.55;
 
     color:#3c3631;
@@ -893,11 +739,9 @@ nav{
 
 .object-tags{
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
 
     letter-spacing:.38em;
-
     text-transform:uppercase;
 
     color:#9d9389;
@@ -920,7 +764,6 @@ nav{
     font-family:'Cormorant Garamond',serif;
 
     font-size:9px;
-
     letter-spacing:.35em;
 
     text-transform:uppercase;
@@ -936,11 +779,9 @@ nav{
     font-size:clamp(55px,7vw,95px);
 
     font-weight:300;
-
     font-style:italic;
 
     line-height:.9;
-
     letter-spacing:-.05em;
 }
 
@@ -950,7 +791,6 @@ nav{
     margin:30px auto 0;
 
     font-size:16px;
-
     line-height:1.6;
 
     color:#6c645c;
@@ -1040,13 +880,13 @@ footer{
     }
 
     .hero{
-        height:620px;
+        height:640px;
         min-height:0;
         margin-top:56px;
     }
 
     .hero-title-wrap{
-        left:54%;
+        left:55%;
         top:58%;
         width:80%;
     }
@@ -1068,9 +908,9 @@ footer{
     }
 
     .hero-photo{
-        left:-3%;
-        top:3%;
-        width:50%;
+        left:-7%;
+        top:8%;
+        width:59%;
         height:auto;
     }
 
@@ -1086,29 +926,6 @@ footer{
         bottom:-15px;
         width:20%;
         height:auto;
-    }
-
-    .left-note{
-        left:3%;
-        top:5%;
-        width:24%;
-        font-size:25px;
-    }
-
-    .pink-note{
-        left:57%;
-        top:5%;
-        width:37%;
-        padding:10px;
-        font-size:11px;
-    }
-
-    .red-note{
-        right:25%;
-        top:29%;
-        width:23%;
-        font-size:22px;
-        transform:rotate(-12deg);
     }
 
     .micro-note{
@@ -1151,11 +968,11 @@ footer{
     }
 
     .tabi{
-        height:800px;
+        height:860px;
     }
 
     .tabi-heading{
-        top:55px;
+        top:105px;
     }
 
     .tabi-title{
@@ -1163,7 +980,7 @@ footer{
     }
 
     .tabi-boots{
-        top:220px;
+        top:270px;
 
         width:220px;
         height:300px;
@@ -1175,7 +992,7 @@ footer{
 
     .tabi-recognition{
         left:2%;
-        top:300px;
+        top:350px;
 
         width:110px;
     }
@@ -1183,6 +1000,7 @@ footer{
     .tabi-sketch{
         width:40%;
         right:-12%;
+        top:275px;
     }
 
     .tabi-circle{
@@ -1195,13 +1013,13 @@ footer{
     }
 
     .tabi-copy{
-        top:550px;
+        top:610px;
         width:78%;
         font-size:14px;
     }
 
     .tabi-tags{
-        top:715px;
+        top:775px;
         font-size:6px;
         letter-spacing:.25em;
     }
@@ -1297,29 +1115,6 @@ footer{
     >
 
 
-    <!-- LEFT HANDWRITTEN NOTE -->
-
-    <div class="left-note">
-
-        Objects,<br>
-        ideas,<br>
-        obsessions<br>
-        that shaped<br>
-        my eye.
-
-    </div>
-
-
-    <!-- PINK NOTE -->
-
-    <div class="pink-note">
-
-        A PERSONAL<br>
-        FASHION ARCHIVE
-
-    </div>
-
-
     <!-- SCATTERED STARS -->
 
     <div class="star star-1 black">✳</div>
@@ -1347,18 +1142,6 @@ footer{
         <div class="hero-subtitle">
             A personal collection of fashion’s unforgettable objects.
         </div>
-
-    </div>
-
-
-    <!-- RED HANDWRITTEN QUOTE -->
-
-    <div class="red-note">
-
-        Fashion<br>
-        as a way<br>
-        of keeping<br>
-        things alive.
 
     </div>
 
