@@ -110,7 +110,7 @@ nav{
     height:680px;
     min-height:680px;
 
-    margin-top:37px;
+    margin-top:56px;
 
     overflow:visible;
     background:var(--cream);
@@ -204,7 +204,6 @@ nav{
 
 /* =========================================================
    LARGE VINTAGE PHOTO
-   BIGGER + LOWER + MORE CENTERED
 ========================================================= */
 
 .hero-photo{
@@ -230,7 +229,6 @@ nav{
 
 /* =========================================================
    BOOK
-   BLEEDS INTO TABI SECTION
 ========================================================= */
 
 .hero-book{
@@ -410,7 +408,6 @@ nav{
 
 /* =========================================================
    001 — TABI
-   LOWER + DIVIDED FROM HERO
 ========================================================= */
 
 .tabi{
@@ -424,17 +421,44 @@ nav{
 
     text-align:center;
 
-    border-top:1px solid var(--rule);
+    border-top:none;
     border-bottom:1px solid #ded8ce;
 
     z-index:1;
 }
 
+
+/* =========================================================
+   HERO / TABI DIVIDER
+
+   CHANGE ONLY "top" TO MOVE THE LINE
+   20px = higher
+   40px = current
+   80px = lower
+   120px = much lower
+========================================================= */
+
+.tabi::before{
+    content:"";
+    position:absolute;
+
+    top:40px;
+
+    left:0;
+    width:100%;
+    height:1px;
+
+    background:var(--rule);
+
+    z-index:2;
+    pointer-events:none;
+}
+
+
 .tabi-heading{
     position:absolute;
     z-index:20;
 
-    /* moved lower so it does not appear in hero */
     top:125px;
     left:50%;
 
@@ -552,19 +576,24 @@ nav{
     height:115px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     border:1px solid rgba(90,80,70,.3);
+
     border-radius:50%;
 
     transform:rotate(-8deg);
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:12px;
+
     font-style:italic;
 
     line-height:1.5;
+
     letter-spacing:.07em;
 
     color:#6b625a;
@@ -572,12 +601,14 @@ nav{
 
 .tabi-signature{
     position:absolute;
+
     z-index:15;
 
     right:8%;
     bottom:65px;
 
     font-family:'Corinthia',cursive;
+
     font-size:35px;
 
     line-height:.65;
@@ -589,6 +620,7 @@ nav{
 
 .tabi-copy{
     position:absolute;
+
     z-index:20;
 
     left:50%;
@@ -599,6 +631,7 @@ nav{
     transform:translateX(-50%);
 
     font-family:'EB Garamond',serif;
+
     font-size:16px;
 
     line-height:1.48;
@@ -621,6 +654,7 @@ nav{
 
 .tabi-tags{
     position:absolute;
+
     z-index:20;
 
     left:50%;
@@ -631,9 +665,11 @@ nav{
     white-space:nowrap;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
 
     letter-spacing:.4em;
+
     text-transform:uppercase;
 
     color:#a0978d;
@@ -650,9 +686,11 @@ nav{
     padding:6rem 8vw;
 
     display:flex;
+
     flex-direction:column;
 
     align-items:center;
+
     justify-content:center;
 
     text-align:center;
@@ -668,8 +706,11 @@ nav{
 
 .object-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
+
     letter-spacing:.35em;
+
     color:#998b7c;
 }
 
@@ -677,9 +718,11 @@ nav{
     margin-top:15px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:12px;
 
     letter-spacing:.38em;
+
     text-transform:uppercase;
 }
 
@@ -691,9 +734,11 @@ nav{
     font-size:clamp(43px,4.5vw,65px);
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.95;
+
     letter-spacing:-.04em;
 }
 
@@ -701,6 +746,7 @@ nav{
     margin-top:14px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
 
     letter-spacing:.3em;
@@ -708,6 +754,7 @@ nav{
 
 .object-image{
     width:min(470px,50vw);
+
     height:350px;
 
     margin:35px auto 28px;
@@ -719,6 +766,7 @@ nav{
     max-width:590px;
 
     font-size:16px;
+
     line-height:1.55;
 
     color:#3c3631;
@@ -739,9 +787,11 @@ nav{
 
 .object-tags{
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
 
     letter-spacing:.38em;
+
     text-transform:uppercase;
 
     color:#9d9389;
@@ -764,6 +814,7 @@ nav{
     font-family:'Cormorant Garamond',serif;
 
     font-size:9px;
+
     letter-spacing:.35em;
 
     text-transform:uppercase;
@@ -779,9 +830,11 @@ nav{
     font-size:clamp(55px,7vw,95px);
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.9;
+
     letter-spacing:-.05em;
 }
 
@@ -791,6 +844,7 @@ nav{
     margin:30px auto 0;
 
     font-size:16px;
+
     line-height:1.6;
 
     color:#6c645c;
