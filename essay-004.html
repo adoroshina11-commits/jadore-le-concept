@@ -105,25 +105,28 @@ nav{
 
 
 /* =========================================================
-   HERO
+   HERO — FITS FIRST VIEWPORT
 ========================================================= */
 
 .article-hero{
-  min-height:700px;
+  height:100vh;
+  min-height:650px;
 
   padding-top:56px;
 
   display:grid;
 
-  grid-template-columns:minmax(500px,.9fr) minmax(600px,1.1fr);
-
-  align-items:stretch;
+  grid-template-columns:44.5% 55.5%;
 
   border-bottom:.5px solid var(--rule);
+
+  overflow:hidden;
 }
 
 .hero-copy{
-  padding:6.2rem 5vw 5rem 5.5vw;
+  height:calc(100vh - 56px);
+
+  padding:4vh 4.8vw;
 
   display:flex;
   flex-direction:column;
@@ -135,7 +138,7 @@ nav{
   align-items:center;
   gap:13px;
 
-  margin-bottom:1.6rem;
+  margin-bottom:1.7rem;
 
   font-family:'Cormorant Garamond',serif;
   font-size:9px;
@@ -147,34 +150,34 @@ nav{
 }
 
 .article-title{
-  max-width:720px;
+  max-width:700px;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(55px,5vw,82px);
+  font-size:clamp(48px,4.3vw,74px);
 
   font-weight:300;
   font-style:italic;
 
-  line-height:.96;
+  line-height:.98;
 
-  letter-spacing:-.045em;
+  letter-spacing:-.04em;
 
   color:var(--ink);
 }
 
 .article-intro{
-  max-width:620px;
+  max-width:610px;
 
   margin-top:2rem;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:17px;
+  font-size:clamp(14px,1vw,17px);
   font-weight:300;
   font-style:italic;
 
-  line-height:1.62;
+  line-height:1.65;
 
   color:#918880;
 }
@@ -185,7 +188,7 @@ nav{
 .hero-image{
   position:relative;
 
-  min-height:644px;
+  height:calc(100vh - 56px);
 
   overflow:hidden;
 }
@@ -197,7 +200,7 @@ nav{
   height:100%;
 
   object-fit:cover;
-  object-position:center;
+  object-position:center center;
 }
 
 .hero-image .image-credit{
@@ -206,9 +209,9 @@ nav{
   right:1.4rem;
   bottom:.8rem;
 
-  color:rgba(255,255,255,.8);
+  color:rgba(255,255,255,.82);
 
-  text-shadow:0 1px 4px rgba(0,0,0,.2);
+  text-shadow:0 1px 4px rgba(0,0,0,.25);
 }
 
 
@@ -328,7 +331,7 @@ nav{
 
 
 /* =========================================================
-   FULL-BLEED EDITORIAL IMAGE
+   FULL-WIDTH IMAGES
 ========================================================= */
 
 .full-image{
@@ -343,7 +346,6 @@ nav{
   display:block;
 
   width:100%;
-  height:auto;
 }
 
 .full-image-credit{
@@ -363,21 +365,17 @@ nav{
 /* LAVENDER */
 
 .lavender-image img{
-  width:100%;
-
   height:520px;
 
   object-fit:cover;
-
   object-position:center 48%;
 }
 
 
-/* LV */
+/* LOUIS VUITTON */
 
 .lv-image img{
   width:100%;
-
   height:auto;
 
   object-fit:contain;
@@ -425,7 +423,7 @@ nav{
 
 
 /* =========================================================
-   EDITORIAL QUOTE
+   STRATEGIC SHIFT QUOTE
 ========================================================= */
 
 .editorial-quote{
@@ -467,47 +465,77 @@ nav{
 
 
 /* =========================================================
-   LV TEXT — TWO COLUMN
+   FROM STORE TO CULTURAL SPACE
+   CENTERED EDITORIAL TITLE
 ========================================================= */
 
-.lv-copy{
+.cultural-heading{
   width:min(88vw,1120px);
 
   margin:0 auto;
 
-  padding:3.2rem 0 3.7rem;
+  padding:4.8rem 5vw 5rem;
 
-  display:grid;
+  border-top:.5px solid var(--accent);
+  border-bottom:.5px solid var(--accent);
 
-  grid-template-columns:.9fr 1.1fr;
+  text-align:center;
+}
 
-  gap:6rem;
+.cultural-heading .section-label{
+  margin-bottom:2rem;
+
+  font-size:9px;
+
+  letter-spacing:.32em;
+
+  color:#9b9189;
+}
+
+.cultural-title{
+  max-width:900px;
+
+  margin:0 auto;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(38px,4vw,58px);
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:1.12;
+
+  letter-spacing:-.025em;
+
+  color:var(--ink);
+}
+
+
+/* =========================================================
+   LOUIS VUITTON BODY COPY
+========================================================= */
+
+.lv-body-section{
+  width:min(100% - 40px,760px);
+
+  margin:0 auto;
+
+  padding:3.4rem 0 3.7rem;
 
   border-bottom:.5px solid var(--rule);
 }
 
-.lv-heading{
-  max-width:420px;
-}
-
-.lv-heading .section-title{
-  font-size:31px;
-}
-
-.lv-body{
-  padding-top:1.3rem;
-}
-
-.lv-body p{
+.lv-body-section p{
   margin-bottom:.9rem;
 
-  font-size:15.5px;
-  line-height:1.62;
+  font-size:16.5px;
+  line-height:1.67;
 
   color:#292621;
 }
 
-.lv-body p:last-child{
+.lv-body-section p:last-child{
   margin-bottom:0;
 }
 
@@ -865,30 +893,28 @@ footer{
 
 
 /* =========================================================
-   TABLET
+   SHORT DESKTOP SCREENS
 ========================================================= */
 
-@media(max-width:1050px){
-
-  .article-hero{
-    grid-template-columns:1fr 1fr;
-  }
+@media(min-width:801px) and (max-height:760px){
 
   .hero-copy{
-    padding-left:5vw;
-    padding-right:4vw;
+    padding-top:2.5vh;
+    padding-bottom:2.5vh;
+  }
+
+  .article-meta{
+    margin-bottom:1rem;
   }
 
   .article-title{
-    font-size:clamp(48px,5.5vw,67px);
+    font-size:clamp(43px,4vw,64px);
   }
 
-  .editorial-section{
-    gap:4rem;
-  }
-
-  .lv-copy{
-    gap:4rem;
+  .article-intro{
+    margin-top:1.35rem;
+    font-size:14px;
+    line-height:1.5;
   }
 
 }
@@ -916,14 +942,19 @@ footer{
   /* HERO */
 
   .article-hero{
+    height:auto;
     min-height:auto;
 
     padding-top:56px;
 
     grid-template-columns:1fr;
+
+    overflow:visible;
   }
 
   .hero-copy{
+    height:auto;
+
     padding:3.8rem 7vw 3rem;
   }
 
@@ -936,7 +967,7 @@ footer{
   }
 
   .hero-image{
-    min-height:auto;
+    height:auto;
   }
 
   .hero-image img{
@@ -992,26 +1023,27 @@ footer{
   }
 
 
-  /* LV */
+  /* CULTURAL SPACE */
 
-  .lv-copy{
+  .cultural-heading{
     width:86%;
 
-    grid-template-columns:1fr;
-
-    gap:.5rem;
-
-    padding:3rem 0;
+    padding:3.4rem 4vw 3.6rem;
   }
 
-  .lv-body{
-    padding-top:.4rem;
+  .cultural-heading .section-label{
+    margin-bottom:1.5rem;
+  }
+
+  .cultural-title{
+    font-size:clamp(32px,9vw,46px);
   }
 
 
-  /* OTHER ARTICLE SECTIONS */
+  /* ARTICLE */
 
   .text-section,
+  .lv-body-section,
   .conclusion,
   .sources{
     width:86%;
@@ -1100,9 +1132,6 @@ footer{
 
 <header class="article-hero">
 
-
-  <!-- HERO COPY -->
-
   <div class="hero-copy">
 
     <div class="article-meta">
@@ -1136,8 +1165,6 @@ footer{
   </div>
 
 
-  <!-- HUGE HERO IMAGE -->
-
   <div class="hero-image">
 
     <img
@@ -1150,7 +1177,6 @@ footer{
     </p>
 
   </div>
-
 
 </header>
 
@@ -1200,7 +1226,7 @@ footer{
 
 
 <!-- =====================================================
-     OBJECT
+     THE OBJECT
 ===================================================== -->
 
 <section class="text-section">
@@ -1270,7 +1296,7 @@ footer{
 
 
 <!-- =====================================================
-     JACQUEMUS EDITORIAL SECTION
+     JACQUEMUS
 ===================================================== -->
 
 <section class="editorial-section">
@@ -1392,55 +1418,55 @@ footer{
 
 
 <!-- =====================================================
-     LOUIS VUITTON TEXT
+     FROM STORE TO CULTURAL SPACE
 ===================================================== -->
 
-<section class="lv-copy">
+<section class="cultural-heading">
 
-
-  <div class="lv-heading">
-
-    <div class="section-label">
-      02 · From Store to Cultural Space
-    </div>
-
-    <h2 class="section-title">
-      The boutique is becoming something larger than a point of sale.
-    </h2>
-
+  <div class="section-label">
+    02 · From Store to Cultural Space
   </div>
 
+  <h2 class="cultural-title">
+    The boutique is becoming something<br>
+    larger than a point of sale.
+  </h2>
 
-  <div class="lv-body">
+</section>
 
-    <p>
-      Louis Vuitton provides a different model of world-building.
-      The house has spent decades connecting fashion with travel,
-      architecture and contemporary art, allowing those associations
-      to extend well beyond conventional retail.
-    </p>
 
-    <p>
-      Its cultural ecosystem now includes exhibitions, artistic
-      collaborations, publishing, architectural projects and spaces
-      dedicated to presenting the history and creative vocabulary
-      of the house.
-    </p>
 
-    <p>
-      In these environments, products appear alongside archive material,
-      craftsmanship, images, objects and storytelling. The visitor is
-      not simply shown what Louis Vuitton sells. They are shown how
-      the brand understands itself.
-    </p>
+<!-- =====================================================
+     LOUIS VUITTON BODY
+===================================================== -->
 
-    <p>
-      The distinction between store, exhibition, museum and brand
-      communication begins to dissolve.
-    </p>
+<section class="lv-body-section">
 
-  </div>
+  <p>
+    Louis Vuitton provides a different model of world-building.
+    The house has spent decades connecting fashion with travel,
+    architecture and contemporary art, allowing those associations
+    to extend well beyond conventional retail.
+  </p>
 
+  <p>
+    Its cultural ecosystem now includes exhibitions, artistic
+    collaborations, publishing, architectural projects and spaces
+    dedicated to presenting the history and creative vocabulary
+    of the house.
+  </p>
+
+  <p>
+    In these environments, products appear alongside archive material,
+    craftsmanship, images, objects and storytelling. The visitor is
+    not simply shown what Louis Vuitton sells. They are shown how
+    the brand understands itself.
+  </p>
+
+  <p>
+    The distinction between store, exhibition, museum and brand
+    communication begins to dissolve.
+  </p>
 
 </section>
 
@@ -1546,7 +1572,7 @@ footer{
 
 
 <!-- =====================================================
-     PARTICIPATION STATEMENT
+     PARTICIPATION
 ===================================================== -->
 
 <section class="statement-break">
