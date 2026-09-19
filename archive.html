@@ -12,7 +12,7 @@
 <style>
 
 /* =========================================================
-   BASE
+   RESET + VARIABLES
 ========================================================= */
 
 *{
@@ -23,14 +23,14 @@
 
 :root{
   --cream:#faf8f4;
-  --paper:#f7f3eb;
-  --off:#f1ede4;
-  --ink:#171512;
-  --muted:#716a64;
-  --rule:#d8d4cc;
+  --paper:#f6f1e8;
+  --off:#f2eee7;
+  --ink:#181512;
+  --muted:#6e6761;
+  --rule:#d8d2c8;
   --accent:#b89a7a;
-  --pink:#d75b72;
-  --red:#a92d2d;
+  --pink:#df7083;
+  --red:#a22d2a;
   --teal:#05242b;
 }
 
@@ -43,9 +43,9 @@ body{
   color:var(--ink);
   font-family:'EB Garamond',Georgia,serif;
   font-size:16px;
-  line-height:1.62;
-  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 
 img{
@@ -67,45 +67,45 @@ nav{
   top:0;
   left:0;
   right:0;
-  z-index:100;
+  z-index:1000;
 
   height:56px;
+
+  padding:0 4.6vw;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 5vw;
+  background:rgba(250,248,244,.96);
 
-  background:rgba(250,248,244,.95);
-
-  backdrop-filter:blur(7px);
-  -webkit-backdrop-filter:blur(7px);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
 
   border-bottom:.5px solid var(--rule);
 }
 
 .nav-logo{
   font-family:'Cormorant Garamond',serif;
-  font-size:12px;
-  letter-spacing:.22em;
+  font-size:11px;
+  letter-spacing:.18em;
   text-transform:uppercase;
   text-decoration:none;
 }
 
 .nav-links{
   display:flex;
-  gap:28px;
+  align-items:center;
+  gap:27px;
 }
 
 .nav-links a{
   font-family:'Cormorant Garamond',serif;
-  font-size:11px;
+  font-size:9px;
   letter-spacing:.18em;
   text-transform:uppercase;
-
-  color:var(--muted);
   text-decoration:none;
+  color:#625b55;
 }
 
 .nav-links a:hover,
@@ -115,90 +115,82 @@ nav{
 
 
 /* =========================================================
-   HERO — COLLAGE
+   HERO
 ========================================================= */
 
-.archive-hero{
+.cabinet-hero{
   position:relative;
 
   height:calc(100vh - 56px);
   min-height:690px;
+  max-height:930px;
 
   margin-top:56px;
 
   overflow:hidden;
 
   background:
-    radial-gradient(circle at 20% 30%, rgba(184,154,122,.06), transparent 25%),
-    radial-gradient(circle at 75% 50%, rgba(215,91,114,.04), transparent 28%),
-    var(--paper);
+    radial-gradient(circle at 22% 26%,rgba(169,139,107,.08),transparent 27%),
+    radial-gradient(circle at 76% 68%,rgba(177,148,119,.07),transparent 30%),
+    #f7f3eb;
 
-  border-bottom:.5px solid var(--rule);
+  border-bottom:.5px solid #cfc8bd;
 }
 
 
 /* paper texture */
 
-.archive-hero::before{
+.cabinet-hero::before{
   content:"";
-
   position:absolute;
   inset:0;
+  z-index:1;
 
-  opacity:.28;
   pointer-events:none;
 
+  opacity:.28;
+
   background-image:
-    linear-gradient(rgba(80,65,50,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(80,65,50,.025) 1px, transparent 1px);
-
-  background-size:4px 4px;
-
-  mix-blend-mode:multiply;
+    repeating-linear-gradient(
+      0deg,
+      rgba(50,40,30,.022) 0,
+      rgba(50,40,30,.022) 1px,
+      transparent 1px,
+      transparent 4px
+    );
 }
 
 
 /* =========================================================
-   HERO MAIN TITLE
+   HERO CENTER TYPOGRAPHY
 ========================================================= */
 
-.hero-title-wrap{
+.hero-center{
   position:absolute;
 
   left:50%;
-  top:49%;
+  top:48%;
+
+  width:min(49vw,760px);
 
   transform:translate(-50%,-50%);
 
-  width:min(62vw,850px);
-
-  z-index:20;
+  z-index:30;
 
   text-align:center;
-}
-
-.hero-kicker{
-  margin-bottom:1.4rem;
-
-  font-family:'Cormorant Garamond',serif;
-  font-size:9px;
-
-  letter-spacing:.32em;
-  text-transform:uppercase;
-
-  color:var(--muted);
 }
 
 .hero-title{
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(85px,10.5vw,155px);
+  font-size:clamp(83px,9.4vw,146px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:.68;
-  letter-spacing:-.065em;
+
+  letter-spacing:-.067em;
 }
 
 .hero-title span{
@@ -206,428 +198,412 @@ nav{
 }
 
 .hero-title .archive-line{
-  margin-top:.32em;
+  margin-top:.37em;
 
-  font-size:.55em;
-  line-height:.8;
+  font-size:.52em;
+
+  line-height:.9;
+
+  letter-spacing:-.045em;
 }
 
-.hero-description{
-  margin:3rem auto 0;
+.hero-subtitle{
+  margin-top:3.1rem;
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:11px;
-  letter-spacing:.3em;
-  text-transform:uppercase;
+  font-size:10px;
 
   line-height:1.7;
-}
 
+  letter-spacing:.35em;
 
-/* =========================================================
-   COLLAGE IMAGES
-========================================================= */
-
-.collage-img{
-  position:absolute;
-
-  overflow:hidden;
-
-  z-index:4;
-
-  background:#ddd7ce;
-
-  box-shadow:0 7px 20px rgba(45,35,25,.09);
-}
-
-.collage-img img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  filter:saturate(.78) contrast(.96);
-}
-
-
-/* left top */
-
-.collage-a{
-  left:8vw;
-  top:8vh;
-
-  width:16vw;
-  height:25vh;
-
-  transform:rotate(-5deg);
-}
-
-.collage-a img{
-  object-position:center top;
-}
-
-
-/* left lower */
-
-.collage-b{
-  left:3vw;
-  bottom:9vh;
-
-  width:19vw;
-  height:29vh;
-
-  transform:rotate(3deg);
-}
-
-.collage-b img{
-  object-position:center;
-}
-
-
-/* right */
-
-.collage-c{
-  right:5vw;
-  top:13vh;
-
-  width:22vw;
-  height:43vh;
-
-  transform:rotate(2deg);
-}
-
-.collage-c img{
-  object-position:center top;
-}
-
-
-/* tiny */
-
-.collage-d{
-  right:16vw;
-  bottom:6vh;
-
-  width:12vw;
-  height:18vh;
-
-  transform:rotate(-7deg);
-}
-
-.collage-d img{
-  object-position:center;
-}
-
-
-/* =========================================================
-   TAPE
-========================================================= */
-
-.tape{
-  position:absolute;
-
-  z-index:10;
-
-  width:78px;
-  height:25px;
-
-  background:rgba(217,202,169,.55);
-
-  box-shadow:0 1px 2px rgba(0,0,0,.04);
-}
-
-.tape-a{
-  left:7.3vw;
-  top:7vh;
-
-  transform:rotate(-13deg);
-}
-
-.tape-b{
-  left:15vw;
-  bottom:36vh;
-
-  transform:rotate(9deg);
-}
-
-.tape-c{
-  right:18vw;
-  top:12vh;
-
-  transform:rotate(-8deg);
-}
-
-
-/* =========================================================
-   PINK PAPER NOTES
-========================================================= */
-
-.pink-note{
-  position:absolute;
-
-  z-index:14;
-
-  background:var(--pink);
-
-  color:#201b19;
-
-  padding:14px 23px;
-
-  font-family:'Cormorant Garamond',serif;
-  font-size:15px;
-  font-style:italic;
-
-  letter-spacing:.06em;
-
-  box-shadow:0 5px 15px rgba(0,0,0,.06);
-}
-
-.note-top{
-  top:6vh;
-  left:57%;
-
-  transform:rotate(-3deg);
-}
-
-.note-bottom{
-  left:11vw;
-  bottom:3vh;
-
-  width:245px;
-
-  transform:rotate(4deg);
-}
-
-.note-bottom strong{
-  display:block;
-
-  margin-bottom:7px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:24px;
-  font-weight:400;
-  font-style:italic;
-}
-
-.note-bottom small{
-  display:block;
-
-  font-size:9px;
-
-  letter-spacing:.22em;
   text-transform:uppercase;
-
-  line-height:1.7;
 }
 
 
 /* =========================================================
-   HANDWRITTEN NOTES
+   HAND + FLOWER
 ========================================================= */
 
-.hand-note{
+.hero-hand-flower{
   position:absolute;
 
   z-index:15;
 
-  font-family:'Corinthia',cursive;
+  top:-9%;
+  left:18%;
 
-  font-size:clamp(26px,2.4vw,40px);
+  width:25%;
 
-  line-height:.8;
-}
+  max-width:400px;
 
-.hand-left{
-  left:3.5vw;
-  top:9vh;
-
-  width:170px;
-
-  transform:rotate(-8deg);
-}
-
-.hand-right{
-  right:2.5vw;
-  top:42vh;
-
-  width:150px;
-
-  color:var(--red);
-
-  transform:rotate(4deg);
-}
-
-.hand-right{
-  font-size:29px;
-}
-
-
-/* =========================================================
-   SCRIBBLES
-========================================================= */
-
-.scribble{
-  position:absolute;
-
-  z-index:7;
+  transform:rotate(-2deg);
 
   pointer-events:none;
 }
 
-.scribble-one{
-  right:3vw;
-  top:6vh;
 
-  width:165px;
-  height:105px;
+/* =========================================================
+   RIGHT WOMAN
+========================================================= */
 
-  border-top:3px solid var(--ink);
-
-  border-radius:50%;
-
-  transform:rotate(-17deg);
-}
-
-.scribble-one::before,
-.scribble-one::after{
-  content:"";
-
+.hero-woman{
   position:absolute;
 
-  width:155px;
-  height:65px;
+  z-index:13;
 
-  border-top:2px solid var(--ink);
+  right:-1.5%;
+  bottom:-2%;
 
-  border-radius:50%;
-}
+  width:34%;
+  max-width:520px;
 
-.scribble-one::before{
-  top:19px;
-  left:-8px;
-
-  transform:rotate(14deg);
-}
-
-.scribble-one::after{
-  top:40px;
-  left:15px;
-
-  transform:rotate(-12deg);
+  pointer-events:none;
 }
 
 
-.scribble-two{
-  left:31vw;
-  bottom:10vh;
+/* =========================================================
+   STATUE
+========================================================= */
 
-  width:170px;
-  height:30px;
+.hero-statue{
+  position:absolute;
 
-  border-top:3px solid var(--ink);
+  z-index:7;
+
+  left:-4%;
+  bottom:-8%;
+
+  width:21%;
+  max-width:330px;
+
+  transform:rotate(-3deg);
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   VINTAGE PHOTO
+========================================================= */
+
+.hero-vintage-photo{
+  position:absolute;
+
+  z-index:18;
+
+  left:7%;
+  top:29%;
+
+  width:13.5%;
+  max-width:210px;
+
+  transform:rotate(-5deg);
+
+  filter:drop-shadow(0 7px 7px rgba(35,28,20,.13));
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   BOOK
+========================================================= */
+
+.hero-book{
+  position:absolute;
+
+  z-index:20;
+
+  right:-1.5%;
+  bottom:-5%;
+
+  width:18%;
+  max-width:280px;
+
+  transform:rotate(-5deg);
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   SEAL
+========================================================= */
+
+.hero-seal{
+  position:absolute;
+
+  z-index:35;
+
+  right:20%;
+  bottom:-1.5%;
+
+  width:10.5%;
+  max-width:150px;
+
+  transform:rotate(-8deg);
+
+  filter:drop-shadow(0 8px 7px rgba(40,15,10,.22));
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   LEFT HANDWRITING
+========================================================= */
+
+.hero-left-note{
+  position:absolute;
+
+  z-index:25;
+
+  left:4.2%;
+  top:6%;
+
+  width:145px;
+
+  font-family:'Corinthia',cursive;
+
+  font-size:clamp(27px,2.2vw,38px);
+
+  line-height:.76;
 
   transform:rotate(-8deg);
 }
 
-.scribble-two::after{
+
+/* =========================================================
+   TOP PINK NOTE
+========================================================= */
+
+.hero-pink-note{
+  position:absolute;
+
+  z-index:26;
+
+  left:56%;
+  top:5%;
+
+  width:230px;
+
+  padding:16px 23px;
+
+  background:rgba(222,111,131,.84);
+
+  transform:rotate(-6deg);
+
+  box-shadow:0 5px 10px rgba(40,30,20,.05);
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:16px;
+  font-style:italic;
+
+  line-height:1.25;
+
+  letter-spacing:.07em;
+
+  text-align:center;
+}
+
+.hero-pink-note::before{
   content:"";
 
   position:absolute;
 
-  left:20px;
-  top:9px;
+  left:25%;
+  top:-10px;
 
-  width:140px;
+  width:80px;
+  height:18px;
 
-  border-top:2px solid var(--ink);
+  background:rgba(229,215,186,.55);
+
+  transform:rotate(3deg);
+}
+
+
+/* =========================================================
+   RED HAND NOTE
+========================================================= */
+
+.hero-red-note{
+  position:absolute;
+
+  z-index:32;
+
+  right:3.5%;
+  top:44%;
+
+  width:105px;
+
+  font-family:'Corinthia',cursive;
+
+  font-size:25px;
+
+  line-height:.8;
+
+  color:#bd3034;
+
+  transform:rotate(4deg);
+}
+
+
+/* =========================================================
+   LOWER LEFT PINK ARCHIVE CARD
+========================================================= */
+
+.hero-archive-card{
+  position:absolute;
+
+  z-index:28;
+
+  left:8.5%;
+  bottom:2%;
+
+  width:255px;
+
+  padding:18px 23px;
+
+  background:rgba(223,112,131,.9);
+
+  transform:rotate(5deg);
+
+  box-shadow:0 5px 12px rgba(40,30,20,.06);
+}
+
+.archive-card-title{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:24px;
+  font-style:italic;
+
+  line-height:1;
+}
+
+.archive-card-grid{
+  margin-top:13px;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:12px;
+}
+
+.archive-card-grid span{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  line-height:1.8;
+
+  letter-spacing:.23em;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   BLACK SCRIBBLES
+========================================================= */
+
+.hero-star{
+  position:absolute;
+
+  z-index:24;
+
+  left:49.5%;
+  top:6%;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:55px;
 
   transform:rotate(10deg);
 }
 
-
-/* =========================================================
-   STAR
-========================================================= */
-
-.sketch-star{
+.hero-scribble{
   position:absolute;
 
-  top:8vh;
-  left:49%;
+  z-index:23;
 
-  z-index:15;
+  right:1.5%;
+  top:2%;
 
-  font-family:'Cormorant Garamond',serif;
+  width:150px;
+  height:90px;
 
-  font-size:58px;
-  font-weight:300;
+  border-top:3px solid var(--ink);
+
+  border-radius:50%;
+
+  transform:rotate(-15deg);
+}
+
+.hero-scribble::before,
+.hero-scribble::after{
+  content:"";
+
+  position:absolute;
+
+  border-top:2px solid var(--ink);
+
+  border-radius:50%;
+}
+
+.hero-scribble::before{
+  width:155px;
+  height:60px;
+
+  left:-7px;
+  top:20px;
 
   transform:rotate(15deg);
 }
 
+.hero-scribble::after{
+  width:130px;
+  height:50px;
 
-/* =========================================================
-   RED CIRCLE
-========================================================= */
+  left:16px;
+  top:40px;
 
-.red-circle{
-  position:absolute;
-
-  left:19vw;
-  top:10vh;
-
-  z-index:2;
-
-  width:145px;
-  height:145px;
-
-  border-radius:50%;
-
-  background:rgba(200,43,65,.9);
-
-  filter:saturate(.85);
-
-  transform:rotate(-10deg);
+  transform:rotate(-11deg);
 }
 
 
-/* =========================================================
-   WAX STAMP
-========================================================= */
-
-.wax-stamp{
+.hero-underline{
   position:absolute;
 
-  right:24vw;
-  bottom:2.8vh;
+  z-index:24;
 
-  z-index:18;
+  left:42%;
+  bottom:11%;
 
-  width:95px;
-  height:95px;
+  width:150px;
 
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:#9c2f2a;
-
-  border:6px double rgba(72,16,15,.35);
-
-  box-shadow:
-    0 6px 15px rgba(0,0,0,.22),
-    inset 0 0 0 3px rgba(255,255,255,.08);
+  border-top:3px solid var(--ink);
 
   transform:rotate(-8deg);
+}
 
-  font-family:'Corinthia',cursive;
+.hero-underline::after{
+  content:"";
 
-  font-size:38px;
+  position:absolute;
 
-  color:rgba(45,10,8,.65);
+  width:130px;
+
+  top:9px;
+  left:16px;
+
+  border-top:2px solid var(--ink);
+
+  transform:rotate(9deg);
 }
 
 
@@ -638,23 +614,24 @@ nav{
 .hero-bottom{
   position:absolute;
 
+  z-index:50;
+
   left:0;
   right:0;
   bottom:0;
 
-  z-index:25;
+  height:48px;
 
-  height:54px;
-
-  padding:0 5vw;
+  padding:0 4.5vw;
 
   display:flex;
   align-items:center;
-  gap:24px;
 
-  background:rgba(250,248,244,.94);
+  gap:20px;
 
-  border-top:.5px solid var(--rule);
+  background:rgba(250,248,244,.96);
+
+  border-top:.5px solid #cfc8bd;
 }
 
 .hero-bottom span{
@@ -662,32 +639,320 @@ nav{
 
   font-family:'Cormorant Garamond',serif;
 
-  font-size:9px;
-  letter-spacing:.3em;
+  font-size:8px;
+
+  letter-spacing:.34em;
+
   text-transform:uppercase;
 
-  color:var(--muted);
+  color:#6e665f;
 }
 
-.hero-line{
+.hero-bottom-line{
   flex:1;
 
   height:.5px;
 
-  background:var(--rule);
+  background:#bdb6ac;
 }
 
 
 /* =========================================================
-   ARCHIVE OBJECTS
+   001 — MARGIELA
+========================================================= */
+
+.tabi-section{
+  position:relative;
+
+  min-height:830px;
+
+  padding:5.2rem 7vw 4.5rem;
+
+  overflow:hidden;
+
+  text-align:center;
+
+  background:
+    radial-gradient(circle at 50% 42%,rgba(255,255,255,.7),transparent 38%),
+    var(--cream);
+
+  border-bottom:.5px solid var(--rule);
+}
+
+
+/* heading */
+
+.tabi-heading{
+  position:relative;
+  z-index:20;
+}
+
+.object-number{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  letter-spacing:.35em;
+
+  color:#9e8a74;
+}
+
+.object-house{
+  margin-top:1rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:12px;
+
+  letter-spacing:.4em;
+
+  text-transform:uppercase;
+}
+
+.object-title{
+  margin-top:.4rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(45px,4.8vw,68px);
+
+  font-weight:300;
+  font-style:italic;
+
+  line-height:.95;
+
+  letter-spacing:-.04em;
+}
+
+.object-meta{
+  margin-top:.9rem;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  letter-spacing:.34em;
+
+  color:#716a63;
+}
+
+
+/* main boots */
+
+.tabi-main{
+  position:relative;
+
+  z-index:15;
+
+  width:min(27vw,390px);
+
+  height:315px;
+
+  margin:1.5rem auto 1.2rem;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.tabi-main img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  filter:drop-shadow(0 13px 11px rgba(70,60,50,.08));
+}
+
+
+/* vintage photo left */
+
+.tabi-vintage{
+  position:absolute;
+
+  z-index:5;
+
+  left:-2%;
+  bottom:2%;
+
+  width:15.5%;
+  max-width:240px;
+
+  transform:rotate(-1deg);
+
+  opacity:.73;
+
+  filter:grayscale(1);
+}
+
+
+/* recognition note */
+
+.tabi-recognition{
+  position:absolute;
+
+  z-index:12;
+
+  left:13%;
+  top:37%;
+
+  width:14%;
+  max-width:210px;
+
+  transform:rotate(-4deg);
+
+  filter:drop-shadow(0 5px 5px rgba(50,40,30,.05));
+}
+
+
+/* sketch right */
+
+.tabi-sketch{
+  position:absolute;
+
+  z-index:6;
+
+  right:-1.5%;
+  top:27%;
+
+  width:24%;
+  max-width:360px;
+
+  opacity:.34;
+
+  transform:rotate(2deg);
+}
+
+
+/* circle handwritten annotation */
+
+.tabi-circle-note{
+  position:absolute;
+
+  z-index:11;
+
+  right:18%;
+  top:55%;
+
+  width:185px;
+  height:110px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(76,68,60,.3);
+
+  border-radius:50%;
+
+  transform:rotate(-10deg);
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:11px;
+  font-style:italic;
+
+  line-height:1.45;
+
+  letter-spacing:.06em;
+
+  color:#655d56;
+}
+
+.tabi-circle-note::after{
+  content:"";
+
+  position:absolute;
+
+  right:-22px;
+  bottom:6px;
+
+  width:45px;
+
+  border-top:1px solid rgba(76,68,60,.35);
+
+  transform:rotate(25deg);
+}
+
+
+/* Margiela signature */
+
+.tabi-signature{
+  position:absolute;
+
+  z-index:10;
+
+  right:7%;
+  bottom:6%;
+
+  font-family:'Corinthia',cursive;
+
+  font-size:31px;
+
+  line-height:.7;
+
+  color:#887f76;
+
+  transform:rotate(-10deg);
+}
+
+
+/* body */
+
+.tabi-copy{
+  position:relative;
+
+  z-index:20;
+
+  max-width:600px;
+
+  margin:0 auto;
+
+  font-family:'EB Garamond',serif;
+
+  font-size:15.5px;
+
+  line-height:1.55;
+
+  color:#37312d;
+}
+
+.tabi-rule{
+  width:55px;
+  height:.5px;
+
+  margin:1.4rem auto;
+
+  background:#8c837a;
+}
+
+.tabi-tags{
+  position:relative;
+
+  z-index:20;
+
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:8px;
+
+  letter-spacing:.4em;
+
+  text-transform:uppercase;
+
+  color:#a2968a;
+}
+
+
+/* =========================================================
+   002–009 SHARED ARCHIVE DESIGN
 ========================================================= */
 
 .archive-object{
   position:relative;
 
-  min-height:860px;
+  min-height:720px;
 
-  padding:7.5rem 7vw;
+  padding:5.5rem 7vw;
 
   display:flex;
   flex-direction:column;
@@ -696,287 +961,97 @@ nav{
 
   text-align:center;
 
-  border-bottom:.5px solid var(--rule);
-
   overflow:hidden;
+
+  background:var(--cream);
+
+  border-bottom:.5px solid var(--rule);
 }
 
-.archive-object:nth-of-type(even){
-  background:#f8f5ef;
+.archive-object.alt{
+  background:#f7f4ee;
 }
 
+.archive-object .object-image{
+  width:min(37vw,510px);
+  height:340px;
 
-/* =========================================================
-   OBJECT TYPOGRAPHY
-========================================================= */
-
-.object-number{
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:9px;
-  letter-spacing:.31em;
-
-  text-transform:uppercase;
-
-  color:var(--accent);
-}
-
-.object-house{
-  margin-top:1.15rem;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:11px;
-  letter-spacing:.35em;
-
-  text-transform:uppercase;
-
-  color:var(--ink);
-}
-
-.object-title{
-  margin-top:.45rem;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:clamp(44px,5vw,70px);
-
-  font-weight:300;
-  font-style:italic;
-
-  line-height:.95;
-  letter-spacing:-.035em;
-}
-
-.object-meta{
-  margin-top:1.1rem;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:9px;
-  letter-spacing:.3em;
-
-  text-transform:uppercase;
-
-  color:#8e867f;
-}
-
-
-/* =========================================================
-   OBJECT IMAGE
-========================================================= */
-
-.object-image{
-  position:relative;
-
-  width:min(42vw,500px);
-  height:430px;
-
-  margin:3rem auto 2.7rem;
+  margin:2rem auto 1.8rem;
 
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
-.object-image img{
+.archive-object .object-image img{
   width:100%;
   height:100%;
 
   object-fit:contain;
 }
 
-
-/* =========================================================
-   OBJECT TEXT
-========================================================= */
-
-.object-copy{
-  max-width:650px;
+.archive-object .object-copy{
+  max-width:610px;
 
   margin:0 auto;
 
-  font-size:16px;
-  line-height:1.68;
+  font-size:15.5px;
 
-  color:#332f2a;
+  line-height:1.57;
+
+  color:#37312d;
 }
 
-.object-theme{
-  display:block;
+.archive-object .object-rule{
+  width:55px;
+  height:.5px;
 
-  margin-top:2rem;
+  margin:1.45rem auto;
 
+  background:#8d857d;
+}
+
+.archive-object .object-theme{
   font-family:'Cormorant Garamond',serif;
 
   font-size:8px;
-  letter-spacing:.36em;
+
+  letter-spacing:.38em;
 
   text-transform:uppercase;
 
-  color:#9a8c7d;
+  color:#9e9389;
 }
 
 
-/* =========================================================
-   SMALL ARCHIVE NOTES
-========================================================= */
+/* small editorial annotations */
 
-.archive-note{
-  position:absolute;
-
-  padding:15px 18px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:12px;
-  font-style:italic;
-
-  line-height:1.4;
-
-  color:#47413c;
-
-  background:#f2ede3;
-
-  transform:rotate(-4deg);
-}
-
-.archive-note.left{
-  left:10vw;
-  top:45%;
-}
-
-.archive-note.right{
-  right:9vw;
-  top:40%;
-
-  transform:rotate(5deg);
-}
-
-
-/* =========================================================
-   HAND ANNOTATIONS
-========================================================= */
-
-.object-hand{
+.side-note{
   position:absolute;
 
   font-family:'Corinthia',cursive;
 
-  font-size:31px;
+  font-size:30px;
 
-  line-height:.85;
+  line-height:.8;
 
-  color:#716a64;
+  color:#766e67;
 
-  opacity:.7;
+  opacity:.72;
 }
 
-.object-hand.left{
-  left:7vw;
-  bottom:10vh;
+.side-note.left{
+  left:8%;
+  top:52%;
 
   transform:rotate(-8deg);
 }
 
-.object-hand.right{
-  right:7vw;
-  bottom:12vh;
+.side-note.right{
+  right:8%;
+  top:51%;
 
   transform:rotate(7deg);
-}
-
-
-/* =========================================================
-   001 — TABI
-========================================================= */
-
-.tabi-object{
-  background:var(--cream);
-}
-
-.tabi-object .object-image{
-  width:min(38vw,450px);
-}
-
-
-/* =========================================================
-   002 — DIOR
-========================================================= */
-
-.saddle-object .object-image{
-  width:min(52vw,650px);
-  height:420px;
-}
-
-
-/* =========================================================
-   003 — MUGLER
-========================================================= */
-
-.mugler-object .object-image{
-  width:min(36vw,430px);
-  height:500px;
-}
-
-
-/* =========================================================
-   004 — McQUEEN
-========================================================= */
-
-.mcqueen-object .object-image{
-  width:min(40vw,480px);
-  height:480px;
-}
-
-
-/* =========================================================
-   005 — CDG
-========================================================= */
-
-.cdg-object .object-image{
-  width:min(47vw,570px);
-  height:470px;
-}
-
-
-/* =========================================================
-   006 — SCHIAPARELLI
-========================================================= */
-
-.schiaparelli-object .object-image{
-  width:min(38vw,450px);
-  height:500px;
-}
-
-
-/* =========================================================
-   007 — BIRKIN
-========================================================= */
-
-.birkin-object .object-image{
-  width:min(48vw,580px);
-  height:420px;
-}
-
-
-/* =========================================================
-   008 — BOURDIN
-========================================================= */
-
-.bourdin-object .object-image{
-  width:min(50vw,620px);
-  height:440px;
-}
-
-
-/* =========================================================
-   009 — CARTIER
-========================================================= */
-
-.cartier-object .object-image{
-  width:min(48vw,580px);
-  height:430px;
 }
 
 
@@ -985,7 +1060,7 @@ nav{
 ========================================================= */
 
 .archive-closing{
-  padding:9rem 8vw;
+  padding:8rem 8vw;
 
   text-align:center;
 
@@ -995,12 +1070,13 @@ nav{
 }
 
 .closing-kicker{
-  margin-bottom:2rem;
+  margin-bottom:1.7rem;
 
   font-family:'Cormorant Garamond',serif;
 
   font-size:9px;
-  letter-spacing:.33em;
+
+  letter-spacing:.34em;
 
   text-transform:uppercase;
 
@@ -1010,32 +1086,34 @@ nav{
 .closing-title{
   font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(55px,7vw,100px);
+  font-size:clamp(54px,7vw,95px);
 
   font-weight:300;
   font-style:italic;
 
   line-height:.9;
+
   letter-spacing:-.045em;
 }
 
 .closing-copy{
-  max-width:560px;
+  max-width:550px;
 
-  margin:2.5rem auto 0;
+  margin:2.3rem auto 0;
 
   font-size:15px;
-  line-height:1.7;
+
+  line-height:1.65;
 
   color:var(--muted);
 }
 
 .closing-sign{
-  margin-top:2.5rem;
+  margin-top:2rem;
 
   font-family:'Corinthia',cursive;
 
-  font-size:35px;
+  font-size:38px;
 
   color:var(--accent);
 
@@ -1044,7 +1122,7 @@ nav{
 
 
 /* =========================================================
-   AD STAMP
+   AD SPINNING STAMP
 ========================================================= */
 
 .logo-stamp{
@@ -1078,6 +1156,7 @@ nav{
 .stamp-spin svg{
   width:100%;
   height:100%;
+
   overflow:visible;
 }
 
@@ -1094,7 +1173,7 @@ nav{
 }
 
 @keyframes spinStamp{
-  from{transform:rotate(0);}
+  from{transform:rotate(0deg);}
   to{transform:rotate(360deg);}
 }
 
@@ -1110,9 +1189,11 @@ footer{
   grid-template-columns:1.3fr 1fr;
 
   gap:4rem;
+
   align-items:end;
 
   background:var(--teal);
+
   color:var(--cream);
 }
 
@@ -1122,6 +1203,7 @@ footer{
   font-family:'Cormorant Garamond',serif;
 
   font-size:13px;
+
   letter-spacing:.22em;
 
   text-transform:uppercase;
@@ -1133,6 +1215,7 @@ footer{
   font-family:'Cormorant Garamond',serif;
 
   font-size:15px;
+
   font-weight:300;
   font-style:italic;
 
@@ -1144,6 +1227,7 @@ footer{
 .ft-right{
   display:flex;
   flex-direction:column;
+
   align-items:flex-end;
 
   gap:8px;
@@ -1153,13 +1237,14 @@ footer{
   font-family:'Cormorant Garamond',serif;
 
   font-size:11px;
+
   letter-spacing:.18em;
 
   text-transform:uppercase;
 
-  color:rgba(250,248,244,.55);
-
   text-decoration:none;
+
+  color:rgba(250,248,244,.55);
 }
 
 .ft-copy{
@@ -1168,11 +1253,37 @@ footer{
   font-family:'Cormorant Garamond',serif;
 
   font-size:9px;
+
   letter-spacing:.24em;
 
   text-transform:uppercase;
 
   color:rgba(250,248,244,.25);
+}
+
+
+/* =========================================================
+   SHORTER DESKTOPS
+========================================================= */
+
+@media(min-width:801px) and (max-height:760px){
+
+  .cabinet-hero{
+    min-height:640px;
+  }
+
+  .hero-center{
+    top:47%;
+  }
+
+  .hero-title{
+    font-size:clamp(75px,8.4vw,120px);
+  }
+
+  .hero-subtitle{
+    margin-top:2.5rem;
+  }
+
 }
 
 
@@ -1195,184 +1306,235 @@ footer{
   }
 
 
-  /* HERO */
+  /* hero */
 
-  .archive-hero{
+  .cabinet-hero{
     height:calc(100svh - 56px);
+
     min-height:680px;
+    max-height:none;
   }
 
-  .hero-title-wrap{
+  .hero-center{
+    top:47%;
+
     width:88vw;
-    top:48%;
   }
 
   .hero-title{
-    font-size:clamp(65px,21vw,105px);
+    font-size:clamp(64px,20vw,95px);
   }
 
-  .hero-description{
-    margin-top:2.4rem;
+  .hero-subtitle{
+    margin-top:2.5rem;
 
     font-size:8px;
-    letter-spacing:.23em;
+
+    letter-spacing:.25em;
   }
 
 
-  .collage-a{
-    left:3vw;
-    top:10vh;
+  .hero-hand-flower{
+    top:-3%;
+    left:11%;
 
-    width:29vw;
-    height:20vh;
+    width:38%;
   }
 
-  .collage-b{
-    left:-5vw;
-    bottom:10vh;
+  .hero-woman{
+    right:-11%;
+    bottom:2%;
 
-    width:34vw;
-    height:23vh;
+    width:53%;
+
+    opacity:.9;
   }
 
-  .collage-c{
-    right:-5vw;
-    top:12vh;
+  .hero-statue{
+    left:-11%;
+    bottom:0;
 
-    width:34vw;
-    height:28vh;
+    width:36%;
   }
 
-  .collage-d{
-    right:4vw;
-    bottom:9vh;
+  .hero-vintage-photo{
+    left:4%;
+    top:27%;
 
-    width:23vw;
-    height:15vh;
+    width:23%;
   }
 
+  .hero-book{
+    right:-8%;
+    bottom:-1%;
 
-  .red-circle{
-    left:18vw;
-    top:8vh;
+    width:31%;
+  }
+
+  .hero-seal{
+    right:23%;
+    bottom:2%;
+
+    width:18%;
+  }
+
+  .hero-left-note{
+    left:2%;
+    top:5%;
 
     width:95px;
-    height:95px;
+
+    font-size:24px;
   }
 
+  .hero-pink-note{
+    left:55%;
+    top:4%;
 
-  .pink-note{
+    width:145px;
+
+    padding:10px 12px;
+
     font-size:11px;
-    padding:10px 14px;
   }
 
-  .note-top{
-    top:5vh;
-    left:49%;
-  }
-
-  .note-bottom{
-    left:8vw;
-    bottom:5vh;
-
-    width:170px;
-  }
-
-  .note-bottom strong{
-    font-size:18px;
-  }
-
-
-  .hand-left{
+  .hero-red-note{
     display:none;
   }
 
-  .hand-right{
-    right:1vw;
-    top:45vh;
+  .hero-archive-card{
+    left:5%;
+    bottom:2%;
+
+    width:170px;
+
+    padding:11px 14px;
+  }
+
+  .archive-card-title{
+    font-size:18px;
+  }
+
+  .archive-card-grid span{
+    font-size:6px;
+  }
+
+  .hero-star{
+    left:48%;
+    top:8%;
+
+    font-size:38px;
+  }
+
+  .hero-scribble{
+    right:-4%;
 
     width:90px;
-
-    font-size:21px;
   }
 
+  .hero-underline{
+    left:37%;
+    bottom:14%;
 
-  .wax-stamp{
-    right:21vw;
-    bottom:4vh;
-
-    width:68px;
-    height:68px;
-
-    font-size:28px;
-  }
-
-
-  .sketch-star{
-    top:8vh;
-    left:46%;
-
-    font-size:40px;
-  }
-
-
-  .scribble-one{
     width:90px;
-    right:0;
   }
 
-  .scribble-two{
-    width:100px;
-    left:35vw;
+  .hero-bottom{
+    gap:9px;
+
+    padding:0 3vw;
+  }
+
+  .hero-bottom span{
+    font-size:6px;
+
+    letter-spacing:.2em;
   }
 
 
-  /* ARCHIVE ITEMS */
+  /* Margiela */
+
+  .tabi-section{
+    min-height:760px;
+
+    padding:4.5rem 6vw;
+  }
+
+  .tabi-main{
+    width:min(55vw,340px);
+
+    height:280px;
+
+    margin-top:1.3rem;
+  }
+
+  .tabi-vintage{
+    left:-8%;
+    bottom:2%;
+
+    width:29%;
+
+    opacity:.5;
+  }
+
+  .tabi-recognition{
+    left:3%;
+    top:41%;
+
+    width:25%;
+  }
+
+  .tabi-sketch{
+    right:-12%;
+    top:33%;
+
+    width:42%;
+
+    opacity:.23;
+  }
+
+  .tabi-circle-note{
+    display:none;
+  }
+
+  .tabi-signature{
+    right:3%;
+    bottom:4%;
+
+    font-size:24px;
+  }
+
+  .tabi-copy{
+    max-width:88%;
+
+    font-size:14.5px;
+  }
+
+
+  /* rest */
 
   .archive-object{
     min-height:auto;
 
-    padding:6rem 7vw;
+    padding:5.5rem 7vw;
+  }
+
+  .archive-object .object-image{
+    width:min(77vw,480px);
+
+    height:300px;
   }
 
   .object-title{
-    font-size:clamp(42px,12vw,60px);
+    font-size:clamp(42px,12vw,58px);
   }
 
-  .object-image,
-  .tabi-object .object-image,
-  .saddle-object .object-image,
-  .mugler-object .object-image,
-  .mcqueen-object .object-image,
-  .cdg-object .object-image,
-  .schiaparelli-object .object-image,
-  .birkin-object .object-image,
-  .bourdin-object .object-image,
-  .cartier-object .object-image{
-    width:min(80vw,500px);
-    height:360px;
-
-    margin:2.5rem auto;
-  }
-
-  .object-copy{
-    font-size:15px;
-  }
-
-  .archive-note,
-  .object-hand{
+  .side-note{
     display:none;
   }
 
 
-  /* CLOSING */
-
-  .archive-closing{
-    padding:7rem 7vw;
-  }
-
-
-  /* FOOTER */
+  /* footer */
 
   footer{
     grid-template-columns:1fr;
@@ -1405,7 +1567,7 @@ footer{
 
 
 <!-- =====================================================
-     NAVIGATION
+     NAV
 ===================================================== -->
 
 <nav>
@@ -1443,99 +1605,66 @@ footer{
 
 
 <!-- =====================================================
-     COLLAGE HERO
+     HERO — THE CABINET
 ===================================================== -->
 
-<header class="archive-hero">
+<header class="cabinet-hero">
 
 
-  <!-- RED PAPER CIRCLE -->
+  <!-- LEFT COLLAGE -->
 
-  <div class="red-circle"></div>
+  <img
+    src="cabinet-statue.png"
+    class="hero-statue"
+    alt=""
+  >
 
-
-  <!-- COLLAGE IMAGE 1 -->
-
-  <div class="collage-img collage-a">
-
-    <img
-      src="archive-mugler.jpg"
-      alt=""
-    >
-
-  </div>
+  <img
+    src="cabinet-vintage-photo.png"
+    class="hero-vintage-photo"
+    alt=""
+  >
 
 
-  <!-- COLLAGE IMAGE 2 -->
+  <!-- HAND + FLOWER -->
 
-  <div class="collage-img collage-b">
-
-    <img
-      src="archive-cdg.jpg"
-      alt=""
-    >
-
-  </div>
+  <img
+    src="cabinet-hand-flower.png"
+    class="hero-hand-flower"
+    alt=""
+  >
 
 
-  <!-- COLLAGE IMAGE 3 -->
+  <!-- RIGHT FIGURE -->
 
-  <div class="collage-img collage-c">
-
-    <img
-      src="archive-bourdin.jpg"
-      alt=""
-    >
-
-  </div>
+  <img
+    src="cabinet-woman.png"
+    class="hero-woman"
+    alt=""
+  >
 
 
-  <!-- COLLAGE IMAGE 4 -->
+  <!-- BOOK -->
 
-  <div class="collage-img collage-d">
-
-    <img
-      src="archive-cartier.jpg"
-      alt=""
-    >
-
-  </div>
+  <img
+    src="cabinet-book.png"
+    class="hero-book"
+    alt=""
+  >
 
 
-  <!-- TAPE -->
+  <!-- WAX SEAL -->
 
-  <div class="tape tape-a"></div>
-  <div class="tape tape-b"></div>
-  <div class="tape tape-c"></div>
-
-
-  <!-- PINK NOTES -->
-
-  <div class="pink-note note-top">
-    A personal<br>
-    fashion archive
-  </div>
+  <img
+    src="cabinet-seal.png"
+    class="hero-seal"
+    alt=""
+  >
 
 
-  <div class="pink-note note-bottom">
+  <!-- HANDWRITTEN LEFT -->
 
-    <strong>
-      AD! Archive
-    </strong>
-
-    <small>
-      001 — ∞<br>
-      Barcelona<br>
-      Paris<br>
-      Beyond
-    </small>
-
-  </div>
-
-
-  <!-- HANDWRITTEN NOTES -->
-
-  <div class="hand-note hand-left">
+  <div class="hero-left-note">
     Objects,<br>
     ideas,<br>
     obsessions<br>
@@ -1544,7 +1673,17 @@ footer{
   </div>
 
 
-  <div class="hand-note hand-right">
+  <!-- PINK NOTE -->
+
+  <div class="hero-pink-note">
+    A PERSONAL<br>
+    FASHION ARCHIVE
+  </div>
+
+
+  <!-- RED NOTE -->
+
+  <div class="hero-red-note">
     Fashion<br>
     as a way<br>
     of keeping<br>
@@ -1554,24 +1693,16 @@ footer{
 
   <!-- SCRIBBLES -->
 
-  <div class="scribble scribble-one"></div>
-  <div class="scribble scribble-two"></div>
-
-
-  <!-- STAR -->
-
-  <div class="sketch-star">
+  <div class="hero-star">
     ✳
   </div>
+
+  <div class="hero-scribble"></div>
 
 
   <!-- MAIN TITLE -->
 
-  <div class="hero-title-wrap">
-
-    <div class="hero-kicker">
-      Anaïs Doroshina · Selected Objects
-    </div>
+  <div class="hero-center">
 
     <h1 class="hero-title">
 
@@ -1585,8 +1716,7 @@ footer{
 
     </h1>
 
-
-    <p class="hero-description">
+    <p class="hero-subtitle">
       Not a history of fashion,<br>
       but a personal one.
     </p>
@@ -1594,14 +1724,37 @@ footer{
   </div>
 
 
-  <!-- WAX STAMP -->
+  <!-- LOWER LEFT ARCHIVE CARD -->
 
-  <div class="wax-stamp">
-    AD
+  <div class="hero-archive-card">
+
+    <div class="archive-card-title">
+      AD! <small>Archive</small>
+    </div>
+
+    <div class="archive-card-grid">
+
+      <span>
+        001 — ∞
+      </span>
+
+      <span>
+        Barcelona<br>
+        Paris<br>
+        Beyond
+      </span>
+
+    </div>
+
   </div>
 
 
-  <!-- BOTTOM -->
+  <!-- LOWER SCRIBBLE -->
+
+  <div class="hero-underline"></div>
+
+
+  <!-- BOTTOM BAR -->
 
   <div class="hero-bottom">
 
@@ -1609,13 +1762,13 @@ footer{
       Scroll
     </span>
 
-    <div class="hero-line"></div>
+    <div class="hero-bottom-line"></div>
 
     <span>
       Enter the Archive
     </span>
 
-    <div class="hero-line"></div>
+    <div class="hero-bottom-line"></div>
 
     <span>
       001 — 009
@@ -1631,70 +1784,115 @@ footer{
      001 — MAISON MARGIELA
 ===================================================== -->
 
-<section class="archive-object tabi-object">
+<section class="tabi-section">
 
-  <span class="object-number">
-    001
-  </span>
 
-  <div class="object-house">
-    Maison Margiela
+  <!-- HEADING -->
+
+  <div class="tabi-heading">
+
+    <span class="object-number">
+      001
+    </span>
+
+    <div class="object-house">
+      Maison Margiela
+    </div>
+
+    <h2 class="object-title">
+      Tabi Boot
+    </h2>
+
+    <div class="object-meta">
+      1989
+    </div>
+
   </div>
 
-  <h2 class="object-title">
-    Tabi Boot
-  </h2>
 
-  <div class="object-meta">
-    1989
-  </div>
+  <!-- LEFT ARCHIVAL PHOTO -->
+
+  <img
+    src="tabi-vintage-photo.png"
+    class="tabi-vintage"
+    alt=""
+  >
 
 
-  <div class="object-image">
+  <!-- RECOGNITION NOTE -->
+
+  <img
+    src="tabi-recognition-note.png"
+    class="tabi-recognition"
+    alt="Recognition, Form, Anti-Luxury"
+  >
+
+
+  <!-- MAIN TABI -->
+
+  <div class="tabi-main">
 
     <img
-      src="archive-tabi.jpg"
-      alt="Maison Margiela Tabi Boot"
+      src="tabi-boots.png"
+      alt="Maison Margiela Tabi boots"
     >
 
   </div>
 
 
-  <div class="archive-note left">
-    Recognition<br>
-    Form<br>
-    Anti-luxury
+  <!-- RIGHT SKETCH -->
+
+  <img
+    src="tabi-sketch.png"
+    class="tabi-sketch"
+    alt=""
+  >
+
+
+  <!-- CIRCLED NOTE -->
+
+  <div class="tabi-circle-note">
+    AN OBJECT<br>
+    THAT BECAME A<br>
+    LANGUAGE.
   </div>
 
 
-  <div class="object-hand right">
-    An object<br>
-    that became<br>
-    a language.
+  <!-- SIGNATURE -->
+
+  <div class="tabi-signature">
+    Maison<br>
+    Martin<br>
+    Margiela
   </div>
 
 
-  <p class="object-copy">
+  <!-- COPY -->
+
+  <p class="tabi-copy">
     What began as a radical split-toe silhouette became one of
     fashion's most recognizable objects. I love the Tabi because
-    its identity does not depend on a visible logo. The shape
-    itself became the house code.
+    its identity does not depend on a visible logo. The shape itself
+    became the house code.
   </p>
 
 
-  <span class="object-theme">
-    Form · Identity · Anti-Luxury
-  </span>
+  <div class="tabi-rule"></div>
+
+
+  <div class="tabi-tags">
+    Form &nbsp;·&nbsp; Identity &nbsp;·&nbsp; Anti-Luxury
+  </div>
 
 </section>
 
 
 
 <!-- =====================================================
-     002 — DIOR
+     002 — DIOR SADDLE
 ===================================================== -->
 
-<section class="archive-object saddle-object">
+<section class="archive-object alt">
 
   <span class="object-number">
     002
@@ -1713,6 +1911,13 @@ footer{
   </div>
 
 
+  <div class="side-note left">
+    An accessory<br>
+    becomes<br>
+    an icon.
+  </div>
+
+
   <div class="object-image">
 
     <img
@@ -1720,12 +1925,6 @@ footer{
       alt="Archival Dior Saddle Bag"
     >
 
-  </div>
-
-
-  <div class="archive-note right">
-    An accessory<br>
-    becomes an icon.
   </div>
 
 
@@ -1738,9 +1937,12 @@ footer{
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Silhouette · Recognition · Collectibility
-  </span>
+  </div>
 
 </section>
 
@@ -1750,7 +1952,7 @@ footer{
      003 — MUGLER
 ===================================================== -->
 
-<section class="archive-object mugler-object">
+<section class="archive-object">
 
   <span class="object-number">
     003
@@ -1769,20 +1971,20 @@ footer{
   </div>
 
 
+  <div class="side-note right">
+    Part dress.<br>
+    Part creature.<br>
+    Part sculpture.
+  </div>
+
+
   <div class="object-image">
 
     <img
       src="archive-mugler.jpg"
-      alt="Thierry Mugler Chimère Gown"
+      alt="Thierry Mugler Chimère gown"
     >
 
-  </div>
-
-
-  <div class="object-hand left">
-    Part dress.<br>
-    Part creature.<br>
-    Part sculpture.
   </div>
 
 
@@ -1794,19 +1996,22 @@ footer{
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Craftsmanship · Fantasy · Transformation
-  </span>
+  </div>
 
 </section>
 
 
 
 <!-- =====================================================
-     004 — ALEXANDER McQUEEN
+     004 — McQUEEN
 ===================================================== -->
 
-<section class="archive-object mcqueen-object">
+<section class="archive-object alt">
 
   <span class="object-number">
     004
@@ -1825,6 +2030,13 @@ footer{
   </div>
 
 
+  <div class="side-note left">
+    Shoe?<br>
+    Sculpture?<br>
+    Creature?
+  </div>
+
+
   <div class="object-image">
 
     <img
@@ -1832,13 +2044,6 @@ footer{
       alt="Alexander McQueen Armadillo Boot"
     >
 
-  </div>
-
-
-  <div class="archive-note left">
-    Shoe?<br>
-    Sculpture?<br>
-    Creature?
   </div>
 
 
@@ -1850,9 +2055,12 @@ footer{
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Sculpture · Body · Spectacle
-  </span>
+  </div>
 
 </section>
 
@@ -1862,7 +2070,7 @@ footer{
      005 — COMME DES GARÇONS
 ===================================================== -->
 
-<section class="archive-object cdg-object">
+<section class="archive-object">
 
   <span class="object-number">
     005
@@ -1882,6 +2090,13 @@ footer{
   </div>
 
 
+  <div class="side-note right">
+    What if the<br>
+    garment changes<br>
+    the body?
+  </div>
+
+
   <div class="object-image">
 
     <img
@@ -1892,25 +2107,21 @@ footer{
   </div>
 
 
-  <div class="object-hand right">
-    What if the<br>
-    garment changes<br>
-    the body?
-  </div>
-
-
   <p class="object-copy">
     Padding appeared in places fashion traditionally tries to flatten,
-    narrow or conceal. The collection distorted the conventional
-    silhouette and forced the viewer to reconsider where the body
-    ended and the garment began. Beauty here was not about correcting
-    the body. It was about inventing another one.
+    narrow or conceal. The collection distorted the conventional silhouette
+    and forced the viewer to reconsider where the body ended and the garment
+    began. Beauty here was not about correcting the body. It was about
+    inventing another one.
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Body · Proportion · Provocation
-  </span>
+  </div>
 
 </section>
 
@@ -1920,7 +2131,7 @@ footer{
      006 — SCHIAPARELLI
 ===================================================== -->
 
-<section class="archive-object schiaparelli-object">
+<section class="archive-object alt">
 
   <span class="object-number">
     006
@@ -1939,6 +2150,13 @@ footer{
   </div>
 
 
+  <div class="side-note left">
+    Fashion<br>
+    meets<br>
+    surrealism.
+  </div>
+
+
   <div class="object-image">
 
     <img
@@ -1949,24 +2167,20 @@ footer{
   </div>
 
 
-  <div class="archive-note right">
-    Fashion meets<br>
-    surrealism.
-  </div>
-
-
   <p class="object-copy">
-    Schiaparelli understood that fashion could participate in the
-    same visual conversation as art. The lobster transforms an
-    otherwise elegant evening dress into something strange, humorous
-    and deliberately provocative. It is precisely that tension that
-    makes the piece unforgettable.
+    Schiaparelli understood that fashion could participate in the same
+    visual conversation as art. The lobster transforms an otherwise elegant
+    evening dress into something strange, humorous and deliberately provocative.
+    It is precisely that tension that makes the piece unforgettable.
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Surrealism · Collaboration · Provocation
-  </span>
+  </div>
 
 </section>
 
@@ -1976,7 +2190,7 @@ footer{
      007 — HERMÈS
 ===================================================== -->
 
-<section class="archive-object birkin-object">
+<section class="archive-object">
 
   <span class="object-number">
     007
@@ -1995,6 +2209,13 @@ footer{
   </div>
 
 
+  <div class="side-note right">
+    When does<br>
+    an object<br>
+    become myth?
+  </div>
+
+
   <div class="object-image">
 
     <img
@@ -2002,13 +2223,6 @@ footer{
       alt="Hermès Himalaya Birkin"
     >
 
-  </div>
-
-
-  <div class="object-hand left">
-    When does<br>
-    an object<br>
-    become myth?
   </div>
 
 
@@ -2021,9 +2235,12 @@ footer{
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Scarcity · Mythology · Value
-  </span>
+  </div>
 
 </section>
 
@@ -2033,7 +2250,7 @@ footer{
      008 — GUY BOURDIN
 ===================================================== -->
 
-<section class="archive-object bourdin-object">
+<section class="archive-object alt">
 
   <span class="object-number">
     008
@@ -2052,19 +2269,20 @@ footer{
   </div>
 
 
+  <div class="side-note left">
+    Desire<br>
+    before<br>
+    explanation.
+  </div>
+
+
   <div class="object-image">
 
     <img
       src="archive-bourdin.jpg"
-      alt="Guy Bourdin Fashion Photography"
+      alt="Guy Bourdin fashion photography"
     >
 
-  </div>
-
-
-  <div class="archive-note right">
-    Desire before<br>
-    explanation.
   </div>
 
 
@@ -2077,9 +2295,12 @@ footer{
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Photography · Desire · Narrative
-  </span>
+  </div>
 
 </section>
 
@@ -2089,7 +2310,7 @@ footer{
      009 — CARTIER
 ===================================================== -->
 
-<section class="archive-object cartier-object">
+<section class="archive-object">
 
   <span class="object-number">
     009
@@ -2108,34 +2329,37 @@ footer{
   </div>
 
 
-  <div class="object-image">
-
-    <img
-      src="archive-cartier.jpg"
-      alt="Cartier Tutti Frutti Jewelry"
-    >
-
-  </div>
-
-
-  <div class="object-hand left">
+  <div class="side-note right">
     More can<br>
     sometimes<br>
     be more.
   </div>
 
 
+  <div class="object-image">
+
+    <img
+      src="archive-cartier.jpg"
+      alt="Cartier Tutti Frutti jewelry"
+    >
+
+  </div>
+
+
   <p class="object-copy">
-    I keep coming back to Tutti Frutti because it rejects the idea
-    that sophistication must always mean restraint. Carved coloured
-    stones, extraordinary combinations and dense ornament become
-    harmonious through craftsmanship.
+    I keep coming back to Tutti Frutti because it rejects the idea that
+    sophistication must always mean restraint. Carved coloured stones,
+    extraordinary combinations and dense ornament become harmonious
+    through craftsmanship.
   </p>
 
 
-  <span class="object-theme">
+  <div class="object-rule"></div>
+
+
+  <div class="object-theme">
     Jewelry · Colour · Craftsmanship
-  </span>
+  </div>
 
 </section>
 
@@ -2172,7 +2396,7 @@ footer{
 
 
 <!-- =====================================================
-     AD STAMP
+     SPINNING AD STAMP
 ===================================================== -->
 
 <div class="logo-stamp">
