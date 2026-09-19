@@ -1,2240 +1,2013 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>The Cabinet — The Archive | Anaïs Doroshina</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   BASE
-========================================================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-:root{
-    --cream:#faf8f4;
-    --paper:#f6f2e9;
-    --ink:#171411;
-    --muted:#766d64;
-    --rule:#d8d1c6;
-    --pink:#df7184;
-    --red:#bd2f39;
-    --teal:#05242b;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'EB Garamond', Georgia, serif;
-    overflow-x:hidden;
-}
-
-img{
-    display:block;
-}
-
-a{
-    color:inherit;
-}
-
-
-/* =========================================================
-   NAV
-========================================================= */
-
-nav{
-    position:relative;
-    z-index:1000;
-    height:56px;
-    padding:0 3.8vw;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:#faf8f4;
-    border-bottom:1px solid #ded8ce;
-}
-
-.nav-logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:11px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    text-decoration:none;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:26px;
-}
-
-.nav-links a{
-    font-family:'Cormorant Garamond',serif;
-    font-size:9px;
-    letter-spacing:.17em;
-    text-transform:uppercase;
-    text-decoration:none;
-    color:#57504a;
-}
-
-
-/* =========================================================
-   HERO
-   EDIT #1 — SHORTER
-========================================================= */
-
-.hero{
-    position:relative;
-    width:100%;
-
-    /* shorter than before */
-    height:min(61vw, 760px);
-    min-height:640px;
-
-    overflow:hidden;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 43%,
-            rgba(255,255,255,.95) 0%,
-            rgba(255,255,255,.55) 42%,
-            transparent 74%
-        ),
-        #f4f0e7;
-
-    border-bottom:1px solid #d5cec3;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    opacity:.18;
-
-    background-image:
-        repeating-linear-gradient(
-            0deg,
-            rgba(40,30,20,.025) 0px,
-            rgba(40,30,20,.025) 1px,
-            transparent 1px,
-            transparent 4px
-        );
-}
-
-
-/* =========================================================
-   TITLE
-   EDIT #3 — LOWER, CLEAR OF COLLAGE
-========================================================= */
-
-.hero-title-wrap{
-    position:absolute;
-    z-index:40;
-
-    left:50%;
-    top:53%;
-
-    width:54%;
-
-    transform:translate(-50%,-50%);
-    text-align:center;
-}
-
-.hero-title{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(82px,9.3vw,142px);
-
-    font-weight:300;
-    font-style:italic;
-
-    line-height:.66;
-
-    letter-spacing:-.075em;
-
-    color:#100e0c;
-}
-
-.hero-title span{
-    display:block;
-}
-
-.hero-title .line-two{
-    margin-top:.42em;
-
-    font-size:.51em;
-    letter-spacing:-.055em;
-}
-
-.hero-subtitle{
-    margin-top:44px;
-
-    font-family:'Cormorant Garamond',serif;
-    font-size:10px;
-    line-height:1.75;
-    letter-spacing:.38em;
-    text-transform:uppercase;
-
-    color:#332e29;
-}
-
-
-/* =========================================================
-   HAND + FLOWER
-========================================================= */
-
-.hero-hand{
-    position:absolute;
-    z-index:34;
-
-    left:20%;
-    top:-31%;
-
-    width:31%;
-
-    max-width:none;
-
-    transform:rotate(-2deg);
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   WOMAN
-========================================================= */
-
-.hero-woman{
-    position:absolute;
-    z-index:28;
-
-    right:-1.5%;
-    top:9%;
-
-    width:35%;
-
-    max-width:none;
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   VINTAGE PHOTO
-   EDIT #2 — MUCH BIGGER
-========================================================= */
-
-.hero-photo{
-    position:absolute;
-    z-index:35;
-
-    left:3.5%;
-    top:25%;
-
-    /* previously 17% */
-    width:27%;
-
-    max-width:none;
-
-    transform:rotate(-5deg);
-
-    filter:drop-shadow(0 8px 10px rgba(40,30,20,.13));
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   STATUE
-   EDIT #4 — INSIDE FRAME
-========================================================= */
-
-.hero-statue{
-    position:absolute;
-    z-index:24;
-
-    /* no longer hanging way off-screen */
-    left:-1%;
-    bottom:-1%;
-
-    width:23%;
-
-    max-width:none;
-
-    transform:rotate(-2deg);
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   BOOK
-========================================================= */
-
-.hero-book{
-    position:absolute;
-    z-index:35;
-
-    right:-4%;
-    bottom:-6%;
-
-    width:27%;
-
-    max-width:none;
-
-    transform:rotate(-4deg);
-
-    filter:drop-shadow(0 8px 8px rgba(40,30,20,.08));
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   WAX SEAL
-========================================================= */
-
-.hero-seal{
-    position:absolute;
-    z-index:46;
-
-    right:17%;
-    bottom:1%;
-
-    width:12.5%;
-
-    max-width:none;
-
-    transform:rotate(-5deg);
-
-    filter:drop-shadow(0 6px 7px rgba(70,20,15,.16));
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   LEFT HANDWRITING
-========================================================= */
-
-.left-note{
-    position:absolute;
-    z-index:45;
-
-    left:3.3%;
-    top:6%;
-
-    width:13%;
-
-    font-family:'Corinthia',cursive;
-
-    font-size:clamp(29px,2.7vw,44px);
-
-    line-height:.69;
-
-    transform:rotate(-7deg);
-}
-
-
-/* =========================================================
-   PINK TOP NOTE
-========================================================= */
-
-.pink-note{
-    position:absolute;
-    z-index:48;
-
-    left:55%;
-    top:5%;
-
-    width:25%;
-
-    padding:15px 20px;
-
-    background:rgba(224,112,133,.88);
-
-    transform:rotate(-4deg);
-
-    text-align:center;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(13px,1.35vw,20px);
-
-    font-style:italic;
-
-    letter-spacing:.08em;
-
-    line-height:1.25;
-}
-
-.pink-note::before{
-    content:"";
-
-    position:absolute;
-
-    width:30%;
-    height:19px;
-
-    top:-9px;
-    left:35%;
-
-    background:rgba(218,202,168,.65);
-
-    transform:rotate(4deg);
-}
-
-
-/* =========================================================
-   EDIT #5 — FUN STARS / ASTERISKS
-========================================================= */
-
-.star{
-    position:absolute;
-    z-index:60;
-
-    font-family:'Cormorant Garamond',serif;
-
-    line-height:1;
-
-    pointer-events:none;
-}
-
-.star-1{
-    left:48%;
-    top:8%;
-
-    font-size:55px;
-
-    transform:rotate(4deg);
-}
-
-.star-2{
-    left:34%;
-    top:18%;
-
-    font-size:28px;
-
-    transform:rotate(-14deg);
-}
-
-.star-3{
-    left:44%;
-    top:31%;
-
-    font-size:20px;
-
-    color:var(--pink);
-
-    transform:rotate(12deg);
-}
-
-.star-4{
-    right:31%;
-    top:25%;
-
-    font-size:32px;
-
-    transform:rotate(17deg);
-}
-
-.star-5{
-    left:30%;
-    bottom:16%;
-
-    font-size:26px;
-
-    color:#c83d49;
-
-    transform:rotate(-8deg);
-}
-
-.star-6{
-    right:27%;
-    bottom:17%;
-
-    font-size:21px;
-
-    transform:rotate(8deg);
-}
-
-.star-7{
-    left:6%;
-    top:17%;
-
-    font-size:19px;
-
-    color:var(--pink);
-
-    transform:rotate(16deg);
-}
-
-.star-8{
-    right:5%;
-    top:9%;
-
-    font-size:25px;
-
-    transform:rotate(-12deg);
-}
-
-
-/* slightly imperfect hand-drawn style */
-
-.drawn-star{
-    width:42px;
-    height:42px;
-}
-
-.drawn-star::before,
-.drawn-star::after{
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:42px;
-    height:2px;
-
-    background:currentColor;
-
-    transform:translate(-50%,-50%);
-}
-
-.drawn-star::after{
-    transform:translate(-50%,-50%) rotate(90deg);
-}
-
-.drawn-star i::before,
-.drawn-star i::after{
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:42px;
-    height:2px;
-
-    background:currentColor;
-
-    transform:translate(-50%,-50%) rotate(45deg);
-}
-
-.drawn-star i::after{
-    transform:translate(-50%,-50%) rotate(-45deg);
-}
-
-
-/* =========================================================
-   TOP SCRIBBLE
-========================================================= */
-
-.scribble-top{
-    position:absolute;
-
-    z-index:20;
-
-    right:-1%;
-    top:0;
-
-    width:22%;
-    height:18%;
-}
-
-.scribble-top::before,
-.scribble-top::after{
-    content:"";
-
-    position:absolute;
-
-    width:90%;
-    height:75%;
-
-    border-top:3px solid #211d19;
-
-    border-radius:50%;
-
-    transform:rotate(-19deg);
-}
-
-.scribble-top::after{
-    top:30px;
-    right:-20px;
-
-    transform:rotate(-31deg);
-}
-
-
-/* =========================================================
-   EDIT #6 — RED QUOTE MOVED OFF WOMAN
-========================================================= */
-
-.red-note{
-    position:absolute;
-
-    z-index:55;
-
-    /*
-       now placed in open cream space,
-       not over the woman
-    */
-
-    right:31%;
-    bottom:13%;
-
-    width:13%;
-
-    font-family:'Corinthia',cursive;
-
-    font-size:clamp(22px,2vw,33px);
-
-    line-height:.73;
-
-    color:#c3313c;
-
-    transform:rotate(-4deg);
-
-    text-align:left;
-}
-
-
-/* =========================================================
-   EDIT #4 — SMALLER PINK ARCHIVE CARD
-========================================================= */
-
-.archive-card{
-    position:absolute;
-
-    z-index:50;
-
-    left:7%;
-    bottom:3%;
-
-    /* much shorter than before */
-    width:20%;
-
-    min-width:255px;
-
-    min-height:105px;
-
-    padding:18px 22px;
-
-    background:rgba(224,112,133,.92);
-
-    transform:rotate(4deg);
-}
-
-.archive-card-top{
-    display:flex;
-
-    align-items:flex-start;
-    justify-content:space-between;
-
-    gap:20px;
-}
-
-.archive-card-brand{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:25px;
-
-    font-style:italic;
-
-    line-height:.8;
-}
-
-.archive-card-brand small{
-    display:block;
-
-    margin-top:7px;
-
-    font-size:7px;
-
-    font-style:normal;
-
-    letter-spacing:.28em;
-
-    text-transform:uppercase;
-}
-
-.archive-card-number{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:17px;
-
-    letter-spacing:.12em;
-
-    white-space:nowrap;
-}
-
-.archive-card-places{
-    margin-top:13px;
-    margin-left:45%;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:7px;
-
-    line-height:1.55;
-
-    letter-spacing:.23em;
-
-    text-transform:uppercase;
-}
-
-
-/* =========================================================
-   LOWER SCRIBBLE
-========================================================= */
-
-.lower-scribble{
-    position:absolute;
-
-    z-index:45;
-
-    left:43%;
-    bottom:5%;
-
-    width:13%;
-    height:35px;
-}
-
-.lower-scribble::before,
-.lower-scribble::after{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    width:100%;
-
-    border-top:3px solid #171411;
-}
-
-.lower-scribble::before{
-    top:9px;
-
-    transform:rotate(-8deg);
-}
-
-.lower-scribble::after{
-    top:21px;
-
-    width:84%;
-
-    left:10%;
-
-    transform:rotate(6deg);
-}
-
-
-/* =========================================================
-   001 — TABI
-   DIRECTLY AFTER HERO
-========================================================= */
-
-.tabi{
-    position:relative;
-
-    height:900px;
-
-    overflow:hidden;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 48%,
-            white 0%,
-            rgba(255,255,255,.65) 28%,
-            transparent 62%
-        ),
-        #faf8f4;
-
-    text-align:center;
-
-    border-bottom:1px solid #ded8ce;
-}
-
-.tabi-heading{
-    position:absolute;
-
-    z-index:20;
-
-    top:50px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:70%;
-}
-
-.tabi-number{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.35em;
-
-    color:#998b7c;
-}
-
-.tabi-house{
-    margin-top:16px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:13px;
-
-    letter-spacing:.4em;
-
-    text-transform:uppercase;
-}
-
-.tabi-title{
-    margin-top:5px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:57px;
-
-    font-weight:300;
-    font-style:italic;
-
-    line-height:.95;
-
-    letter-spacing:-.045em;
-}
-
-.tabi-year{
-    margin-top:15px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.3em;
-}
-
-.tabi-boots{
-    position:absolute;
-
-    z-index:18;
-
-    left:50%;
-    top:235px;
-
-    width:285px;
-    height:360px;
-
-    transform:translateX(-50%);
-
-    object-fit:contain;
-
-    filter:drop-shadow(0 12px 10px rgba(55,45,35,.08));
-}
-
-.tabi-vintage{
-    position:absolute;
-
-    z-index:4;
-
-    left:-2%;
-    bottom:55px;
-
-    width:17%;
-
-    max-height:390px;
-
-    object-fit:cover;
-
-    filter:grayscale(1);
-
-    opacity:.65;
-}
-
-.tabi-recognition{
-    position:absolute;
-
-    z-index:13;
-
-    left:14%;
-    top:280px;
-
-    width:180px;
-
-    transform:rotate(-4deg);
-}
-
-.tabi-sketch{
-    position:absolute;
-
-    z-index:4;
-
-    right:-2%;
-    top:225px;
-
-    width:25%;
-
-    opacity:.3;
-}
-
-.tabi-circle{
-    position:absolute;
-
-    z-index:14;
-
-    right:15%;
-    top:400px;
-
-    width:205px;
-    height:115px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid rgba(90,80,70,.3);
-
-    border-radius:50%;
-
-    transform:rotate(-8deg);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:12px;
-
-    font-style:italic;
-
-    line-height:1.5;
-
-    letter-spacing:.07em;
-
-    color:#6b625a;
-}
-
-.tabi-signature{
-    position:absolute;
-
-    z-index:15;
-
-    right:8%;
-    bottom:65px;
-
-    font-family:'Corinthia',cursive;
-
-    font-size:35px;
-
-    line-height:.65;
-
-    color:#8a8178;
-
-    transform:rotate(-9deg);
-}
-
-.tabi-copy{
-    position:absolute;
-
-    z-index:20;
-
-    left:50%;
-    top:635px;
-
-    width:min(610px,70%);
-
-    transform:translateX(-50%);
-
-    font-family:'EB Garamond',serif;
-
-    font-size:16px;
-
-    line-height:1.48;
-
-    color:#302b27;
-}
-
-.tabi-copy::after{
-    content:"";
-
-    display:block;
-
-    width:65px;
-    height:1px;
-
-    margin:22px auto;
-
-    background:#958b81;
-}
-
-.tabi-tags{
-    position:absolute;
-
-    z-index:20;
-
-    left:50%;
-    top:780px;
-
-    transform:translateX(-50%);
-
-    white-space:nowrap;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.4em;
-
-    text-transform:uppercase;
-
-    color:#a0978d;
-}
-
-
-/* =========================================================
-   OTHER ARCHIVE OBJECTS
-========================================================= */
-
-.archive-object{
-    min-height:720px;
-
-    padding:6rem 8vw;
-
-    display:flex;
-
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    background:#faf8f4;
-
-    border-bottom:1px solid var(--rule);
-}
-
-.archive-object:nth-of-type(even){
-    background:#f6f2eb;
-}
-
-.object-number{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.35em;
-
-    color:#998b7c;
-}
-
-.object-house{
-    margin-top:15px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:12px;
-
-    letter-spacing:.38em;
-
-    text-transform:uppercase;
-}
-
-.object-title{
-    margin-top:7px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(43px,4.5vw,65px);
-
-    font-weight:300;
-    font-style:italic;
-
-    line-height:.95;
-
-    letter-spacing:-.04em;
-}
-
-.object-year{
-    margin-top:14px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.3em;
-}
-
-.object-image{
-    width:min(470px,50vw);
-    height:350px;
-
-    margin:35px auto 28px;
-
-    object-fit:contain;
-}
-
-.object-copy{
-    max-width:590px;
-
-    font-size:16px;
-
-    line-height:1.55;
-
-    color:#3c3631;
-}
-
-.object-copy::after{
-    content:"";
-
-    display:block;
-
-    width:60px;
-    height:1px;
-
-    margin:23px auto;
-
-    background:#92887f;
-}
-
-.object-tags{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.38em;
-
-    text-transform:uppercase;
-
-    color:#9d9389;
-}
-
-
-/* =========================================================
-   ENDING
-========================================================= */
-
-.archive-ending{
-    padding:8rem 8vw;
-
-    text-align:center;
-
-    background:#f4f0e8;
-}
-
-.archive-ending small{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:9px;
-
-    letter-spacing:.35em;
-
-    text-transform:uppercase;
-
-    color:#9b8b7b;
-}
-
-.archive-ending h2{
-    margin-top:22px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(55px,7vw,95px);
-
-    font-weight:300;
-    font-style:italic;
-
-    line-height:.9;
-
-    letter-spacing:-.05em;
-}
-
-.archive-ending p{
-    max-width:560px;
-
-    margin:30px auto 0;
-
-    font-size:16px;
-
-    line-height:1.6;
-
-    color:#6c645c;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    padding:55px 9vw;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:40px;
-
-    background:var(--teal);
-
-    color:#faf8f4;
-}
-
-.footer-name{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:13px;
-
-    letter-spacing:.22em;
-
-    text-transform:uppercase;
-}
-
-.footer-copy{
-    max-width:420px;
-
-    margin-top:10px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:15px;
-
-    font-style:italic;
-
-    color:rgba(250,248,244,.55);
-}
-
-.footer-right{
-    text-align:right;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:9px;
-
-    line-height:2;
-
-    letter-spacing:.2em;
-
-    text-transform:uppercase;
-
-    color:rgba(250,248,244,.55);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:800px){
-
-    nav{
-        padding:0 4vw;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Archive — Anaïs Doroshina</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================================================
+       BASE
+    ========================================================= */
+
+    :root{
+      --cream:#faf8f4;
+      --paper:#f7f3eb;
+      --ink:#171411;
+      --muted:#777069;
+      --rule:#d8d4cc;
+      --pink:#df6f87;
+      --red:#c9323e;
+      --teal:#05242b;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--cream);
+      color:var(--ink);
+      font-family:'EB Garamond',serif;
+      overflow-x:hidden;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+
+    /* =========================================================
+       STANDARD SITE NAVBAR
+    ========================================================= */
+
+    .site-nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:56px;
+      z-index:1000;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 5vw;
+
+      background:rgba(250,248,244,.97);
+      border-bottom:.5px solid var(--rule);
+    }
+
+    .nav-name{
+      font-family:'Cormorant Garamond',serif;
+      font-size:12px;
+      font-weight:400;
+      letter-spacing:.19em;
+      text-transform:uppercase;
+      white-space:nowrap;
     }
 
     .nav-links{
-        gap:9px;
+      display:flex;
+      align-items:center;
+      gap:34px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:10px;
+      letter-spacing:.19em;
+      text-transform:uppercase;
     }
 
     .nav-links a{
-        font-size:6.5px;
+      transition:opacity .2s ease;
+    }
+
+    .nav-links a:hover{
+      opacity:.45;
     }
 
 
-    .hero{
-        height:650px;
-        min-height:0;
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .archive-hero{
+      position:relative;
+      margin-top:56px;
+
+      /* EDIT #1 — shorter hero */
+      height:clamp(650px,calc(100vh - 56px),820px);
+      min-height:650px;
+
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 20% 25%,rgba(226,215,194,.15),transparent 22%),
+        radial-gradient(circle at 80% 60%,rgba(218,201,177,.10),transparent 24%),
+        #faf8f4;
     }
 
 
-    .hero-title-wrap{
-        left:50%;
-        top:52%;
+    /* subtle paper grain */
 
-        width:90%;
+    .archive-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(40,30,20,.012) 0px,
+          rgba(40,30,20,.012) 1px,
+          transparent 1px,
+          transparent 4px
+        );
+
+      opacity:.45;
+    }
+
+
+    /* =========================================================
+       HERO TITLE
+       EDIT #1 — ONLY "THE ARCHIVE"
+    ========================================================= */
+
+    .hero-title-block{
+      position:absolute;
+      z-index:20;
+
+      left:50%;
+      top:57%;
+
+      transform:translate(-50%,-50%);
+      width:min(670px,47vw);
+
+      text-align:center;
+    }
+
+    .hero-eyebrow{
+      margin-bottom:13px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:8px;
+      letter-spacing:.42em;
+      text-transform:uppercase;
+      color:#9a9189;
     }
 
     .hero-title{
-        font-size:clamp(62px,18vw,92px);
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(82px,8.2vw,138px);
+      font-weight:300;
+      font-style:italic;
+      line-height:.78;
+      letter-spacing:-.065em;
     }
 
     .hero-subtitle{
-        margin-top:34px;
+      margin:42px auto 0;
+      max-width:530px;
 
-        font-size:6.5px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:13px;
+      font-style:italic;
+      letter-spacing:.06em;
+      line-height:1.4;
 
-        letter-spacing:.23em;
+      color:#57504a;
     }
 
+
+    /* =========================================================
+       COLLAGE IMAGES
+    ========================================================= */
+
+    .collage{
+      position:absolute;
+      z-index:5;
+      pointer-events:none;
+    }
+
+
+    /* HAND + FLOWER */
 
     .hero-hand{
-        left:8%;
-        top:-10%;
-
-        width:48%;
+      top:-35px;
+      left:25.5%;
+      width:250px;
+      z-index:15;
     }
 
 
-    .hero-woman{
-        right:-17%;
-        top:27%;
-
-        width:62%;
-    }
-
+    /* EDIT #3 — LARGE VINTAGE PHOTO MOVED UP + RIGHT */
 
     .hero-photo{
-        left:1%;
-        top:30%;
-
-        width:37%;
+      top:95px;
+      left:8.5%;
+      width:285px;
+      transform:rotate(-6deg);
+      z-index:8;
     }
 
+
+    /* WOMAN SKETCH */
+
+    .hero-woman{
+      right:2.3%;
+      bottom:-10px;
+      width:330px;
+      z-index:9;
+    }
+
+
+    /* STATUE — completely inside hero */
 
     .hero-statue{
-        left:-4%;
-        bottom:0;
-
-        width:38%;
+      left:-24px;
+      bottom:-5px;
+      width:255px;
+      z-index:7;
     }
 
+
+    /* BOOK */
 
     .hero-book{
-        right:-17%;
-        bottom:-3%;
-
-        width:46%;
+      right:-17px;
+      bottom:-34px;
+      width:250px;
+      transform:rotate(-5deg);
+      z-index:12;
     }
 
 
-    .hero-seal{
-        right:20%;
-        bottom:1%;
+    /* WAX STAMP */
 
-        width:21%;
+    .hero-stamp{
+      right:17%;
+      bottom:-4px;
+      width:122px;
+      z-index:16;
+      transform:rotate(-7deg);
+      filter:drop-shadow(0 7px 8px rgba(0,0,0,.12));
     }
 
+
+    /* =========================================================
+       HANDWRITTEN LEFT TEXT
+    ========================================================= */
 
     .left-note{
-        left:3%;
-        top:5%;
+      position:absolute;
+      z-index:18;
 
-        width:24%;
+      top:72px;
+      left:3.5%;
+      width:145px;
 
-        font-size:25px;
+      font-family:'Corinthia',cursive;
+      font-size:31px;
+      font-weight:700;
+      line-height:.91;
+
+      transform:rotate(-4deg);
     }
 
+
+    /* =========================================================
+       PINK TOP NOTE
+    ========================================================= */
 
     .pink-note{
-        left:55%;
-        top:5%;
+      position:absolute;
+      z-index:18;
 
-        width:39%;
+      top:57px;
+      right:28%;
 
-        padding:10px;
+      width:220px;
+      min-height:76px;
 
-        font-size:11px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:18px 22px;
+
+      background:rgba(223,111,135,.92);
+      transform:rotate(-5deg);
+
+      text-align:center;
+      font-family:'Cormorant Garamond',serif;
+      font-style:italic;
+      font-size:16px;
+      line-height:1.15;
+      letter-spacing:.05em;
+    }
+
+    .pink-note::before{
+      content:"";
+      position:absolute;
+      top:-12px;
+      left:40%;
+      width:70px;
+      height:22px;
+
+      background:rgba(223,211,179,.62);
+      transform:rotate(3deg);
     }
 
 
-    .scribble-top{
-        display:none;
-    }
-
-
-    .red-note{
-        right:31%;
-        bottom:15%;
-
-        width:23%;
-
-        font-size:21px;
-    }
-
+    /* =========================================================
+       PINK ARCHIVE CARD
+       EDIT #4 FROM PREVIOUS ROUND — SHORTER
+    ========================================================= */
 
     .archive-card{
-        left:5%;
-        bottom:2%;
+      position:absolute;
+      z-index:14;
 
-        width:38%;
-        min-width:0;
+      left:9%;
+      bottom:28px;
 
-        min-height:75px;
+      width:390px;
+      height:118px;
 
-        padding:11px;
+      padding:22px 27px;
+
+      background:rgba(223,111,135,.93);
+      transform:rotate(4deg);
     }
 
-    .archive-card-brand{
-        font-size:17px;
+    .archive-card-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:25px;
+      font-style:italic;
+      line-height:.9;
     }
 
-    .archive-card-number{
-        font-size:10px;
+    .archive-card-title span{
+      display:block;
+      margin-top:5px;
+
+      font-size:8px;
+      font-style:normal;
+      letter-spacing:.34em;
+      text-transform:uppercase;
     }
 
-    .archive-card-places{
-        font-size:5px;
+    .archive-number{
+      position:absolute;
+      top:34px;
+      right:31px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:18px;
+      letter-spacing:.18em;
     }
 
+    .archive-cities{
+      position:absolute;
+      left:53%;
+      bottom:18px;
 
-    .lower-scribble{
-        display:none;
-    }
-
-
-    .star-2,
-    .star-3,
-    .star-5,
-    .star-6,
-    .star-7,
-    .star-8{
-        display:none;
-    }
-
-    .star-1{
-        left:49%;
-        top:11%;
-
-        font-size:36px;
-    }
-
-    .star-4{
-        right:25%;
-        top:30%;
-
-        font-size:24px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:8px;
+      line-height:1.55;
+      letter-spacing:.24em;
+      text-transform:uppercase;
     }
 
 
-    /* TABI */
+    /* =========================================================
+       RED FASHION NOTE
+       EDIT #6 — NO LONGER OVERLAPS WOMAN
+    ========================================================= */
 
-    .tabi{
-        height:800px;
+    .fashion-note{
+      position:absolute;
+      z-index:19;
+
+      right:22%;
+      top:185px;
+
+      width:150px;
+
+      font-family:'Corinthia',cursive;
+      font-size:28px;
+      font-weight:700;
+      line-height:.82;
+      color:var(--red);
+
+      transform:rotate(-7deg);
     }
 
-    .tabi-heading{
-        top:48px;
+
+    /* =========================================================
+       EDIT #2 + #6 — MORE STARS
+    ========================================================= */
+
+    .star{
+      position:absolute;
+      z-index:17;
+
+      font-family:'Cormorant Garamond',serif;
+      line-height:1;
+      pointer-events:none;
     }
 
-    .tabi-title{
-        font-size:48px;
+    .star.black{
+      color:#171411;
     }
 
-    .tabi-boots{
-        top:220px;
-
-        width:220px;
-        height:300px;
+    .star.pink{
+      color:var(--red);
     }
 
-    .tabi-vintage{
-        width:29%;
+    .s1{
+      left:49%;
+      top:70px;
+      font-size:48px;
+      transform:rotate(8deg);
     }
 
-    .tabi-recognition{
-        left:2%;
-        top:300px;
-
-        width:110px;
+    .s2{
+      left:18%;
+      top:62px;
+      font-size:24px;
+      transform:rotate(-17deg);
     }
 
-    .tabi-sketch{
-        width:40%;
-
-        right:-12%;
+    .s3{
+      left:6%;
+      top:390px;
+      font-size:31px;
+      transform:rotate(15deg);
     }
 
-    .tabi-circle{
-        display:none;
+    .s4{
+      left:36%;
+      top:170px;
+      font-size:20px;
+      transform:rotate(-9deg);
     }
 
-    .tabi-signature{
-        right:2%;
-
-        font-size:27px;
+    .s5{
+      right:19%;
+      top:100px;
+      font-size:31px;
+      transform:rotate(14deg);
     }
 
-    .tabi-copy{
-        top:550px;
-
-        width:78%;
-
-        font-size:14px;
+    .s6{
+      right:7%;
+      top:345px;
+      font-size:24px;
+      transform:rotate(-12deg);
     }
 
-    .tabi-tags{
-        top:715px;
-
-        font-size:6px;
-
-        letter-spacing:.25em;
+    .s7{
+      left:43%;
+      bottom:90px;
+      font-size:23px;
+      transform:rotate(11deg);
     }
 
+    .s8{
+      right:33%;
+      bottom:100px;
+      font-size:35px;
+      transform:rotate(-4deg);
+    }
+
+    .s9{
+      left:24%;
+      bottom:205px;
+      font-size:19px;
+      transform:rotate(22deg);
+    }
+
+    .s10{
+      right:42%;
+      top:145px;
+      font-size:19px;
+      transform:rotate(-11deg);
+    }
+
+    .s11{
+      left:2.2%;
+      bottom:180px;
+      font-size:22px;
+      transform:rotate(-12deg);
+    }
+
+    .s12{
+      right:4%;
+      top:88px;
+      font-size:18px;
+      transform:rotate(10deg);
+    }
+
+    .s13{
+      left:57%;
+      bottom:47px;
+      font-size:18px;
+      transform:rotate(-18deg);
+    }
+
+    .s14{
+      right:26%;
+      top:330px;
+      font-size:19px;
+      transform:rotate(5deg);
+    }
+
+    .s15{
+      left:31%;
+      top:340px;
+      font-size:17px;
+      transform:rotate(-14deg);
+    }
+
+
+    /* =========================================================
+       EDIT #4 — ARTISTIC SQUIGGLES
+    ========================================================= */
+
+    .squiggle{
+      position:absolute;
+      z-index:11;
+      pointer-events:none;
+    }
+
+    .squiggle svg{
+      width:100%;
+      height:100%;
+      overflow:visible;
+    }
+
+    .squiggle path{
+      fill:none;
+      stroke:#171411;
+      stroke-width:2.2;
+      stroke-linecap:round;
+    }
+
+    .squiggle-one{
+      right:2.5%;
+      top:68px;
+      width:160px;
+      height:100px;
+      transform:rotate(-8deg);
+    }
+
+    .squiggle-two{
+      left:44%;
+      bottom:34px;
+      width:155px;
+      height:50px;
+      transform:rotate(-5deg);
+    }
+
+
+    /* =========================================================
+       EXTRA SKETCHBOOK DETAILS
+       EDIT #6
+    ========================================================= */
+
+    .micro-note{
+      position:absolute;
+      z-index:10;
+
+      font-family:'Cormorant Garamond',serif;
+      font-style:italic;
+      color:#a49a91;
+
+      pointer-events:none;
+    }
+
+    .micro-one{
+      left:31%;
+      bottom:165px;
+
+      font-size:12px;
+      transform:rotate(-12deg);
+    }
+
+    .micro-two{
+      right:34%;
+      top:105px;
+
+      font-size:11px;
+      letter-spacing:.15em;
+      transform:rotate(5deg);
+    }
+
+    .micro-three{
+      right:11%;
+      bottom:130px;
+
+      font-size:11px;
+      transform:rotate(-7deg);
+    }
+
+    .pencil-loop{
+      position:absolute;
+      z-index:4;
+
+      width:260px;
+      height:180px;
+
+      opacity:.17;
+      pointer-events:none;
+    }
+
+    .pencil-loop svg{
+      width:100%;
+      height:100%;
+    }
+
+    .pencil-loop path{
+      fill:none;
+      stroke:#433d38;
+      stroke-width:1.3;
+    }
+
+    .loop-left{
+      left:-30px;
+      bottom:70px;
+      transform:rotate(8deg);
+    }
+
+    .loop-right{
+      right:5%;
+      top:110px;
+      transform:rotate(-13deg);
+    }
+
+
+    /* =========================================================
+       HERO BOTTOM BAR
+       NO "SCROLL"
+    ========================================================= */
+
+    .hero-bottom{
+      position:absolute;
+      z-index:30;
+
+      left:0;
+      bottom:0;
+
+      width:100%;
+      height:34px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:rgba(250,248,244,.90);
+      border-top:.5px solid var(--rule);
+    }
+
+    .hero-bottom::before,
+    .hero-bottom::after{
+      content:"";
+      width:31%;
+      height:.5px;
+      background:#cfc8be;
+    }
+
+    .hero-bottom span{
+      padding:0 28px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:8px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      color:#8c847c;
+    }
+
+
+    /* =========================================================
+       ARCHIVE OBJECTS
+    ========================================================= */
 
     .archive-object{
-        min-height:650px;
+      position:relative;
+      min-height:860px;
+      padding:72px 6vw 90px;
 
-        padding:5rem 7vw;
+      overflow:hidden;
+      border-bottom:.5px solid var(--rule);
+
+      background:#faf8f4;
+    }
+
+    .object-heading{
+      position:relative;
+      z-index:5;
+      text-align:center;
+    }
+
+    .object-number{
+      margin-bottom:15px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:8px;
+      letter-spacing:.35em;
+      color:#a18f7c;
+    }
+
+    .object-house{
+      font-family:'Cormorant Garamond',serif;
+      font-size:12px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+    }
+
+    .object-title{
+      margin-top:6px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(46px,5vw,72px);
+      font-weight:300;
+      font-style:italic;
+      line-height:1;
+      letter-spacing:-.035em;
+    }
+
+    .object-year{
+      margin-top:18px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:9px;
+      letter-spacing:.34em;
     }
 
     .object-image{
-        width:76vw;
-        height:300px;
+      width:min(410px,37vw);
+      margin:42px auto 0;
+    }
+
+    .object-image img{
+      width:100%;
+      max-height:430px;
+      object-fit:contain;
+    }
+
+    .object-copy{
+      width:min(610px,75vw);
+      margin:31px auto 0;
+
+      text-align:center;
+
+      font-family:'EB Garamond',serif;
+      font-size:16px;
+      line-height:1.52;
+    }
+
+    .object-rule{
+      width:72px;
+      height:.5px;
+
+      margin:20px auto;
+
+      background:#bdb4a9;
+    }
+
+    .object-tags{
+      text-align:center;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:8px;
+      letter-spacing:.4em;
+      text-transform:uppercase;
+      color:#a09890;
+    }
+
+    .object-side-note{
+      position:absolute;
+
+      font-family:'Cormorant Garamond',serif;
+      font-style:italic;
+      color:#777069;
+    }
+
+    .note-left{
+      top:300px;
+      left:10%;
+      transform:rotate(-5deg);
+    }
+
+    .note-right{
+      right:9%;
+      top:440px;
+      transform:rotate(7deg);
     }
 
 
-    footer{
+    /* =========================================================
+       OBJECT DECORATION
+    ========================================================= */
+
+    .tape-note{
+      padding:22px 20px;
+      background:#f2ede2;
+
+      font-size:14px;
+      line-height:1.55;
+      text-align:center;
+
+      box-shadow:0 6px 18px rgba(0,0,0,.025);
+    }
+
+    .tape-note::before{
+      content:"";
+      position:absolute;
+
+      width:75px;
+      height:20px;
+
+      top:-10px;
+      left:50%;
+      transform:translateX(-50%) rotate(-3deg);
+
+      background:rgba(232,219,184,.48);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .site-footer{
+      position:relative;
+      padding:72px 6vw 45px;
+
+      background:var(--teal);
+      color:#f7f2e9;
+    }
+
+    .footer-inner{
+      display:grid;
+      grid-template-columns:1fr 1.5fr 1fr;
+      align-items:start;
+      gap:40px;
+    }
+
+    .footer-name{
+      font-family:'Cormorant Garamond',serif;
+      font-size:28px;
+      font-style:italic;
+    }
+
+    .footer-copy{
+      max-width:460px;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:18px;
+      font-style:italic;
+      line-height:1.45;
+      color:#d8d1c7;
+    }
+
+    .footer-contact{
+      text-align:right;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:10px;
+      letter-spacing:.2em;
+      line-height:2;
+      text-transform:uppercase;
+    }
+
+    .footer-bottom{
+      margin-top:70px;
+      padding-top:20px;
+
+      border-top:1px solid rgba(255,255,255,.16);
+
+      display:flex;
+      justify-content:space-between;
+
+      font-family:'Cormorant Garamond',serif;
+      font-size:8px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:#aaa59d;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media(max-width:1000px){
+
+      .archive-hero{
+        height:700px;
+      }
+
+      .hero-title-block{
+        width:60vw;
+      }
+
+      .hero-title{
+        font-size:90px;
+      }
+
+      .hero-hand{
+        left:24%;
+        width:210px;
+      }
+
+      .hero-photo{
+        width:220px;
+      }
+
+      .hero-woman{
+        width:280px;
+      }
+
+      .hero-statue{
+        width:200px;
+      }
+
+      .archive-card{
+        width:320px;
+      }
+
+      .fashion-note{
+        right:20%;
+      }
+
+    }
+
+
+    @media(max-width:800px){
+
+      .site-nav{
+        padding:0 22px;
+      }
+
+      .nav-links{
+        gap:14px;
+        font-size:8px;
+      }
+
+      .archive-hero{
+        margin-top:56px;
+        height:690px;
+        min-height:690px;
+      }
+
+      .hero-title-block{
+        top:46%;
+        width:86vw;
+      }
+
+      .hero-title{
+        font-size:clamp(66px,18vw,105px);
+      }
+
+      .hero-subtitle{
+        margin-top:27px;
+        font-size:12px;
+      }
+
+      .hero-eyebrow{
+        display:none;
+      }
+
+      .hero-hand{
+        width:160px;
+        left:31%;
+        top:-25px;
+      }
+
+      .hero-photo{
+        width:145px;
+        left:4%;
+        top:170px;
+      }
+
+      .hero-woman{
+        width:190px;
+        right:-38px;
+      }
+
+      .hero-statue{
+        width:145px;
+        left:-40px;
+      }
+
+      .hero-book{
+        width:140px;
+        right:-32px;
+      }
+
+      .hero-stamp{
+        width:80px;
+        right:14%;
+      }
+
+      .left-note{
+        top:75px;
+        left:5%;
+        width:100px;
+        font-size:23px;
+      }
+
+      .pink-note{
+        top:70px;
+        right:5%;
+        width:150px;
+        min-height:55px;
+        padding:12px;
+        font-size:12px;
+      }
+
+      .archive-card{
+        left:5%;
+        bottom:37px;
+
+        width:240px;
+        height:88px;
+
+        padding:15px 18px;
+      }
+
+      .archive-card-title{
+        font-size:18px;
+      }
+
+      .archive-number{
+        top:20px;
+        right:18px;
+        font-size:13px;
+      }
+
+      .archive-cities{
+        display:none;
+      }
+
+      .fashion-note{
+        top:auto;
+        bottom:175px;
+        right:22%;
+        width:100px;
+        font-size:20px;
+      }
+
+      .star{
+        opacity:.85;
+      }
+
+      .s4,
+      .s7,
+      .s9,
+      .s10,
+      .s13,
+      .s15,
+      .micro-note,
+      .pencil-loop{
+        display:none;
+      }
+
+      .squiggle-one{
+        width:100px;
+        right:2%;
+      }
+
+      .squiggle-two{
+        width:90px;
+      }
+
+      .hero-bottom::before,
+      .hero-bottom::after{
+        width:20%;
+      }
+
+      .hero-bottom span{
+        padding:0 12px;
+        font-size:7px;
+      }
+
+
+      /* objects */
+
+      .archive-object{
+        min-height:auto;
+        padding:65px 7vw 80px;
+      }
+
+      .object-image{
+        width:min(360px,72vw);
+      }
+
+      .object-copy{
+        width:min(560px,88vw);
+        font-size:15px;
+      }
+
+      .object-side-note{
+        display:none;
+      }
+
+      .footer-inner{
         grid-template-columns:1fr;
-    }
+      }
 
-    .footer-right{
+      .footer-contact{
         text-align:left;
+      }
+
     }
 
-}
 
-</style>
+    @media(max-width:560px){
+
+      .nav-name{
+        font-size:9px;
+      }
+
+      .nav-links{
+        gap:10px;
+      }
+
+      .nav-links a:nth-child(3){
+        display:none;
+      }
+
+      .archive-hero{
+        height:640px;
+        min-height:640px;
+      }
+
+      .hero-title-block{
+        top:47%;
+      }
+
+      .hero-title{
+        font-size:66px;
+      }
+
+      .hero-photo{
+        width:120px;
+        top:145px;
+      }
+
+      .hero-woman{
+        width:160px;
+      }
+
+      .hero-hand{
+        width:135px;
+      }
+
+      .left-note{
+        font-size:20px;
+      }
+
+      .pink-note{
+        width:130px;
+        right:3%;
+      }
+
+      .archive-card{
+        width:205px;
+      }
+
+      .fashion-note{
+        display:none;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
 
-<!-- =========================================================
-     NAV
-========================================================= -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-<nav>
+  <nav class="site-nav">
 
-    <a href="index.html" class="nav-logo">
-        Anaïs Doroshina
+    <a href="index.html" class="nav-name">
+      Anaïs Doroshina
     </a>
 
     <div class="nav-links">
-
-        <a href="archive.html">Archive</a>
-        <a href="essays.html">Essays</a>
-        <a href="photography.html">Photography</a>
-        <a href="about.html">About</a>
-        <a href="about.html#contact">Contact</a>
-
+      <a href="archive.html">Archive</a>
+      <a href="essays.html">Essays</a>
+      <a href="photography.html">Photography</a>
+      <a href="about.html">About</a>
+      <a href="mailto:YOUR-EMAIL-HERE">Contact</a>
     </div>
 
-</nav>
+  </nav>
 
 
 
-<!-- =========================================================
-     THE CABINET HERO
-========================================================= -->
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
-<section class="hero">
-
-
-    <!-- COLLAGE ASSETS -->
-
-    <img
-        src="cabinet-hand-flower.png"
-        class="hero-hand"
-        alt=""
-    >
+  <header class="archive-hero">
 
 
-    <img
-        src="cabinet-woman.png"
-        class="hero-woman"
-        alt=""
-    >
-
-
-    <img
-        src="cabinet-vintage-photo.png"
-        class="hero-photo"
-        alt=""
-    >
-
-
-    <img
-        src="cabinet-statue.png"
-        class="hero-statue"
-        alt=""
-    >
-
-
-    <img
-        src="cabinet-book.png"
-        class="hero-book"
-        alt=""
-    >
-
-
-    <img
-        src="cabinet-seal.png"
-        class="hero-seal"
-        alt=""
-    >
-
-
-
-    <!-- LEFT HANDWRITTEN NOTE -->
-
+    <!-- handwritten left note -->
     <div class="left-note">
-
-        Objects,<br>
-        ideas,<br>
-        obsessions<br>
-        that shaped<br>
-        my eye.
-
+      Objects,<br>
+      ideas,<br>
+      obsessions<br>
+      that shaped<br>
+      my eye.
     </div>
 
 
+    <!-- hand + flower -->
+    <img
+      src="archive-hand.png"
+      class="collage hero-hand"
+      alt=""
+    >
 
-    <!-- PINK NOTE -->
 
+    <!-- vintage photograph — MOVED UP/RIGHT -->
+    <img
+      src="archive-photo.png"
+      class="collage hero-photo"
+      alt=""
+    >
+
+
+    <!-- woman illustration -->
+    <img
+      src="archive-woman.png"
+      class="collage hero-woman"
+      alt=""
+    >
+
+
+    <!-- statue -->
+    <img
+      src="archive-statue.png"
+      class="collage hero-statue"
+      alt=""
+    >
+
+
+    <!-- book -->
+    <img
+      src="archive-book.png"
+      class="collage hero-book"
+      alt=""
+    >
+
+
+    <!-- AD wax stamp -->
+    <img
+      src="archive-stamp.png"
+      class="collage hero-stamp"
+      alt=""
+    >
+
+
+
+    <!-- pink personal archive note -->
     <div class="pink-note">
+      A PERSONAL<br>
+      FASHION ARCHIVE
+    </div>
 
-        A PERSONAL<br>
-        FASHION ARCHIVE
+
+
+    <!-- ===================================================
+         TITLE
+    ==================================================== -->
+
+    <div class="hero-title-block">
+
+      <div class="hero-eyebrow">
+        Anaïs Doroshina · Selected Objects
+      </div>
+
+      <h1 class="hero-title">
+        The Archive
+      </h1>
+
+      <p class="hero-subtitle">
+        A personal collection of fashion’s unforgettable objects.
+      </p>
 
     </div>
 
 
 
-    <!-- TOP SCRIBBLE -->
+    <!-- ===================================================
+         RED NOTE — moved away from woman
+    ==================================================== -->
 
-    <div class="scribble-top"></div>
-
-
-
-    <!-- FUN STARS -->
-
-    <div class="star star-1">✳</div>
-
-    <div class="star star-2">✦</div>
-
-    <div class="star star-3">＊</div>
-
-    <div class="star star-4">✳</div>
-
-    <div class="star star-5">✦</div>
-
-    <div class="star star-6">＊</div>
-
-    <div class="star star-7">✦</div>
-
-    <div class="star star-8">＊</div>
-
-
-
-    <!-- MAIN TITLE -->
-
-    <div class="hero-title-wrap">
-
-        <h1 class="hero-title">
-
-            <span>
-                The Cabinet
-            </span>
-
-            <span class="line-two">
-                The Archive
-            </span>
-
-        </h1>
-
-
-        <div class="hero-subtitle">
-
-            NOT A HISTORY OF FASHION,<br>
-            BUT A PERSONAL ONE.
-
-        </div>
-
+    <div class="fashion-note">
+      Fashion<br>
+      as a way<br>
+      of keeping<br>
+      things alive.
     </div>
 
 
 
-    <!-- RED HANDWRITTEN QUOTE -->
-
-    <div class="red-note">
-
-        Fashion<br>
-        as a way<br>
-        of keeping<br>
-        things alive.
-
-    </div>
-
-
-
-    <!-- SMALLER ARCHIVE CARD -->
+    <!-- ===================================================
+         PINK ARCHIVE CARD
+    ==================================================== -->
 
     <div class="archive-card">
 
-        <div class="archive-card-top">
-
-            <div class="archive-card-brand">
-
-                AD!
-
-                <small>
-                    Archive
-                </small>
-
-            </div>
-
-
-            <div class="archive-card-number">
-
-                001 — ∞
-
-            </div>
-
-        </div>
-
-
-        <div class="archive-card-places">
-
-            Barcelona<br>
-            Paris<br>
-            Beyond
-
-        </div>
-
-    </div>
-
-
-
-    <div class="lower-scribble"></div>
-
-
-</section>
-
-
-
-<!-- =========================================================
-     001 — MAISON MARGIELA TABI
-     DIRECTLY AFTER HERO — NO SCROLL BAR
-========================================================= -->
-
-<section class="tabi">
-
-
-    <div class="tabi-heading">
-
-        <div class="tabi-number">
-            001
-        </div>
-
-        <div class="tabi-house">
-            Maison Margiela
-        </div>
-
-        <h2 class="tabi-title">
-            Tabi Boot
-        </h2>
-
-        <div class="tabi-year">
-            1989
-        </div>
-
-    </div>
-
-
-
-    <img
-        src="tabi-vintage-photo.png"
-        class="tabi-vintage"
-        alt=""
-    >
-
-
-
-    <img
-        src="tabi-recognition-note.png"
-        class="tabi-recognition"
-        alt=""
-    >
-
-
-
-    <img
-        src="tabi-boots.png"
-        class="tabi-boots"
-        alt="Maison Margiela Tabi boots"
-    >
-
-
-
-    <img
-        src="tabi-sketch.png"
-        class="tabi-sketch"
-        alt=""
-    >
-
-
-
-    <div class="tabi-circle">
-
-        AN OBJECT<br>
-        THAT BECAME A<br>
-        LANGUAGE.
-
-    </div>
-
-
-
-    <div class="tabi-signature">
-
-        Maison<br>
-        Martin<br>
-        Margiela
-
-    </div>
-
-
-
-    <p class="tabi-copy">
-
-        What began as a radical split-toe silhouette became one of
-        fashion's most recognizable objects. I love the Tabi because
-        its identity does not depend on a visible logo. The shape
-        itself became the house code.
-
-    </p>
-
-
-
-    <div class="tabi-tags">
-
-        FORM &nbsp;&nbsp;·&nbsp;&nbsp;
-        IDENTITY &nbsp;&nbsp;·&nbsp;&nbsp;
-        ANTI-LUXURY
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =========================================================
-     002 — DIOR SADDLE
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">002</div>
-
-    <div class="object-house">
-        Christian Dior by John Galliano
-    </div>
-
-    <h2 class="object-title">
-        The Saddle Bag
-    </h2>
-
-    <div class="object-year">
-        SS00
-    </div>
-
-    <img
-        src="archive-saddle.jpg"
-        class="object-image"
-        alt="Dior Saddle Bag"
-    >
-
-    <p class="object-copy">
-
-        Few accessories demonstrate the power of silhouette as clearly
-        as the Saddle. Its asymmetric form turned a handbag into a visual
-        code — recognizable before the Dior name is even read.
-
-    </p>
-
-    <div class="object-tags">
-        Silhouette · Recognition · Collectibility
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     003 — MUGLER
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">003</div>
-
-    <div class="object-house">
-        Thierry Mugler
-    </div>
-
-    <h2 class="object-title">
-        La Chimère
-    </h2>
-
-    <div class="object-year">
-        Haute Couture · FW97–98
-    </div>
-
-    <img
-        src="archive-mugler.jpg"
-        class="object-image"
-        alt="Thierry Mugler Chimère gown"
-    >
-
-    <p class="object-copy">
-
-        What fascinates me about the Chimère gown is that its fantasy
-        cannot be separated from the extraordinary work required to
-        construct it. It represents fashion at the point where clothing
-        begins to behave like sculpture.
-
-    </p>
-
-    <div class="object-tags">
-        Craftsmanship · Fantasy · Transformation
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     004 — McQUEEN
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">004</div>
-
-    <div class="object-house">
-        Alexander McQueen
-    </div>
-
-    <h2 class="object-title">
-        Armadillo Boot
-    </h2>
-
-    <div class="object-year">
-        Plato's Atlantis · SS10
-    </div>
-
-    <img
-        src="archive-mcqueen.jpg"
-        class="object-image"
-        alt="Alexander McQueen Armadillo Boot"
-    >
-
-    <p class="object-copy">
-
-        The Armadillo boot pushes the accessory almost beyond
-        wearability. Its exaggerated structure changes the body,
-        the walk and the silhouette itself.
-
-    </p>
-
-    <div class="object-tags">
-        Sculpture · Body · Spectacle
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     005 — COMME DES GARÇONS
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">005</div>
-
-    <div class="object-house">
-        Comme des Garçons
-    </div>
-
-    <h2 class="object-title">
-        Body Meets Dress,<br>
-        Dress Meets Body
-    </h2>
-
-    <div class="object-year">
-        Rei Kawakubo · SS97
-    </div>
-
-    <img
-        src="archive-cdg.jpg"
-        class="object-image"
-        alt="Comme des Garçons Body Meets Dress Dress Meets Body"
-    >
-
-    <p class="object-copy">
-
-        Padding appeared in places fashion traditionally tries to
-        flatten, narrow or conceal. The collection challenged the
-        conventional silhouette and asked where the body ended and
-        the garment began.
-
-    </p>
-
-    <div class="object-tags">
-        Body · Proportion · Provocation
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     006 — SCHIAPARELLI
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">006</div>
-
-    <div class="object-house">
-        Elsa Schiaparelli × Salvador Dalí
-    </div>
-
-    <h2 class="object-title">
-        Lobster Dress
-    </h2>
-
-    <div class="object-year">
-        1937
-    </div>
-
-    <img
-        src="archive-schiaparelli.jpg"
-        class="object-image"
-        alt="Schiaparelli Lobster Dress"
-    >
-
-    <p class="object-copy">
-
-        Schiaparelli understood that fashion could participate in the
-        same visual conversation as art. The lobster turns an elegant
-        evening dress into something strange, humorous and deliberately
-        provocative.
-
-    </p>
-
-    <div class="object-tags">
-        Surrealism · Collaboration · Provocation
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     007 — BIRKIN
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">007</div>
-
-    <div class="object-house">
-        Hermès
-    </div>
-
-    <h2 class="object-title">
-        Himalaya Birkin
-    </h2>
-
-    <div class="object-year">
-        Collectible Luxury
-    </div>
-
-    <img
-        src="archive-birkin.jpg"
-        class="object-image"
-        alt="Hermès Himalaya Birkin"
-    >
-
-    <p class="object-copy">
-
-        The Himalaya Birkin interests me because it demonstrates how
-        a luxury object acquires mythology. Material rarity,
-        craftsmanship, restricted availability and auction culture
-        accumulate around the bag until the object becomes a collectible.
-
-    </p>
-
-    <div class="object-tags">
-        Scarcity · Mythology · Value
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     008 — GUY BOURDIN
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">008</div>
-
-    <div class="object-house">
-        Guy Bourdin
-    </div>
-
-    <h2 class="object-title">
-        The Image Before the Product
-    </h2>
-
-    <div class="object-year">
-        French Fashion Photography · 1970s
-    </div>
-
-    <img
-        src="archive-bourdin.jpg"
-        class="object-image"
-        alt="Guy Bourdin fashion photography"
-    >
-
-    <p class="object-copy">
-
-        Before I understood fashion photography as an industry,
-        I understood the feeling of it: impossible colour, strange
-        framing and images in which the product could become almost
-        secondary to the world around it.
-
-    </p>
-
-    <div class="object-tags">
-        Photography · Desire · Narrative
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     009 — CARTIER
-========================================================= -->
-
-<section class="archive-object">
-
-    <div class="object-number">009</div>
-
-    <div class="object-house">
-        Cartier
-    </div>
-
-    <h2 class="object-title">
-        Tutti Frutti
-    </h2>
-
-    <div class="object-year">
-        Art Deco · India → Paris
-    </div>
-
-    <img
-        src="archive-cartier.jpg"
-        class="object-image"
-        alt="Cartier Tutti Frutti jewelry"
-    >
-
-    <p class="object-copy">
-
-        I keep coming back to Tutti Frutti because it rejects the
-        idea that sophistication must always mean restraint. Carved
-        coloured stones and dense ornament become harmonious through
-        craftsmanship.
-
-    </p>
-
-    <div class="object-tags">
-        Jewelry · Colour · Craftsmanship
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     ENDING
-========================================================= -->
-
-<section class="archive-ending">
-
-    <small>
+      <div class="archive-card-title">
+        AD!
+        <span>Archive</span>
+      </div>
+
+      <div class="archive-number">
         001 — ∞
-    </small>
+      </div>
 
-    <h2>
-        The archive is<br>
-        never finished.
-    </h2>
+      <div class="archive-cities">
+        Barcelona<br>
+        Paris<br>
+        Beyond
+      </div>
 
-    <p>
+    </div>
 
-        These objects do not form a complete history of fashion.
-        They form a personal one — pieces, images and ideas I return
-        to because each changed the language around it.
 
+
+    <!-- ===================================================
+         STARS
+    ==================================================== -->
+
+    <span class="star black s1">＊</span>
+    <span class="star pink s2">✦</span>
+    <span class="star black s3">✧</span>
+    <span class="star pink s4">✦</span>
+    <span class="star black s5">＊</span>
+    <span class="star pink s6">✦</span>
+    <span class="star black s7">✧</span>
+    <span class="star pink s8">✦</span>
+    <span class="star black s9">＊</span>
+    <span class="star pink s10">✧</span>
+    <span class="star black s11">✦</span>
+    <span class="star pink s12">✦</span>
+    <span class="star black s13">＊</span>
+    <span class="star pink s14">✧</span>
+    <span class="star black s15">✦</span>
+
+
+
+    <!-- ===================================================
+         ARTISTIC SQUIGGLES
+    ==================================================== -->
+
+    <div class="squiggle squiggle-one">
+      <svg viewBox="0 0 170 100">
+        <path d="
+          M5 75
+          C35 25, 76 12, 105 39
+          C132 65, 102 81, 74 56
+          C52 36, 90 16, 160 32
+        "/>
+
+        <path d="
+          M22 88
+          C67 54, 111 51, 165 67
+        "/>
+      </svg>
+    </div>
+
+
+    <div class="squiggle squiggle-two">
+      <svg viewBox="0 0 170 55">
+        <path d="
+          M4 37
+          C38 29, 58 10, 94 24
+          C119 34, 137 17, 164 12
+        "/>
+
+        <path d="
+          M26 43
+          C72 30, 111 43, 153 32
+        "/>
+      </svg>
+    </div>
+
+
+
+    <!-- ===================================================
+         SMALL SKETCHBOOK NOTES
+    ==================================================== -->
+
+    <span class="micro-note micro-one">
+      obsession / form / memory
+    </span>
+
+    <span class="micro-note micro-two">
+      01 / 09
+    </span>
+
+    <span class="micro-note micro-three">
+      things worth keeping
+    </span>
+
+
+
+    <!-- faint pencil loops -->
+
+    <div class="pencil-loop loop-left">
+      <svg viewBox="0 0 260 180">
+        <path d="
+          M8 140
+          C42 43, 111 32, 143 94
+          C168 143, 92 166, 61 111
+          C32 58, 132 20, 229 81
+          C254 97, 248 123, 207 147
+        "/>
+      </svg>
+    </div>
+
+
+    <div class="pencil-loop loop-right">
+      <svg viewBox="0 0 260 180">
+        <path d="
+          M12 112
+          C54 20, 144 19, 177 77
+          C204 126, 122 147, 83 100
+          C52 63, 119 31, 241 52
+        "/>
+      </svg>
+    </div>
+
+
+
+    <!-- ===================================================
+         HERO BOTTOM
+         "SCROLL" REMOVED
+    ==================================================== -->
+
+    <div class="hero-bottom">
+      <span>Enter the Archive</span>
+    </div>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       001 — MAISON MARGIELA
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        001
+      </div>
+
+      <div class="object-house">
+        Maison Margiela
+      </div>
+
+      <h2 class="object-title">
+        Tabi Boot
+      </h2>
+
+      <div class="object-year">
+        1989
+      </div>
+
+    </div>
+
+
+    <div class="object-side-note note-left tape-note">
+      Recognition<br>
+      Form<br>
+      Anti-luxury.
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-tabi.jpg"
+        alt="Maison Margiela Tabi Boot"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      What began as a radical split-toe silhouette became one of
+      fashion’s most recognizable objects. I love the Tabi because its
+      identity does not depend on a visible logo. The shape itself
+      became the house code.
     </p>
 
-</section>
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Form &nbsp; · &nbsp; Identity &nbsp; · &nbsp; Anti-Luxury
+    </div>
+
+  </section>
 
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+  <!-- =======================================================
+       002 — DIOR SADDLE
+  ======================================================== -->
 
-<footer>
+  <section class="archive-object">
 
-    <div>
+    <div class="object-heading">
 
-        <div class="footer-name">
-            Anaïs Doroshina
-        </div>
+      <div class="object-number">
+        002
+      </div>
 
-        <p class="footer-copy">
-            A curated perspective on fashion, luxury and the structures behind them.
-        </p>
+      <div class="object-house">
+        Christian Dior
+      </div>
+
+      <h2 class="object-title">
+        Saddle Bag
+      </h2>
+
+      <div class="object-year">
+        1999
+      </div>
 
     </div>
 
 
-    <div class="footer-right">
+    <div class="object-image">
+      <img
+        src="archive-saddle.jpg"
+        alt="Dior Saddle Bag"
+      >
+    </div>
 
-        ANAISDOROSHINA1@GMAIL.COM<br>
-        LINKEDIN<br>
-        EST. 2024
+
+    <p class="object-copy">
+      Few handbags reject conventional shape as confidently as the
+      Saddle. Its asymmetry turned an everyday object into a silhouette
+      recognizable from across a room — part accessory, part symbol,
+      part piece of fashion history.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Galliano &nbsp; · &nbsp; Icon &nbsp; · &nbsp; Reinvention
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       003 — ALEXANDER McQUEEN
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        003
+      </div>
+
+      <div class="object-house">
+        Alexander McQueen
+      </div>
+
+      <h2 class="object-title">
+        Armadillo Boot
+      </h2>
+
+      <div class="object-year">
+        2009
+      </div>
 
     </div>
 
-</footer>
+
+    <div class="object-image">
+      <img
+        src="archive-mcqueen.jpg"
+        alt="Alexander McQueen Armadillo Boot"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      The Armadillo boot sits somewhere between footwear, sculpture and
+      creature. Its proportions deliberately disturb the familiar shape
+      of the human body — exactly the kind of object that makes fashion
+      capable of feeling strange again.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Sculpture &nbsp; · &nbsp; Fantasy &nbsp; · &nbsp; Transformation
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       004 — MUGLER
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        004
+      </div>
+
+      <div class="object-house">
+        Thierry Mugler
+      </div>
+
+      <h2 class="object-title">
+        Chimère
+      </h2>
+
+      <div class="object-year">
+        1997
+      </div>
+
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-mugler.jpg"
+        alt="Thierry Mugler Chimere"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      More creature than conventional couture, Chimère represents the
+      point at which clothing becomes mythology. The body is not merely
+      dressed; it is transformed into something imagined.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Couture &nbsp; · &nbsp; Mythology &nbsp; · &nbsp; Transformation
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       005 — SCHIAPARELLI
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        005
+      </div>
+
+      <div class="object-house">
+        Schiaparelli
+      </div>
+
+      <h2 class="object-title">
+        Surrealist Object
+      </h2>
+
+      <div class="object-year">
+        Archive
+      </div>
+
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-schiaparelli.jpg"
+        alt="Schiaparelli archival object"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      Schiaparelli has always treated fashion as a place where the
+      ordinary can become absurd, theatrical or surreal. I am drawn to
+      objects that make you look twice — pieces that behave almost like
+      visual jokes while remaining extraordinarily crafted.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Surrealism &nbsp; · &nbsp; Art &nbsp; · &nbsp; Provocation
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       006 — COMME DES GARÇONS
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        006
+      </div>
+
+      <div class="object-house">
+        Comme des Garçons
+      </div>
+
+      <h2 class="object-title">
+        Body Meets Dress
+      </h2>
+
+      <div class="object-year">
+        1997
+      </div>
+
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-cdg.jpg"
+        alt="Comme des Garcons Body Meets Dress"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      Rei Kawakubo challenged one of fashion’s most basic assumptions:
+      that clothing should flatter the existing body. By inserting
+      unexpected volume, the collection asked whether fashion could
+      invent an entirely different silhouette instead.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Body &nbsp; · &nbsp; Distortion &nbsp; · &nbsp; Radical Form
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       007 — HERMÈS
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        007
+      </div>
+
+      <div class="object-house">
+        Hermès
+      </div>
+
+      <h2 class="object-title">
+        Birkin
+      </h2>
+
+      <div class="object-year">
+        1984
+      </div>
+
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-birkin.jpg"
+        alt="Hermes Birkin"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      The Birkin is interesting to me not simply because it is expensive,
+      but because an ordinary functional object became surrounded by an
+      extraordinary cultural mythology of access, scarcity, collecting
+      and status.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Scarcity &nbsp; · &nbsp; Status &nbsp; · &nbsp; Myth
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       008 — CARTIER
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        008
+      </div>
+
+      <div class="object-house">
+        Cartier
+      </div>
+
+      <h2 class="object-title">
+        An Object in Motion
+      </h2>
+
+      <div class="object-year">
+        Archive
+      </div>
+
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-cartier.jpg"
+        alt="Cartier archival jewelry"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      Jewelry becomes especially fascinating when engineering disappears
+      beneath beauty. Cartier’s transformable pieces reveal how an object
+      can carry multiple identities while still feeling completely
+      resolved.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Jewelry &nbsp; · &nbsp; Mechanism &nbsp; · &nbsp; Transformation
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       009 — GUY BOURDIN
+  ======================================================== -->
+
+  <section class="archive-object">
+
+    <div class="object-heading">
+
+      <div class="object-number">
+        009
+      </div>
+
+      <div class="object-house">
+        Guy Bourdin
+      </div>
+
+      <h2 class="object-title">
+        The Image
+      </h2>
+
+      <div class="object-year">
+        Archive
+      </div>
+
+    </div>
+
+
+    <div class="object-image">
+      <img
+        src="archive-bourdin.jpg"
+        alt="Guy Bourdin fashion photograph"
+      >
+    </div>
+
+
+    <p class="object-copy">
+      Fashion does not survive only through garments. Sometimes the
+      photograph becomes the object we remember. Bourdin’s images prove
+      how framing, colour, tension and atmosphere can become as
+      recognizable as the fashion itself.
+    </p>
+
+
+    <div class="object-rule"></div>
+
+    <div class="object-tags">
+      Image &nbsp; · &nbsp; Desire &nbsp; · &nbsp; Memory
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-name">
+        Anaïs Doroshina
+      </div>
+
+      <div class="footer-copy">
+        A curated perspective on fashion, luxury and the structures
+        behind them.
+      </div>
+
+      <div class="footer-contact">
+        <a href="mailto:YOUR-EMAIL-HERE">Email</a><br>
+        <a href="#">LinkedIn</a>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        Anaïs Doroshina
+      </span>
+
+      <span>
+        Est. 2024
+      </span>
+
+    </div>
+
+  </footer>
 
 
 </body>
