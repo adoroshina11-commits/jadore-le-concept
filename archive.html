@@ -59,7 +59,6 @@ a{
 nav{
     position:relative;
     z-index:1000;
-
     height:56px;
     padding:0 3.8vw;
 
@@ -68,7 +67,6 @@ nav{
     align-items:center;
 
     background:#faf8f4;
-
     border-bottom:1px solid #ded8ce;
 }
 
@@ -98,35 +96,30 @@ nav{
 
 /* =========================================================
    HERO
-
-   IMPORTANT:
-   This is intentionally taller than the old hero.
-   The generated reference is a collage, not a banner.
+   EDIT #1 — SHORTER
 ========================================================= */
 
 .hero{
     position:relative;
-
     width:100%;
-    height:min(76vw, 900px);
-    min-height:720px;
+
+    /* shorter than before */
+    height:min(61vw, 760px);
+    min-height:640px;
 
     overflow:hidden;
 
     background:
         radial-gradient(
-            ellipse at 50% 44%,
-            rgba(255,255,255,.92) 0%,
-            rgba(255,255,255,.48) 39%,
-            transparent 72%
+            ellipse at 50% 43%,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,255,255,.55) 42%,
+            transparent 74%
         ),
         #f4f0e7;
 
     border-bottom:1px solid #d5cec3;
 }
-
-
-/* subtle paper texture */
 
 .hero::before{
     content:"";
@@ -134,8 +127,7 @@ nav{
     inset:0;
     z-index:0;
     pointer-events:none;
-
-    opacity:.2;
+    opacity:.18;
 
     background-image:
         repeating-linear-gradient(
@@ -149,33 +141,32 @@ nav{
 
 
 /* =========================================================
-   CENTRAL TITLE
+   TITLE
+   EDIT #3 — LOWER, CLEAR OF COLLAGE
 ========================================================= */
 
 .hero-title-wrap{
     position:absolute;
-
     z-index:40;
 
-    left:49%;
-    top:42%;
+    left:50%;
+    top:53%;
 
-    width:52%;
+    width:54%;
 
     transform:translate(-50%,-50%);
-
     text-align:center;
 }
 
 .hero-title{
     font-family:'Cormorant Garamond',serif;
 
-    font-size:clamp(92px,10.3vw,158px);
+    font-size:clamp(82px,9.3vw,142px);
 
     font-weight:300;
     font-style:italic;
 
-    line-height:.65;
+    line-height:.66;
 
     letter-spacing:-.075em;
 
@@ -187,24 +178,19 @@ nav{
 }
 
 .hero-title .line-two{
-    margin-top:.39em;
+    margin-top:.42em;
 
-    font-size:.52em;
-
+    font-size:.51em;
     letter-spacing:-.055em;
 }
 
 .hero-subtitle{
-    margin-top:52px;
+    margin-top:44px;
 
     font-family:'Cormorant Garamond',serif;
-
-    font-size:11px;
-
+    font-size:10px;
     line-height:1.75;
-
-    letter-spacing:.39em;
-
+    letter-spacing:.38em;
     text-transform:uppercase;
 
     color:#332e29;
@@ -212,21 +198,17 @@ nav{
 
 
 /* =========================================================
-   HAND
-
-   The hand is deliberately HUGE.
-   It should feel like it is falling into the composition.
+   HAND + FLOWER
 ========================================================= */
 
 .hero-hand{
     position:absolute;
-
     z-index:34;
 
-    left:18.3%;
-    top:-26%;
+    left:20%;
+    top:-31%;
 
-    width:35%;
+    width:31%;
 
     max-width:none;
 
@@ -238,19 +220,16 @@ nav{
 
 /* =========================================================
    WOMAN
-
-   Large and pushed inward like the reference.
 ========================================================= */
 
 .hero-woman{
     position:absolute;
-
     z-index:28;
 
-    right:-2.5%;
-    top:11%;
+    right:-1.5%;
+    top:9%;
 
-    width:37%;
+    width:35%;
 
     max-width:none;
 
@@ -260,23 +239,24 @@ nav{
 
 /* =========================================================
    VINTAGE PHOTO
+   EDIT #2 — MUCH BIGGER
 ========================================================= */
 
 .hero-photo{
     position:absolute;
+    z-index:35;
 
-    z-index:32;
+    left:3.5%;
+    top:25%;
 
-    left:4.5%;
-    top:29%;
-
-    width:17%;
+    /* previously 17% */
+    width:27%;
 
     max-width:none;
 
     transform:rotate(-5deg);
 
-    filter:drop-shadow(0 7px 8px rgba(40,30,20,.12));
+    filter:drop-shadow(0 8px 10px rgba(40,30,20,.13));
 
     pointer-events:none;
 }
@@ -284,21 +264,22 @@ nav{
 
 /* =========================================================
    STATUE
+   EDIT #4 — INSIDE FRAME
 ========================================================= */
 
 .hero-statue{
     position:absolute;
-
     z-index:24;
 
-    left:-7%;
-    bottom:-6%;
+    /* no longer hanging way off-screen */
+    left:-1%;
+    bottom:-1%;
 
-    width:29%;
+    width:23%;
 
     max-width:none;
 
-    transform:rotate(-3deg);
+    transform:rotate(-2deg);
 
     pointer-events:none;
 }
@@ -310,13 +291,12 @@ nav{
 
 .hero-book{
     position:absolute;
-
     z-index:35;
 
-    right:-7%;
-    bottom:-9%;
+    right:-4%;
+    bottom:-6%;
 
-    width:32%;
+    width:27%;
 
     max-width:none;
 
@@ -329,19 +309,17 @@ nav{
 
 
 /* =========================================================
-   SEAL
+   WAX SEAL
 ========================================================= */
 
 .hero-seal{
     position:absolute;
-
     z-index:46;
 
-    right:18%;
+    right:17%;
+    bottom:1%;
 
-    bottom:-1.5%;
-
-    width:14%;
+    width:12.5%;
 
     max-width:none;
 
@@ -359,21 +337,20 @@ nav{
 
 .left-note{
     position:absolute;
-
     z-index:45;
 
-    left:3.8%;
-    top:5%;
+    left:3.3%;
+    top:6%;
 
     width:13%;
 
     font-family:'Corinthia',cursive;
 
-    font-size:clamp(31px,3vw,48px);
+    font-size:clamp(29px,2.7vw,44px);
 
-    line-height:.67;
+    line-height:.69;
 
-    transform:rotate(-8deg);
+    transform:rotate(-7deg);
 }
 
 
@@ -383,15 +360,14 @@ nav{
 
 .pink-note{
     position:absolute;
-
     z-index:48;
 
-    left:54.5%;
-    top:4%;
+    left:55%;
+    top:5%;
 
-    width:27%;
+    width:25%;
 
-    padding:18px 22px;
+    padding:15px 20px;
 
     background:rgba(224,112,133,.88);
 
@@ -401,7 +377,7 @@ nav{
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:clamp(14px,1.45vw,22px);
+    font-size:clamp(13px,1.35vw,20px);
 
     font-style:italic;
 
@@ -416,9 +392,9 @@ nav{
     position:absolute;
 
     width:30%;
-    height:22px;
+    height:19px;
 
-    top:-10px;
+    top:-9px;
     left:35%;
 
     background:rgba(218,202,168,.65);
@@ -428,53 +404,151 @@ nav{
 
 
 /* =========================================================
-   STAR
+   EDIT #5 — FUN STARS / ASTERISKS
 ========================================================= */
 
 .star{
     position:absolute;
-
-    z-index:47;
-
-    left:48.5%;
-    top:4.5%;
+    z-index:60;
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:clamp(42px,4vw,65px);
-
     line-height:1;
+
+    pointer-events:none;
+}
+
+.star-1{
+    left:48%;
+    top:8%;
+
+    font-size:55px;
+
+    transform:rotate(4deg);
+}
+
+.star-2{
+    left:34%;
+    top:18%;
+
+    font-size:28px;
+
+    transform:rotate(-14deg);
+}
+
+.star-3{
+    left:44%;
+    top:31%;
+
+    font-size:20px;
+
+    color:var(--pink);
+
+    transform:rotate(12deg);
+}
+
+.star-4{
+    right:31%;
+    top:25%;
+
+    font-size:32px;
+
+    transform:rotate(17deg);
+}
+
+.star-5{
+    left:30%;
+    bottom:16%;
+
+    font-size:26px;
+
+    color:#c83d49;
+
+    transform:rotate(-8deg);
+}
+
+.star-6{
+    right:27%;
+    bottom:17%;
+
+    font-size:21px;
+
+    transform:rotate(8deg);
+}
+
+.star-7{
+    left:6%;
+    top:17%;
+
+    font-size:19px;
+
+    color:var(--pink);
+
+    transform:rotate(16deg);
+}
+
+.star-8{
+    right:5%;
+    top:9%;
+
+    font-size:25px;
+
+    transform:rotate(-12deg);
 }
 
 
-/* =========================================================
-   RIGHT RED NOTE
-========================================================= */
+/* slightly imperfect hand-drawn style */
 
-.red-note{
+.drawn-star{
+    width:42px;
+    height:42px;
+}
+
+.drawn-star::before,
+.drawn-star::after{
+    content:"";
+
     position:absolute;
 
-    z-index:50;
+    left:50%;
+    top:50%;
 
-    right:2.7%;
-    top:39%;
+    width:42px;
+    height:2px;
 
-    width:11%;
+    background:currentColor;
 
-    font-family:'Corinthia',cursive;
+    transform:translate(-50%,-50%);
+}
 
-    font-size:clamp(24px,2.2vw,36px);
+.drawn-star::after{
+    transform:translate(-50%,-50%) rotate(90deg);
+}
 
-    line-height:.72;
+.drawn-star i::before,
+.drawn-star i::after{
+    content:"";
 
-    color:#c3313c;
+    position:absolute;
 
-    transform:rotate(3deg);
+    left:50%;
+    top:50%;
+
+    width:42px;
+    height:2px;
+
+    background:currentColor;
+
+    transform:translate(-50%,-50%) rotate(45deg);
+}
+
+.drawn-star i::after{
+    transform:translate(-50%,-50%) rotate(-45deg);
 }
 
 
 /* =========================================================
-   LARGE SCRIBBLES
+   TOP SCRIBBLE
 ========================================================= */
 
 .scribble-top{
@@ -485,8 +559,8 @@ nav{
     right:-1%;
     top:0;
 
-    width:24%;
-    height:21%;
+    width:22%;
+    height:18%;
 }
 
 .scribble-top::before,
@@ -499,6 +573,7 @@ nav{
     height:75%;
 
     border-top:3px solid #211d19;
+
     border-radius:50%;
 
     transform:rotate(-19deg);
@@ -513,7 +588,125 @@ nav{
 
 
 /* =========================================================
-   LOWER CENTER SCRIBBLE
+   EDIT #6 — RED QUOTE MOVED OFF WOMAN
+========================================================= */
+
+.red-note{
+    position:absolute;
+
+    z-index:55;
+
+    /*
+       now placed in open cream space,
+       not over the woman
+    */
+
+    right:31%;
+    bottom:13%;
+
+    width:13%;
+
+    font-family:'Corinthia',cursive;
+
+    font-size:clamp(22px,2vw,33px);
+
+    line-height:.73;
+
+    color:#c3313c;
+
+    transform:rotate(-4deg);
+
+    text-align:left;
+}
+
+
+/* =========================================================
+   EDIT #4 — SMALLER PINK ARCHIVE CARD
+========================================================= */
+
+.archive-card{
+    position:absolute;
+
+    z-index:50;
+
+    left:7%;
+    bottom:3%;
+
+    /* much shorter than before */
+    width:20%;
+
+    min-width:255px;
+
+    min-height:105px;
+
+    padding:18px 22px;
+
+    background:rgba(224,112,133,.92);
+
+    transform:rotate(4deg);
+}
+
+.archive-card-top{
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.archive-card-brand{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+
+    font-style:italic;
+
+    line-height:.8;
+}
+
+.archive-card-brand small{
+    display:block;
+
+    margin-top:7px;
+
+    font-size:7px;
+
+    font-style:normal;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+}
+
+.archive-card-number{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:17px;
+
+    letter-spacing:.12em;
+
+    white-space:nowrap;
+}
+
+.archive-card-places{
+    margin-top:13px;
+    margin-left:45%;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:7px;
+
+    line-height:1.55;
+
+    letter-spacing:.23em;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   LOWER SCRIBBLE
 ========================================================= */
 
 .lower-scribble{
@@ -521,11 +714,11 @@ nav{
 
     z-index:45;
 
-    left:42%;
-    bottom:11%;
+    left:43%;
+    bottom:5%;
 
-    width:18%;
-    height:40px;
+    width:13%;
+    height:35px;
 }
 
 .lower-scribble::before,
@@ -559,125 +752,8 @@ nav{
 
 
 /* =========================================================
-   PINK ARCHIVE CARD
-========================================================= */
-
-.archive-card{
-    position:absolute;
-
-    z-index:50;
-
-    left:7.5%;
-    bottom:3%;
-
-    width:33%;
-
-    min-height:115px;
-
-    padding:22px 28px;
-
-    background:rgba(224,112,133,.9);
-
-    transform:rotate(5deg);
-}
-
-.archive-card-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-}
-
-.archive-card-brand{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:28px;
-
-    font-style:italic;
-
-    line-height:.8;
-}
-
-.archive-card-brand small{
-    display:block;
-
-    margin-top:7px;
-
-    font-size:7px;
-
-    font-style:normal;
-
-    letter-spacing:.28em;
-
-    text-transform:uppercase;
-}
-
-.archive-card-number{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:20px;
-
-    letter-spacing:.15em;
-}
-
-.archive-card-places{
-    margin-top:13px;
-    margin-left:47%;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:7px;
-
-    line-height:1.65;
-
-    letter-spacing:.23em;
-
-    text-transform:uppercase;
-}
-
-
-/* =========================================================
-   HERO TRANSITION BAR
-========================================================= */
-
-.archive-entry{
-    height:60px;
-
-    padding:0 3.8vw;
-
-    display:grid;
-
-    grid-template-columns:auto 1fr auto 1fr auto;
-
-    gap:22px;
-
-    align-items:center;
-
-    background:#faf8f4;
-
-    border-bottom:1px solid #ded8ce;
-}
-
-.archive-entry span{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.32em;
-
-    text-transform:uppercase;
-
-    color:#716960;
-}
-
-.entry-line{
-    height:1px;
-
-    background:#c8c0b5;
-}
-
-
-/* =========================================================
-   TABI SECTION
+   001 — TABI
+   DIRECTLY AFTER HERO
 ========================================================= */
 
 .tabi{
@@ -701,15 +777,12 @@ nav{
     border-bottom:1px solid #ded8ce;
 }
 
-
-/* heading */
-
 .tabi-heading{
     position:absolute;
 
     z-index:20;
 
-    top:54px;
+    top:50px;
     left:50%;
 
     transform:translateX(-50%);
@@ -764,9 +837,6 @@ nav{
     letter-spacing:.3em;
 }
 
-
-/* Tabi main image */
-
 .tabi-boots{
     position:absolute;
 
@@ -784,9 +854,6 @@ nav{
 
     filter:drop-shadow(0 12px 10px rgba(55,45,35,.08));
 }
-
-
-/* left vintage image */
 
 .tabi-vintage{
     position:absolute;
@@ -807,9 +874,6 @@ nav{
     opacity:.65;
 }
 
-
-/* recognition note */
-
 .tabi-recognition{
     position:absolute;
 
@@ -822,9 +886,6 @@ nav{
 
     transform:rotate(-4deg);
 }
-
-
-/* right sketch */
 
 .tabi-sketch{
     position:absolute;
@@ -839,9 +900,6 @@ nav{
     opacity:.3;
 }
 
-
-/* circle note */
-
 .tabi-circle{
     position:absolute;
 
@@ -854,6 +912,7 @@ nav{
     height:115px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -876,9 +935,6 @@ nav{
     color:#6b625a;
 }
 
-
-/* Margiela signature */
-
 .tabi-signature{
     position:absolute;
 
@@ -897,9 +953,6 @@ nav{
 
     transform:rotate(-9deg);
 }
-
-
-/* body */
 
 .tabi-copy{
     position:absolute;
@@ -960,7 +1013,7 @@ nav{
 
 
 /* =========================================================
-   REST OF ARCHIVE
+   OTHER ARCHIVE OBJECTS
 ========================================================= */
 
 .archive-object{
@@ -969,6 +1022,7 @@ nav{
     padding:6rem 8vw;
 
     display:flex;
+
     flex-direction:column;
     align-items:center;
     justify-content:center;
@@ -1207,68 +1261,68 @@ footer{
 
 
     .hero{
-        height:720px;
+        height:650px;
         min-height:0;
     }
 
 
     .hero-title-wrap{
         left:50%;
-        top:42%;
+        top:52%;
 
-        width:92%;
+        width:90%;
     }
 
     .hero-title{
-        font-size:clamp(67px,20vw,100px);
+        font-size:clamp(62px,18vw,92px);
     }
 
     .hero-subtitle{
-        margin-top:38px;
+        margin-top:34px;
 
-        font-size:7px;
+        font-size:6.5px;
 
-        letter-spacing:.25em;
+        letter-spacing:.23em;
     }
 
 
     .hero-hand{
-        left:7%;
-        top:-9%;
+        left:8%;
+        top:-10%;
 
-        width:52%;
+        width:48%;
     }
 
 
     .hero-woman{
-        right:-18%;
-        top:30%;
+        right:-17%;
+        top:27%;
 
-        width:65%;
+        width:62%;
     }
 
 
     .hero-photo{
-        left:2%;
-        top:34%;
+        left:1%;
+        top:30%;
 
-        width:27%;
+        width:37%;
     }
 
 
     .hero-statue{
-        left:-17%;
-        bottom:-1%;
+        left:-4%;
+        bottom:0;
 
-        width:47%;
+        width:38%;
     }
 
 
     .hero-book{
-        right:-18%;
-        bottom:-4%;
+        right:-17%;
+        bottom:-3%;
 
-        width:50%;
+        width:46%;
     }
 
 
@@ -1276,7 +1330,7 @@ footer{
         right:20%;
         bottom:1%;
 
-        width:22%;
+        width:21%;
     }
 
 
@@ -1286,7 +1340,7 @@ footer{
 
         width:24%;
 
-        font-size:26px;
+        font-size:25px;
     }
 
 
@@ -1302,39 +1356,39 @@ footer{
     }
 
 
-    .star{
-        display:none;
-    }
-
-
-    .red-note{
-        display:none;
-    }
-
-
     .scribble-top{
         display:none;
     }
 
 
-    .archive-card{
-        left:7%;
-        bottom:3%;
+    .red-note{
+        right:31%;
+        bottom:15%;
 
-        width:42%;
+        width:23%;
+
+        font-size:21px;
+    }
+
+
+    .archive-card{
+        left:5%;
+        bottom:2%;
+
+        width:38%;
+        min-width:0;
 
         min-height:75px;
 
-        padding:12px;
+        padding:11px;
     }
 
-
     .archive-card-brand{
-        font-size:18px;
+        font-size:17px;
     }
 
     .archive-card-number{
-        font-size:12px;
+        font-size:10px;
     }
 
     .archive-card-places{
@@ -1347,16 +1401,27 @@ footer{
     }
 
 
-    .archive-entry{
-        gap:8px;
-
-        padding:0 3vw;
+    .star-2,
+    .star-3,
+    .star-5,
+    .star-6,
+    .star-7,
+    .star-8{
+        display:none;
     }
 
-    .archive-entry span{
-        font-size:5px;
+    .star-1{
+        left:49%;
+        top:11%;
 
-        letter-spacing:.15em;
+        font-size:36px;
+    }
+
+    .star-4{
+        right:25%;
+        top:30%;
+
+        font-size:24px;
     }
 
 
@@ -1366,16 +1431,13 @@ footer{
         height:800px;
     }
 
-
     .tabi-heading{
         top:48px;
     }
 
-
     .tabi-title{
         font-size:48px;
     }
-
 
     .tabi-boots{
         top:220px;
@@ -1384,11 +1446,9 @@ footer{
         height:300px;
     }
 
-
     .tabi-vintage{
         width:29%;
     }
-
 
     .tabi-recognition{
         left:2%;
@@ -1397,24 +1457,21 @@ footer{
         width:110px;
     }
 
-
     .tabi-sketch{
         width:40%;
+
         right:-12%;
     }
-
 
     .tabi-circle{
         display:none;
     }
-
 
     .tabi-signature{
         right:2%;
 
         font-size:27px;
     }
-
 
     .tabi-copy{
         top:550px;
@@ -1423,7 +1480,6 @@ footer{
 
         font-size:14px;
     }
-
 
     .tabi-tags{
         top:715px;
@@ -1439,7 +1495,6 @@ footer{
 
         padding:5rem 7vw;
     }
-
 
     .object-image{
         width:76vw;
@@ -1463,7 +1518,9 @@ footer{
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- =========================================================
+     NAV
+========================================================= -->
 
 <nav>
 
@@ -1474,13 +1531,9 @@ footer{
     <div class="nav-links">
 
         <a href="archive.html">Archive</a>
-
         <a href="essays.html">Essays</a>
-
         <a href="photography.html">Photography</a>
-
         <a href="about.html">About</a>
-
         <a href="about.html#contact">Contact</a>
 
     </div>
@@ -1489,12 +1542,14 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      THE CABINET HERO
-===================================================== -->
+========================================================= -->
 
 <section class="hero">
 
+
+    <!-- COLLAGE ASSETS -->
 
     <img
         src="cabinet-hand-flower.png"
@@ -1539,6 +1594,8 @@ footer{
 
 
 
+    <!-- LEFT HANDWRITTEN NOTE -->
+
     <div class="left-note">
 
         Objects,<br>
@@ -1551,11 +1608,7 @@ footer{
 
 
 
-    <div class="star">
-        ✳
-    </div>
-
-
+    <!-- PINK NOTE -->
 
     <div class="pink-note">
 
@@ -1566,9 +1619,33 @@ footer{
 
 
 
+    <!-- TOP SCRIBBLE -->
+
     <div class="scribble-top"></div>
 
 
+
+    <!-- FUN STARS -->
+
+    <div class="star star-1">✳</div>
+
+    <div class="star star-2">✦</div>
+
+    <div class="star star-3">＊</div>
+
+    <div class="star star-4">✳</div>
+
+    <div class="star star-5">✦</div>
+
+    <div class="star star-6">＊</div>
+
+    <div class="star star-7">✦</div>
+
+    <div class="star star-8">＊</div>
+
+
+
+    <!-- MAIN TITLE -->
 
     <div class="hero-title-wrap">
 
@@ -1596,6 +1673,8 @@ footer{
 
 
 
+    <!-- RED HANDWRITTEN QUOTE -->
+
     <div class="red-note">
 
         Fashion<br>
@@ -1606,6 +1685,8 @@ footer{
     </div>
 
 
+
+    <!-- SMALLER ARCHIVE CARD -->
 
     <div class="archive-card">
 
@@ -1650,27 +1731,10 @@ footer{
 
 
 
-<!-- ARCHIVE ENTRY -->
-
-<div class="archive-entry">
-
-    <span>Scroll</span>
-
-    <div class="entry-line"></div>
-
-    <span>Enter the Archive</span>
-
-    <div class="entry-line"></div>
-
-    <span>001 — 009</span>
-
-</div>
-
-
-
-<!-- =====================================================
-     001 — TABI
-===================================================== -->
+<!-- =========================================================
+     001 — MAISON MARGIELA TABI
+     DIRECTLY AFTER HERO — NO SCROLL BAR
+========================================================= -->
 
 <section class="tabi">
 
@@ -1773,9 +1837,9 @@ footer{
 
 
 
-<!-- =====================================================
-     002 — SADDLE
-===================================================== -->
+<!-- =========================================================
+     002 — DIOR SADDLE
+========================================================= -->
 
 <section class="archive-object">
 
@@ -1815,9 +1879,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      003 — MUGLER
-===================================================== -->
+========================================================= -->
 
 <section class="archive-object">
 
@@ -1858,9 +1922,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      004 — McQUEEN
-===================================================== -->
+========================================================= -->
 
 <section class="archive-object">
 
@@ -1900,9 +1964,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      005 — COMME DES GARÇONS
-===================================================== -->
+========================================================= -->
 
 <section class="archive-object">
 
@@ -1944,9 +2008,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      006 — SCHIAPARELLI
-===================================================== -->
+========================================================= -->
 
 <section class="archive-object">
 
@@ -1987,9 +2051,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      007 — BIRKIN
-===================================================== -->
+========================================================= -->
 
 <section class="archive-object">
 
@@ -2030,9 +2094,9 @@ footer{
 
 
 
-<!-- =====================================================
-     008 — BOURDIN
-===================================================== -->
+<!-- =========================================================
+     008 — GUY BOURDIN
+========================================================= -->
 
 <section class="archive-object">
 
@@ -2073,9 +2137,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      009 — CARTIER
-===================================================== -->
+========================================================= -->
 
 <section class="archive-object">
 
@@ -2116,9 +2180,9 @@ footer{
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      ENDING
-===================================================== -->
+========================================================= -->
 
 <section class="archive-ending">
 
@@ -2143,7 +2207,9 @@ footer{
 
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
@@ -2158,6 +2224,7 @@ footer{
         </p>
 
     </div>
+
 
     <div class="footer-right">
 
