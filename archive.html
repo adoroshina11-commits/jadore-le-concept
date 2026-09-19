@@ -22,7 +22,6 @@
 
 :root{
     --cream:#faf8f4;
-    --paper:#f6f2e9;
     --ink:#171411;
     --muted:#766d64;
     --rule:#d8d1c6;
@@ -33,13 +32,14 @@
 
 html{
     scroll-behavior:smooth;
+    background:var(--cream);
 }
 
 body{
     margin:0;
     background:var(--cream);
     color:var(--ink);
-    font-family:'EB Garamond', Georgia, serif;
+    font-family:'EB Garamond',Georgia,serif;
     overflow-x:hidden;
 }
 
@@ -54,6 +54,7 @@ a{
 
 /* =========================================================
    NAV
+   SAME 56PX NAV SYSTEM AS THE REST OF THE SITE
 ========================================================= */
 
 nav{
@@ -66,8 +67,8 @@ nav{
     justify-content:space-between;
     align-items:center;
 
-    background:#faf8f4;
-    border-bottom:1px solid #ded8ce;
+    background:var(--cream);
+    border-bottom:.5px solid var(--rule);
 }
 
 .nav-logo{
@@ -76,6 +77,7 @@ nav{
     letter-spacing:.16em;
     text-transform:uppercase;
     text-decoration:none;
+    line-height:1;
 }
 
 .nav-links{
@@ -87,6 +89,7 @@ nav{
 .nav-links a{
     font-family:'Cormorant Garamond',serif;
     font-size:9px;
+    line-height:1;
     letter-spacing:.17em;
     text-transform:uppercase;
     text-decoration:none;
@@ -102,23 +105,32 @@ nav{
     position:relative;
     width:100%;
 
-    /* shorter so the Tabi begins almost immediately */
-    height:min(57vw, 700px);
-    min-height:610px;
+    /*
+       Shorter hero.
+       Tabi appears quickly when scrolling.
+    */
+    height:650px;
+    min-height:650px;
 
-    overflow:hidden;
+    /*
+       IMPORTANT:
+       visible instead of hidden so the book can cross
+       naturally into the Tabi section.
+    */
+    overflow:visible;
 
-    background:
-        radial-gradient(
-            ellipse at 50% 45%,
-            rgba(255,255,255,.96) 0%,
-            rgba(255,255,255,.58) 42%,
-            transparent 75%
-        ),
-        #f4f0e7;
+    /*
+       EXACT SAME COLOR AS BODY/TABI.
+       No separate hero panel.
+    */
+    background:var(--cream);
 
-    border-bottom:1px solid #d5cec3;
+    border-bottom:none;
+    z-index:10;
 }
+
+
+/* subtle texture without changing the background colour */
 
 .hero::before{
     content:"";
@@ -126,13 +138,13 @@ nav{
     inset:0;
     z-index:0;
     pointer-events:none;
-    opacity:.18;
+    opacity:.10;
 
     background-image:
         repeating-linear-gradient(
             0deg,
-            rgba(40,30,20,.025) 0px,
-            rgba(40,30,20,.025) 1px,
+            rgba(40,30,20,.018) 0px,
+            rgba(40,30,20,.018) 1px,
             transparent 1px,
             transparent 4px
         );
@@ -147,10 +159,14 @@ nav{
     position:absolute;
     z-index:40;
 
-    left:50%;
-    top:59%;
+    /*
+       Shifted slightly right to create a clean separation
+       from the vintage photograph.
+    */
+    left:54%;
+    top:56%;
 
-    width:54%;
+    width:45%;
 
     transform:translate(-50%,-50%);
     text-align:center;
@@ -159,19 +175,19 @@ nav{
 .hero-title{
     font-family:'Cormorant Garamond',serif;
 
-    font-size:clamp(90px,10vw,150px);
+    font-size:clamp(92px,9vw,142px);
 
     font-weight:300;
     font-style:italic;
 
-    line-height:.82;
+    line-height:.84;
     letter-spacing:-.07em;
 
     color:#100e0c;
 }
 
 .hero-subtitle{
-    margin-top:35px;
+    margin-top:34px;
 
     font-family:'Cormorant Garamond',serif;
     font-size:clamp(13px,1.05vw,17px);
@@ -186,18 +202,26 @@ nav{
 
 /* =========================================================
    HAND + FLOWER
+   PRESERVE ORIGINAL ASPECT RATIO
 ========================================================= */
 
 .hero-hand{
     position:absolute;
-    z-index:34;
+    z-index:32;
 
-    left:21%;
-    top:-34%;
+    left:23%;
+    top:-25%;
 
-    width:30%;
+    /*
+       Only width is controlled.
+       Height remains AUTO so the hand cannot stretch.
+    */
+    width:27%;
+    height:auto;
 
     max-width:none;
+
+    object-fit:contain;
 
     transform:rotate(-2deg);
 
@@ -213,12 +237,15 @@ nav{
     position:absolute;
     z-index:28;
 
-    right:-1.5%;
-    top:8%;
+    right:-1%;
+    top:7%;
 
-    width:34%;
+    width:31%;
+    height:auto;
 
     max-width:none;
+
+    object-fit:contain;
 
     pointer-events:none;
 }
@@ -226,23 +253,28 @@ nav{
 
 /* =========================================================
    VINTAGE PHOTO
-   MOVED UP + RIGHT INTO EMPTY SPACE
+
+   MOVED UP + RIGHT.
+   DOES NOT TOUCH THE TITLE.
 ========================================================= */
 
 .hero-photo{
     position:absolute;
     z-index:35;
 
-    left:8%;
-    top:14%;
+    left:13%;
+    top:-3%;
 
-    width:28%;
+    width:24%;
+    height:auto;
 
     max-width:none;
 
-    transform:rotate(-6deg);
+    object-fit:contain;
 
-    filter:drop-shadow(0 8px 10px rgba(40,30,20,.13));
+    transform:rotate(-5deg);
+
+    filter:drop-shadow(0 8px 10px rgba(40,30,20,.11));
 
     pointer-events:none;
 }
@@ -250,20 +282,25 @@ nav{
 
 /* =========================================================
    STATUE
+   ORIGINAL PROPORTIONS — NO DISTORTION
 ========================================================= */
 
 .hero-statue{
     position:absolute;
     z-index:24;
 
-    left:-1.5%;
-    bottom:-1%;
+    left:-2%;
+    bottom:-2%;
 
-    width:22%;
+    width:20%;
+    height:auto;
 
     max-width:none;
 
-    transform:rotate(-2deg);
+    object-fit:contain;
+    object-position:left bottom;
+
+    transform:none;
 
     pointer-events:none;
 }
@@ -271,20 +308,29 @@ nav{
 
 /* =========================================================
    BOOK
+   BLEEDS INTO TABI SECTION
 ========================================================= */
 
 .hero-book{
     position:absolute;
-    z-index:35;
+    z-index:36;
 
-    right:-4%;
-    bottom:-7%;
+    right:-2.5%;
 
-    width:26%;
+    /*
+       Negative bottom deliberately allows the book
+       to cross the hero boundary.
+    */
+    bottom:-95px;
+
+    width:24%;
+    height:auto;
 
     max-width:none;
 
-    transform:rotate(-4deg);
+    object-fit:contain;
+
+    transform:rotate(-3deg);
 
     filter:drop-shadow(0 8px 8px rgba(40,30,20,.08));
 
@@ -301,11 +347,14 @@ nav{
     z-index:46;
 
     right:17%;
-    bottom:0;
+    bottom:-25px;
 
-    width:12%;
+    width:11%;
+    height:auto;
 
     max-width:none;
+
+    object-fit:contain;
 
     transform:rotate(-5deg);
 
@@ -324,7 +373,7 @@ nav{
     z-index:45;
 
     left:3.2%;
-    top:7%;
+    top:9%;
 
     width:13%;
 
@@ -349,9 +398,9 @@ nav{
     left:56%;
     top:6%;
 
-    width:23%;
+    width:21%;
 
-    padding:15px 20px;
+    padding:14px 20px;
 
     background:rgba(224,112,133,.90);
 
@@ -388,15 +437,14 @@ nav{
 
 
 /* =========================================================
-   STARS — SCATTERED THROUGHOUT HERO
+   STARS
+   ONLY IN NEGATIVE SPACE
 ========================================================= */
 
 .star{
     position:absolute;
     z-index:60;
-
     line-height:1;
-
     pointer-events:none;
 }
 
@@ -408,94 +456,93 @@ nav{
     color:#ca3340;
 }
 
-.star-outline{
-    color:#171411;
-    font-family:'Cormorant Garamond',serif;
-}
 
-/* individual positions */
+/*
+   None of these positions sit on top of the hand,
+   flower, photo, statue, woman or book.
+*/
 
 .star-1{
-    left:49%;
-    top:10%;
-    font-size:46px;
+    left:47%;
+    top:9%;
+    font-size:43px;
     transform:rotate(7deg);
 }
 
 .star-2{
-    left:35.5%;
-    top:26%;
-    font-size:24px;
+    left:39%;
+    top:27%;
+    font-size:22px;
     transform:rotate(-11deg);
 }
 
 .star-3{
-    left:29%;
-    top:9%;
-    font-size:23px;
+    left:7%;
+    top:48%;
+    font-size:22px;
     transform:rotate(12deg);
 }
 
 .star-4{
     right:19%;
-    top:17%;
-    font-size:33px;
+    top:15%;
+    font-size:29px;
     transform:rotate(15deg);
 }
 
 .star-5{
-    right:7%;
-    top:13%;
-    font-size:22px;
+    right:6%;
+    top:14%;
+    font-size:20px;
     transform:rotate(-8deg);
 }
 
 .star-6{
-    left:6%;
-    top:56%;
-    font-size:28px;
+    left:5%;
+    top:63%;
+    font-size:27px;
     transform:rotate(9deg);
 }
 
 .star-7{
-    left:24%;
-    bottom:17%;
-    font-size:22px;
+    left:39%;
+    bottom:12%;
+    font-size:19px;
     transform:rotate(-10deg);
 }
 
 .star-8{
-    left:42%;
-    bottom:8%;
-    font-size:25px;
+    left:43%;
+    bottom:4%;
+    font-size:21px;
     transform:rotate(8deg);
 }
 
 .star-9{
-    right:33%;
-    bottom:14%;
-    font-size:31px;
+    right:34%;
+    bottom:10%;
+    font-size:27px;
     transform:rotate(-8deg);
 }
 
 .star-10{
-    right:7%;
-    bottom:30%;
-    font-size:26px;
+    right:31%;
+    top:36%;
+    font-size:20px;
     transform:rotate(8deg);
 }
 
 .star-11{
     left:55%;
-    top:26%;
-    font-size:18px;
+    top:22%;
+    font-size:16px;
     transform:rotate(10deg);
 }
 
 .star-12{
-    right:25%;
-    top:46%;
-    font-size:19px;
+    right:24%;
+    top:47%;
+    font-size:17px;
     transform:rotate(-5deg);
 }
 
@@ -532,31 +579,27 @@ nav{
 .scribble-top span:nth-child(1){
     top:0;
     left:0;
-
     transform:rotate(-11deg) skewX(-16deg);
 }
 
 .scribble-top span:nth-child(2){
     top:22px;
     left:8px;
-
     width:86%;
-
     transform:rotate(12deg) skewX(15deg);
 }
 
 .scribble-top span:nth-child(3){
     top:43px;
     left:24px;
-
     width:65%;
-
     transform:rotate(-19deg);
 }
 
 
 /* =========================================================
    RED HANDWRITTEN QUOTE
+   MORE DIAGONAL + PLAYFUL
 ========================================================= */
 
 .red-note{
@@ -564,19 +607,24 @@ nav{
     z-index:55;
 
     right:28%;
-    top:28%;
+    top:24%;
 
     width:12%;
 
     font-family:'Corinthia',cursive;
 
-    font-size:clamp(22px,1.9vw,31px);
+    font-size:clamp(23px,2vw,33px);
 
-    line-height:.73;
+    line-height:.70;
 
     color:#c3313c;
 
-    transform:rotate(-4deg);
+    /*
+       Stronger angle, like handwritten marginalia.
+    */
+    transform:rotate(-13deg);
+
+    transform-origin:center;
 
     text-align:left;
 }
@@ -608,44 +656,31 @@ nav{
 
 .archive-card-top{
     display:flex;
-
     align-items:flex-start;
     justify-content:space-between;
-
     gap:20px;
 }
 
 .archive-card-brand{
     font-family:'Cormorant Garamond',serif;
-
     font-size:25px;
-
     font-style:italic;
-
     line-height:.8;
 }
 
 .archive-card-brand small{
     display:block;
-
     margin-top:7px;
-
     font-size:7px;
-
     font-style:normal;
-
     letter-spacing:.28em;
-
     text-transform:uppercase;
 }
 
 .archive-card-number{
     font-family:'Cormorant Garamond',serif;
-
     font-size:17px;
-
     letter-spacing:.12em;
-
     white-space:nowrap;
 }
 
@@ -656,7 +691,6 @@ nav{
     font-family:'Cormorant Garamond',serif;
 
     font-size:7px;
-
     line-height:1.55;
 
     letter-spacing:.23em;
@@ -679,6 +713,8 @@ nav{
 
     width:12%;
     height:52px;
+
+    transform:rotate(-4deg);
 }
 
 .lower-scribble span{
@@ -691,25 +727,26 @@ nav{
 
     border-top:2px solid #171411;
 
-    border-radius:50%;
+    border-radius:55% 40% 60% 35%;
 }
 
 .lower-scribble span:first-child{
     top:7px;
-    transform:rotate(-8deg) skewX(-17deg);
+    transform:rotate(-10deg) skewX(-19deg);
 }
 
 .lower-scribble span:last-child{
     top:20px;
     left:12%;
     width:82%;
-    transform:rotate(5deg) skewX(12deg);
+    transform:rotate(7deg) skewX(15deg);
 }
 
 
 /* =========================================================
-   SMALL EDITORIAL NOTES
-   fills dead space without competing with title
+   ONLY REMAINING SMALL NOTE
+
+   "obsession / form / memory" IS COMPLETELY REMOVED.
 ========================================================= */
 
 .micro-note{
@@ -727,15 +764,9 @@ nav{
     pointer-events:none;
 }
 
-.micro-one{
-    left:30%;
-    bottom:18%;
-    transform:rotate(-9deg);
-}
-
 .micro-two{
     right:10%;
-    bottom:14%;
+    bottom:15%;
     transform:rotate(4deg);
 }
 
@@ -749,20 +780,22 @@ nav{
 
     height:900px;
 
-    overflow:hidden;
+    /*
+       visible allows hero book/seal to visually bleed
+       into the beginning of this section.
+    */
+    overflow:visible;
 
-    background:
-        radial-gradient(
-            ellipse at 50% 48%,
-            white 0%,
-            rgba(255,255,255,.65) 28%,
-            transparent 62%
-        ),
-        #faf8f4;
+    /*
+       SAME EXACT BACKGROUND AS HERO/BODY
+    */
+    background:var(--cream);
 
     text-align:center;
 
     border-bottom:1px solid #ded8ce;
+
+    z-index:1;
 }
 
 .tabi-heading{
@@ -770,7 +803,7 @@ nav{
 
     z-index:20;
 
-    top:50px;
+    top:65px;
     left:50%;
 
     transform:translateX(-50%);
@@ -780,11 +813,8 @@ nav{
 
 .tabi-number{
     font-family:'Cormorant Garamond',serif;
-
     font-size:8px;
-
     letter-spacing:.35em;
-
     color:#998b7c;
 }
 
@@ -1002,6 +1032,7 @@ nav{
 
 /* =========================================================
    OTHER ARCHIVE OBJECTS
+   ONE CONTINUOUS BACKGROUND
 ========================================================= */
 
 .archive-object{
@@ -1017,13 +1048,18 @@ nav{
 
     text-align:center;
 
-    background:#faf8f4;
+    background:var(--cream);
 
     border-bottom:1px solid var(--rule);
 }
 
+/*
+   Removed alternating background.
+   Entire archive is now one continuous cream.
+*/
+
 .archive-object:nth-of-type(even){
-    background:#f6f2eb;
+    background:var(--cream);
 }
 
 .object-number{
@@ -1127,7 +1163,7 @@ nav{
 
     text-align:center;
 
-    background:#f4f0e8;
+    background:var(--cream);
 }
 
 .archive-ending small{
@@ -1236,7 +1272,12 @@ footer{
 @media(max-width:800px){
 
     nav{
+        height:56px;
         padding:0 4vw;
+    }
+
+    .nav-logo{
+        font-size:9px;
     }
 
     .nav-links{
@@ -1254,8 +1295,8 @@ footer{
 
     .hero-title-wrap{
         left:50%;
-        top:60%;
-        width:90%;
+        top:58%;
+        width:86%;
     }
 
     .hero-title{
@@ -1268,39 +1309,45 @@ footer{
     }
 
     .hero-hand{
-        left:9%;
-        top:-10%;
-        width:48%;
+        left:8%;
+        top:-5%;
+        width:43%;
+        height:auto;
     }
 
     .hero-woman{
-        right:-17%;
+        right:-16%;
         top:27%;
-        width:62%;
+        width:59%;
+        height:auto;
     }
 
     .hero-photo{
-        left:4%;
-        top:21%;
-        width:40%;
+        left:8%;
+        top:15%;
+        width:34%;
+        height:auto;
     }
 
     .hero-statue{
-        left:-4%;
-        bottom:0;
-        width:37%;
+        left:-5%;
+        bottom:-1%;
+        width:34%;
+        height:auto;
     }
 
     .hero-book{
-        right:-17%;
-        bottom:-3%;
-        width:46%;
+        right:-14%;
+        bottom:-55px;
+        width:43%;
+        height:auto;
     }
 
     .hero-seal{
-        right:20%;
-        bottom:1%;
-        width:21%;
+        right:18%;
+        bottom:-15px;
+        width:20%;
+        height:auto;
     }
 
     .left-note{
@@ -1311,9 +1358,9 @@ footer{
     }
 
     .pink-note{
-        left:56%;
+        left:57%;
         top:5%;
-        width:38%;
+        width:37%;
         padding:10px;
         font-size:11px;
     }
@@ -1323,15 +1370,16 @@ footer{
     }
 
     .red-note{
-        right:27%;
-        top:30%;
-        width:22%;
-        font-size:21px;
+        right:25%;
+        top:29%;
+        width:23%;
+        font-size:22px;
+        transform:rotate(-12deg);
     }
 
     .archive-card{
         left:5%;
-        bottom:2%;
+        bottom:1%;
 
         width:40%;
         min-width:0;
@@ -1404,7 +1452,7 @@ footer{
     }
 
     .tabi-heading{
-        top:48px;
+        top:55px;
     }
 
     .tabi-title{
@@ -1431,7 +1479,6 @@ footer{
 
     .tabi-sketch{
         width:40%;
-
         right:-12%;
     }
 
@@ -1441,30 +1488,24 @@ footer{
 
     .tabi-signature{
         right:2%;
-
         font-size:27px;
     }
 
     .tabi-copy{
         top:550px;
-
         width:78%;
-
         font-size:14px;
     }
 
     .tabi-tags{
         top:715px;
-
         font-size:6px;
-
         letter-spacing:.25em;
     }
 
 
     .archive-object{
         min-height:650px;
-
         padding:5rem 7vw;
     }
 
@@ -1519,7 +1560,7 @@ footer{
 <section class="hero">
 
 
-    <!-- ACTUAL COLLAGE ASSETS -->
+    <!-- ORIGINAL COLLAGE ASSETS -->
 
     <img
         src="cabinet-hand-flower.png"
@@ -1669,11 +1710,7 @@ footer{
     </div>
 
 
-    <!-- SMALL EDITORIAL NOTES -->
-
-    <div class="micro-note micro-one">
-        obsession / form / memory
-    </div>
+    <!-- SMALL EDITORIAL NOTE -->
 
     <div class="micro-note micro-two">
         things worth keeping
