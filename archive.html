@@ -28,7 +28,6 @@
     --muted:#6a6460;
     --rule:#d8d4cc;
     --accent:#b89a7a;
-    --pink:#df7184;
     --red:#bd2f39;
     --teal:#05242b;
 }
@@ -56,7 +55,7 @@ a{
 
 
 /* =========================================================
-   NAVIGATION — MATCHES ESSAYS.HTML
+   NAVIGATION
 ========================================================= */
 
 nav{
@@ -74,18 +73,18 @@ nav{
 
     padding:0 5vw;
 
-    background:rgba(250,248,244,0.96);
+    background:rgba(250,248,244,.96);
 
     backdrop-filter:blur(5px);
     -webkit-backdrop-filter:blur(5px);
 
-    border-bottom:0.5px solid var(--rule);
+    border-bottom:.5px solid var(--rule);
 }
 
 .nav-logo{
     font-family:'Cormorant Garamond',serif;
     font-size:12px;
-    letter-spacing:0.22em;
+    letter-spacing:.22em;
     text-transform:uppercase;
     color:var(--ink);
     text-decoration:none;
@@ -99,11 +98,11 @@ nav{
 .nav-links a{
     font-family:'Cormorant Garamond',serif;
     font-size:11px;
-    letter-spacing:0.18em;
+    letter-spacing:.18em;
     text-transform:uppercase;
     color:var(--muted);
     text-decoration:none;
-    transition:color 0.2s ease;
+    transition:color .2s ease;
 }
 
 .nav-links a:hover,
@@ -134,7 +133,7 @@ nav{
 
 
 /* =========================================================
-   SUBTLE PAPER TEXTURE
+   SUBTLE MAGAZINE PAPER
 ========================================================= */
 
 .hero::before{
@@ -147,31 +146,24 @@ nav{
 
     pointer-events:none;
 
-    opacity:.16;
-
     background-image:
         repeating-linear-gradient(
             0deg,
-            rgba(55,42,30,.025) 0px,
-            rgba(55,42,30,.025) 1px,
+            rgba(40,30,20,.018) 0,
+            rgba(40,30,20,.018) 1px,
             transparent 1px,
             transparent 5px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            rgba(55,42,30,.018) 0px,
-            rgba(55,42,30,.018) 1px,
-            transparent 1px,
-            transparent 90px
         );
+
+    opacity:.35;
 }
 
 
 /* =========================================================
-   ART DIRECTION BACKGROUND
+   MAGAZINE BACKGROUND LAYER
 ========================================================= */
 
-.hero-art{
+.magazine-layer{
     position:absolute;
     inset:0;
 
@@ -183,115 +175,121 @@ nav{
 }
 
 
-/* HUGE FAINT ARCHIVE */
+/* =========================================================
+   HUGE GHOST MASTHEAD
+========================================================= */
 
-.ghost-archive{
+.magazine-masthead{
     position:absolute;
 
-    left:30%;
-    top:1%;
+    left:24%;
+    top:-58px;
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:clamp(110px,16vw,245px);
+    font-size:clamp(150px,18vw,280px);
 
     font-weight:300;
 
-    letter-spacing:.12em;
+    line-height:1;
+
+    letter-spacing:.055em;
 
     text-transform:uppercase;
 
     white-space:nowrap;
 
-    color:rgba(30,25,20,.025);
+    color:rgba(22,18,15,.035);
 
-    transform:rotate(-3deg);
+    z-index:1;
 }
 
 
-/* FAINT 001 */
+/* =========================================================
+   ISSUE INFORMATION
+========================================================= */
 
-.ghost-number{
+.issue-info{
     position:absolute;
 
-    left:48%;
-    top:17%;
+    left:47%;
+    top:48px;
 
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:125px;
-
-    font-weight:300;
-
-    font-style:italic;
-
-    color:rgba(189,47,57,.045);
-
-    transform:rotate(-8deg);
-}
-
-
-/* OBJECTS */
-
-.ghost-objects{
-    position:absolute;
-
-    left:48%;
-    bottom:9%;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:52px;
-
-    font-style:italic;
-
-    letter-spacing:.15em;
-
-    color:rgba(20,18,15,.035);
-
-    transform:rotate(-5deg);
-}
-
-
-/* MEMORY */
-
-.ghost-memory{
-    position:absolute;
-
-    right:5%;
-    bottom:4%;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:35px;
-
-    letter-spacing:.3em;
-
-    text-transform:uppercase;
-
-    color:rgba(189,47,57,.04);
-
-    transform:rotate(5deg);
-}
-
-
-/* VERTICAL EDITORIAL TEXT */
-
-.hero-side-label{
-    position:absolute;
-
-    left:48.5%;
-    top:18%;
+    display:flex;
+    align-items:center;
+    gap:13px;
 
     font-family:'Cormorant Garamond',serif;
 
     font-size:8px;
 
+    letter-spacing:.3em;
+
+    text-transform:uppercase;
+
+    color:rgba(35,30,25,.48);
+
+    z-index:5;
+}
+
+.issue-dot{
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:var(--red);
+}
+
+
+/* =========================================================
+   ARCHIVE INDEX
+========================================================= */
+
+.archive-index{
+    position:absolute;
+
+    left:48%;
+    bottom:64px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:8px;
+
+    line-height:2;
+
+    letter-spacing:.28em;
+
+    text-transform:uppercase;
+
+    color:rgba(50,43,37,.42);
+}
+
+.archive-index strong{
+    font-weight:500;
+    color:rgba(30,25,20,.62);
+}
+
+
+/* =========================================================
+   VERTICAL EDITORIAL LABEL
+========================================================= */
+
+.vertical-label{
+    position:absolute;
+
+    left:46.2%;
+    top:255px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:7px;
+
     letter-spacing:.42em;
 
     text-transform:uppercase;
 
-    color:rgba(80,70,60,.35);
+    color:rgba(50,43,37,.34);
 
     writing-mode:vertical-rl;
 
@@ -299,142 +297,358 @@ nav{
 }
 
 
-/* SMALL ARCHIVE CODE */
+/* =========================================================
+   LARGE FAINT ISSUE NUMBER
+========================================================= */
 
-.hero-code{
+.issue-number{
     position:absolute;
 
-    left:51%;
-    bottom:13%;
+    right:4%;
+    bottom:-50px;
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:8px;
+    font-size:190px;
 
-    letter-spacing:.25em;
+    font-weight:300;
 
-    text-transform:uppercase;
+    font-style:italic;
 
-    color:rgba(80,70,60,.4);
+    line-height:1;
+
+    color:rgba(189,47,57,.035);
 }
 
 
 /* =========================================================
-   HAND DRAWN ELLIPSES
+   PAGE NUMBER
 ========================================================= */
 
-.art-circle{
+.page-number{
     position:absolute;
 
-    border:1px solid rgba(70,60,50,.10);
+    right:3.8%;
+    top:51%;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:9px;
+
+    letter-spacing:.25em;
+
+    color:rgba(40,34,28,.45);
+
+    transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   REGISTRATION TARGET
+========================================================= */
+
+.registration-mark{
+    position:absolute;
+
+    left:52%;
+    top:105px;
+
+    width:22px;
+    height:22px;
+
+    border:1px solid rgba(30,25,20,.22);
 
     border-radius:50%;
 }
 
-.art-circle-one{
-    width:380px;
-    height:155px;
+.registration-mark::before,
+.registration-mark::after{
+    content:"";
 
-    left:45%;
-    top:32%;
+    position:absolute;
 
-    transform:rotate(-12deg);
+    background:rgba(30,25,20,.22);
 }
 
-.art-circle-two{
-    width:280px;
-    height:105px;
+.registration-mark::before{
+    width:32px;
+    height:1px;
 
-    right:5%;
-    bottom:14%;
+    left:-6px;
+    top:10px;
+}
 
-    border-color:rgba(189,47,57,.09);
+.registration-mark::after{
+    width:1px;
+    height:32px;
 
-    transform:rotate(14deg);
+    top:-6px;
+    left:10px;
 }
 
 
 /* =========================================================
-   THIN SKETCH LINES
+   CROP MARKS
 ========================================================= */
 
-.art-line{
+.crop{
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    opacity:.34;
+}
+
+.crop::before,
+.crop::after{
+    content:"";
+
+    position:absolute;
+
+    background:#29241f;
+}
+
+.crop::before{
+    width:24px;
+    height:1px;
+}
+
+.crop::after{
+    width:1px;
+    height:24px;
+}
+
+.crop-one{
+    left:43%;
+    top:93px;
+}
+
+.crop-two{
+    left:62%;
+    bottom:53px;
+
+    transform:rotate(180deg);
+}
+
+.crop-three{
+    right:8%;
+    top:140px;
+
+    transform:rotate(90deg);
+}
+
+
+/* =========================================================
+   THIN EDITORIAL RULES
+========================================================= */
+
+.editorial-rule{
     position:absolute;
 
     height:1px;
 
-    transform-origin:left center;
-
-    background:rgba(60,50,40,.10);
+    background:rgba(45,38,32,.17);
 }
 
-.art-line-one{
-    width:330px;
-
+.rule-one{
     left:44%;
-    top:27%;
+    top:136px;
 
-    transform:rotate(-13deg);
+    width:195px;
 }
 
-.art-line-two{
-    width:260px;
+.rule-two{
+    left:49%;
+    bottom:116px;
 
-    left:53%;
-    bottom:16%;
-
-    background:rgba(189,47,57,.10);
-
-    transform:rotate(8deg);
+    width:290px;
 }
 
-.art-line-three{
-    width:150px;
+.rule-three{
+    right:7%;
+    top:188px;
 
-    right:8%;
-    top:39%;
+    width:110px;
 
-    transform:rotate(-31deg);
+    transform:rotate(-8deg);
 }
 
 
 /* =========================================================
-   TRANSLUCENT RED MARKS
+   TINY MAGAZINE CAPTIONS
 ========================================================= */
 
-.red-mark{
+.mag-caption{
     position:absolute;
 
-    z-index:3;
+    font-family:'Cormorant Garamond',serif;
 
-    background:rgba(189,47,57,.045);
+    font-size:7px;
+
+    line-height:1.55;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    color:rgba(55,48,41,.45);
+}
+
+.caption-one{
+    left:43.8%;
+    top:150px;
+}
+
+.caption-two{
+    left:62%;
+    bottom:72px;
+
+    text-align:right;
+}
+
+
+/* =========================================================
+   RED HANDWRITTEN ANNOTATIONS
+========================================================= */
+
+.hand-note{
+    position:absolute;
+
+    z-index:8;
+
+    font-family:'Corinthia',cursive;
+
+    color:rgba(177,40,49,.82);
+
+    line-height:.8;
 
     pointer-events:none;
 }
 
-.red-mark-one{
-    width:150px;
-    height:28px;
+.note-one{
+    left:53%;
+    top:168px;
 
-    left:52%;
-    top:18%;
+    font-size:30px;
 
-    transform:rotate(-7deg);
+    transform:rotate(-8deg);
 }
 
-.red-mark-two{
-    width:105px;
-    height:20px;
+.note-two{
+    right:18%;
+    bottom:95px;
 
-    right:24%;
-    bottom:19%;
+    font-size:27px;
 
-    transform:rotate(12deg);
+    transform:rotate(7deg);
 }
 
 
 /* =========================================================
-   TITLE — MOVED RIGHT
+   RED HAND-DRAWN CIRCLE
+========================================================= */
+
+.red-circle{
+    position:absolute;
+
+    z-index:7;
+
+    left:50%;
+    top:143px;
+
+    width:125px;
+    height:55px;
+
+    border:1.5px solid rgba(189,47,57,.45);
+
+    border-radius:50%;
+
+    transform:rotate(-11deg);
+}
+
+.red-circle::after{
+    content:"";
+
+    position:absolute;
+
+    inset:3px -3px -2px 2px;
+
+    border:1px solid rgba(189,47,57,.18);
+
+    border-radius:50%;
+}
+
+
+/* =========================================================
+   RED ARROW
+========================================================= */
+
+.red-arrow{
+    position:absolute;
+
+    z-index:7;
+
+    right:26%;
+    bottom:122px;
+
+    width:95px;
+    height:45px;
+
+    border-bottom:1.5px solid rgba(189,47,57,.55);
+
+    transform:rotate(-13deg);
+}
+
+.red-arrow::before,
+.red-arrow::after{
+    content:"";
+
+    position:absolute;
+
+    right:-1px;
+    bottom:-1px;
+
+    width:14px;
+    height:1.5px;
+
+    background:rgba(189,47,57,.55);
+
+    transform-origin:right center;
+}
+
+.red-arrow::before{
+    transform:rotate(150deg);
+}
+
+.red-arrow::after{
+    transform:rotate(-150deg);
+}
+
+
+/* =========================================================
+   RED UNDERLINE
+========================================================= */
+
+.red-underline{
+    position:absolute;
+
+    left:59%;
+    top:66%;
+
+    width:135px;
+    height:8px;
+
+    border-bottom:2px solid rgba(189,47,57,.42);
+
+    border-radius:50%;
+
+    transform:rotate(-3deg);
+}
+
+
+/* =========================================================
+   HERO TITLE
 ========================================================= */
 
 .hero-title-wrap{
@@ -489,7 +703,7 @@ nav{
 
 
 /* =========================================================
-   LEFT VINTAGE PHOTO
+   LEFT PHOTO
 ========================================================= */
 
 .hero-photo{
@@ -599,7 +813,7 @@ nav{
 
 
 /* =========================================================
-   STARS
+   STARS — FEWER, MORE INTENTIONAL
 ========================================================= */
 
 .star{
@@ -616,206 +830,98 @@ nav{
     color:#171411;
 }
 
-.star.pink{
+.star.red{
     color:#ca3340;
 }
-
 
 .star-1{
     left:46%;
     top:7%;
-    font-size:43px;
+
+    font-size:37px;
+
     transform:rotate(7deg);
 }
 
 .star-2{
     left:42%;
-    top:25%;
-    font-size:22px;
+    top:27%;
+
+    font-size:18px;
+
     transform:rotate(-11deg);
 }
 
 .star-3{
     left:5%;
-    top:48%;
+    top:55%;
+
     font-size:22px;
+
     transform:rotate(12deg);
 }
 
 .star-4{
-    right:18%;
-    top:12%;
-    font-size:29px;
-    transform:rotate(15deg);
+    right:6%;
+    top:15%;
+
+    font-size:19px;
+
+    transform:rotate(-8deg);
 }
 
 .star-5{
-    right:5%;
-    top:15%;
-    font-size:20px;
-    transform:rotate(-8deg);
+    left:39%;
+    bottom:14%;
+
+    font-size:16px;
+
+    transform:rotate(-10deg);
 }
 
 .star-6{
-    left:4%;
-    top:66%;
-    font-size:27px;
-    transform:rotate(9deg);
+    right:33%;
+    bottom:9%;
+
+    font-size:23px;
+
+    transform:rotate(-8deg);
 }
 
 .star-7{
-    left:39%;
-    bottom:14%;
-    font-size:19px;
-    transform:rotate(-10deg);
+    right:29%;
+    top:35%;
+
+    font-size:16px;
+
+    transform:rotate(8deg);
 }
 
 .star-8{
-    left:44%;
-    bottom:5%;
-    font-size:21px;
-    transform:rotate(8deg);
-}
+    left:56%;
+    top:23%;
 
-.star-9{
-    right:33%;
-    bottom:8%;
-    font-size:27px;
-    transform:rotate(-8deg);
-}
+    font-size:11px;
 
-.star-10{
-    right:30%;
-    top:34%;
-    font-size:20px;
-    transform:rotate(8deg);
-}
-
-.star-11{
-    left:55%;
-    top:19%;
-    font-size:16px;
     transform:rotate(10deg);
 }
 
-.star-12{
-    right:23%;
-    top:48%;
-    font-size:17px;
+.star-9{
+    left:52%;
+    bottom:17%;
+
+    font-size:11px;
+
     transform:rotate(-5deg);
 }
 
-.star-13{
-    left:36%;
-    top:11%;
-    font-size:13px;
-    transform:rotate(-8deg);
-}
+.star-10{
+    right:10%;
+    top:52%;
 
-.star-14{
-    left:51%;
-    top:15%;
     font-size:12px;
-    transform:rotate(12deg);
-}
 
-.star-15{
-    left:58%;
-    top:29%;
-    font-size:15px;
-    transform:rotate(-7deg);
-}
-
-.star-16{
-    left:52%;
-    top:69%;
-    font-size:13px;
-    transform:rotate(16deg);
-}
-
-.star-17{
-    left:61%;
-    bottom:7%;
-    font-size:16px;
-    transform:rotate(-12deg);
-}
-
-.star-18{
-    right:27%;
-    top:23%;
-    font-size:11px;
     transform:rotate(8deg);
-}
-
-.star-19{
-    right:8%;
-    top:42%;
-    font-size:15px;
-    transform:rotate(-10deg);
-}
-
-.star-20{
-    right:28%;
-    bottom:23%;
-    font-size:12px;
-    transform:rotate(14deg);
-}
-
-.star-21{
-    left:47%;
-    top:39%;
-    font-size:11px;
-    transform:rotate(-12deg);
-}
-
-.star-22{
-    left:57%;
-    bottom:19%;
-    font-size:10px;
-    transform:rotate(8deg);
-}
-
-.star-23{
-    right:12%;
-    top:61%;
-    font-size:13px;
-    transform:rotate(-6deg);
-}
-
-.star-24{
-    left:33%;
-    bottom:5%;
-    font-size:12px;
-    transform:rotate(13deg);
-}
-
-
-/* =========================================================
-   SMALL EDITORIAL NOTE
-========================================================= */
-
-.micro-note{
-    position:absolute;
-
-    z-index:18;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:9px;
-    font-style:italic;
-
-    color:#a2988f;
-
-    letter-spacing:.02em;
-
-    pointer-events:none;
-}
-
-.micro-two{
-    right:9%;
-    bottom:14%;
-
-    transform:rotate(4deg);
 }
 
 
@@ -841,7 +947,7 @@ nav{
 }
 
 
-/* DIVIDER — CHANGE top ONLY TO MOVE LINE */
+/* CHANGE top ONLY TO MOVE THE DIVIDER */
 
 .tabi::before{
     content:"";
@@ -1262,7 +1368,6 @@ nav{
     font-size:clamp(55px,7vw,95px);
 
     font-weight:300;
-
     font-style:italic;
 
     line-height:.9;
@@ -1361,86 +1466,128 @@ footer{
     }
 
 
+    /* HERO */
+
     .hero{
         height:640px;
-
         min-height:0;
 
         margin-top:56px;
     }
 
 
-    /* BACKGROUND ART */
+    /* MAGAZINE ELEMENTS */
 
-    .ghost-archive{
-        left:3%;
-        top:5%;
+    .magazine-masthead{
+        left:0;
+        top:8px;
 
         font-size:95px;
     }
 
-    .ghost-number{
-        left:45%;
-        top:17%;
+    .issue-info{
+        left:43%;
+        top:65px;
 
-        font-size:85px;
+        gap:7px;
+
+        font-size:6px;
     }
 
-    .ghost-objects{
-        left:33%;
-        bottom:8%;
+    .registration-mark{
+        left:49%;
+        top:105px;
 
-        font-size:35px;
+        transform:scale(.75);
     }
 
-    .ghost-memory,
-    .hero-side-label,
-    .hero-code,
-    .art-circle-two,
-    .art-line-three,
-    .red-mark-two{
+    .vertical-label,
+    .page-number,
+    .caption-two,
+    .crop-three,
+    .rule-three,
+    .note-two,
+    .red-arrow,
+    .issue-number{
         display:none;
     }
 
-    .art-circle-one{
-        left:23%;
-        top:36%;
+    .archive-index{
+        left:7%;
+        bottom:38px;
 
-        width:260px;
-        height:110px;
+        font-size:6px;
     }
 
-    .art-line-one{
-        left:28%;
-        width:210px;
+    .crop-one{
+        left:43%;
+        top:115px;
     }
 
-    .art-line-two{
-        left:40%;
-        width:160px;
+    .crop-two{
+        left:54%;
+        bottom:55px;
     }
 
-    .red-mark-one{
-        left:48%;
-        width:100px;
+    .rule-one{
+        left:42%;
+        top:152px;
+
+        width:110px;
+    }
+
+    .rule-two{
+        left:44%;
+        bottom:100px;
+
+        width:150px;
+    }
+
+    .caption-one{
+        left:43%;
+        top:164px;
+
+        font-size:6px;
+    }
+
+    .note-one{
+        left:52%;
+        top:183px;
+
+        font-size:24px;
+    }
+
+    .red-circle{
+        left:47%;
+        top:165px;
+
+        width:90px;
+        height:42px;
+    }
+
+    .red-underline{
+        left:49%;
+        top:69%;
+
+        width:95px;
     }
 
 
     /* TITLE */
 
     .hero-title-wrap{
-        left:63%;
+        left:64%;
         top:57%;
 
-        width:72%;
+        width:70%;
     }
 
     .hero-title{
-        font-size:clamp(60px,17vw,88px);
+        font-size:clamp(58px,16vw,86px);
     }
 
     .hero-subtitle{
-        margin-top:25px;
+        margin-top:24px;
 
         font-size:11px;
 
@@ -1448,7 +1595,7 @@ footer{
     }
 
 
-    /* COLLAGE */
+    /* IMAGES */
 
     .hero-photo{
         left:-17%;
@@ -1478,74 +1625,38 @@ footer{
         width:23%;
     }
 
-    .micro-note{
-        display:none;
-    }
 
-
-    /* STARS — REDUCED ON MOBILE */
+    /* STARS */
 
     .star-2,
     .star-3,
     .star-5,
     .star-7,
     .star-8,
-    .star-10,
-    .star-11,
-    .star-12,
-    .star-13,
-    .star-14,
-    .star-15,
-    .star-17,
-    .star-18,
-    .star-19,
-    .star-21,
-    .star-22,
-    .star-23,
-    .star-24{
+    .star-9,
+    .star-10{
         display:none;
     }
 
     .star-1{
         left:48%;
-        top:9%;
+        top:10%;
 
-        font-size:34px;
+        font-size:30px;
     }
 
     .star-4{
-        right:21%;
-        top:19%;
+        right:10%;
+        top:18%;
 
-        font-size:24px;
+        font-size:17px;
     }
 
     .star-6{
-        left:4%;
-        top:61%;
-
-        font-size:21px;
-    }
-
-    .star-9{
-        right:28%;
+        right:27%;
         bottom:14%;
 
-        font-size:23px;
-    }
-
-    .star-16{
-        left:49%;
-        top:71%;
-
-        font-size:12px;
-    }
-
-    .star-20{
-        right:12%;
-        bottom:27%;
-
-        font-size:11px;
+        font-size:20px;
     }
 
 
@@ -1615,7 +1726,7 @@ footer{
     }
 
 
-    /* OTHER OBJECTS */
+    /* OBJECTS */
 
     .archive-object{
         min-height:650px;
@@ -1660,25 +1771,15 @@ footer{
 
     <div class="nav-links">
 
-        <a href="archive.html" class="active">
-            Archive
-        </a>
+        <a href="archive.html" class="active">Archive</a>
 
-        <a href="essays.html">
-            Essays
-        </a>
+        <a href="essays.html">Essays</a>
 
-        <a href="photography.html">
-            Photography
-        </a>
+        <a href="photography.html">Photography</a>
 
-        <a href="about.html">
-            About
-        </a>
+        <a href="about.html">About</a>
 
-        <a href="about.html#contact">
-            Contact
-        </a>
+        <a href="about.html#contact">Contact</a>
 
     </div>
 
@@ -1692,51 +1793,130 @@ footer{
 <section class="hero">
 
 
-    <!-- BACKGROUND ART -->
+    <!-- MAGAZINE BACKGROUND -->
 
-    <div class="hero-art">
+    <div class="magazine-layer">
 
-        <div class="ghost-archive">
+
+        <!-- HUGE MASTHEAD -->
+
+        <div class="magazine-masthead">
             Archive
         </div>
 
-        <div class="ghost-number">
-            001
-        </div>
 
-        <div class="ghost-objects">
-            objects
-        </div>
+        <!-- ISSUE INFORMATION -->
 
-        <div class="ghost-memory">
-            memory
-        </div>
+        <div class="issue-info">
 
-        <div class="hero-side-label">
-            personal fashion archive
-        </div>
+            <span>VOL. 01</span>
 
-        <div class="hero-code">
-            AD — 001 / ∞
+            <span class="issue-dot"></span>
+
+            <span>ANAÏS DOROSHINA</span>
+
+            <span class="issue-dot"></span>
+
+            <span>2026</span>
+
         </div>
 
 
-        <div class="art-circle art-circle-one"></div>
-        <div class="art-circle art-circle-two"></div>
+        <!-- REGISTRATION MARK -->
+
+        <div class="registration-mark"></div>
 
 
-        <div class="art-line art-line-one"></div>
-        <div class="art-line art-line-two"></div>
-        <div class="art-line art-line-three"></div>
+        <!-- CROP MARKS -->
+
+        <div class="crop crop-one"></div>
+
+        <div class="crop crop-two"></div>
+
+        <div class="crop crop-three"></div>
 
 
-        <div class="red-mark red-mark-one"></div>
-        <div class="red-mark red-mark-two"></div>
+        <!-- EDITORIAL RULES -->
+
+        <div class="editorial-rule rule-one"></div>
+
+        <div class="editorial-rule rule-two"></div>
+
+        <div class="editorial-rule rule-three"></div>
+
+
+        <!-- SMALL CAPTIONS -->
+
+        <div class="mag-caption caption-one">
+            PERSONAL ARCHIVE<br>
+            OBJECT STUDY / 001
+        </div>
+
+        <div class="mag-caption caption-two">
+            FORM / MEMORY<br>
+            CULTURE / IDENTITY
+        </div>
+
+
+        <!-- VERTICAL LABEL -->
+
+        <div class="vertical-label">
+            PERSONAL FASHION ARCHIVE
+        </div>
+
+
+        <!-- INDEX -->
+
+        <div class="archive-index">
+
+            <strong>ARCHIVE INDEX</strong><br>
+
+            01 &nbsp; OBJECT<br>
+            02 &nbsp; FORM<br>
+            03 &nbsp; MEMORY<br>
+            04 &nbsp; CULTURE
+
+        </div>
+
+
+        <!-- BIG FAINT NUMBER -->
+
+        <div class="issue-number">
+            01
+        </div>
+
+
+        <!-- PAGE NUMBER -->
+
+        <div class="page-number">
+            P. 001
+        </div>
+
+
+        <!-- RED MARKUPS -->
+
+        <div class="red-circle"></div>
+
+        <div class="red-arrow"></div>
+
+        <div class="red-underline"></div>
+
+
+        <!-- HANDWRITTEN NOTES -->
+
+        <div class="hand-note note-one">
+            keep this
+        </div>
+
+        <div class="hand-note note-two">
+            worth remembering
+        </div>
+
 
     </div>
 
 
-    <!-- LARGE VINTAGE PHOTO -->
+    <!-- LEFT PHOTO -->
 
     <img
         src="cabinet-vintage-photo.png"
@@ -1763,7 +1943,7 @@ footer{
     >
 
 
-    <!-- WAX SEAL -->
+    <!-- SEAL -->
 
     <img
         src="cabinet-seal.png"
@@ -1775,34 +1955,27 @@ footer{
     <!-- STARS -->
 
     <div class="star star-1 black">✳</div>
-    <div class="star star-2 pink">✦</div>
-    <div class="star star-3 black">✦</div>
-    <div class="star star-4 black">✳</div>
-    <div class="star star-5 pink">✦</div>
-    <div class="star star-6 black">✧</div>
-    <div class="star star-7 pink">✦</div>
-    <div class="star star-8 black">＊</div>
-    <div class="star star-9 pink">✦</div>
-    <div class="star star-10 pink">✦</div>
-    <div class="star star-11 pink">✧</div>
-    <div class="star star-12 black">✦</div>
 
-    <div class="star star-13 black">✦</div>
-    <div class="star star-14 pink">✧</div>
-    <div class="star star-15 black">✦</div>
-    <div class="star star-16 pink">✦</div>
-    <div class="star star-17 black">＊</div>
-    <div class="star star-18 pink">✦</div>
-    <div class="star star-19 black">✧</div>
-    <div class="star star-20 pink">✦</div>
+    <div class="star star-2 red">✦</div>
 
-    <div class="star star-21 black">✦</div>
-    <div class="star star-22 pink">✧</div>
-    <div class="star star-23 black">✦</div>
-    <div class="star star-24 pink">✦</div>
+    <div class="star star-3 black">✧</div>
+
+    <div class="star star-4 red">✦</div>
+
+    <div class="star star-5 black">＊</div>
+
+    <div class="star star-6 red">✦</div>
+
+    <div class="star star-7 red">✦</div>
+
+    <div class="star star-8 black">✧</div>
+
+    <div class="star star-9 red">✦</div>
+
+    <div class="star star-10 black">✧</div>
 
 
-    <!-- MAIN TITLE -->
+    <!-- TITLE -->
 
     <div class="hero-title-wrap">
 
@@ -1814,11 +1987,6 @@ footer{
             A personal collection of fashion’s unforgettable objects.
         </div>
 
-    </div>
-
-
-    <div class="micro-note micro-two">
-        things worth keeping
     </div>
 
 
@@ -1927,7 +2095,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">002</div>
+    <div class="object-number">
+        002
+    </div>
 
     <div class="object-house">
         Christian Dior by John Galliano
@@ -1968,7 +2138,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">003</div>
+    <div class="object-number">
+        003
+    </div>
 
     <div class="object-house">
         Thierry Mugler
@@ -2010,7 +2182,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">004</div>
+    <div class="object-number">
+        004
+    </div>
 
     <div class="object-house">
         Alexander McQueen
@@ -2051,7 +2225,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">005</div>
+    <div class="object-number">
+        005
+    </div>
 
     <div class="object-house">
         Comme des Garçons
@@ -2094,7 +2270,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">006</div>
+    <div class="object-number">
+        006
+    </div>
 
     <div class="object-house">
         Elsa Schiaparelli × Salvador Dalí
@@ -2136,7 +2314,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">007</div>
+    <div class="object-number">
+        007
+    </div>
 
     <div class="object-house">
         Hermès
@@ -2178,7 +2358,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">008</div>
+    <div class="object-number">
+        008
+    </div>
 
     <div class="object-house">
         Guy Bourdin
@@ -2220,7 +2402,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">009</div>
+    <div class="object-number">
+        009
+    </div>
 
     <div class="object-house">
         Cartier
