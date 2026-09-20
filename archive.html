@@ -156,6 +156,42 @@ nav{
 }
 
 
+
+/* =========================================================
+   WOMAN — LARGE CROPPED PORTRAIT
+========================================================= */
+
+.woman-crop{
+    position:absolute;
+
+    z-index:25;
+
+    left:0;
+    top:0;
+
+    width:36%;
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.hero-woman{
+    position:absolute;
+
+    width:190%;
+    height:auto;
+
+    max-width:none;
+
+    left:-77%;
+    top:-4%;
+
+    pointer-events:none;
+}
+
+
 /* =========================================================
    TITLE
 ========================================================= */
@@ -1124,11 +1160,19 @@ footer{
         font-size:12px;
     }
 
-    .hero-woman{
-        right:-25%;
-        top:18%;
+    .woman-crop{
+        left:0;
+        top:0;
 
-        width:73%;
+        width:45%;
+        height:100%;
+    }
+
+    .hero-woman{
+        width:225%;
+
+        left:-103%;
+        top:4%;
     }
 
     .hero-book{
@@ -1357,6 +1401,19 @@ footer{
 ========================================================= -->
 
 <section class="hero">
+
+
+    <!-- WOMAN — CROPPED PORTRAIT -->
+
+    <div class="woman-crop">
+
+        <img
+            src="cabinet-woman.png"
+            class="hero-woman"
+            alt=""
+        >
+
+    </div>
 
 
     <!-- BOOK -->
