@@ -28,6 +28,7 @@
     --muted:#6a6460;
     --rule:#d8d4cc;
     --accent:#b89a7a;
+    --pink:#df7184;
     --red:#bd2f39;
     --teal:#05242b;
 }
@@ -56,6 +57,7 @@ a{
 
 /* =========================================================
    NAVIGATION
+   MATCHES ESSAYS.HTML
 ========================================================= */
 
 nav{
@@ -73,18 +75,18 @@ nav{
 
     padding:0 5vw;
 
-    background:rgba(250,248,244,.96);
+    background:rgba(250,248,244,0.96);
 
     backdrop-filter:blur(5px);
     -webkit-backdrop-filter:blur(5px);
 
-    border-bottom:.5px solid var(--rule);
+    border-bottom:0.5px solid var(--rule);
 }
 
 .nav-logo{
     font-family:'Cormorant Garamond',serif;
     font-size:12px;
-    letter-spacing:.22em;
+    letter-spacing:0.22em;
     text-transform:uppercase;
     color:var(--ink);
     text-decoration:none;
@@ -98,11 +100,11 @@ nav{
 .nav-links a{
     font-family:'Cormorant Garamond',serif;
     font-size:11px;
-    letter-spacing:.18em;
+    letter-spacing:0.18em;
     text-transform:uppercase;
     color:var(--muted);
     text-decoration:none;
-    transition:color .2s ease;
+    transition:color 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -131,11 +133,6 @@ nav{
     z-index:10;
 }
 
-
-/* =========================================================
-   SUBTLE MAGAZINE PAPER
-========================================================= */
-
 .hero::before{
     content:"";
 
@@ -146,509 +143,21 @@ nav{
 
     pointer-events:none;
 
+    opacity:.10;
+
     background-image:
         repeating-linear-gradient(
             0deg,
-            rgba(40,30,20,.018) 0,
+            rgba(40,30,20,.018) 0px,
             rgba(40,30,20,.018) 1px,
             transparent 1px,
-            transparent 5px
+            transparent 4px
         );
-
-    opacity:.35;
 }
 
 
 /* =========================================================
-   MAGAZINE BACKGROUND LAYER
-========================================================= */
-
-.magazine-layer{
-    position:absolute;
-    inset:0;
-
-    z-index:2;
-
-    overflow:hidden;
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   HUGE GHOST MASTHEAD
-========================================================= */
-
-.magazine-masthead{
-    position:absolute;
-
-    left:24%;
-    top:-58px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:clamp(150px,18vw,280px);
-
-    font-weight:300;
-
-    line-height:1;
-
-    letter-spacing:.055em;
-
-    text-transform:uppercase;
-
-    white-space:nowrap;
-
-    color:rgba(22,18,15,.035);
-
-    z-index:1;
-}
-
-
-/* =========================================================
-   ISSUE INFORMATION
-========================================================= */
-
-.issue-info{
-    position:absolute;
-
-    left:47%;
-    top:48px;
-
-    display:flex;
-    align-items:center;
-    gap:13px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    letter-spacing:.3em;
-
-    text-transform:uppercase;
-
-    color:rgba(35,30,25,.48);
-
-    z-index:5;
-}
-
-.issue-dot{
-    width:3px;
-    height:3px;
-
-    border-radius:50%;
-
-    background:var(--red);
-}
-
-
-/* =========================================================
-   ARCHIVE INDEX
-========================================================= */
-
-.archive-index{
-    position:absolute;
-
-    left:48%;
-    bottom:64px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:8px;
-
-    line-height:2;
-
-    letter-spacing:.28em;
-
-    text-transform:uppercase;
-
-    color:rgba(50,43,37,.42);
-}
-
-.archive-index strong{
-    font-weight:500;
-    color:rgba(30,25,20,.62);
-}
-
-
-/* =========================================================
-   VERTICAL EDITORIAL LABEL
-========================================================= */
-
-.vertical-label{
-    position:absolute;
-
-    left:46.2%;
-    top:255px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:7px;
-
-    letter-spacing:.42em;
-
-    text-transform:uppercase;
-
-    color:rgba(50,43,37,.34);
-
-    writing-mode:vertical-rl;
-
-    transform:rotate(180deg);
-}
-
-
-/* =========================================================
-   LARGE FAINT ISSUE NUMBER
-========================================================= */
-
-.issue-number{
-    position:absolute;
-
-    right:4%;
-    bottom:-50px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:190px;
-
-    font-weight:300;
-
-    font-style:italic;
-
-    line-height:1;
-
-    color:rgba(189,47,57,.035);
-}
-
-
-/* =========================================================
-   PAGE NUMBER
-========================================================= */
-
-.page-number{
-    position:absolute;
-
-    right:3.8%;
-    top:51%;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:9px;
-
-    letter-spacing:.25em;
-
-    color:rgba(40,34,28,.45);
-
-    transform:rotate(90deg);
-}
-
-
-/* =========================================================
-   REGISTRATION TARGET
-========================================================= */
-
-.registration-mark{
-    position:absolute;
-
-    left:52%;
-    top:105px;
-
-    width:22px;
-    height:22px;
-
-    border:1px solid rgba(30,25,20,.22);
-
-    border-radius:50%;
-}
-
-.registration-mark::before,
-.registration-mark::after{
-    content:"";
-
-    position:absolute;
-
-    background:rgba(30,25,20,.22);
-}
-
-.registration-mark::before{
-    width:32px;
-    height:1px;
-
-    left:-6px;
-    top:10px;
-}
-
-.registration-mark::after{
-    width:1px;
-    height:32px;
-
-    top:-6px;
-    left:10px;
-}
-
-
-/* =========================================================
-   CROP MARKS
-========================================================= */
-
-.crop{
-    position:absolute;
-
-    width:24px;
-    height:24px;
-
-    opacity:.34;
-}
-
-.crop::before,
-.crop::after{
-    content:"";
-
-    position:absolute;
-
-    background:#29241f;
-}
-
-.crop::before{
-    width:24px;
-    height:1px;
-}
-
-.crop::after{
-    width:1px;
-    height:24px;
-}
-
-.crop-one{
-    left:43%;
-    top:93px;
-}
-
-.crop-two{
-    left:62%;
-    bottom:53px;
-
-    transform:rotate(180deg);
-}
-
-.crop-three{
-    right:8%;
-    top:140px;
-
-    transform:rotate(90deg);
-}
-
-
-/* =========================================================
-   THIN EDITORIAL RULES
-========================================================= */
-
-.editorial-rule{
-    position:absolute;
-
-    height:1px;
-
-    background:rgba(45,38,32,.17);
-}
-
-.rule-one{
-    left:44%;
-    top:136px;
-
-    width:195px;
-}
-
-.rule-two{
-    left:49%;
-    bottom:116px;
-
-    width:290px;
-}
-
-.rule-three{
-    right:7%;
-    top:188px;
-
-    width:110px;
-
-    transform:rotate(-8deg);
-}
-
-
-/* =========================================================
-   TINY MAGAZINE CAPTIONS
-========================================================= */
-
-.mag-caption{
-    position:absolute;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:7px;
-
-    line-height:1.55;
-
-    letter-spacing:.22em;
-
-    text-transform:uppercase;
-
-    color:rgba(55,48,41,.45);
-}
-
-.caption-one{
-    left:43.8%;
-    top:150px;
-}
-
-.caption-two{
-    left:62%;
-    bottom:72px;
-
-    text-align:right;
-}
-
-
-/* =========================================================
-   RED HANDWRITTEN ANNOTATIONS
-========================================================= */
-
-.hand-note{
-    position:absolute;
-
-    z-index:8;
-
-    font-family:'Corinthia',cursive;
-
-    color:rgba(177,40,49,.82);
-
-    line-height:.8;
-
-    pointer-events:none;
-}
-
-.note-one{
-    left:53%;
-    top:168px;
-
-    font-size:30px;
-
-    transform:rotate(-8deg);
-}
-
-.note-two{
-    right:18%;
-    bottom:95px;
-
-    font-size:27px;
-
-    transform:rotate(7deg);
-}
-
-
-/* =========================================================
-   RED HAND-DRAWN CIRCLE
-========================================================= */
-
-.red-circle{
-    position:absolute;
-
-    z-index:7;
-
-    left:50%;
-    top:143px;
-
-    width:125px;
-    height:55px;
-
-    border:1.5px solid rgba(189,47,57,.45);
-
-    border-radius:50%;
-
-    transform:rotate(-11deg);
-}
-
-.red-circle::after{
-    content:"";
-
-    position:absolute;
-
-    inset:3px -3px -2px 2px;
-
-    border:1px solid rgba(189,47,57,.18);
-
-    border-radius:50%;
-}
-
-
-/* =========================================================
-   RED ARROW
-========================================================= */
-
-.red-arrow{
-    position:absolute;
-
-    z-index:7;
-
-    right:26%;
-    bottom:122px;
-
-    width:95px;
-    height:45px;
-
-    border-bottom:1.5px solid rgba(189,47,57,.55);
-
-    transform:rotate(-13deg);
-}
-
-.red-arrow::before,
-.red-arrow::after{
-    content:"";
-
-    position:absolute;
-
-    right:-1px;
-    bottom:-1px;
-
-    width:14px;
-    height:1.5px;
-
-    background:rgba(189,47,57,.55);
-
-    transform-origin:right center;
-}
-
-.red-arrow::before{
-    transform:rotate(150deg);
-}
-
-.red-arrow::after{
-    transform:rotate(-150deg);
-}
-
-
-/* =========================================================
-   RED UNDERLINE
-========================================================= */
-
-.red-underline{
-    position:absolute;
-
-    left:59%;
-    top:66%;
-
-    width:135px;
-    height:8px;
-
-    border-bottom:2px solid rgba(189,47,57,.42);
-
-    border-radius:50%;
-
-    transform:rotate(-3deg);
-}
-
-
-/* =========================================================
-   HERO TITLE
+   TITLE
 ========================================================= */
 
 .hero-title-wrap{
@@ -656,10 +165,10 @@ nav{
 
     z-index:50;
 
-    left:75%;
+    left:69%;
     top:52%;
 
-    width:38%;
+    width:42%;
 
     transform:translate(-50%,-50%);
 
@@ -669,7 +178,7 @@ nav{
 .hero-title{
     font-family:'Cormorant Garamond',serif;
 
-    font-size:clamp(82px,8vw,126px);
+    font-size:clamp(92px,9vw,142px);
 
     font-weight:300;
     font-style:italic;
@@ -697,13 +206,11 @@ nav{
     letter-spacing:.015em;
 
     color:#71675e;
-
-    white-space:nowrap;
 }
 
 
 /* =========================================================
-   LEFT PHOTO
+   LEFT VINTAGE PHOTO
 ========================================================= */
 
 .hero-photo{
@@ -723,9 +230,10 @@ nav{
 
     transform:rotate(-4deg);
 
-    filter:drop-shadow(
-        0 8px 10px rgba(40,30,20,.11)
-    );
+    filter:
+        drop-shadow(
+            0 8px 10px rgba(40,30,20,.11)
+        );
 
     pointer-events:none;
 }
@@ -775,9 +283,10 @@ nav{
 
     transform:rotate(-3deg);
 
-    filter:drop-shadow(
-        0 8px 8px rgba(40,30,20,.08)
-    );
+    filter:
+        drop-shadow(
+            0 8px 8px rgba(40,30,20,.08)
+        );
 
     pointer-events:none;
 }
@@ -804,16 +313,17 @@ nav{
 
     transform:rotate(-5deg);
 
-    filter:drop-shadow(
-        0 6px 7px rgba(70,20,15,.16)
-    );
+    filter:
+        drop-shadow(
+            0 6px 7px rgba(70,20,15,.16)
+        );
 
     pointer-events:none;
 }
 
 
 /* =========================================================
-   STARS — FEWER, MORE INTENTIONAL
+   STARS
 ========================================================= */
 
 .star{
@@ -830,31 +340,34 @@ nav{
     color:#171411;
 }
 
-.star.red{
+.star.pink{
     color:#ca3340;
 }
+
+
+/* LARGE / ORIGINAL STARS */
 
 .star-1{
     left:46%;
     top:7%;
 
-    font-size:37px;
+    font-size:43px;
 
     transform:rotate(7deg);
 }
 
 .star-2{
     left:42%;
-    top:27%;
+    top:25%;
 
-    font-size:18px;
+    font-size:22px;
 
     transform:rotate(-11deg);
 }
 
 .star-3{
     left:5%;
-    top:55%;
+    top:48%;
 
     font-size:22px;
 
@@ -862,71 +375,230 @@ nav{
 }
 
 .star-4{
-    right:6%;
+    right:18%;
+    top:12%;
+
+    font-size:29px;
+
+    transform:rotate(15deg);
+}
+
+.star-5{
+    right:5%;
     top:15%;
 
-    font-size:19px;
+    font-size:20px;
 
     transform:rotate(-8deg);
 }
 
-.star-5{
+.star-6{
+    left:4%;
+    top:66%;
+
+    font-size:27px;
+
+    transform:rotate(9deg);
+}
+
+.star-7{
     left:39%;
     bottom:14%;
 
-    font-size:16px;
+    font-size:19px;
 
     transform:rotate(-10deg);
 }
 
-.star-6{
-    right:33%;
-    bottom:9%;
+.star-8{
+    left:44%;
+    bottom:5%;
 
-    font-size:23px;
+    font-size:21px;
+
+    transform:rotate(8deg);
+}
+
+.star-9{
+    right:33%;
+    bottom:8%;
+
+    font-size:27px;
 
     transform:rotate(-8deg);
 }
 
-.star-7{
-    right:29%;
-    top:35%;
+.star-10{
+    right:30%;
+    top:34%;
 
-    font-size:16px;
+    font-size:20px;
 
     transform:rotate(8deg);
 }
 
-.star-8{
-    left:56%;
-    top:23%;
+.star-11{
+    left:55%;
+    top:19%;
 
-    font-size:11px;
+    font-size:16px;
 
     transform:rotate(10deg);
 }
 
-.star-9{
-    left:52%;
-    bottom:17%;
+.star-12{
+    right:23%;
+    top:48%;
 
-    font-size:11px;
+    font-size:17px;
 
     transform:rotate(-5deg);
 }
 
-.star-10{
-    right:10%;
-    top:52%;
+
+/* EXTRA SMALL STARS */
+
+.star-13{
+    left:36%;
+    top:11%;
+
+    font-size:13px;
+
+    transform:rotate(-8deg);
+}
+
+.star-14{
+    left:51%;
+    top:15%;
 
     font-size:12px;
+
+    transform:rotate(12deg);
+}
+
+.star-15{
+    left:58%;
+    top:29%;
+
+    font-size:15px;
+
+    transform:rotate(-7deg);
+}
+
+.star-16{
+    left:52%;
+    top:69%;
+
+    font-size:13px;
+
+    transform:rotate(16deg);
+}
+
+.star-17{
+    left:61%;
+    bottom:7%;
+
+    font-size:16px;
+
+    transform:rotate(-12deg);
+}
+
+.star-18{
+    right:27%;
+    top:23%;
+
+    font-size:11px;
 
     transform:rotate(8deg);
 }
 
+.star-19{
+    right:8%;
+    top:42%;
+
+    font-size:15px;
+
+    transform:rotate(-10deg);
+}
+
+.star-20{
+    right:28%;
+    bottom:23%;
+
+    font-size:12px;
+
+    transform:rotate(14deg);
+}
+
+.star-21{
+    left:47%;
+    top:39%;
+
+    font-size:11px;
+
+    transform:rotate(-12deg);
+}
+
+.star-22{
+    left:57%;
+    bottom:19%;
+
+    font-size:10px;
+
+    transform:rotate(8deg);
+}
+
+.star-23{
+    right:12%;
+    top:61%;
+
+    font-size:13px;
+
+    transform:rotate(-6deg);
+}
+
+.star-24{
+    left:33%;
+    bottom:5%;
+
+    font-size:12px;
+
+    transform:rotate(13deg);
+}
+
 
 /* =========================================================
-   TABI
+   SMALL EDITORIAL NOTE
+========================================================= */
+
+.micro-note{
+    position:absolute;
+
+    z-index:18;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:9px;
+
+    font-style:italic;
+
+    color:#a2988f;
+
+    letter-spacing:.02em;
+
+    pointer-events:none;
+}
+
+.micro-two{
+    right:9%;
+    bottom:14%;
+
+    transform:rotate(4deg);
+}
+
+
+/* =========================================================
+   001 — TABI
 ========================================================= */
 
 .tabi{
@@ -947,7 +619,11 @@ nav{
 }
 
 
-/* CHANGE top ONLY TO MOVE THE DIVIDER */
+/* =========================================================
+   HERO / TABI DIVIDER
+
+   CHANGE top:95px IF YOU WANT TO MOVE ONLY THE LINE
+========================================================= */
 
 .tabi::before{
     content:"";
@@ -967,6 +643,10 @@ nav{
     pointer-events:none;
 }
 
+
+/* =========================================================
+   TABI HEADING
+========================================================= */
 
 .tabi-heading{
     position:absolute;
@@ -1011,6 +691,7 @@ nav{
     font-size:57px;
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.95;
@@ -1048,9 +729,10 @@ nav{
 
     object-fit:contain;
 
-    filter:drop-shadow(
-        0 12px 10px rgba(55,45,35,.08)
-    );
+    filter:
+        drop-shadow(
+            0 12px 10px rgba(55,45,35,.08)
+        );
 }
 
 .tabi-vintage{
@@ -1273,6 +955,7 @@ nav{
     font-size:clamp(43px,4.5vw,65px);
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.95;
@@ -1368,6 +1051,7 @@ nav{
     font-size:clamp(55px,7vw,95px);
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.9;
@@ -1470,132 +1154,28 @@ footer{
 
     .hero{
         height:640px;
+
         min-height:0;
 
         margin-top:56px;
     }
 
-
-    /* MAGAZINE ELEMENTS */
-
-    .magazine-masthead{
-        left:0;
-        top:8px;
-
-        font-size:95px;
-    }
-
-    .issue-info{
-        left:43%;
-        top:65px;
-
-        gap:7px;
-
-        font-size:6px;
-    }
-
-    .registration-mark{
-        left:49%;
-        top:105px;
-
-        transform:scale(.75);
-    }
-
-    .vertical-label,
-    .page-number,
-    .caption-two,
-    .crop-three,
-    .rule-three,
-    .note-two,
-    .red-arrow,
-    .issue-number{
-        display:none;
-    }
-
-    .archive-index{
-        left:7%;
-        bottom:38px;
-
-        font-size:6px;
-    }
-
-    .crop-one{
-        left:43%;
-        top:115px;
-    }
-
-    .crop-two{
-        left:54%;
-        bottom:55px;
-    }
-
-    .rule-one{
-        left:42%;
-        top:152px;
-
-        width:110px;
-    }
-
-    .rule-two{
-        left:44%;
-        bottom:100px;
-
-        width:150px;
-    }
-
-    .caption-one{
-        left:43%;
-        top:164px;
-
-        font-size:6px;
-    }
-
-    .note-one{
-        left:52%;
-        top:183px;
-
-        font-size:24px;
-    }
-
-    .red-circle{
-        left:47%;
-        top:165px;
-
-        width:90px;
-        height:42px;
-    }
-
-    .red-underline{
-        left:49%;
-        top:69%;
-
-        width:95px;
-    }
-
-
-    /* TITLE */
-
     .hero-title-wrap{
-        left:64%;
+        left:61%;
         top:57%;
 
-        width:70%;
+        width:76%;
     }
 
     .hero-title{
-        font-size:clamp(58px,16vw,86px);
+        font-size:clamp(62px,18vw,92px);
     }
 
     .hero-subtitle{
-        margin-top:24px;
+        margin-top:25px;
 
-        font-size:11px;
-
-        white-space:normal;
+        font-size:12px;
     }
-
-
-    /* IMAGES */
 
     .hero-photo{
         left:-17%;
@@ -1625,38 +1205,74 @@ footer{
         width:23%;
     }
 
+    .micro-note{
+        display:none;
+    }
 
-    /* STARS */
+
+    /* SIMPLIFY STARS ON MOBILE */
 
     .star-2,
     .star-3,
     .star-5,
     .star-7,
     .star-8,
-    .star-9,
-    .star-10{
+    .star-10,
+    .star-11,
+    .star-12,
+    .star-13,
+    .star-14,
+    .star-15,
+    .star-17,
+    .star-18,
+    .star-19,
+    .star-21,
+    .star-22,
+    .star-23,
+    .star-24{
         display:none;
     }
 
     .star-1{
         left:48%;
-        top:10%;
+        top:9%;
 
-        font-size:30px;
+        font-size:34px;
     }
 
     .star-4{
-        right:10%;
-        top:18%;
+        right:21%;
+        top:19%;
 
-        font-size:17px;
+        font-size:24px;
     }
 
     .star-6{
-        right:27%;
+        left:4%;
+        top:61%;
+
+        font-size:21px;
+    }
+
+    .star-9{
+        right:28%;
         bottom:14%;
 
-        font-size:20px;
+        font-size:23px;
+    }
+
+    .star-16{
+        left:49%;
+        top:71%;
+
+        font-size:12px;
+    }
+
+    .star-20{
+        right:12%;
+        bottom:27%;
+
+        font-size:11px;
     }
 
 
@@ -1726,7 +1342,7 @@ footer{
     }
 
 
-    /* OBJECTS */
+    /* OTHER OBJECTS */
 
     .archive-object{
         min-height:650px;
@@ -1771,15 +1387,25 @@ footer{
 
     <div class="nav-links">
 
-        <a href="archive.html" class="active">Archive</a>
+        <a href="archive.html" class="active">
+            Archive
+        </a>
 
-        <a href="essays.html">Essays</a>
+        <a href="essays.html">
+            Essays
+        </a>
 
-        <a href="photography.html">Photography</a>
+        <a href="photography.html">
+            Photography
+        </a>
 
-        <a href="about.html">About</a>
+        <a href="about.html">
+            About
+        </a>
 
-        <a href="about.html#contact">Contact</a>
+        <a href="about.html#contact">
+            Contact
+        </a>
 
     </div>
 
@@ -1793,130 +1419,7 @@ footer{
 <section class="hero">
 
 
-    <!-- MAGAZINE BACKGROUND -->
-
-    <div class="magazine-layer">
-
-
-        <!-- HUGE MASTHEAD -->
-
-        <div class="magazine-masthead">
-            Archive
-        </div>
-
-
-        <!-- ISSUE INFORMATION -->
-
-        <div class="issue-info">
-
-            <span>VOL. 01</span>
-
-            <span class="issue-dot"></span>
-
-            <span>ANAÏS DOROSHINA</span>
-
-            <span class="issue-dot"></span>
-
-            <span>2026</span>
-
-        </div>
-
-
-        <!-- REGISTRATION MARK -->
-
-        <div class="registration-mark"></div>
-
-
-        <!-- CROP MARKS -->
-
-        <div class="crop crop-one"></div>
-
-        <div class="crop crop-two"></div>
-
-        <div class="crop crop-three"></div>
-
-
-        <!-- EDITORIAL RULES -->
-
-        <div class="editorial-rule rule-one"></div>
-
-        <div class="editorial-rule rule-two"></div>
-
-        <div class="editorial-rule rule-three"></div>
-
-
-        <!-- SMALL CAPTIONS -->
-
-        <div class="mag-caption caption-one">
-            PERSONAL ARCHIVE<br>
-            OBJECT STUDY / 001
-        </div>
-
-        <div class="mag-caption caption-two">
-            FORM / MEMORY<br>
-            CULTURE / IDENTITY
-        </div>
-
-
-        <!-- VERTICAL LABEL -->
-
-        <div class="vertical-label">
-            PERSONAL FASHION ARCHIVE
-        </div>
-
-
-        <!-- INDEX -->
-
-        <div class="archive-index">
-
-            <strong>ARCHIVE INDEX</strong><br>
-
-            01 &nbsp; OBJECT<br>
-            02 &nbsp; FORM<br>
-            03 &nbsp; MEMORY<br>
-            04 &nbsp; CULTURE
-
-        </div>
-
-
-        <!-- BIG FAINT NUMBER -->
-
-        <div class="issue-number">
-            01
-        </div>
-
-
-        <!-- PAGE NUMBER -->
-
-        <div class="page-number">
-            P. 001
-        </div>
-
-
-        <!-- RED MARKUPS -->
-
-        <div class="red-circle"></div>
-
-        <div class="red-arrow"></div>
-
-        <div class="red-underline"></div>
-
-
-        <!-- HANDWRITTEN NOTES -->
-
-        <div class="hand-note note-one">
-            keep this
-        </div>
-
-        <div class="hand-note note-two">
-            worth remembering
-        </div>
-
-
-    </div>
-
-
-    <!-- LEFT PHOTO -->
+    <!-- LARGE VINTAGE PHOTO -->
 
     <img
         src="cabinet-vintage-photo.png"
@@ -1943,7 +1446,7 @@ footer{
     >
 
 
-    <!-- SEAL -->
+    <!-- WAX SEAL -->
 
     <img
         src="cabinet-seal.png"
@@ -1955,27 +1458,34 @@ footer{
     <!-- STARS -->
 
     <div class="star star-1 black">✳</div>
+    <div class="star star-2 pink">✦</div>
+    <div class="star star-3 black">✦</div>
+    <div class="star star-4 black">✳</div>
+    <div class="star star-5 pink">✦</div>
+    <div class="star star-6 black">✧</div>
+    <div class="star star-7 pink">✦</div>
+    <div class="star star-8 black">＊</div>
+    <div class="star star-9 pink">✦</div>
+    <div class="star star-10 pink">✦</div>
+    <div class="star star-11 pink">✧</div>
+    <div class="star star-12 black">✦</div>
 
-    <div class="star star-2 red">✦</div>
+    <div class="star star-13 black">✦</div>
+    <div class="star star-14 pink">✧</div>
+    <div class="star star-15 black">✦</div>
+    <div class="star star-16 pink">✦</div>
+    <div class="star star-17 black">＊</div>
+    <div class="star star-18 pink">✦</div>
+    <div class="star star-19 black">✧</div>
+    <div class="star star-20 pink">✦</div>
 
-    <div class="star star-3 black">✧</div>
-
-    <div class="star star-4 red">✦</div>
-
-    <div class="star star-5 black">＊</div>
-
-    <div class="star star-6 red">✦</div>
-
-    <div class="star star-7 red">✦</div>
-
-    <div class="star star-8 black">✧</div>
-
-    <div class="star star-9 red">✦</div>
-
-    <div class="star star-10 black">✧</div>
+    <div class="star star-21 black">✦</div>
+    <div class="star star-22 pink">✧</div>
+    <div class="star star-23 black">✦</div>
+    <div class="star star-24 pink">✦</div>
 
 
-    <!-- TITLE -->
+    <!-- MAIN TITLE -->
 
     <div class="hero-title-wrap">
 
@@ -1987,6 +1497,13 @@ footer{
             A personal collection of fashion’s unforgettable objects.
         </div>
 
+    </div>
+
+
+    <!-- SMALL EDITORIAL NOTE -->
+
+    <div class="micro-note micro-two">
+        things worth keeping
     </div>
 
 
