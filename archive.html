@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +16,9 @@
 ========================================================= */
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 :root{
@@ -56,7 +57,7 @@ a{
 
 /* =========================================================
    NAVIGATION
-   EXACT MATCH TO ESSAYS.HTML
+   MATCHES ESSAYS.HTML
 ========================================================= */
 
 nav{
@@ -64,7 +65,7 @@ nav{
     top:0;
     left:0;
     right:0;
-    z-index:100;
+    z-index:1000;
 
     height:56px;
 
@@ -118,13 +119,15 @@ nav{
 
 .hero{
     position:relative;
+
     width:100%;
     height:680px;
     min-height:680px;
 
-    margin-top:37px;
+    margin-top:56px;
 
     overflow:visible;
+
     background:var(--cream);
 
     z-index:10;
@@ -132,10 +135,14 @@ nav{
 
 .hero::before{
     content:"";
+
     position:absolute;
     inset:0;
+
     z-index:0;
+
     pointer-events:none;
+
     opacity:.10;
 
     background-image:
@@ -150,46 +157,85 @@ nav{
 
 
 /* =========================================================
-   MAIN TITLE
+   TITLE
 ========================================================= */
 
 .hero-title-wrap{
     position:absolute;
-    z-index:40;
 
-    left:62%;
-    top:54%;
+    z-index:50;
 
-    width:43%;
+    left:69%;
+    top:52%;
+
+    width:42%;
 
     transform:translate(-50%,-50%);
+
     text-align:center;
 }
 
 .hero-title{
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(92px,9vw,142px);
 
     font-weight:300;
     font-style:italic;
 
     line-height:.84;
+
     letter-spacing:-.07em;
 
     color:#100e0c;
+
+    white-space:nowrap;
 }
 
 .hero-subtitle{
     margin-top:34px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:clamp(13px,1.05vw,17px);
+
     line-height:1.4;
 
     font-style:italic;
+
     letter-spacing:.015em;
 
     color:#71675e;
+}
+
+
+/* =========================================================
+   LEFT VINTAGE PHOTO
+========================================================= */
+
+.hero-photo{
+    position:absolute;
+
+    z-index:35;
+
+    left:-5%;
+    top:-5%;
+
+    width:57%;
+    height:auto;
+
+    max-width:none;
+
+    object-fit:contain;
+
+    transform:rotate(-4deg);
+
+    filter:
+        drop-shadow(
+            0 8px 10px rgba(40,30,20,.11)
+        );
+
+    pointer-events:none;
 }
 
 
@@ -199,41 +245,18 @@ nav{
 
 .hero-woman{
     position:absolute;
+
     z-index:28;
 
-    right:-1%;
-    top:7%;
-
-    width:31%;
-    height:auto;
-
-    max-width:none;
-    object-fit:contain;
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   LARGE VINTAGE PHOTO
-========================================================= */
-
-.hero-photo{
-    position:absolute;
-    z-index:35;
-
-    left:4%;
-    top:5%;
+    right:-8%;
+    top:-6%;
 
     width:43%;
     height:auto;
 
     max-width:none;
+
     object-fit:contain;
-
-    transform:rotate(-4deg);
-
-    filter:drop-shadow(0 8px 10px rgba(40,30,20,.11));
 
     pointer-events:none;
 }
@@ -245,20 +268,25 @@ nav{
 
 .hero-book{
     position:absolute;
+
     z-index:36;
 
-    right:-2.5%;
-    bottom:-100px;
+    right:-5%;
+    bottom:-120px;
 
-    width:24%;
+    width:32%;
     height:auto;
 
     max-width:none;
+
     object-fit:contain;
 
     transform:rotate(-3deg);
 
-    filter:drop-shadow(0 8px 8px rgba(40,30,20,.08));
+    filter:
+        drop-shadow(
+            0 8px 8px rgba(40,30,20,.08)
+        );
 
     pointer-events:none;
 }
@@ -270,20 +298,25 @@ nav{
 
 .hero-seal{
     position:absolute;
+
     z-index:46;
 
-    right:17%;
-    bottom:-25px;
+    right:18%;
+    bottom:-20px;
 
-    width:11%;
+    width:13%;
     height:auto;
 
     max-width:none;
+
     object-fit:contain;
 
     transform:rotate(-5deg);
 
-    filter:drop-shadow(0 6px 7px rgba(70,20,15,.16));
+    filter:
+        drop-shadow(
+            0 6px 7px rgba(70,20,15,.16)
+        );
 
     pointer-events:none;
 }
@@ -295,8 +328,11 @@ nav{
 
 .star{
     position:absolute;
+
     z-index:60;
+
     line-height:1;
+
     pointer-events:none;
 }
 
@@ -308,88 +344,226 @@ nav{
     color:#ca3340;
 }
 
+
+/* LARGE / ORIGINAL STARS */
+
 .star-1{
-    left:47%;
-    top:9%;
+    left:46%;
+    top:7%;
+
     font-size:43px;
+
     transform:rotate(7deg);
 }
 
 .star-2{
     left:42%;
-    top:27%;
+    top:25%;
+
     font-size:22px;
+
     transform:rotate(-11deg);
 }
 
 .star-3{
-    left:7%;
+    left:5%;
     top:48%;
+
     font-size:22px;
+
     transform:rotate(12deg);
 }
 
 .star-4{
-    right:19%;
-    top:15%;
+    right:18%;
+    top:12%;
+
     font-size:29px;
+
     transform:rotate(15deg);
 }
 
 .star-5{
-    right:6%;
-    top:14%;
+    right:5%;
+    top:15%;
+
     font-size:20px;
+
     transform:rotate(-8deg);
 }
 
 .star-6{
-    left:5%;
-    top:63%;
+    left:4%;
+    top:66%;
+
     font-size:27px;
+
     transform:rotate(9deg);
 }
 
 .star-7{
     left:39%;
-    bottom:12%;
+    bottom:14%;
+
     font-size:19px;
+
     transform:rotate(-10deg);
 }
 
 .star-8{
-    left:43%;
-    bottom:4%;
+    left:44%;
+    bottom:5%;
+
     font-size:21px;
+
     transform:rotate(8deg);
 }
 
 .star-9{
-    right:34%;
-    bottom:10%;
+    right:33%;
+    bottom:8%;
+
     font-size:27px;
+
     transform:rotate(-8deg);
 }
 
 .star-10{
-    right:31%;
-    top:36%;
+    right:30%;
+    top:34%;
+
     font-size:20px;
+
     transform:rotate(8deg);
 }
 
 .star-11{
     left:55%;
-    top:22%;
+    top:19%;
+
     font-size:16px;
+
     transform:rotate(10deg);
 }
 
 .star-12{
-    right:24%;
-    top:47%;
+    right:23%;
+    top:48%;
+
     font-size:17px;
+
     transform:rotate(-5deg);
+}
+
+
+/* EXTRA SMALL STARS */
+
+.star-13{
+    left:36%;
+    top:11%;
+
+    font-size:13px;
+
+    transform:rotate(-8deg);
+}
+
+.star-14{
+    left:51%;
+    top:15%;
+
+    font-size:12px;
+
+    transform:rotate(12deg);
+}
+
+.star-15{
+    left:58%;
+    top:29%;
+
+    font-size:15px;
+
+    transform:rotate(-7deg);
+}
+
+.star-16{
+    left:52%;
+    top:69%;
+
+    font-size:13px;
+
+    transform:rotate(16deg);
+}
+
+.star-17{
+    left:61%;
+    bottom:7%;
+
+    font-size:16px;
+
+    transform:rotate(-12deg);
+}
+
+.star-18{
+    right:27%;
+    top:23%;
+
+    font-size:11px;
+
+    transform:rotate(8deg);
+}
+
+.star-19{
+    right:8%;
+    top:42%;
+
+    font-size:15px;
+
+    transform:rotate(-10deg);
+}
+
+.star-20{
+    right:28%;
+    bottom:23%;
+
+    font-size:12px;
+
+    transform:rotate(14deg);
+}
+
+.star-21{
+    left:47%;
+    top:39%;
+
+    font-size:11px;
+
+    transform:rotate(-12deg);
+}
+
+.star-22{
+    left:57%;
+    bottom:19%;
+
+    font-size:10px;
+
+    transform:rotate(8deg);
+}
+
+.star-23{
+    right:12%;
+    top:61%;
+
+    font-size:13px;
+
+    transform:rotate(-6deg);
+}
+
+.star-24{
+    left:33%;
+    bottom:5%;
+
+    font-size:12px;
+
+    transform:rotate(13deg);
 }
 
 
@@ -399,21 +573,26 @@ nav{
 
 .micro-note{
     position:absolute;
+
     z-index:18;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:9px;
+
     font-style:italic;
 
     color:#a2988f;
+
     letter-spacing:.02em;
 
     pointer-events:none;
 }
 
 .micro-two{
-    right:10%;
-    bottom:15%;
+    right:9%;
+    bottom:14%;
+
     transform:rotate(4deg);
 }
 
@@ -442,41 +621,53 @@ nav{
 
 /* =========================================================
    HERO / TABI DIVIDER
+
+   CHANGE top:95px IF YOU WANT TO MOVE ONLY THE LINE
 ========================================================= */
 
 .tabi::before{
     content:"";
+
     position:absolute;
 
-    top:110px;
-
+    top:95px;
     left:0;
+
     width:100%;
     height:1px;
 
     background:var(--rule);
 
     z-index:2;
+
     pointer-events:none;
 }
 
 
+/* =========================================================
+   TABI HEADING
+========================================================= */
+
 .tabi-heading{
     position:absolute;
+
     z-index:20;
 
     top:125px;
     left:50%;
 
-    transform:translateX(-50%);
-
     width:70%;
+
+    transform:translateX(-50%);
 }
 
 .tabi-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
+
     letter-spacing:.35em;
+
     color:#998b7c;
 }
 
@@ -484,9 +675,11 @@ nav{
     margin-top:16px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:13px;
 
     letter-spacing:.4em;
+
     text-transform:uppercase;
 }
 
@@ -494,12 +687,15 @@ nav{
     margin-top:5px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:57px;
 
     font-weight:300;
+
     font-style:italic;
 
     line-height:.95;
+
     letter-spacing:-.045em;
 }
 
@@ -507,13 +703,20 @@ nav{
     margin-top:15px;
 
     font-family:'Cormorant Garamond',serif;
+
     font-size:8px;
 
     letter-spacing:.3em;
 }
 
+
+/* =========================================================
+   TABI IMAGES
+========================================================= */
+
 .tabi-boots{
     position:absolute;
+
     z-index:18;
 
     left:50%;
@@ -526,11 +729,15 @@ nav{
 
     object-fit:contain;
 
-    filter:drop-shadow(0 12px 10px rgba(55,45,35,.08));
+    filter:
+        drop-shadow(
+            0 12px 10px rgba(55,45,35,.08)
+        );
 }
 
 .tabi-vintage{
     position:absolute;
+
     z-index:4;
 
     left:-2%;
@@ -549,6 +756,7 @@ nav{
 
 .tabi-recognition{
     position:absolute;
+
     z-index:13;
 
     left:14%;
@@ -561,6 +769,7 @@ nav{
 
 .tabi-sketch{
     position:absolute;
+
     z-index:4;
 
     right:-2%;
@@ -571,8 +780,14 @@ nav{
     opacity:.3;
 }
 
+
+/* =========================================================
+   TABI DETAILS
+========================================================= */
+
 .tabi-circle{
     position:absolute;
+
     z-index:14;
 
     right:15%;
@@ -922,8 +1137,6 @@ footer{
 
 @media(max-width:800px){
 
-    /* EXACT ESSAYS NAV MOBILE SETTINGS */
-
     nav{
         padding:0 5vw;
     }
@@ -937,58 +1150,67 @@ footer{
     }
 
 
+    /* HERO */
+
     .hero{
         height:640px;
+
         min-height:0;
+
         margin-top:56px;
     }
 
     .hero-title-wrap{
-        left:55%;
-        top:58%;
-        width:80%;
+        left:61%;
+        top:57%;
+
+        width:76%;
     }
 
     .hero-title{
-        font-size:clamp(66px,19vw,96px);
+        font-size:clamp(62px,18vw,92px);
     }
 
     .hero-subtitle{
-        margin-top:26px;
+        margin-top:25px;
+
         font-size:12px;
     }
 
-    .hero-woman{
-        right:-16%;
-        top:27%;
-        width:59%;
-        height:auto;
+    .hero-photo{
+        left:-17%;
+        top:0;
+
+        width:76%;
     }
 
-    .hero-photo{
-        left:-7%;
-        top:8%;
-        width:59%;
-        height:auto;
+    .hero-woman{
+        right:-25%;
+        top:18%;
+
+        width:73%;
     }
 
     .hero-book{
-        right:-14%;
-        bottom:-55px;
-        width:43%;
-        height:auto;
+        right:-18%;
+        bottom:-60px;
+
+        width:53%;
     }
 
     .hero-seal{
-        right:18%;
-        bottom:-15px;
-        width:20%;
-        height:auto;
+        right:17%;
+        bottom:-12px;
+
+        width:23%;
     }
 
     .micro-note{
         display:none;
     }
+
+
+    /* SIMPLIFY STARS ON MOBILE */
 
     .star-2,
     .star-3,
@@ -997,33 +1219,64 @@ footer{
     .star-8,
     .star-10,
     .star-11,
-    .star-12{
+    .star-12,
+    .star-13,
+    .star-14,
+    .star-15,
+    .star-17,
+    .star-18,
+    .star-19,
+    .star-21,
+    .star-22,
+    .star-23,
+    .star-24{
         display:none;
     }
 
     .star-1{
-        left:49%;
-        top:11%;
+        left:48%;
+        top:9%;
+
         font-size:34px;
     }
 
     .star-4{
-        right:24%;
-        top:23%;
+        right:21%;
+        top:19%;
+
         font-size:24px;
     }
 
     .star-6{
-        left:5%;
-        top:57%;
+        left:4%;
+        top:61%;
+
         font-size:21px;
     }
 
     .star-9{
-        right:30%;
-        bottom:15%;
+        right:28%;
+        bottom:14%;
+
         font-size:23px;
     }
+
+    .star-16{
+        left:49%;
+        top:71%;
+
+        font-size:12px;
+    }
+
+    .star-20{
+        right:12%;
+        bottom:27%;
+
+        font-size:11px;
+    }
+
+
+    /* TABI */
 
     .tabi{
         height:860px;
@@ -1057,6 +1310,7 @@ footer{
 
     .tabi-sketch{
         width:40%;
+
         right:-12%;
         top:275px;
     }
@@ -1067,30 +1321,43 @@ footer{
 
     .tabi-signature{
         right:2%;
+
         font-size:27px;
     }
 
     .tabi-copy{
         top:610px;
+
         width:78%;
+
         font-size:14px;
     }
 
     .tabi-tags{
         top:775px;
+
         font-size:6px;
+
         letter-spacing:.25em;
     }
 
+
+    /* OTHER OBJECTS */
+
     .archive-object{
         min-height:650px;
+
         padding:5rem 7vw;
     }
 
     .object-image{
         width:76vw;
+
         height:300px;
     }
+
+
+    /* FOOTER */
 
     footer{
         grid-template-columns:1fr;
@@ -1104,12 +1371,12 @@ footer{
 </style>
 </head>
 
+
 <body>
 
 
 <!-- =========================================================
      NAVIGATION
-     SAME AS ESSAYS.HTML
 ========================================================= -->
 
 <nav>
@@ -1188,7 +1455,7 @@ footer{
     >
 
 
-    <!-- SCATTERED STARS -->
+    <!-- STARS -->
 
     <div class="star star-1 black">✳</div>
     <div class="star star-2 pink">✦</div>
@@ -1202,6 +1469,20 @@ footer{
     <div class="star star-10 pink">✦</div>
     <div class="star star-11 pink">✧</div>
     <div class="star star-12 black">✦</div>
+
+    <div class="star star-13 black">✦</div>
+    <div class="star star-14 pink">✧</div>
+    <div class="star star-15 black">✦</div>
+    <div class="star star-16 pink">✦</div>
+    <div class="star star-17 black">＊</div>
+    <div class="star star-18 pink">✦</div>
+    <div class="star star-19 black">✧</div>
+    <div class="star star-20 pink">✦</div>
+
+    <div class="star star-21 black">✦</div>
+    <div class="star star-22 pink">✧</div>
+    <div class="star star-23 black">✦</div>
+    <div class="star star-24 pink">✦</div>
 
 
     <!-- MAIN TITLE -->
@@ -1331,7 +1612,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">002</div>
+    <div class="object-number">
+        002
+    </div>
 
     <div class="object-house">
         Christian Dior by John Galliano
@@ -1372,7 +1655,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">003</div>
+    <div class="object-number">
+        003
+    </div>
 
     <div class="object-house">
         Thierry Mugler
@@ -1414,7 +1699,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">004</div>
+    <div class="object-number">
+        004
+    </div>
 
     <div class="object-house">
         Alexander McQueen
@@ -1455,7 +1742,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">005</div>
+    <div class="object-number">
+        005
+    </div>
 
     <div class="object-house">
         Comme des Garçons
@@ -1498,7 +1787,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">006</div>
+    <div class="object-number">
+        006
+    </div>
 
     <div class="object-house">
         Elsa Schiaparelli × Salvador Dalí
@@ -1540,7 +1831,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">007</div>
+    <div class="object-number">
+        007
+    </div>
 
     <div class="object-house">
         Hermès
@@ -1582,7 +1875,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">008</div>
+    <div class="object-number">
+        008
+    </div>
 
     <div class="object-house">
         Guy Bourdin
@@ -1624,7 +1919,9 @@ footer{
 
 <section class="archive-object">
 
-    <div class="object-number">009</div>
+    <div class="object-number">
+        009
+    </div>
 
     <div class="object-house">
         Cartier
