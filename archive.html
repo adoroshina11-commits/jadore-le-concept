@@ -22,9 +22,11 @@
 
 :root{
     --cream:#faf8f4;
-    --ink:#171411;
-    --muted:#766d64;
-    --rule:#d8d1c6;
+    --off:#f4f1eb;
+    --ink:#1a1814;
+    --muted:#6a6460;
+    --rule:#d8d4cc;
+    --accent:#b89a7a;
     --pink:#df7184;
     --red:#bd2f39;
     --teal:#05242b;
@@ -53,50 +55,60 @@ a{
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
+   EXACT MATCH TO ESSAYS.HTML
 ========================================================= */
 
 nav{
     position:fixed;
     top:0;
     left:0;
-    width:100%;
-    z-index:1000;
+    right:0;
+    z-index:100;
 
     height:56px;
-    padding:0 3.8vw;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 
-    background:var(--cream);
-    border-bottom:.5px solid var(--rule);
+    padding:0 5vw;
+
+    background:rgba(250,248,244,0.96);
+
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+
+    border-bottom:0.5px solid var(--rule);
 }
 
 .nav-logo{
     font-family:'Cormorant Garamond',serif;
-    font-size:11px;
-    letter-spacing:.16em;
+    font-size:12px;
+    letter-spacing:0.22em;
     text-transform:uppercase;
+    color:var(--ink);
     text-decoration:none;
-    line-height:1;
 }
 
 .nav-links{
     display:flex;
-    align-items:center;
-    gap:26px;
+    gap:28px;
 }
 
 .nav-links a{
     font-family:'Cormorant Garamond',serif;
-    font-size:9px;
-    line-height:1;
-    letter-spacing:.17em;
+    font-size:11px;
+    letter-spacing:0.18em;
     text-transform:uppercase;
+    color:var(--muted);
     text-decoration:none;
-    color:#57504a;
+    transition:color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--ink);
 }
 
 
@@ -430,19 +442,13 @@ nav{
 
 /* =========================================================
    HERO / TABI DIVIDER
-
-   CHANGE ONLY "top" TO MOVE THE LINE
-   20px = higher
-   40px = current
-   80px = lower
-   120px = much lower
 ========================================================= */
 
 .tabi::before{
     content:"";
     position:absolute;
 
-    top:95px;
+    top:105px;
 
     left:0;
     width:100%;
@@ -916,22 +922,20 @@ footer{
 
 @media(max-width:800px){
 
-    nav{
-        height:56px;
-        padding:0 4vw;
-    }
+    /* EXACT ESSAYS NAV MOBILE SETTINGS */
 
-    .nav-logo{
-        font-size:9px;
+    nav{
+        padding:0 5vw;
     }
 
     .nav-links{
-        gap:9px;
+        gap:13px;
     }
 
     .nav-links a{
-        font-size:6.5px;
+        font-size:8.5px;
     }
+
 
     .hero{
         height:640px;
@@ -1104,7 +1108,8 @@ footer{
 
 
 <!-- =========================================================
-     NAV
+     NAVIGATION
+     SAME AS ESSAYS.HTML
 ========================================================= -->
 
 <nav>
@@ -1115,11 +1120,25 @@ footer{
 
     <div class="nav-links">
 
-        <a href="archive.html">Archive</a>
-        <a href="essays.html">Essays</a>
-        <a href="photography.html">Photography</a>
-        <a href="about.html">About</a>
-        <a href="about.html#contact">Contact</a>
+        <a href="archive.html" class="active">
+            Archive
+        </a>
+
+        <a href="essays.html">
+            Essays
+        </a>
+
+        <a href="photography.html">
+            Photography
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="about.html#contact">
+            Contact
+        </a>
 
     </div>
 
